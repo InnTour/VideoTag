@@ -9,3 +9,8 @@ import { enableTailwind } from '@remotion/tailwind-v4';
 Config.setVideoImageFormat("jpeg");
 Config.setOverwriteOutput(true);
 Config.overrideWebpackConfig(enableTailwind);
+
+// Chromium settings for Matterport iframe support
+Config.setChromiumDisableWebSecurity(true);
+Config.setChromiumIgnoreCertificateErrors(true);
+Config.setChromiumOpenGlRenderer('angle');
