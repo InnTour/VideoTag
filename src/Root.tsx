@@ -5,10 +5,7 @@ import {
   calculateCaptionedVideoMetadata,
   captionedVideoSchema,
 } from "./CaptionedVideo";
-import { MatrixVideo } from "./MatrixVideo";
 import { LacedoniaVideo } from "./LacedoniaVideo";
-import { MatterportWalkthrough } from "./MatterportWalkthrough";
-import { TestSimple } from "./MatterportWalkthrough/TestSimple";
 import { MetaBorghiVideo } from "./MetaBorghiVideo";
 import { PortaLaStella } from "./PortaLaStella";
 import { PiazzettaNicolaVella } from "./PiazzettaNicolaVella";
@@ -37,33 +34,9 @@ export const RemotionRoot: React.FC = () => {
         }}
       />
       <Composition
-        id="MatrixVideo"
-        component={MatrixVideo}
-        durationInFrames={450}
-        fps={30}
-        width={1920}
-        height={1080}
-      />
-      <Composition
         id="LacedoniaVideo"
         component={LacedoniaVideo}
         durationInFrames={1500}
-        fps={30}
-        width={1920}
-        height={1080}
-      />
-      <Composition
-        id="MatterportWalkthrough"
-        component={MatterportWalkthrough}
-        durationInFrames={450}
-        fps={30}
-        width={1920}
-        height={1080}
-      />
-      <Composition
-        id="TestSimple"
-        component={TestSimple}
-        durationInFrames={150}
         fps={30}
         width={1920}
         height={1080}
