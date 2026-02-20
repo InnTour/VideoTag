@@ -20,6 +20,7 @@ import { BibliotecaVescovile } from "./BibliotecaVescovile";
 import { FrankCancianMavi } from "./FrankCancianMavi";
 import { MonumentoAiCaduti } from "./MonumentoAiCaduti";
 import { LapideTerremoto1930 } from "./LapideTerremoto1930";
+import { ColonnaPedoca } from "./ColonnaPedoca";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -181,6 +182,16 @@ export const RemotionRoot: React.FC = () => {
         id="A4-09-LapideTerremoto1930"
         component={LapideTerremoto1930}
         durationInFrames={1982}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      {/* A4.10 — Colonna del Pedoca · durata audio Iapetus: 59.19s → 1776 frame */}
+      <Composition
+        id="A4-10-ColonnaPedoca"
+        component={ColonnaPedoca}
+        durationInFrames={1776}
         fps={30}
         width={1920}
         height={1080}

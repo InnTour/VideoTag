@@ -1210,6 +1210,64 @@ const crossDissolveProgress = interpolate(frame, [dissolveStart, dissolveEnd], [
   - Palette quasi monocromatica (nero/grigio/bianco/rosso → oro finale) crea un arco visivo che rispecchia la narrazione
   - ⚠️ **REGOLA OPERATIVA CONFERMATA**: la voce Leda è sempre ~metà della durata di Iapetus — misurare SEMPRE entrambe prima di scegliere
 
+### Clip #20 — A4.10 · Colonna del Pedoca
+- **Data Produzione**: 2026-02-20
+- **Sezione Tematica**: Architettura e Monumenti (A4 — Luoghi della Cultura)
+- **Durata**: 59.19 secondi / 1776 frame @30fps
+- **Composizione Remotion**: `A4-10-ColonnaPedoca`
+- **Audio**: `TAG_A4.10_COLONNA_DEL_PEDOCA_Iapetus_ITA.mp3` (voce Iapetus · 59.19s)
+  - ⚠️ Voce Leda (29.66s/890f) — NON usare
+- **Sottotitoli**: Non integrati — gestiti in Filmora
+- **Asset Visivi**: 6 immagini PNG in `public/images/TAG A4.10 - COLONNA DEL PEDOCA/`
+  - `fssfsfasf` — Colonna del Pedoca hero (Seq01 Intro + Seq05 Outro bookend)
+  - `image_28d55fc9` — Tempio di Iside / rovine romane (Seq02 layer 1)
+  - `image_8aa60710` — Dettaglio colonna / travertino / iscrizione (Seq02 cross-dissolve)
+  - `image_9678b6d2` — Vescovo Marco Pedoca / Controriforma (Seq03 layer 1)
+  - `image_afd583ef` — Croce sulla colonna / cerimonia 1587 (Seq03 cross-dissolve)
+  - `image_cc17995a` — Contadini che si avvicinano al borgo / ingresso (Seq04)
+- **Contenuto Storico Reale** (narrazione fornita dall'utente):
+  - **Colonna in travertino di epoca romana** recuperata dagli scavi dell'antico **Tempio di Iside**
+  - **1587**: croce sovrapposta per volontà del vescovo **Marco Pedoca**, monaco benedettino e insigne matematico
+  - **Controriforma**: riconsacrazione di un simbolo dell'antica **Aquilonia** (nome romano di Lacedonia)
+  - **1586**: iscrizione ancora leggibile dedicata al prelato
+  - Situata all'**ingresso del borgo** — luogo di sosta per i contadini che tornavano dalle fatiche nelle contrade
+  - Per secoli: **confine sacro tra il lavoro dei campi e la pace della citta**
+- **Palette Cromatica**:
+  - `neroFondo #0A0808` — sfondo scuro notturno
+  - `travertino #D8C8A8` — la colonna romana
+  - `oroVescovile #C89830` — il potere del vescovado
+  - `rossoVescovile #6A1A1A` — la Controriforma
+  - `verdePagano #2D5A3A` — il mondo pagano di Iside
+  - `grigioIscrizione #8A8078` — l'iscrizione sul marmo
+- **Struttura**: Intro / Il Tempio di Iside / Il Vescovo Pedoca / Il Confine Sacro / Outro (5 sequenze + 4 fade)
+  - s01=300f · s02=380f · s03=380f · s04=340f · s05=456f
+  - `300+380+380+340+456 − 4×20 = 1856 − 80 = 1776 ✓`
+- **Componenti Originali Nuovi**:
+  - **CrossReveal.tsx** — croce latina SVG che si disegna progressivamente dal centro verso l'esterno con `stroke-dashoffset`; include glow filter e fill fade-in finale; rappresenta la sovrapposizione della fede cristiana sul travertino pagano
+  - **ParticleField mode='travertino'** — polvere di pietra beige/ocra per rovine romane
+  - **ParticleField mode='incenso'** — fumo liturgico grigio-oro per atmosfera religiosa
+- **Innovazioni Narrative e Visive**:
+  - **Transizione cromatica pagano→cristiano** in Seq02: overlay che muta da `verdePagano` a travertino caldo via interpolazione RGB
+  - **Ghost "AQUILONIA"** a 180px in verdePagano (Seq02) — il nome romano come presenza del passato pagano
+  - **Ghost "CONTRORIFORMA"** verticale a 110px in oroVescovile (Seq03) — il clima storico
+  - **Ghost "CONFINE SACRO"** rotated -90deg a 120px in travertino (Seq04) — la funzione del monumento
+  - **Ghost "PEDOCA"** a 240px in oroVescovile (Seq05) — il nome del vescovo come filigrana finale
+  - **Ghost "1587"** verticale a 220px (Seq01) — l'anno fondativo come sigillo d'apertura
+  - **Iscrizione reveal lettera-per-lettera** "ANNO DOMINI MDLXXXVI" con cursore lampeggiante (Seq03) — effetto scrittura su pietra
+  - **Counter 1500→1587** in Playfair 76px oro (Seq03) — l'anno della croce sovrapposta
+  - **CrossReveal SVG** che emerge dal nulla durante Seq03 — la fede che si sovrappone al paganesimo
+  - **Overlay golden hour** crescente `rgba(212,168,67)` in Seq04 — la luce del pomeriggio sui contadini
+  - **Collegamento tematico A2.09 e A3.01**: il Tempio di Iside e la Colonna del Pedoca sono nello stesso contesto archeologico
+  - **Bookend circolare**: stessa hero image intro/outro (Pattern 7)
+  - **Iris SVG outro** per chiusura cinematografica
+- **Tagline Finale**: *"Per secoli, il confine sacro tra la fatica e la pace — oggi, custode silenzioso di duemila anni di storia stratificata."*
+- **File Output**: Da renderizzare — `out/A4-10-ColonnaPedoca.mp4`
+- **Lezioni Apprese**:
+  - `CrossReveal` con `stroke-dasharray` + `stroke-dashoffset` = tecnica efficace per "disegnare" simboli progressivamente
+  - Transizione cromatica RGB interpolata (verdePagano→travertino warm) su overlay `mixBlendMode:'overlay'` crea una mutazione percettiva sottile e potente
+  - ParticleField con `mode='travertino'` (beige/ocra) e `mode='incenso'` (grigio-oro) separano visivamente l'atmosfera pagana da quella cristiana
+  - Iscrizione lettera-per-lettera con cursore lampeggiante aggiunge un livello di "scrittura dal vivo" che cattura l'attenzione anche in assenza di movimento fotografico
+
 ---
 
 ## 📈 Metriche di Produzione
@@ -1217,11 +1275,11 @@ const crossDissolveProgress = interpolate(frame, [dissolveStart, dissolveEnd], [
 > **Auto-aggiornamento**: Statistiche aggiornate dopo ogni clip
 
 ```
-Clip Prodotte:        19 / ~18 target (+ 1 versione alternativa)
-Durata Totale:        1361.90 secondi (22:41.90)  ← aggiunta A4.09 Lapide Terremoto (66.06s)
-Sezioni Completate:   0 / 6 (A4 Luoghi della Cultura: 4 clip · C3 Fotografia: 1 clip · Architettura: 17)
+Clip Prodotte:        20 / ~18 target (+ 1 versione alternativa)
+Durata Totale:        1421.09 secondi (23:41.09)  ← aggiunta A4.10 Colonna del Pedoca (59.19s)
+Sezioni Completate:   0 / 6 (A4 Luoghi della Cultura: 5 clip · C3 Fotografia: 1 clip · Architettura: 18)
 Pattern Documentati:  7 (vedi sezione Pattern)
-Asset Caricati:       107 immagini AI/JPG/PNG, 25 MP3 narrazione, 1 SRT manuale
+Asset Caricati:       113 immagini AI/JPG/PNG, 27 MP3 narrazione, 1 SRT manuale
 Plugin Installati:    @remotion/transitions · @remotion/motion-blur · @remotion/noise · @remotion/shapes · @remotion/paths · @remotion/light-leaks · @remotion/player · @remotion/renderer
 Lingue Coperte:       IT (principale) · EN e Cerugnés pronte al primo uso
 Ultimo Rendering:     N/A (composizioni pronte per render locale)
@@ -1231,7 +1289,7 @@ Tempo Medio Render:   N/A (stimato: 3–5 min/clip su macchina locale)
 ### Distribuzione Target per Sezione
 | Sezione | Clip Pianificate | Clip Prodotte | Status |
 |---------|-----------------|---------------|--------|
-| Architettura & Monumenti (A) | 3+ | 18 | 🔄 In produzione (A1.02 · A1.05 · A1.06 · A1.07 · A1.10 · A2.01 · A2.03 · A2.03v2 · A2.08 · A2.09 · A3.01 · A3.02 · A3.04 · A3.06 · **A4.04** · **A4.05** · **A4.08** · **A4.09**) |
+| Architettura & Monumenti (A) | 3+ | 19 | 🔄 In produzione (A1.02 · A1.05 · A1.06 · A1.07 · A1.10 · A2.01 · A2.03 · A2.03v2 · A2.08 · A2.09 · A3.01 · A3.02 · A3.04 · A3.06 · **A4.04** · **A4.05** · **A4.08** · **A4.09** · **A4.10**) |
 | Fotografia & Cultura (C) | 3 | 1 | 🔄 In produzione (**C3.01** Frank Cancian e il MAVI) |
 | Paesaggio & Natura | 3 | 0 | ⏳ In attesa |
 | Tradizioni & Cultura Popolare | 3 | 0 | ⏳ In attesa |
@@ -1298,6 +1356,20 @@ const srtTimeToFrame = (srtTime: string, fps = 30): number => {
 - 🎨 **Progressione cromatica** Seq04: cenere → oro con `mixBlendMode:'overlay'` crescente
 - ⚠️ **REGOLA CONFERMATA**: voce Leda (29.64s) = ~metà di Iapetus (66.06s) — misurare SEMPRE entrambe
 - 📊 Metriche aggiornate: **19 clip** / **1361.90s totali** (22:41.90)
+
+### 2026-02-20 — v2.8 — Clip #20 A4.10 · Colonna del Pedoca
+- 🎬 **Produzione A4.10 "Colonna del Pedoca"** — 59.19s / 1776 frame · voce Iapetus
+- 🏛️ **Tema: transizione paganesimo→fede cristiana** — la colonna romana riconsacrata nel 1587
+- ✝️ **CrossReveal.tsx**: croce latina SVG con animazione `stroke-dashoffset` progressiva + glow filter + fill fade-in — rappresenta la sovrapposizione della fede cristiana
+- 🏛️ **ParticleField mode='travertino'**: polvere di pietra beige/ocra per atmosfera rovine romane
+- ⛪ **ParticleField mode='incenso'**: fumo liturgico grigio-oro per atmosfera religiosa
+- 🎨 **Transizione cromatica RGB** in Seq02: overlay che muta da verdePagano (#2D5A3A) a travertino caldo (#D8C8A8) via interpolazione
+- 📜 **Iscrizione reveal lettera-per-lettera** "ANNO DOMINI MDLXXXVI" + cursore lampeggiante in Seq03
+- 🔢 **Counter 1500→1587** in Playfair 76px — l'anno della croce sovrapposta
+- 👻 **5 Ghost typography**: "1587" verticale (Seq01) · "AQUILONIA" verdePagano (Seq02) · "CONTRORIFORMA" verticale (Seq03) · "CONFINE SACRO" rotated (Seq04) · "PEDOCA" 240px (Seq05)
+- 🌅 **Overlay golden hour** crescente `rgba(212,168,67)` in Seq04 — luce del pomeriggio sui contadini
+- 🔗 **Collegamento tematico A2.09/A3.01**: Tempio di Iside e Colonna nello stesso contesto archeologico
+- 📊 Metriche aggiornate: **20 clip** / **1421.09s totali** (23:41.09) / 113 asset immagine
 
 ### 2026-02-20 — v2.6 — C3.01 FrankCancianMavi · Correzione Durata e Rifacimento
 - ⚠️ **FIX CRITICO**: C3.01 era sbagliato — usava voce Leda (27.79s/834f) invece di Iapetus (58.70s/1761f)
@@ -1468,8 +1540,8 @@ Questo framework è progettato per essere **completamente riutilizzabile**. Una 
 
 ---
 
-**Versione**: 2.7 — 19 Clip Prodotte · A4.09 Lapide Terremoto 1930 (66.06s · SeismicWave)
+**Versione**: 2.8 — 20 Clip Prodotte · A4.10 Colonna del Pedoca (59.19s · CrossReveal SVG)
 **Ultimo Aggiornamento**: 2026-02-20
-**Status**: 🟢 Target Superato — 19/18 clip sviluppate · A4.09 completa
+**Status**: 🟢 Target Superato — 20/18 clip sviluppate · A4.10 completa
 **Prossimo Step**: Prossimo TAG su richiesta utente
 **Maintainer**: Claude (InnTour S.R.L. / MetaBorghi Initiative)
