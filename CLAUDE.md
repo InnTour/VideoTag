@@ -1154,6 +1154,62 @@ const crossDissolveProgress = interpolate(frame, [dissolveStart, dissolveEnd], [
   - Tema della memoria dei caduti richiede palette molto sobria (grigio/oro) — evitare colori troppo vivaci che snaturerebbero il contesto commemorativo
   - `ElmettoIcon` SVG inline (non componente separato) = soluzione rapida per icone semantiche usate in una sola sequenza
 
+### Clip #19 — A4.09 · Lapide Terremoto 1930
+- **Data Produzione**: 2026-02-20
+- **Sezione Tematica**: Architettura e Monumenti (A4 — Luoghi della Cultura · Memoria del Sisma)
+- **Durata**: 66.06 secondi / 1982 frame @30fps
+- **Composizione Remotion**: `A4-09-LapideTerremoto1930`
+- **Audio**: `TAG_A4.09_LAPIDE_TERREMOTO_1930_Iapetus_ITA.mp3` (voce Iapetus · 66.06s)
+  - ⚠️ Voce Leda (29.64s/889f) — NON usare
+- **Sottotitoli**: Non integrati — gestiti in Filmora
+- **Asset Visivi**: 6 immagini PNG in `public/images/TAG A4.09 - LAPIDE TERREMOTO 1930/`
+  - `image_03b78576` — Lapide commemorativa (Seq01 Intro hero + Seq05 Outro bookend)
+  - `image_0d87df3b` — Macerie/devastazione 1930 (Seq02 Il Sisma layer 1)
+  - `image_173461cb` — Lapide con nomi incisi (Seq02 cross-dissolve)
+  - `image_2f0e0bf7` — Contadini nei campi / mietitura estate 1930 (Seq03 I Salvati)
+  - `image_b3231da5` — Ricostruzione / nuovo paese a monte (Seq04 La Ricostruzione)
+  - `image_e9c42da1` — Speranza / paesaggio rinato (Seq05 bookend)
+- **Contenuto Storico Reale** (narrazione fornita dall'utente):
+  - **22–23 luglio 1930** — notte del sisma, ore 3:00 di mattina
+  - **Vulture** —  10° grado scala Mercalli — rase al suolo gran parte del borgo antico
+  - **~200 vittime** a Lacedonia · **1.000+ feriti**
+  - Salvati molti perché i contadini dormivano **nei campi per la mietitura**
+  - **Cappella del Purgatorio** tra i luoghi storici crollati
+  - Decisione governativa: abbandonare le aree instabili · ricostruire **più a monte**
+  - Chiusura: *"trasformando la polvere in una nuova speranza"*
+- **Palette Cromatica**:
+  - `neroNotte #030306` — le 3 di mattina (buio totale)
+  - `rossoSisma #8B1A1A` — la violenza del terremoto
+  - `polvere #8B7355` — la polvere delle macerie
+  - `oroSperanza #C8A84B` — la rinascita e la speranza
+  - `biancoMarmo #F0EDE8` — il marmo della lapide
+- **Struttura**: L'Alba del Dolore / Il Sisma / I Salvati / La Ricostruzione / La Speranza (5 sequenze + 4 fade)
+  - s01=350f · s02=440f · s03=380f · s04=400f · s05=492f
+  - `350+440+380+400+492 − 4×20 = 2062 − 80 = 1982 ✓`
+- **Componenti Originali Nuovi**:
+  - **SeismicWave.tsx** — onda sismica SVG con battimento doppio (onda primaria + secondaria + linea base) che simula il tracciato di un sismografo; animata con `frame` per scorrimento continuo
+  - **ClockIcon** (SVG inline in Seq01) — orologio delle 3:00 con lancette, tacche ore e pulse sinusoidale
+- **Innovazioni Narrative e Visive**:
+  - **SHAKE visivo del sisma** in Seq02 (frame 0–80): `shakeX/Y` con doppia sinusoide (magnitudine max a frame 8) — si percepisce la scossa
+  - **Flash bianco impatto** (frame 0→3→14): la violenza del sisma come lampo visivo
+  - **Counter 0→200 vittime** in rosso Playfair 92px + counter 0→1.000+ feriti in bianco
+  - **Card 10° grado Mercalli** con dato "X°" in Playfair 64px rosso
+  - **Ghost "22 LUGLIO"** verticale in rosso (0.045 opacity) — la data come trauma
+  - **Ghost "MIETITURA"** centrato in polvere (0.040 opacity) — il paradosso della salvezza
+  - **Ghost "RINASCITA"** verticale in oro (0.042 opacity) in Seq04
+  - **Ghost "SPERANZA"** 220px in oro (0.060 opacity) — la parola chiave finale
+  - **ParticleField mode='polvere'** in Seq03 — polvere di campo e terra irpina d'estate
+  - **SeismicWave** in Seq02 (waveOp 0→1 durante dissolve) e Seq04 (si spegne 0.45→0 — il sisma si allontana)
+  - **Progressione cromatica** Seq04: cenere → oro con `mixBlendMode: 'overlay'` crescente
+  - **Orologio SVG** in Seq01: lancette alle 3:00, pulse `Math.sin` che batte lentamente
+  - **Bookend circolare**: speranza/lapide image intro/outro con zoom-out (Pattern 7)
+- **File Output**: Da renderizzare — `out/A4-09-LapideTerremoto1930.mp4`
+- **Lezioni Apprese**:
+  - `SeismicWave` con battimento (due sinusoidi a frequenze prime: 8/13, 6/11) = aspetto realistico sismografo senza essere periodico
+  - Shake visivo del sisma: doppia sinusoide (sin+cos) con magnitudine interpolata garantisce un tremore organico, non meccanico
+  - Palette quasi monocromatica (nero/grigio/bianco/rosso → oro finale) crea un arco visivo che rispecchia la narrazione
+  - ⚠️ **REGOLA OPERATIVA CONFERMATA**: la voce Leda è sempre ~metà della durata di Iapetus — misurare SEMPRE entrambe prima di scegliere
+
 ---
 
 ## 📈 Metriche di Produzione
@@ -1161,11 +1217,11 @@ const crossDissolveProgress = interpolate(frame, [dissolveStart, dissolveEnd], [
 > **Auto-aggiornamento**: Statistiche aggiornate dopo ogni clip
 
 ```
-Clip Prodotte:        18 / ~18 target (+ 1 versione alternativa)
-Durata Totale:        1295.84 secondi (21:35.84)  ← C3.01 corretta: 58.70s (era 27.79s)
-Sezioni Completate:   0 / 6 (A4 Luoghi della Cultura: 3 clip · C3 Fotografia: 1 clip · Architettura: 16)
+Clip Prodotte:        19 / ~18 target (+ 1 versione alternativa)
+Durata Totale:        1361.90 secondi (22:41.90)  ← aggiunta A4.09 Lapide Terremoto (66.06s)
+Sezioni Completate:   0 / 6 (A4 Luoghi della Cultura: 4 clip · C3 Fotografia: 1 clip · Architettura: 17)
 Pattern Documentati:  7 (vedi sezione Pattern)
-Asset Caricati:       101 immagini AI/JPG/PNG, 23 MP3 narrazione, 1 SRT manuale
+Asset Caricati:       107 immagini AI/JPG/PNG, 25 MP3 narrazione, 1 SRT manuale
 Plugin Installati:    @remotion/transitions · @remotion/motion-blur · @remotion/noise · @remotion/shapes · @remotion/paths · @remotion/light-leaks · @remotion/player · @remotion/renderer
 Lingue Coperte:       IT (principale) · EN e Cerugnés pronte al primo uso
 Ultimo Rendering:     N/A (composizioni pronte per render locale)
@@ -1175,7 +1231,7 @@ Tempo Medio Render:   N/A (stimato: 3–5 min/clip su macchina locale)
 ### Distribuzione Target per Sezione
 | Sezione | Clip Pianificate | Clip Prodotte | Status |
 |---------|-----------------|---------------|--------|
-| Architettura & Monumenti (A) | 3+ | 17 | 🔄 In produzione (A1.02 · A1.05 · A1.06 · A1.07 · A1.10 · A2.01 · A2.03 · A2.03v2 · A2.08 · A2.09 · A3.01 · A3.02 · A3.04 · A3.06 · **A4.04** · **A4.05** · **A4.08**) |
+| Architettura & Monumenti (A) | 3+ | 18 | 🔄 In produzione (A1.02 · A1.05 · A1.06 · A1.07 · A1.10 · A2.01 · A2.03 · A2.03v2 · A2.08 · A2.09 · A3.01 · A3.02 · A3.04 · A3.06 · **A4.04** · **A4.05** · **A4.08** · **A4.09**) |
 | Fotografia & Cultura (C) | 3 | 1 | 🔄 In produzione (**C3.01** Frank Cancian e il MAVI) |
 | Paesaggio & Natura | 3 | 0 | ⏳ In attesa |
 | Tradizioni & Cultura Popolare | 3 | 0 | ⏳ In attesa |
@@ -1227,6 +1283,21 @@ const srtTimeToFrame = (srtTime: string, fps = 30): number => {
 ---
 
 ## 🔄 Changelog del Documento
+
+### 2026-02-20 — v2.7 — Clip #19 A4.09 · Lapide Terremoto 1930
+- 🎬 **Produzione A4.09 "Lapide Terremoto 1930"** — 66.06s / 1982 frame · voce Iapetus
+- 🌊 **SeismicWave.tsx**: onda sismica SVG con doppio battimento (primaria + secondaria sfasata) — tracciato sismografo realistico animato con frame
+- ⏰ **ClockIcon SVG inline** in Seq01: orologio delle 3:00 con lancette + pulse sinusoidale lento
+- 📳 **SHAKE visivo** in Seq02 (frame 0–80): doppia sinusoide con magnitudine interpolata — si percepisce la scossa del Vulture
+- ⚡ **Flash bianco impatto** (frame 0→3→14) + tono rosso overlay sulle macerie
+- 🔢 **Counter 0→200 vittime** (rosso) · **Counter 0→1.000+ feriti** (bianco)
+- 📊 **Card 10° grado Mercalli** con "X°" Playfair 64px rosso
+- 👻 **Ghost "22 LUGLIO"** verticale rosso (Seq02) · **Ghost "MIETITURA"** polvere (Seq03) · **Ghost "RINASCITA"** oro (Seq04) · **Ghost "SPERANZA"** 220px oro (Seq05)
+- 🌾 **ParticleField mode='polvere'** in Seq03 — polvere di campo e terra irpina d'estate
+- 📉 **SeismicWave in Seq04** che si spegne (0.45→0) — il sisma che si allontana
+- 🎨 **Progressione cromatica** Seq04: cenere → oro con `mixBlendMode:'overlay'` crescente
+- ⚠️ **REGOLA CONFERMATA**: voce Leda (29.64s) = ~metà di Iapetus (66.06s) — misurare SEMPRE entrambe
+- 📊 Metriche aggiornate: **19 clip** / **1361.90s totali** (22:41.90)
 
 ### 2026-02-20 — v2.6 — C3.01 FrankCancianMavi · Correzione Durata e Rifacimento
 - ⚠️ **FIX CRITICO**: C3.01 era sbagliato — usava voce Leda (27.79s/834f) invece di Iapetus (58.70s/1761f)
@@ -1397,8 +1468,8 @@ Questo framework è progettato per essere **completamente riutilizzabile**. Una 
 
 ---
 
-**Versione**: 2.6 — 18 Clip Prodotte · C3.01 Corretta (58.70s Iapetus · 5 sequenze)
+**Versione**: 2.7 — 19 Clip Prodotte · A4.09 Lapide Terremoto 1930 (66.06s · SeismicWave)
 **Ultimo Aggiornamento**: 2026-02-20
-**Status**: 🟢 Target Raggiunto — 18/18 clip sviluppate · A4.05 clip di riferimento approvata · Serie C3 avviata
+**Status**: 🟢 Target Superato — 19/18 clip sviluppate · A4.09 completa
 **Prossimo Step**: Prossimo TAG su richiesta utente
 **Maintainer**: Claude (InnTour S.R.L. / MetaBorghi Initiative)
