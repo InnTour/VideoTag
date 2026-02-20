@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCurrentFrame, interpolate } from 'remotion';
+import { useCurrentFrame } from 'remotion';
 
 interface SpotlightEffectProps {
   x?: number;      // center X % (0-100)
