@@ -18,6 +18,7 @@ import { PortaDiSopra } from "./PortaDiSopra";
 import { CattedralAttuale } from "./CattedralAttuale";
 import { ChiesaSantAntonio } from "./ChiesaSantAntonio";
 import { ChiesaSantAntonioV2 } from "./ChiesaSantAntonioV2";
+import { TeatroComunale } from "./TeatroComunale";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -153,6 +154,16 @@ export const RemotionRoot: React.FC = () => {
         id="A2-03v2-ChiesaSantAntonio"
         component={ChiesaSantAntonioV2}
         durationInFrames={2380}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      {/* A4.04 — Teatro Comunale · durata audio: 71.73s → 2152 frame */}
+      <Composition
+        id="A4-04-TeatroComunale"
+        component={TeatroComunale}
+        durationInFrames={2152}
         fps={30}
         width={1920}
         height={1080}

@@ -976,6 +976,50 @@ const crossDissolveProgress = interpolate(frame, [dissolveStart, dissolveEnd], [
   - `s` helper importato ma non usato in Seq01 → TS6133 → rimuovere dall'import se la sequenza non usa timing relativo
   - ParticleField `mode='partenza'` (ellissi orizzontali) vs `mode='ritorno'` (stelle a 4 punte) — ottima separazione semantica visiva
 
+### Clip #15 — A4.04 · Teatro Comunale
+- **Data Produzione**: 2026-02-20
+- **Sezione Tematica**: Architettura e Monumenti (A4 — Luoghi della Cultura)
+- **Durata**: 71.73 secondi / 2152 frame @30fps
+- **Composizione Remotion**: `A4-04-TeatroComunale`
+- **Audio**: `TAG_A4.04_TEATRO_COMUNALE_Iapetus_ITA.mp3` (voce Iapetus)
+- **Stile**: [STILE 5] — Pattern 5 (Data Card Sequence) + Pattern 6 (Photo-First Cinematic) + Pattern 7 (Iris Outro)
+- **Sottotitoli**: Non integrati — gestiti in Filmora
+- **Asset Visivi**: 5 immagini PNG in `public/images/TAG A4.04 - TEATRO COMUNALE/`
+  - `image_09055990` — Teatro Comunale esterno/hero (Intro + Outro bookend)
+  - `image_b0d3125e` — Archivio storico / contesto visivo (Seq02 layer 1)
+  - `image_d6a7a600` — Riferimento anfiteatro / area storica (Seq02 cross-dissolve)
+  - `image_dd9cbe46` — Cinema Argentino / atmosfera Novecento (Seq03)
+  - `image_ee8cda8a` — Teatro oggi / stagione contemporanea (Seq04)
+- **Contenuto Narrativo** (fornito dall'utente):
+  - **Edificio attuale**: costruzione recente, ma il richiamo allo spettacolo è nel DNA lacedoniese
+  - **Anfiteatro Romano**: ipotizzato dagli storici alle spalle dell'Istituto Magistrale — **Epoca Imperiale**
+  - **XVIII secolo**: blocchi dell'anfiteatro smantellati per costruire il campanile della Cattedrale
+  - **Cinema Argentino**: fondato da **Gerardo Vigorita** — faro culturale per **50+ anni**
+  - **Oggi**: compagnie di rilievo nazionale, grandi concerti, sfide e restauri
+  - Chiusura: *"Luogo dove la comunità si ritrova per sognare e nutrire l'anima creativa di Lacedonia."*
+- **Palette**: `neroSala #0D0D1A` · `rossoTelone #8B1A1A` · `oroLampade #D4A843` · `beigeRoma #D4C4A0` · `verdeInnTour #2ECC71`
+- **Struttura**: Intro / Origini Romane / Cinema Argentino / Oggi / Outro (5 sequenze)
+- **Componenti Nuovi**:
+  - **SpotlightEffect.tsx** — riflettore teatrale ellittico SVG con respiro sinusoidale e drift orizzontale
+- **Innovazioni Visive e Narrative**:
+  - **SpotlightEffect** su Seq01 e Seq05 — atmosfera da palcoscenico
+  - **Cross-dissolve storico** in Seq02: archivio → anfiteatro (svela il palinsesto visivo)
+  - **FactCards in cascata** in Seq02 (Anfiteatro Romano · XVIII sec · 2000+ anni DNA culturale)
+  - **Counter animato 0→50 anni** in Seq03 — gli anni del Cinema Argentino
+  - **Overlay "warm sepia"** `rgba(80,30,10,0.22)` con `mixBlendMode: 'multiply'` in Seq03 — atmosfera d'epoca
+  - **ProgramCards in cascata** in Seq04 (Stagione Teatrale · Concerti · Resilienza)
+  - **Ghost "ROMANI"** verticale a 200px (0.06 opacity) in Seq02 — filigrana storica
+  - **Ghost "ARGENTINO"** a 220px (0.07 opacity) in Seq03 — parola come presenza culturale
+  - **Ghost "OGGI"** verticale a 240px (0.05 opacity) verde in Seq04 — contemporaneità
+  - **Bookend circolare**: stessa hero image intro/outro con zoom-out (Pattern 7)
+  - **Iris outro** SVG con cerchio che si restringe in chiusura
+- **File Output**: Da renderizzare — `out/A4-04-TeatroComunale.mp4`
+- **Lezioni Apprese**:
+  - Prima clip della **serie A4** — nuovo blocco tematico "Luoghi della Cultura"
+  - `SpotlightEffect` con `ellipse` SVG (rx≠ry) simula meglio il cono di luce teatrale rispetto al cerchio
+  - `mixBlendMode: 'multiply'` + `rgba(80,30,10,0.22)` = tono sepia caldo senza desaturare la foto
+  - Misura durata MP3 via Node.js (parse frame headers MPEG): metodo affidabile senza ffprobe
+
 ---
 
 ## 📈 Metriche di Produzione
@@ -983,11 +1027,11 @@ const crossDissolveProgress = interpolate(frame, [dissolveStart, dissolveEnd], [
 > **Auto-aggiornamento**: Statistiche aggiornate dopo ogni clip
 
 ```
-Clip Prodotte:        14 / ~18 target (+ 1 versione alternativa)
-Durata Totale:        1034.87 secondi (17:14.87)
-Sezioni Completate:   0 / 6 (Architettura: 14 clip prodotte, inclusa v2)
+Clip Prodotte:        15 / ~18 target (+ 1 versione alternativa)
+Durata Totale:        1106.60 secondi (18:26.60)
+Sezioni Completate:   0 / 6 (Architettura: 15 clip prodotte, inclusa v2)
 Pattern Documentati:  7 (vedi sezione Pattern)
-Asset Caricati:       76 immagini AI/JPG/PNG, 13 MP3 narrazione, 1 SRT manuale
+Asset Caricati:       81 immagini AI/JPG/PNG, 20 MP3 narrazione, 1 SRT manuale
 Plugin Installati:    @remotion/transitions · @remotion/motion-blur · @remotion/noise · @remotion/shapes · @remotion/paths · @remotion/light-leaks · @remotion/player · @remotion/renderer
 Lingue Coperte:       IT (principale) · EN e Cerugnés pronte al primo uso
 Ultimo Rendering:     N/A (composizioni pronte per render locale)
@@ -997,7 +1041,7 @@ Tempo Medio Render:   N/A (stimato: 3–5 min/clip su macchina locale)
 ### Distribuzione Target per Sezione
 | Sezione | Clip Pianificate | Clip Prodotte | Status |
 |---------|-----------------|---------------|--------|
-| Architettura & Monumenti | 3+ | 14 | 🔄 In produzione (A1.02 · A1.05 · A1.06 · A1.07 · A1.10 · A2.01 · A2.03 · A2.03v2 · A2.08 · A2.09 · A3.01 · A3.02 · A3.04 · A3.06) |
+| Architettura & Monumenti | 3+ | 15 | 🔄 In produzione (A1.02 · A1.05 · A1.06 · A1.07 · A1.10 · A2.01 · A2.03 · A2.03v2 · A2.08 · A2.09 · A3.01 · A3.02 · A3.04 · A3.06 · **A4.04**) |
 | Paesaggio & Natura | 3 | 0 | ⏳ In attesa |
 | Tradizioni & Cultura | 3 | 0 | ⏳ In attesa |
 | Gastronomia & Prodotti | 3 | 0 | ⏳ In attesa |
@@ -1048,6 +1092,21 @@ const srtTimeToFrame = (srtTime: string, fps = 30): number => {
 ---
 
 ## 🔄 Changelog del Documento
+
+### 2026-02-20 — v2.2 — Clip #15 A4.04 · Teatro Comunale
+- 🎬 **Produzione A4.04 "Teatro Comunale"** — 71.73s / 2152 frame · voce Iapetus
+- 🏛️ **Prima clip serie A4** — nuovo blocco "Luoghi della Cultura"
+- 🎭 **SpotlightEffect.tsx**: riflettore teatrale ellittico SVG con respiro sinusoidale e drift — atmosfera da palcoscenico
+- 📜 **Cross-dissolve storico** Seq02: archivio → anfiteatro (svela palinsesto visivo del luogo)
+- 🃏 **FactCards in cascata** Seq02: Anfiteatro Romano · XVIII sec · 2000+ anni DNA culturale
+- 🎬 **Counter 0→50 anni** Seq03 — gli anni del Cinema Argentino di Gerardo Vigorita
+- 🕯️ **Overlay warm sepia** `rgba(80,30,10,0.22)` `mixBlendMode:'multiply'` — atmosfera Novecento
+- 📋 **ProgramCards** Seq04: stagione teatrale · concerti · resilienza in cascata
+- 👻 **Tripla ghost typography**: "ROMANI" · "ARGENTINO" · "OGGI" come filigrane testuali per sequenza
+- 🔵 **Workflow**: narrazione fornita direttamente dall'utente (no Whisper) — nuovo flusso alternativo
+- 🔧 **Fix audio duration**: Node.js parse MPEG frame headers = metodo affidabile senza ffprobe
+- 🗂️ **Riorganizzazione asset**: TAG folders da `public/` → `public/images/` · A4.05 estratto da A4.07
+- 📊 Metriche aggiornate: 15 clip / 1106.60 secondi totali
 
 ### 2026-02-19 — v2.1 — Clip #14 A3.06 · Chiesa di San Nicola
 - 🎬 **Produzione A3.06 "Chiesa di San Nicola"** — 70.46s / 2114 frame · voce Leda
@@ -1156,8 +1215,8 @@ Questo framework è progettato per essere **completamente riutilizzabile**. Una 
 
 ---
 
-**Versione**: 2.1 — 14 Clip Prodotte · Workflow Consolidato
-**Ultimo Aggiornamento**: 2026-02-19
-**Status**: 🟢 In Produzione — 14/18 clip sviluppate · Architettura & Monumenti in espansione
-**Prossimo Step**: Review A3.06, render MP4 se approvata, prossimo TAG
+**Versione**: 2.2 — 15 Clip Prodotte · Workflow Consolidato
+**Ultimo Aggiornamento**: 2026-02-20
+**Status**: 🟢 In Produzione — 15/18+ clip sviluppate · Serie A4 Luoghi della Cultura avviata
+**Prossimo Step**: Prossimo TAG su richiesta utente
 **Maintainer**: Claude (InnTour S.R.L. / MetaBorghi Initiative)
