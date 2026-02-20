@@ -201,35 +201,60 @@ NEUTRI:
 ### Tipografia
 
 ```
+⚠️ STANDARD AGGIORNATO (dal 2026-02-20 — Clip di riferimento: A4.05 BibliotecaVescovile):
+  I font sono stati aumentati di 2-4 punti per migliorare leggibilità su schermi video.
+
 TITOLI PRINCIPALI:
   Font: Playfair Display (Bold/Italic)
-  Dimensione: 72–96px
+  Dimensione: 88–108px  ← aggiornato (era 72–96px)
   Tracking: -0.02em
   Colore: Oro Irpino su scuro / Bianco su sfondi fotografici
   Effetto: Text-shadow sottile per leggibilità su foto
 
 SOTTOTITOLI / SEZIONE:
-  Font: Lato (Light 300)
-  Dimensione: 32–42px
+  Font: Lato (Light 300 / Regular 400)
+  Dimensione: 38–46px  ← aggiornato (era 32–42px)
   Tracking: 0.1em (maiuscolo)
   Colore: Bianco Calce / Oro Irpino
 
 NARRAZIONE / CORPO:
-  Font: Lato (Regular 400)
-  Dimensione: 24–30px
-  Interlinea: 1.6
+  Font: Lato (Regular 400 / Light 300)
+  Dimensione: 26–30px  ← aggiornato (era 24–30px)
+  Interlinea: 1.55–1.6
   Colore: Bianco su overlay scuro
 
-SOTTOTITOLI VIDEO:
+LABEL SEZIONE / HEADER CARD:
   Font: Lato (Bold 700)
-  Dimensione: 28px
-  Background: Nero 80% opacità
-  Bordo inferiore: 3px Verde InnTour
-  Posizione: Bottom center, 80px dal bordo
+  Dimensione: 15–17px  ← aggiornato (era 11–14px)
+  Tracking: 0.16–0.22em (maiuscolo)
+  Colore: Accent della palette della clip
+
+TITOLI CARD / GLASSMORPHISM:
+  Font: Playfair Display (Bold) / Lato (Bold)
+  Dimensione: 38–44px  ← aggiornato
+  Colore: Bianco Calce
+
+CORPO CARD / GLASSMORPHISM:
+  Font: Lato (Light 300)
+  Dimensione: 22–26px  ← aggiornato (era 18px)
+  Interlinea: 1.55
+
+COUNTER NUMERI:
+  Font: Playfair Display (Bold)
+  Dimensione: 84–96px  ← standard per impatto visivo
+  Colore: Accent principale della clip
+
+CITAZIONI (Georgia italic):
+  Font: Georgia (Italic)
+  Dimensione: 22–26px  ← aggiornato
+  Bordo sinistro: 4px accent color
+
+SOTTOTITOLI VIDEO (Filmora):
+  [Gestiti in post-produzione — non nel codice Remotion]
 
 CERUGNÉS (citazioni dialettali):
   Font: Georgia (Italic) — autorità linguistica
-  Dimensione: 36px
+  Dimensione: 38px  ← aggiornato (era 36px)
   Colore: Oro Irpino
   Bordo sinistro: 4px Oro Irpino
   Padding: 16px 24px
@@ -1020,6 +1045,67 @@ const crossDissolveProgress = interpolate(frame, [dissolveStart, dissolveEnd], [
   - `mixBlendMode: 'multiply'` + `rgba(80,30,10,0.22)` = tono sepia caldo senza desaturare la foto
   - Misura durata MP3 via Node.js (parse frame headers MPEG): metodo affidabile senza ffprobe
 
+### Clip #16 — A4.05 · Biblioteca Storica Vescovile
+- **Data Produzione**: 2026-02-20
+- **Sezione Tematica**: Architettura e Monumenti (A4 — Luoghi della Cultura)
+- **Durata**: 68.94 secondi / 2068 frame @30fps
+- **Composizione Remotion**: `A4-05-BibliotecaVescovile`
+- **Audio**: `TAG_A4.05_BIBLIOTECA_VESCOVILE_Iapetus_ITA.mp3` (voce Iapetus)
+- **Sottotitoli**: Non integrati — gestiti in Filmora
+- **Asset Visivi**: 8 immagini PNG in `public/images/TAG A4.05 - BIBLIOTECA STORICA VESCOVILE/`
+  - `image_7f62077c` — Monaci con candele/hero (Intro + Outro bookend)
+  - `image_e375ce7f` — Pergamene con sigilli in cera (Seq02 layer 1)
+  - `image_b22ee069` — Luce obliqua sui manoscritti (Seq02 cross-dissolve)
+  - `image_55679d34` — Teche con volumi cinquecentine (Seq03 layer 1)
+  - `image_6e75bfa5` — Teca aperta con enciclopedia (Seq03 cross-dissolve)
+  - `image_5d27520e` — Biblioteca dorata (Seq04 layer 1 — cinquecentine)
+  - `image_306912f6` — Giacobini B&W 1799 (Seq04 layer 2 — il pericolo)
+  - `image_50c5a577` — Vescovo Romanzi in processione (Seq04 layer 3 — la protezione)
+- **Contenuto Storico**: 100+ pergamene XII-XIII sec · Encyclopédie Diderot & d'Alembert 30 volumi · 60 cinquecentine/seicentine · Vescovo Romanzi protegge la biblioteca nel 1799
+- **Palette**: `pergamena #E8D8B0` · `oroAntico #C89830` · `rossoVescovile #8B1A1A`
+- **Struttura**: Intro / Le Pergamene / L'Encyclopédie / Cinquecentine & 1799 / Outro (5 sequenze)
+- **Componente Nuovo**: `FilmGrain.tsx` NO — componente aggiunto in C3.01; qui SpotlightEffect + ParticleField (polvere/oro/carta)
+- **Standard di Riferimento**: ⭐ **CLIP DI RIFERIMENTO** — standard approvato dall'utente per tutte le produzioni successive
+- **File Output**: Da renderizzare — `out/A4-05-BibliotecaVescovile.mp4`
+- **Lezioni Apprese**:
+  - Font di output aumentati (titoli 88-108px, corpo 26-30px, label 15-17px) — nuovo standard
+  - `ParticleField` con `mode='polvere'` (particelle ellittiche warm) efficace per atmosfere archivistiche
+  - Triple cross-dissolve in 3 layer con `Math.max(0, d1*(1-d2))` per layering corretto
+
+### Clip #17 — C3.01 · Frank Cancian e il MAVI
+- **Data Produzione**: 2026-02-20
+- **Sezione Tematica**: Fotografia & Cultura (C3 — Museo Antropologico)
+- **Durata**: 27.79 secondi / 834 frame @30fps
+- **Composizione Remotion**: `C3-01-FrankCancianMavi`
+- **Audio**: `TAG_C3.01_FRANK_CANCIAN_E_IL_MAVI_Leda_ITA.mp3` (voce Leda)
+- **Sottotitoli**: Non integrati — gestiti in Filmora
+- **Asset Visivi**: 7 immagini PNG in `public/images/TAG A4.06 - MAVI - MUSEO ANTROPOLOGICO/`
+  - `image_34b443c2` — Manifesto mostra "Frank Cancian: 1957. L'Irpinia e il tempo fermo." (Intro hero)
+  - `image_dd722545` — Cancian pittoresco nel borgo con macchina (Seq02 layer 1)
+  - `image_d3a3d1c2` — Bar contadini B&W scatto autentico 1957 (Seq02 cross-dissolve)
+  - `image_d615f189` — Bambini in classe B&W con raggi di luce (Seq03 layer 1)
+  - `image_bea476be` — Scene contadine pittoresche (collage) (Seq03 layer 2)
+  - `image_1596ff07` — MAVI interno: visitatore guarda grande foto (Seq03 layer 3)
+  - `image_d8d2c82f` — Porta dorata — l'emigrazione (Seq04 Outro)
+- **Contenuto Storico Reale**: Frank Cancian (Cornell University) · 1801 scatti nel 1957 · mondo contadino pre-emigrazione · MAVI nell'antico carcere ottocentesco · dialogo tra generazioni
+- **Palette**: `seppia #C8A878` · `oroMavi #D4A843` · `seppiaScuro #2A1A08` · `rossoCamera #8B1A1A`
+- **Struttura**: Intro · Frank Cancian · La Vita Contadina & Il Museo · Outro (4 sequenze + 3 fade)
+- **Componenti Nuovi**:
+  - `FilmGrain.tsx` — grana fotografica animata con `feTurbulence` SVG (seed cambia ogni 3 frame) · evoca le stampe d'archivio di Cancian
+- **Innovazioni Visive**:
+  - **Flash otturatore** al momento del dissolve cancianBorgo → barBW (frame 148-160) — simula lo scatto della macchina
+  - **Counter 1.801 scatti** in Playfair 90px con `toLocaleString('it-IT')` per separatore punti
+  - **Ghost "1957"** a 280px verticale in seppia (la cifra più iconica della clip)
+  - **Triple cross-dissolve** in Seq03: bambini → contadini → MAVI (passato → storia → presente)
+  - **Tono seppia** `rgba(200,168,120,0.14)` con `mixBlendMode: 'multiply'` sulle foto B&W
+  - **Iris outro** con l'immagine della porta d'oro (metafora dell'emigrazione come soglia)
+- **Tagline**: *"Ogni fotografia è un'anima che continua a parlare, rendendo Lacedonia un simbolo internazionale della fotografia antropologica."*
+- **File Output**: Da renderizzare — `out/C3-01-FrankCancianMavi.mp4`
+- **Lezioni Apprese**:
+  - `feTurbulence` con `seed` che cambia ogni 3 frame = grana fotografica realistica senza essere stroboscopica
+  - Clip brevi (<30s) → 4 sequenze + 3 transizioni funzionano meglio di 5 sequenze (meno overhead)
+  - Il manifesto/poster della mostra (con testo già integrato) è ottimo come hero image di apertura
+
 ---
 
 ## 📈 Metriche di Produzione
@@ -1027,11 +1113,11 @@ const crossDissolveProgress = interpolate(frame, [dissolveStart, dissolveEnd], [
 > **Auto-aggiornamento**: Statistiche aggiornate dopo ogni clip
 
 ```
-Clip Prodotte:        15 / ~18 target (+ 1 versione alternativa)
-Durata Totale:        1106.60 secondi (18:26.60)
-Sezioni Completate:   0 / 6 (Architettura: 15 clip prodotte, inclusa v2)
+Clip Prodotte:        17 / ~18 target (+ 1 versione alternativa)
+Durata Totale:        1203.33 secondi (20:03.33)
+Sezioni Completate:   0 / 6 (A4 Luoghi della Cultura: 2 clip · C3 Fotografia: 1 clip · Architettura: 15)
 Pattern Documentati:  7 (vedi sezione Pattern)
-Asset Caricati:       81 immagini AI/JPG/PNG, 20 MP3 narrazione, 1 SRT manuale
+Asset Caricati:       96 immagini AI/JPG/PNG, 22 MP3 narrazione, 1 SRT manuale
 Plugin Installati:    @remotion/transitions · @remotion/motion-blur · @remotion/noise · @remotion/shapes · @remotion/paths · @remotion/light-leaks · @remotion/player · @remotion/renderer
 Lingue Coperte:       IT (principale) · EN e Cerugnés pronte al primo uso
 Ultimo Rendering:     N/A (composizioni pronte per render locale)
@@ -1041,9 +1127,10 @@ Tempo Medio Render:   N/A (stimato: 3–5 min/clip su macchina locale)
 ### Distribuzione Target per Sezione
 | Sezione | Clip Pianificate | Clip Prodotte | Status |
 |---------|-----------------|---------------|--------|
-| Architettura & Monumenti | 3+ | 15 | 🔄 In produzione (A1.02 · A1.05 · A1.06 · A1.07 · A1.10 · A2.01 · A2.03 · A2.03v2 · A2.08 · A2.09 · A3.01 · A3.02 · A3.04 · A3.06 · **A4.04**) |
+| Architettura & Monumenti (A) | 3+ | 16 | 🔄 In produzione (A1.02 · A1.05 · A1.06 · A1.07 · A1.10 · A2.01 · A2.03 · A2.03v2 · A2.08 · A2.09 · A3.01 · A3.02 · A3.04 · A3.06 · **A4.04** · **A4.05**) |
+| Fotografia & Cultura (C) | 3 | 1 | 🔄 In produzione (**C3.01** Frank Cancian e il MAVI) |
 | Paesaggio & Natura | 3 | 0 | ⏳ In attesa |
-| Tradizioni & Cultura | 3 | 0 | ⏳ In attesa |
+| Tradizioni & Cultura Popolare | 3 | 0 | ⏳ In attesa |
 | Gastronomia & Prodotti | 3 | 0 | ⏳ In attesa |
 | Memoria & Identità | 3 | 0 | ⏳ In attesa |
 | Lingua Cerugnés | 3 | 0 | ⏳ In attesa |
@@ -1092,6 +1179,30 @@ const srtTimeToFrame = (srtTime: string, fps = 30): number => {
 ---
 
 ## 🔄 Changelog del Documento
+
+### 2026-02-20 — v2.4 — Clip #17 C3.01 · Frank Cancian e il MAVI
+- 🎬 **Produzione C3.01 "Frank Cancian e il MAVI"** — 27.79s / 834 frame · voce Leda
+- 📷 **Prima clip della sezione C3** — Fotografia & Cultura Antropologica
+- 🎞️ **FilmGrain.tsx**: grana fotografica animata con `feTurbulence` SVG — seed ogni 3 frame — evoca le stampe d'archivio di Cancian
+- ⚡ **Flash otturatore** in Seq02 (frame 148-160) — simula lo scatto fotografico al momento del dissolve
+- 🔢 **Counter 1.801 scatti** in Playfair 90px con `toLocaleString('it-IT')`
+- 👻 **Ghost "1957"** 280px verticale in seppia — l'anno come filigrana dominante
+- 🔀 **Triple cross-dissolve** Seq03: bambini → contadini pittoreschi → MAVI interno (passato→storia→presente)
+- 🎨 **Tono seppia** `rgba(200,168,120,0.14)` `mixBlendMode:'multiply'` sulle foto B&W — stampa d'archivio
+- 🔠 **Font aggiornati** (titoli 100px, body 28px, label 16px) — nuovo standard approvato
+- 📐 **4 sequenze** per clip brevi (<30s) — struttura ottimale senza overhead eccessivo
+- 📊 Metriche aggiornate: 17 clip / 1203.33s totali / 96 asset immagine
+
+### 2026-02-20 — v2.3 — Clip #16 A4.05 · Biblioteca Storica Vescovile
+- 🎬 **Produzione A4.05 "Biblioteca Storica Vescovile"** — 68.94s / 2068 frame · voce Iapetus
+- ⭐ **CLIP DI RIFERIMENTO APPROVATA** — nuovo standard per tutte le produzioni successive
+- 📐 **Nuovi standard font** aggiornati nel documento (titoli 88-108px, corpo 26-30px, label 15-17px)
+- 📜 **Seq02 Le Pergamene**: counter 0→100+, cross-dissolve pergamene → luce obliqua
+- 📚 **Seq03 Encyclopédie**: counter 0→30, ghost "ENCYCLOPÉDIE", spotlight dorato sui volumi
+- 📖 **Seq04 Cinquecentine & 1799**: triple cross-dissolve biblioteca → giacobini B&W → vescovo Romanzi
+- 💥 **Flash drammatico** all'arrivo dei giacobini + date reveal "1799" + card vescovo custode
+- 🎭 **ParticleField**: nuovi mode 'polvere' (particelle warm archivistiche) · 'oro' · 'carta'
+- 📊 Metriche aggiornate: 16 clip / 1175.54s totali
 
 ### 2026-02-20 — v2.2 — Clip #15 A4.04 · Teatro Comunale
 - 🎬 **Produzione A4.04 "Teatro Comunale"** — 71.73s / 2152 frame · voce Iapetus
@@ -1215,8 +1326,8 @@ Questo framework è progettato per essere **completamente riutilizzabile**. Una 
 
 ---
 
-**Versione**: 2.2 — 15 Clip Prodotte · Workflow Consolidato
+**Versione**: 2.4 — 17 Clip Prodotte · Font Standard Aggiornati · Prima Clip C3 (MAVI)
 **Ultimo Aggiornamento**: 2026-02-20
-**Status**: 🟢 In Produzione — 15/18+ clip sviluppate · Serie A4 Luoghi della Cultura avviata
+**Status**: 🟢 In Produzione — 17/18+ clip sviluppate · A4.05 clip di riferimento approvata · Serie C3 avviata
 **Prossimo Step**: Prossimo TAG su richiesta utente
 **Maintainer**: Claude (InnTour S.R.L. / MetaBorghi Initiative)

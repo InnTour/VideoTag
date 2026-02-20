@@ -17,6 +17,7 @@ import { ChiesaSantAntonio } from "./ChiesaSantAntonio";
 import { ChiesaSantAntonioV2 } from "./ChiesaSantAntonioV2";
 import { TeatroComunale } from "./TeatroComunale";
 import { BibliotecaVescovile } from "./BibliotecaVescovile";
+import { FrankCancianMavi } from "./FrankCancianMavi";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -148,6 +149,16 @@ export const RemotionRoot: React.FC = () => {
         id="A4-05-BibliotecaVescovile"
         component={BibliotecaVescovile}
         durationInFrames={2068}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      {/* C3.01 — Frank Cancian e il MAVI · durata audio: 27.79s → 834 frame */}
+      <Composition
+        id="C3-01-FrankCancianMavi"
+        component={FrankCancianMavi}
+        durationInFrames={834}
         fps={30}
         width={1920}
         height={1080}
