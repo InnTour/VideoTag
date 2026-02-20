@@ -18,6 +18,7 @@ import { ChiesaSantAntonioV2 } from "./ChiesaSantAntonioV2";
 import { TeatroComunale } from "./TeatroComunale";
 import { BibliotecaVescovile } from "./BibliotecaVescovile";
 import { FrankCancianMavi } from "./FrankCancianMavi";
+import { MonumentoAiCaduti } from "./MonumentoAiCaduti";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -159,6 +160,16 @@ export const RemotionRoot: React.FC = () => {
         id="C3-01-FrankCancianMavi"
         component={FrankCancianMavi}
         durationInFrames={834}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      {/* A4.08 — Monumento ai Caduti · durata audio: 61.60s → 1848 frame */}
+      <Composition
+        id="A4-08-MonumentoAiCaduti"
+        component={MonumentoAiCaduti}
+        durationInFrames={1848}
         fps={30}
         width={1920}
         height={1080}

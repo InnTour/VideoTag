@@ -1106,6 +1106,48 @@ const crossDissolveProgress = interpolate(frame, [dissolveStart, dissolveEnd], [
   - Clip brevi (<30s) → 4 sequenze + 3 transizioni funzionano meglio di 5 sequenze (meno overhead)
   - Il manifesto/poster della mostra (con testo già integrato) è ottimo come hero image di apertura
 
+### Clip #18 — A4.08 · Monumento ai Caduti
+- **Data Produzione**: 2026-02-20
+- **Sezione Tematica**: Architettura e Monumenti (A4 — Luoghi della Cultura · Memoria)
+- **Durata**: 61.60 secondi / 1848 frame @30fps
+- **Composizione Remotion**: `A4-08-MonumentoAiCaduti`
+- **Audio**: `TAG_A4.08_MONUMENTO_AI_CADUTI_Iapetus_ITA.mp3` (voce Iapetus)
+- **Sottotitoli**: Non integrati — gestiti in Filmora
+- **Asset Visivi**: 5 immagini PNG in `public/images/TAG A4.08 - MONUMENTO AI CADUTI/`
+  - `image_e6ece517` — Monumento nella nebbia dorata (Intro hero + Outro bookend)
+  - `image_42f20829` — Statua del milite di Nicola Di Vietri (Seq02)
+  - `image_045dcb26` — Lapidi di marmo con i nomi dei caduti (Seq03 layer 1)
+  - `image_70a072b0` — Soldati in partenza (Seq03 cross-dissolve layer 2)
+  - `fdfewea.png` — Cerimonia del 4 Novembre (Seq04)
+- **Contenuto Storico Reale** (narrazione utente):
+  - Monumento collocato accanto alla **Chiesa di Santa Maria della Cancellata** (A2.09)
+  - Scultore: **Nicola Di Vietri** — raffigura il milite che **depone l'elmetto** (rifiuto della guerra)
+  - Committente: **Leonardo Cuozzo** in memoria dei caduti lacedonesi
+  - Due **lapidi in marmo** con i nomi dei caduti della Prima e Seconda Guerra Mondiale
+  - **4 novembre**: Giornata dell'Unità Nazionale — cerimonia civile e militare
+  - Chiusura poetica: contadini e studenti partiti con speranza, restituiti dalla pietra alla memoria immortale
+- **Palette**: `neroProfondo #0A0A0A` · `oroLuce #D4A843` · `biancoLapide #F0EDE8` · `rossoPapavero #8B1A1A` · `verdeSperanza #2D5016`
+- **Struttura**: Intro / Il Milite · Di Vietri / Le Lapidi / La Cerimonia / Outro · Memoria Immortale (5 sequenze)
+- **Componenti Nuovi**:
+  - `TrombaPulse.tsx` — onde concentriche SVG che simulano il suono della tromba (3 rings per beat con delay sfasato)
+- **Innovazioni Visive e Narrative**:
+  - **ElmettoIcon** inline SVG — elmo da soldato che cade/si inclina come metafora del rifiuto della guerra
+  - **Cross-dissolve lapidi → soldati** (frame 220-320) — nomi incisi → i volti di chi partì
+  - **Ghost "NON TORNARONO"** a 130px (0.08 opacity) — parola come presenza dei caduti
+  - **Ghost "4 NOVEMBRE"** verticale (0.07 opacity) — data come filigrana della cerimonia
+  - **TrombaPulse** con beats a [60, 140, 220, 310] in Seq04 — visualizzare il suono della tromba
+  - **Date reveal "4 Novembre"** a 108px oro in Seq04
+  - **Overlay caldo pomeridiano invernale** `rgba(184,120,40, 0.14)` in Seq04 — luce del 4 novembre
+  - **Tagline finale piena**: *"Erano contadini e studenti partiti con speranza: la guerra li ha presi, ma il marmo li restituisce oggi alla memoria immortale di Lacedonia."*
+  - **Bookend narrativo circolare**: stessa hero image (nebbia dorata) intro/outro con zoom-out
+  - **Iris SVG outro** per chiusura cinematografica
+  - **Collegamento tematico A2.09**: monumento adiacente alla Chiesa di Santa Maria della Cancellata
+- **File Output**: Da renderizzare — `out/A4-08-MonumentoAiCaduti.mp4`
+- **Lezioni Apprese**:
+  - TrombaPulse con rings sfasati ([0, 12, 24] delay per beat) crea progressione organica del suono senza essere ripetitivo
+  - Tema della memoria dei caduti richiede palette molto sobria (grigio/oro) — evitare colori troppo vivaci che snaturerebbero il contesto commemorativo
+  - `ElmettoIcon` SVG inline (non componente separato) = soluzione rapida per icone semantiche usate in una sola sequenza
+
 ---
 
 ## 📈 Metriche di Produzione
@@ -1113,11 +1155,11 @@ const crossDissolveProgress = interpolate(frame, [dissolveStart, dissolveEnd], [
 > **Auto-aggiornamento**: Statistiche aggiornate dopo ogni clip
 
 ```
-Clip Prodotte:        17 / ~18 target (+ 1 versione alternativa)
-Durata Totale:        1203.33 secondi (20:03.33)
-Sezioni Completate:   0 / 6 (A4 Luoghi della Cultura: 2 clip · C3 Fotografia: 1 clip · Architettura: 15)
+Clip Prodotte:        18 / ~18 target (+ 1 versione alternativa)
+Durata Totale:        1264.93 secondi (21:04.93)
+Sezioni Completate:   0 / 6 (A4 Luoghi della Cultura: 3 clip · C3 Fotografia: 1 clip · Architettura: 16)
 Pattern Documentati:  7 (vedi sezione Pattern)
-Asset Caricati:       96 immagini AI/JPG/PNG, 22 MP3 narrazione, 1 SRT manuale
+Asset Caricati:       101 immagini AI/JPG/PNG, 23 MP3 narrazione, 1 SRT manuale
 Plugin Installati:    @remotion/transitions · @remotion/motion-blur · @remotion/noise · @remotion/shapes · @remotion/paths · @remotion/light-leaks · @remotion/player · @remotion/renderer
 Lingue Coperte:       IT (principale) · EN e Cerugnés pronte al primo uso
 Ultimo Rendering:     N/A (composizioni pronte per render locale)
@@ -1127,7 +1169,7 @@ Tempo Medio Render:   N/A (stimato: 3–5 min/clip su macchina locale)
 ### Distribuzione Target per Sezione
 | Sezione | Clip Pianificate | Clip Prodotte | Status |
 |---------|-----------------|---------------|--------|
-| Architettura & Monumenti (A) | 3+ | 16 | 🔄 In produzione (A1.02 · A1.05 · A1.06 · A1.07 · A1.10 · A2.01 · A2.03 · A2.03v2 · A2.08 · A2.09 · A3.01 · A3.02 · A3.04 · A3.06 · **A4.04** · **A4.05**) |
+| Architettura & Monumenti (A) | 3+ | 17 | 🔄 In produzione (A1.02 · A1.05 · A1.06 · A1.07 · A1.10 · A2.01 · A2.03 · A2.03v2 · A2.08 · A2.09 · A3.01 · A3.02 · A3.04 · A3.06 · **A4.04** · **A4.05** · **A4.08**) |
 | Fotografia & Cultura (C) | 3 | 1 | 🔄 In produzione (**C3.01** Frank Cancian e il MAVI) |
 | Paesaggio & Natura | 3 | 0 | ⏳ In attesa |
 | Tradizioni & Cultura Popolare | 3 | 0 | ⏳ In attesa |
@@ -1179,6 +1221,18 @@ const srtTimeToFrame = (srtTime: string, fps = 30): number => {
 ---
 
 ## 🔄 Changelog del Documento
+
+### 2026-02-20 — v2.5 — Clip #18 A4.08 · Monumento ai Caduti
+- 🎬 **Produzione A4.08 "Monumento ai Caduti"** — 61.60s / 1848 frame · voce Iapetus
+- 🏛️ **Prima clip commemorativa** — tema memoria e caduti in guerra
+- 🎺 **TrombaPulse.tsx**: onde concentriche SVG per la tromba del 4 novembre (3 ring per beat · delay sfasato [0,12,24])
+- ⛑️ **ElmettoIcon**: SVG inline dell'elmo che cade — metafora del rifiuto della guerra (Seq02)
+- 🔀 **Cross-dissolve lapidi→soldati** (frame 220-320) — nomi incisi → volti di chi partì
+- 👻 **Ghost "NON TORNARONO"** (0.08 opacity) · **Ghost "4 NOVEMBRE"** verticale (0.07 opacity)
+- 🎺 **Beats TrombaPulse** a [60, 140, 220, 310] in Seq04 — suono della tromba reso visivo
+- 🌅 **Overlay pomeridiano invernale** `rgba(184,120,40,0.14)` in Seq04 — luce del 4 novembre
+- 🔗 **Collegamento tematico A2.09**: monumento adiacente alla Chiesa Santa Maria della Cancellata
+- 📊 Metriche aggiornate: 18 clip / 1264.93s totali / 101 asset immagine · target raggiunto
 
 ### 2026-02-20 — v2.4 — Clip #17 C3.01 · Frank Cancian e il MAVI
 - 🎬 **Produzione C3.01 "Frank Cancian e il MAVI"** — 27.79s / 834 frame · voce Leda
@@ -1326,8 +1380,8 @@ Questo framework è progettato per essere **completamente riutilizzabile**. Una 
 
 ---
 
-**Versione**: 2.4 — 17 Clip Prodotte · Font Standard Aggiornati · Prima Clip C3 (MAVI)
+**Versione**: 2.5 — 18 Clip Prodotte · Target Raggiunto · Monumento ai Caduti Completato
 **Ultimo Aggiornamento**: 2026-02-20
-**Status**: 🟢 In Produzione — 17/18+ clip sviluppate · A4.05 clip di riferimento approvata · Serie C3 avviata
+**Status**: 🟢 Target Raggiunto — 18/18 clip sviluppate · A4.05 clip di riferimento approvata · Serie C3 avviata
 **Prossimo Step**: Prossimo TAG su richiesta utente
 **Maintainer**: Claude (InnTour S.R.L. / MetaBorghi Initiative)
