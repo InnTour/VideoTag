@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCurrentFrame, useVideoConfig, interpolate, staticFile } from 'remotion';
+import { Img, useCurrentFrame, useVideoConfig, interpolate, staticFile } from 'remotion';
 
 type Motion = 'zoom-in' | 'zoom-out' | 'pan-left' | 'pan-right' | 'pan-up';
 
@@ -7,8 +7,6 @@ interface KenBurnsImageProps {
   src: string;
   motion?: Motion;
   intensity?: number;
-  startFrame?: number;
-  endFrame?: number;
   objectPosition?: string;
 }
 
@@ -16,16 +14,15 @@ export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
   src,
   motion = 'zoom-in',
   intensity = 0.05,
-  startFrame,
-  endFrame,
   objectPosition = 'center center',
 }) => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
 
-  const start = startFrame ?? 0;
-  const end = endFrame ?? durationInFrames;
-  const progress = interpolate(frame, [start, end], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const progress = interpolate(frame, [0, durationInFrames], [0, 1], {
+    extrapolateLeft: 'clamp',
+    extrapolateRight: 'clamp',
+  });
 
   let transform = '';
   switch (motion) {
@@ -48,7 +45,7 @@ export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
 
   return (
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
-      <img
+      <Img
         src={staticFile(src)}
         style={{
           width: '100%',

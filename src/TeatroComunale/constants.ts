@@ -11,19 +11,15 @@ export const IMAGES = {
 
 export const AUDIO = 'audio/TAG_A4.04_TEATRO_COMUNALE_Iapetus_ITA.mp3';
 
-// Sequence timing (frames @ 30fps)
-export const SEQ = {
-  s01Start: 0,
-  s01End:   270,  // 0–9s  · Intro
-  s02Start: 250,
-  s02End:   810,  // 8–27s · Origini Romane
-  s03Start: 790,
-  s03End:   1380, // 26–46s · Cinema Argentino
-  s04Start: 1360,
-  s04End:   1890, // 45–63s · Oggi
-  s05Start: 1870,
-  s05End:   2152, // 62–71.7s · Outro
-};
+// Durate locali per TransitionSeries (frame per sequenza, 4 fade×20 = 2232−80 = 2152 ✓)
+export const SEQ_DUR = {
+  s01: 290,        // Intro      ~9.7s
+  s02: 560,        // Origini    ~18.7s
+  s03: 590,        // Cinema     ~19.7s
+  s04: 530,        // Oggi       ~17.7s
+  s05: 262,        // Outro      ~8.7s
+  transition: 20,  // Fade cross tra sequenze
+} as const;
 
 export const COLORS = {
   neroSala:    '#0D0D1A',
