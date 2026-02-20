@@ -155,11 +155,11 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
       />
 
-      {/* C3.01 — Frank Cancian e il MAVI · durata audio: 27.79s → 834 frame */}
+      {/* C3.01 — Frank Cancian e il MAVI · durata audio Iapetus: 58.70s → 1761 frame */}
       <Composition
         id="C3-01-FrankCancianMavi"
         component={FrankCancianMavi}
-        durationInFrames={834}
+        durationInFrames={1761}
         fps={30}
         width={1920}
         height={1080}

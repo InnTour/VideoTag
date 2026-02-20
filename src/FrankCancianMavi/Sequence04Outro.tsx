@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCurrentFrame, useVideoConfig, interpolate, spring, Img, staticFile } from 'remotion';
+import { useCurrentFrame, useVideoConfig, interpolate, spring } from 'remotion';
 import { KenBurnsImage } from './components/KenBurnsImage';
 import { SpotlightEffect } from './components/SpotlightEffect';
 import { FilmGrain } from './components/FilmGrain';
@@ -7,207 +7,141 @@ import { ScanLines } from './components/ScanLines';
 import { IMAGES, COLORS } from './constants';
 
 // ─────────────────────────────────────────────────────────────
-// Seq04 — L'Anima · Outro (~6.5s · 194 frame)
-// Immagine: porta dorata — l'emigrazione come soglia
-// Tagline: "Ogni fotografia è un'anima che continua a parlare"
-// Loghi Comune + InnTour · Iris SVG outro
+// Seq04 — Il Museo · MAVI (~11.3s · 340 frame)
+// Immagine: MAVI interno — visitatore e fotografia grande
+// Card: antico carcere ottocentesco · mappa emozionale
+// Stats: 1.801 fotografie · 1957 · Frank Cancian · Cornell
 // ─────────────────────────────────────────────────────────────
 
-export const Sequence04Outro: React.FC = () => {
+export const Sequence04IlMuseo: React.FC = () => {
   const frame = useCurrentFrame();
-  const { durationInFrames, fps } = useVideoConfig();
+  const { fps } = useVideoConfig();
 
-  // Tagline
-  const taglineEnt = spring({ frame: Math.max(0, frame - 8), fps, config: { damping: 200 } });
-  const taglineOp  = interpolate(taglineEnt, [0, 1], [0, 1]);
-  const taglineY   = interpolate(taglineEnt, [0, 1], [22, 0]);
-  const taglineFade = interpolate(frame, [durationInFrames - 78, durationInFrames - 45], [1, 0], {
+  // Titolo sequenza
+  const titleEnt = spring({ frame: Math.max(0, frame - 5), fps, config: { damping: 200 } });
+
+  // Card 1: dove è ospitato il MAVI (appare all'inizio)
+  const card1Ent  = spring({ frame: Math.max(0, frame - 20), fps, config: { damping: 180 } });
+  const card1Op   = interpolate(card1Ent, [0, 1], [0, 1]);
+  const card1Y    = interpolate(card1Ent, [0, 1], [18, 0]);
+  const card1Fade = interpolate(frame, [145, 185], [1, 0], {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   });
 
-  // Linee decorative
-  const lineW = interpolate(frame, [5, 48], [0, 280], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-
-  // Loghi
-  const logoC   = spring({ frame: Math.max(0, frame - 45), fps, config: { damping: 160 } });
-  const logoI   = spring({ frame: Math.max(0, frame - 60), fps, config: { damping: 160 } });
-  const logoFade = interpolate(frame, [durationInFrames - 72, durationInFrames - 40], [1, 0], {
+  // Card 2: stats del museo (appare dopo metà sequenza)
+  const card2Ent  = spring({ frame: Math.max(0, frame - 175), fps, config: { damping: 180 } });
+  const card2Op   = interpolate(card2Ent, [0, 1], [0, 1]);
+  const card2Y    = interpolate(card2Ent, [0, 1], [18, 0]);
+  const card2Fade = interpolate(frame, [295, 330], [1, 0], {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   });
 
-  // URL
-  const urlOp = spring({ frame: Math.max(0, frame - 82), fps, config: { damping: 200 } });
-
-  // Iris outro
-  const irisP = interpolate(frame, [durationInFrames - 72, durationInFrames - 8], [0, 1], {
+  // Spotlight che cresce lentamente sull'immagine del museo
+  const spotOp = interpolate(frame, [0, 80], [0.08, 0.18], {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   });
-  const irisR = interpolate(irisP, [0, 1], [1500, 0]);
 
-  // Spotlight caldo sulla porta d'oro
-  const spotPulse = Math.sin(frame / 40) * 0.04;
+  // Pulse luce naturale sul visitatore
+  const lucePulse = Math.sin(frame / 55) * 0.025;
 
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
-      {/* Porta dorata — zoom-out lento, bookend emotivo */}
-      <KenBurnsImage src={IMAGES.emigrazione} motion="zoom-out" intensity={0.06} objectPosition="center center" />
+      {/* MAVI interno — zoom-out lento, dialogo generazioni */}
+      <KenBurnsImage src={IMAGES.maviInterno} motion="zoom-out" intensity={0.04} objectPosition="center top" />
 
-      {/* Overlay pesante per la chiusura */}
+      {/* Overlay bitonale */}
       <div style={{
         position: 'absolute', inset: 0,
         background: [
-          'linear-gradient(to top, rgba(10,8,4,0.96) 0%, rgba(10,8,4,0.68) 48%, rgba(10,8,4,0.28) 100%)',
-          'radial-gradient(ellipse at center, transparent 28%, rgba(0,0,0,0.82) 100%)',
+          'linear-gradient(to right, rgba(10,8,4,0.90) 0%, rgba(10,8,4,0.50) 50%, rgba(10,8,4,0.14) 100%)',
+          'linear-gradient(to top,   rgba(10,8,4,0.82) 0%, transparent 55%)',
         ].join(', '),
       }} />
-
-      {/* Tono oro caldo sulla luce della porta */}
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'rgba(212,168,67,0.08)',
-        mixBlendMode: 'overlay',
+        background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.72) 100%)',
       }} />
 
-      {/* Spotlight — la luce che attraversa l'arco */}
-      <SpotlightEffect x={50} y={44} radius={400} color={COLORS.oroMavi} opacity={0.14 + spotPulse} pulse />
+      {/* Luce dorata del museo */}
+      <SpotlightEffect x={58} y={38} radius={400} color={COLORS.oroMavi} opacity={spotOp + lucePulse} />
 
-      {/* TAGLINE */}
+      {/* TITOLO SEQUENZA */}
+      <div style={{ position: 'absolute', left: 72, top: 62, opacity: titleEnt }}>
+        <div style={{
+          fontFamily: 'Lato, sans-serif', fontWeight: 700,
+          fontSize: 16, letterSpacing: '0.20em',
+          color: COLORS.oroMavi, textTransform: 'uppercase', marginBottom: 9,
+        }}>Il Museo · Dialogo tra Generazioni</div>
+        <div style={{ width: 280, height: 2, background: `linear-gradient(to right, ${COLORS.oroMavi}, transparent)` }} />
+      </div>
+
+      {/* CARD 1: dove è ospitato il museo */}
       <div style={{
-        position: 'absolute', inset: 0,
-        display: 'flex', flexDirection: 'column',
-        alignItems: 'center', justifyContent: 'center',
-        paddingBottom: 120,
-        opacity: Math.min(taglineOp, taglineFade),
-        transform: `translateY(${taglineY}px)`,
+        position: 'absolute', left: 72, top: 140,
+        opacity: card1Op * card1Fade, transform: `translateY(${card1Y}px)`,
       }}>
-        {/* Linea superiore */}
         <div style={{
-          width: lineW, height: 2,
-          background: `linear-gradient(to right, transparent, ${COLORS.seppia}, transparent)`,
-          marginBottom: 30,
-        }} />
-
-        <div style={{
-          fontFamily: 'Lato, sans-serif', fontSize: 15,
-          color: COLORS.seppia, letterSpacing: '0.24em',
-          textTransform: 'uppercase', marginBottom: 22, opacity: 0.82,
-        }}>MAVI · Lacedonia · Fotografia Antropologica</div>
-
-        <div style={{
-          fontFamily: 'Playfair Display, serif',
-          fontSize: 46, fontWeight: 700,
-          color: COLORS.biancoCalce,
-          textAlign: 'center', lineHeight: 1.40,
-          maxWidth: 900,
-          textShadow: '0 2px 28px rgba(0,0,0,0.95), 0 0 70px rgba(200,168,120,0.12)',
+          background: 'rgba(10,8,4,0.86)', backdropFilter: 'blur(20px)',
+          border: `1px solid rgba(200,168,120,0.25)`,
+          borderLeft: `5px solid ${COLORS.seppia}`,
+          borderRadius: 4, padding: '22px 30px', maxWidth: 520,
         }}>
-          Ogni fotografia è un'anima<br />
-          <em style={{ color: COLORS.oroMavi }}>che continua a parlare,</em><br />
-          <span style={{
-            fontSize: 30, fontWeight: 400, fontStyle: 'italic',
-            color: COLORS.biancoCalce, opacity: 0.82,
+          <div style={{
+            fontFamily: 'Lato, sans-serif', fontSize: 16,
+            color: COLORS.seppia, letterSpacing: '0.16em',
+            textTransform: 'uppercase', marginBottom: 12,
+          }}>🏛️ Antico Carcere Ottocentesco</div>
+          <div style={{
+            fontFamily: 'Lato, sans-serif', fontSize: 24,
+            color: COLORS.biancoCalce, opacity: 0.88,
+            lineHeight: 1.55, fontWeight: 300,
           }}>
-            rendendo Lacedonia un simbolo internazionale<br />
-            della fotografia antropologica.
-          </span>
-        </div>
-
-        <div style={{
-          width: lineW * 0.7, height: 2,
-          background: `linear-gradient(to right, transparent, ${COLORS.seppia}, transparent)`,
-          marginTop: 30,
-        }} />
-      </div>
-
-      {/* LOGO Comune di Lacedonia — sinistra */}
-      <div style={{
-        position: 'absolute', bottom: 52, left: 120,
-        display: 'flex', alignItems: 'center', gap: 16,
-        opacity: logoC * logoFade,
-        transform: `translateY(${interpolate(logoC, [0, 1], [16, 0])}px)`,
-      }}>
-        <Img
-          src={staticFile(IMAGES.logoComune)}
-          style={{ height: 58, objectFit: 'contain', filter: 'drop-shadow(0 2px 12px rgba(0,0,0,0.9))' }}
-        />
-        <div>
-          <div style={{
-            fontFamily: 'Lato, sans-serif', fontWeight: 700,
-            fontSize: 15, letterSpacing: '0.10em',
-            color: COLORS.biancoCalce, textTransform: 'uppercase',
-            textShadow: '0 1px 6px rgba(0,0,0,0.9)',
-          }}>Comune di Lacedonia</div>
-          <div style={{
-            fontFamily: 'Lato, sans-serif', fontWeight: 300,
-            fontSize: 13, color: COLORS.seppia, opacity: 0.90,
-          }}>Alta Irpinia · Campania</div>
+            Non solo una mostra —<br />
+            <em style={{ color: COLORS.oroMavi }}>una mappa emozionale</em><br />
+            che restituisce dignità alla storia.
+          </div>
         </div>
       </div>
 
-      {/* Separatore */}
+      {/* CARD 2: stats (appare nella seconda metà) */}
       <div style={{
-        position: 'absolute', bottom: 52, left: '50%',
-        transform: 'translateX(-50%)',
-        opacity: Math.min(logoC, logoI) * logoFade,
-        display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4,
-      }}>
-        <div style={{ width: 1, height: 38, background: `rgba(200,168,120,0.45)` }} />
-        <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 10, color: COLORS.seppia, opacity: 0.70 }}>×</div>
-        <div style={{ width: 1, height: 38, background: `rgba(200,168,120,0.45)` }} />
-      </div>
-
-      {/* LOGO InnTour — destra */}
-      <div style={{
-        position: 'absolute', bottom: 52, right: 120,
-        display: 'flex', alignItems: 'center', gap: 16,
-        opacity: logoI * logoFade,
-        transform: `translateY(${interpolate(logoI, [0, 1], [16, 0])}px)`,
-      }}>
-        <div style={{ textAlign: 'right' }}>
-          <div style={{
-            fontFamily: 'Lato, sans-serif', fontWeight: 700,
-            fontSize: 15, letterSpacing: '0.10em',
-            color: COLORS.biancoCalce, textTransform: 'uppercase',
-            textShadow: '0 1px 6px rgba(0,0,0,0.9)',
-          }}>InnTour S.R.L.</div>
-          <div style={{
-            fontFamily: 'Lato, sans-serif', fontWeight: 300,
-            fontSize: 13, color: COLORS.verdeInnTour, opacity: 0.90,
-          }}>MetaBorghi Initiative</div>
-        </div>
-        <Img
-          src={staticFile(IMAGES.logoInnTour)}
-          style={{ height: 58, objectFit: 'contain', filter: 'drop-shadow(0 2px 12px rgba(0,0,0,0.9))' }}
-        />
-      </div>
-
-      {/* URL */}
-      <div style={{
-        position: 'absolute', bottom: 24, left: 0, right: 0,
-        textAlign: 'center', opacity: urlOp * logoFade,
+        position: 'absolute', left: 72, bottom: 112,
+        opacity: card2Op * card2Fade, transform: `translateY(${card2Y}px)`,
+        maxWidth: 640,
       }}>
         <div style={{
-          fontFamily: 'Lato, sans-serif', fontSize: 13,
-          color: COLORS.biancoCalce, opacity: 0.55, letterSpacing: '0.08em',
-        }}>Cicerone Digitale di Lacedonia · Virtual Tour</div>
+          background: 'rgba(10,8,4,0.88)', backdropFilter: 'blur(22px)',
+          border: `1px solid rgba(212,168,67,0.28)`,
+          borderRadius: 4, padding: '22px 30px',
+        }}>
+          <div style={{
+            fontFamily: 'Lato, sans-serif', fontSize: 16,
+            color: COLORS.oroMavi, letterSpacing: '0.16em',
+            textTransform: 'uppercase', marginBottom: 14,
+          }}>Al MAVI Oggi</div>
+          <div style={{ display: 'flex', gap: 36, flexWrap: 'wrap' }}>
+            {[
+              { val: '1.801', label: 'Fotografie' },
+              { val: '1957', label: 'Anno degli scatti' },
+              { val: 'Frank Cancian', label: 'Cornell University' },
+            ].map((item) => (
+              <div key={item.label}>
+                <div style={{
+                  fontFamily: 'Playfair Display, serif',
+                  fontSize: 30, fontWeight: 700, color: COLORS.oroMavi,
+                }}>{item.val}</div>
+                <div style={{
+                  fontFamily: 'Lato, sans-serif', fontSize: 15,
+                  color: COLORS.biancoCalce, opacity: 0.72,
+                  letterSpacing: '0.06em',
+                }}>{item.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
-      {/* IRIS OUTRO */}
-      {irisP > 0 && (
-        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
-          <svg width="1920" height="1080" style={{ position: 'absolute', inset: 0 }}>
-            <defs>
-              <mask id="iris-mavi">
-                <rect width="1920" height="1080" fill="white" />
-                <circle cx="960" cy="540" r={irisR} fill="black" />
-              </mask>
-            </defs>
-            <rect width="1920" height="1080" fill="black" mask="url(#iris-mavi)" />
-          </svg>
-        </div>
-      )}
-
-      <FilmGrain opacity={0.05} />
+      <FilmGrain opacity={0.050} />
       <ScanLines opacity={0.020} />
     </div>
   );

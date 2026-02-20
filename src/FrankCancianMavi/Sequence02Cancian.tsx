@@ -6,7 +6,7 @@ import { ScanLines } from './components/ScanLines';
 import { IMAGES, COLORS } from './constants';
 
 // ─────────────────────────────────────────────────────────────
-// Seq02 — Frank Cancian · 1957 (~8.7s · 260 frame)
+// Seq02 — Frank Cancian · 1957 (~14s · 420 frame)
 // Cancian immortalò la vita del borgo in 1.801 scatti
 // Cross-dissolve: cancianBorgo → barBW (scatto autentico)
 // Counter 0→1801 · Flash fotografico · Ghost "1957"
@@ -22,7 +22,7 @@ export const Sequence02Cancian: React.FC = () => {
   });
 
   // Flash fotografico al momento dello scatto (simula l'otturatore)
-  const flashOp = interpolate(frame, [148, 152, 160], [0, 0.55, 0], {
+  const flashOp = interpolate(frame, [148, 152, 162], [0, 0.55, 0], {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   });
 
@@ -34,24 +34,27 @@ export const Sequence02Cancian: React.FC = () => {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   }));
   const counterEnt = spring({ frame: Math.max(0, frame - 30), fps, config: { damping: 180 } });
-  const counterFade = interpolate(frame, [140, 175], [1, 0], {
+  const counterFade = interpolate(frame, [140, 178], [1, 0], {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   });
 
-  // Card Cancian
+  // Card Cancian — chi era
   const cardEnt  = spring({ frame: Math.max(0, frame - 75), fps, config: { damping: 180 } });
   const cardOp   = interpolate(cardEnt, [0, 1], [0, 1]);
   const cardY    = interpolate(cardEnt, [0, 1], [20, 0]);
-  const cardFade = interpolate(frame, [145, 180], [1, 0], {
+  const cardFade = interpolate(frame, [145, 182], [1, 0], {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   });
 
-  // Card sulla scena del bar (appare dopo il dissolve)
-  const card2Ent = spring({ frame: Math.max(0, frame - 215), fps, config: { damping: 180 } });
-  const card2Op  = interpolate(card2Ent, [0, 1], [0, 1]);
-  const card2Y   = interpolate(card2Ent, [0, 1], [18, 0]);
+  // Card sulla scena del bar (appare dopo il dissolve, rimane fino alla fine)
+  const card2Ent  = spring({ frame: Math.max(0, frame - 218), fps, config: { damping: 180 } });
+  const card2Op   = interpolate(card2Ent, [0, 1], [0, 1]);
+  const card2Y    = interpolate(card2Ent, [0, 1], [18, 0]);
+  const card2Fade = interpolate(frame, [380, 414], [1, 0], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+  });
 
-  // Ghost "1957" — in evidenza nella prima metà
+  // Ghost "1957" — in evidenza nella prima metà, si dissolve con il barBW
   const ghostOp = interpolate(dissolve, [0, 0.6, 1], [0.07, 0.07, 0]);
 
   // Overlay seppia sui B&W
@@ -112,7 +115,7 @@ export const Sequence02Cancian: React.FC = () => {
           fontFamily: 'Lato, sans-serif', fontWeight: 700,
           fontSize: 16, letterSpacing: '0.20em',
           color: COLORS.seppia, textTransform: 'uppercase', marginBottom: 9,
-        }}>Frank Cancian · Antropologo & Fotografo</div>
+        }}>Frank Cancian · Antropologo &amp; Fotografo</div>
         <div style={{ width: 300, height: 2, background: `linear-gradient(to right, ${COLORS.seppia}, transparent)` }} />
       </div>
 
@@ -177,7 +180,7 @@ export const Sequence02Cancian: React.FC = () => {
       {/* CARD: il bar — scena autentica (appare dopo dissolve) */}
       <div style={{
         position: 'absolute', left: 72, bottom: 112,
-        opacity: card2Op, transform: `translateY(${card2Y}px)`,
+        opacity: card2Op * card2Fade, transform: `translateY(${card2Y}px)`,
         maxWidth: 620,
       }}>
         <div style={{ borderLeft: `4px solid ${COLORS.oroMavi}`, paddingLeft: 22 }}>
@@ -194,7 +197,7 @@ export const Sequence02Cancian: React.FC = () => {
         </div>
       </div>
 
-      <FilmGrain opacity={0.06} />
+      <FilmGrain opacity={0.060} />
       <ScanLines opacity={0.020} />
     </div>
   );

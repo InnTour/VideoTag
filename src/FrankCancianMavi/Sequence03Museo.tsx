@@ -7,68 +7,56 @@ import { ScanLines } from './components/ScanLines';
 import { IMAGES, COLORS } from './constants';
 
 // ─────────────────────────────────────────────────────────────
-// Seq03 — La Vita Contadina · Il Museo (~8s · 240 frame)
-//
-// ORDINE IMMAGINI (segue la narrazione):
-//   [0  → 90 ]  bambiniBW     — volti, fatica, riti quotidiani
-//   [85 → 150]  cross-dissolve → contadini pittoreschi
-//   [148→ 200]  cross-dissolve → maviInterno (il museo oggi)
-//   [200→ 240]  maviInterno   — dialogo tra generazioni
-//
-// Card: carcere ottocentesco · mappa emozionale
+// Seq03 — La Vita Contadina (~11.3s · 340 frame)
+// Cross-dissolve: bambiniBW → contadini pittoreschi
+// Volti, fatica e riti quotidiani — il mondo prima della partenza
 // ─────────────────────────────────────────────────────────────
 
-export const Sequence03Museo: React.FC = () => {
+export const Sequence03LaVitaContadina: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
 
-  // Cross-dissolve 1: bambiniBW → contadini
-  const d1 = interpolate(frame, [85, 145], [0, 1], {
-    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
-  });
-  // Cross-dissolve 2: contadini → maviInterno
-  const d2 = interpolate(frame, [148, 198], [0, 1], {
+  // Cross-dissolve: bambiniBW → contadini
+  const dissolve = interpolate(frame, [100, 175], [0, 1], {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   });
 
-  // Titolo
+  // Titolo sequenza
   const titleEnt = spring({ frame: Math.max(0, frame - 5), fps, config: { damping: 200 } });
 
-  // Card 1: carcere ottocentesco
-  const card1Ent  = spring({ frame: Math.max(0, frame - 20), fps, config: { damping: 180 } });
+  // Card 1: la scuola / i bambini (appare all'inizio)
+  const card1Ent  = spring({ frame: Math.max(0, frame - 22), fps, config: { damping: 180 } });
   const card1Op   = interpolate(card1Ent, [0, 1], [0, 1]);
   const card1Y    = interpolate(card1Ent, [0, 1], [18, 0]);
-  const card1Fade = interpolate(frame, [80, 120], [1, 0], {
+  const card1Fade = interpolate(frame, [88, 128], [1, 0], {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   });
 
-  // Card 2: mappa emozionale (appare con il museo)
-  const card2Ent = spring({ frame: Math.max(0, frame - 195), fps, config: { damping: 180 } });
-  const card2Op  = interpolate(card2Ent, [0, 1], [0, 1]);
-  const card2Y   = interpolate(card2Ent, [0, 1], [18, 0]);
+  // Card 2: la vita nei campi (appare con il dissolve verso i contadini)
+  const card2Ent  = spring({ frame: Math.max(0, frame - 185), fps, config: { damping: 180 } });
+  const card2Op   = interpolate(card2Ent, [0, 1], [0, 1]);
+  const card2Y    = interpolate(card2Ent, [0, 1], [18, 0]);
+  const card2Fade = interpolate(frame, [295, 330], [1, 0], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+  });
 
-  // Spotlight sul MAVI (quando appare il museo)
-  const spotOp = interpolate(d2, [0, 1], [0, 0.18]);
+  // Spotlight: rafforza il soggetto del secondo layer
+  const spotOp = interpolate(dissolve, [0, 1], [0, 0.15]);
 
-  // Overlay B&W / seppia per i primi due strati
-  const bwTone = 1 - d2;
+  // Overlay B&W / seppia sulla prima foto
+  const bwTone = 1 - dissolve;
 
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
 
-      {/* STRATO 1: Bambini in classe — B&W con raggi di luce */}
-      <div style={{ position: 'absolute', inset: 0, opacity: 1 - d1 }}>
+      {/* STRATO 1: Bambini in classe — B&W, luce radente */}
+      <div style={{ position: 'absolute', inset: 0, opacity: 1 - dissolve }}>
         <KenBurnsImage src={IMAGES.bambiniBW} motion="zoom-in" intensity={0.05} objectPosition="center center" />
       </div>
 
       {/* STRATO 2: Scene contadine pittoresche */}
-      <div style={{ position: 'absolute', inset: 0, opacity: Math.max(0, d1 * (1 - d2)) }}>
+      <div style={{ position: 'absolute', inset: 0, opacity: dissolve }}>
         <KenBurnsImage src={IMAGES.contadini} motion="pan-left" intensity={0.04} objectPosition="center center" />
-      </div>
-
-      {/* STRATO 3: MAVI interno — visitatore e fotografia grande */}
-      <div style={{ position: 'absolute', inset: 0, opacity: Math.min(1, d2) }}>
-        <KenBurnsImage src={IMAGES.maviInterno} motion="zoom-out" intensity={0.04} objectPosition="center top" />
       </div>
 
       {/* Overlay bitonale */}
@@ -92,8 +80,8 @@ export const Sequence03Museo: React.FC = () => {
         opacity: bwTone,
       }} />
 
-      {/* Spotlight sul MAVI */}
-      <SpotlightEffect x={60} y={38} radius={340} color={COLORS.oroMavi} opacity={spotOp} pulse />
+      {/* Spotlight sulle scene contadine pittoriche */}
+      <SpotlightEffect x={62} y={40} radius={360} color={COLORS.oroMavi} opacity={spotOp} />
 
       {/* TITOLO SEQUENZA */}
       <div style={{ position: 'absolute', left: 72, top: 62, opacity: titleEnt }}>
@@ -101,11 +89,11 @@ export const Sequence03Museo: React.FC = () => {
           fontFamily: 'Lato, sans-serif', fontWeight: 700,
           fontSize: 16, letterSpacing: '0.20em',
           color: COLORS.seppia, textTransform: 'uppercase', marginBottom: 9,
-        }}>Il Museo · Dialogo tra Generazioni</div>
-        <div style={{ width: 280, height: 2, background: `linear-gradient(to right, ${COLORS.seppia}, transparent)` }} />
+        }}>La Vita Contadina · Prima della Partenza</div>
+        <div style={{ width: 310, height: 2, background: `linear-gradient(to right, ${COLORS.seppia}, transparent)` }} />
       </div>
 
-      {/* CARD 1: dove è ospitato (appare all'inizio) */}
+      {/* CARD 1: i bambini in classe */}
       <div style={{
         position: 'absolute', left: 72, top: 140,
         opacity: card1Op * card1Fade, transform: `translateY(${card1Y}px)`,
@@ -120,23 +108,23 @@ export const Sequence03Museo: React.FC = () => {
             fontFamily: 'Lato, sans-serif', fontSize: 16,
             color: COLORS.seppia, letterSpacing: '0.16em',
             textTransform: 'uppercase', marginBottom: 12,
-          }}>🏛️ Antico Carcere Ottocentesco</div>
+          }}>🎒 Lacedonia · 1957</div>
           <div style={{
             fontFamily: 'Lato, sans-serif', fontSize: 24,
             color: COLORS.biancoCalce, opacity: 0.88,
             lineHeight: 1.55, fontWeight: 300,
           }}>
-            Non solo una mostra —<br />
-            <em style={{ color: COLORS.oroMavi }}>una mappa emozionale</em><br />
-            che restituisce dignità alla storia
+            Bambini in classe, padri nei campi —<br />
+            <em style={{ color: COLORS.oroMavi }}>un mondo intatto</em>,<br />
+            ancora ignaro di ciò che sta per accadere.
           </div>
         </div>
       </div>
 
-      {/* CARD 2: oggi al MAVI (appare con il museo) */}
+      {/* CARD 2: la vita nei campi (appare con i contadini pittoreschi) */}
       <div style={{
         position: 'absolute', left: 72, bottom: 112,
-        opacity: card2Op, transform: `translateY(${card2Y}px)`,
+        opacity: card2Op * card2Fade, transform: `translateY(${card2Y}px)`,
         maxWidth: 640,
       }}>
         <div style={{
@@ -148,25 +136,17 @@ export const Sequence03Museo: React.FC = () => {
             fontFamily: 'Lato, sans-serif', fontSize: 16,
             color: COLORS.oroMavi, letterSpacing: '0.16em',
             textTransform: 'uppercase', marginBottom: 14,
-          }}>Al MAVI Oggi</div>
-          <div style={{ display: 'flex', gap: 36, flexWrap: 'wrap' }}>
-            {[
-              { val: '1.801', label: 'Fotografie' },
-              { val: '1957', label: 'Anno degli scatti' },
-              { val: 'Frank Cancian', label: 'Cornell University' },
-            ].map((item) => (
-              <div key={item.label}>
-                <div style={{
-                  fontFamily: 'Playfair Display, serif',
-                  fontSize: 30, fontWeight: 700, color: COLORS.oroMavi,
-                }}>{item.val}</div>
-                <div style={{
-                  fontFamily: 'Lato, sans-serif', fontSize: 15,
-                  color: COLORS.biancoCalce, opacity: 0.72,
-                  letterSpacing: '0.06em',
-                }}>{item.label}</div>
-              </div>
-            ))}
+          }}>Il Mondo che Cancian Salvò</div>
+          <div style={{
+            fontFamily: 'Lato, sans-serif', fontSize: 26,
+            color: COLORS.biancoCalce, fontWeight: 300,
+            lineHeight: 1.52, opacity: 0.88,
+          }}>
+            Gesti antichi, stagioni, fatica —<br />
+            <em style={{ color: COLORS.seppia, fontStyle: 'italic' }}>
+              tutto ciò che il mirino di Cancian<br />
+              ha fermato per sempre.
+            </em>
           </div>
         </div>
       </div>

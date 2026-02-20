@@ -1072,39 +1072,45 @@ const crossDissolveProgress = interpolate(frame, [dissolveStart, dissolveEnd], [
   - `ParticleField` con `mode='polvere'` (particelle ellittiche warm) efficace per atmosfere archivistiche
   - Triple cross-dissolve in 3 layer con `Math.max(0, d1*(1-d2))` per layering corretto
 
-### Clip #17 — C3.01 · Frank Cancian e il MAVI
+### Clip #17 — C3.01 · Frank Cancian e il MAVI *(corretta 2026-02-20)*
 - **Data Produzione**: 2026-02-20
 - **Sezione Tematica**: Fotografia & Cultura (C3 — Museo Antropologico)
-- **Durata**: 27.79 secondi / 834 frame @30fps
+- **Durata**: 58.70 secondi / 1761 frame @30fps *(corretta: era errata a 834 frame con voce Leda)*
 - **Composizione Remotion**: `C3-01-FrankCancianMavi`
-- **Audio**: `TAG_C3.01_FRANK_CANCIAN_E_IL_MAVI_Leda_ITA.mp3` (voce Leda)
+- **Audio**: `TAG_C3.01_FRANK_CANCIAN_E_IL_MAVI_Iapetus_ITA.mp3` (voce Iapetus · 58.70s)
 - **Sottotitoli**: Non integrati — gestiti in Filmora
 - **Asset Visivi**: 7 immagini PNG in `public/images/TAG A4.06 - MAVI - MUSEO ANTROPOLOGICO/`
-  - `image_34b443c2` — Manifesto mostra "Frank Cancian: 1957. L'Irpinia e il tempo fermo." (Intro hero)
+  - `image_34b443c2` — Manifesto mostra "Frank Cancian: 1957. L'Irpinia e il tempo fermo." (Seq01 Intro hero)
   - `image_dd722545` — Cancian pittoresco nel borgo con macchina (Seq02 layer 1)
   - `image_d3a3d1c2` — Bar contadini B&W scatto autentico 1957 (Seq02 cross-dissolve)
   - `image_d615f189` — Bambini in classe B&W con raggi di luce (Seq03 layer 1)
-  - `image_bea476be` — Scene contadine pittoresche (collage) (Seq03 layer 2)
-  - `image_1596ff07` — MAVI interno: visitatore guarda grande foto (Seq03 layer 3)
-  - `image_d8d2c82f` — Porta dorata — l'emigrazione (Seq04 Outro)
+  - `image_bea476be` — Scene contadine pittoresche (collage) (Seq03 cross-dissolve)
+  - `image_1596ff07` — MAVI interno: visitatore guarda grande foto (Seq04 Il Museo)
+  - `image_d8d2c82f` — Porta dorata — l'emigrazione (Seq05 Outro bookend)
 - **Contenuto Storico Reale**: Frank Cancian (Cornell University) · 1801 scatti nel 1957 · mondo contadino pre-emigrazione · MAVI nell'antico carcere ottocentesco · dialogo tra generazioni
-- **Palette**: `seppia #C8A878` · `oroMavi #D4A843` · `seppiaScuro #2A1A08` · `rossoCamera #8B1A1A`
-- **Struttura**: Intro · Frank Cancian · La Vita Contadina & Il Museo · Outro (4 sequenze + 3 fade)
+- **Palette**: `seppia #C8A878` · `oroMavi #D4A843` · `seppiaScuro #2A1A08` · `biancoCalce #F8F4EE`
+- **Struttura**: Intro / Frank Cancian · 1957 / La Vita Contadina / Il Museo / Outro (5 sequenze + 4 fade)
+  - s01=300f (Intro · manifesto) · s02=420f (Cancian · counter) · s03=340f (bambiniBW→contadini) · s04=340f (maviInterno · stats) · s05=441f (outro)
+  - `300+420+340+340+441 − 4×20 = 1841 − 80 = 1761 ✓`
 - **Componenti Nuovi**:
   - `FilmGrain.tsx` — grana fotografica animata con `feTurbulence` SVG (seed cambia ogni 3 frame) · evoca le stampe d'archivio di Cancian
+  - `Sequence05Outro.tsx` — aggiunto come 5a sequenza autonoma (era Seq04 in v1)
 - **Innovazioni Visive**:
-  - **Flash otturatore** al momento del dissolve cancianBorgo → barBW (frame 148-160) — simula lo scatto della macchina
-  - **Counter 1.801 scatti** in Playfair 90px con `toLocaleString('it-IT')` per separatore punti
-  - **Ghost "1957"** a 280px verticale in seppia (la cifra più iconica della clip)
-  - **Triple cross-dissolve** in Seq03: bambini → contadini → MAVI (passato → storia → presente)
-  - **Tono seppia** `rgba(200,168,120,0.14)` con `mixBlendMode: 'multiply'` sulle foto B&W
-  - **Iris outro** con l'immagine della porta d'oro (metafora dell'emigrazione come soglia)
+  - **Flash otturatore** in Seq02 (frame 148-162) — simula lo scatto della macchina fotografica
+  - **Counter 1.801 scatti** in Playfair 90px con `toLocaleString('it-IT')` per separatore punti (Seq02)
+  - **Ghost "1957"** a 280px in seppia — sia in Seq01 (verticale) che in Seq02 (centrato orizzontale)
+  - **Cross-dissolve** cancianBorgo→barBW in Seq02 (frame 150-230) con tono seppia sul B&W
+  - **Cross-dissolve** bambiniBW→contadini in Seq03 (frame 100-175) — la vita prima della partenza
+  - **Seq04 separata** per maviInterno con stats "Al MAVI Oggi" e card carcere ottocentesco
+  - **Iris outro** in Seq05 con l'immagine della porta d'oro (metafora dell'emigrazione come soglia)
 - **Tagline**: *"Ogni fotografia è un'anima che continua a parlare, rendendo Lacedonia un simbolo internazionale della fotografia antropologica."*
 - **File Output**: Da renderizzare — `out/C3-01-FrankCancianMavi.mp4`
 - **Lezioni Apprese**:
+  - ⚠️ **CRITICO**: Verificare SEMPRE la durata della voce specifica (Iapetus ≠ Leda!) — stessa narrazione in voci diverse può differire di 2× la durata
+  - Misurare con Node.js MPEG parser ENTRAMBE le versioni audio prima di scegliere → documentare la scelta
   - `feTurbulence` con `seed` che cambia ogni 3 frame = grana fotografica realistica senza essere stroboscopica
-  - Clip brevi (<30s) → 4 sequenze + 3 transizioni funzionano meglio di 5 sequenze (meno overhead)
-  - Il manifesto/poster della mostra (con testo già integrato) è ottimo come hero image di apertura
+  - Clip ~60s → 5 sequenze ben bilanciate (10+14+11+11+15s) con 4 transizioni
+  - Separare La Vita Contadina e Il Museo in sequenze distinte migliora la narrazione
 
 ### Clip #18 — A4.08 · Monumento ai Caduti
 - **Data Produzione**: 2026-02-20
@@ -1156,7 +1162,7 @@ const crossDissolveProgress = interpolate(frame, [dissolveStart, dissolveEnd], [
 
 ```
 Clip Prodotte:        18 / ~18 target (+ 1 versione alternativa)
-Durata Totale:        1264.93 secondi (21:04.93)
+Durata Totale:        1295.84 secondi (21:35.84)  ← C3.01 corretta: 58.70s (era 27.79s)
 Sezioni Completate:   0 / 6 (A4 Luoghi della Cultura: 3 clip · C3 Fotografia: 1 clip · Architettura: 16)
 Pattern Documentati:  7 (vedi sezione Pattern)
 Asset Caricati:       101 immagini AI/JPG/PNG, 23 MP3 narrazione, 1 SRT manuale
@@ -1221,6 +1227,17 @@ const srtTimeToFrame = (srtTime: string, fps = 30): number => {
 ---
 
 ## 🔄 Changelog del Documento
+
+### 2026-02-20 — v2.6 — C3.01 FrankCancianMavi · Correzione Durata e Rifacimento
+- ⚠️ **FIX CRITICO**: C3.01 era sbagliato — usava voce Leda (27.79s/834f) invece di Iapetus (58.70s/1761f)
+- 🔄 **Rifacimento completo** con voce Iapetus · 5 sequenze (era 4) · struttura bilanciata
+- ⏱️ **Nuova struttura timing**: s01=300f · s02=420f · s03=340f · s04=340f · s05=441f → 1761f ✓
+- 🎬 **Seq03 "La Vita Contadina"** separata da "Il Museo" → narrazione più chiara e respiro maggiore
+- 🏛️ **Seq04 "Il Museo"** autonoma: maviInterno + stats "Al MAVI Oggi" + card carcere ottocentesco
+- 🚪 **Seq05 Outro** espansa a 441f per tagline completa + loghi + iris con spazio sufficiente
+- 📏 Root.tsx: `durationInFrames` aggiornato 834 → 1761
+- 📊 Durata totale aggiornata: 1264.93s → **1295.84s** (21:35.84)
+- 📌 **Regola operativa aggiunta**: misurare SEMPRE la durata di entrambe le voci audio prima di scegliere
 
 ### 2026-02-20 — v2.5 — Clip #18 A4.08 · Monumento ai Caduti
 - 🎬 **Produzione A4.08 "Monumento ai Caduti"** — 61.60s / 1848 frame · voce Iapetus
@@ -1380,7 +1397,7 @@ Questo framework è progettato per essere **completamente riutilizzabile**. Una 
 
 ---
 
-**Versione**: 2.5 — 18 Clip Prodotte · Target Raggiunto · Monumento ai Caduti Completato
+**Versione**: 2.6 — 18 Clip Prodotte · C3.01 Corretta (58.70s Iapetus · 5 sequenze)
 **Ultimo Aggiornamento**: 2026-02-20
 **Status**: 🟢 Target Raggiunto — 18/18 clip sviluppate · A4.05 clip di riferimento approvata · Serie C3 avviata
 **Prossimo Step**: Prossimo TAG su richiesta utente
