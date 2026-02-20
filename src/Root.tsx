@@ -16,6 +16,7 @@ import { CattedralAttuale } from "./CattedralAttuale";
 import { ChiesaSantAntonio } from "./ChiesaSantAntonio";
 import { ChiesaSantAntonioV2 } from "./ChiesaSantAntonioV2";
 import { TeatroComunale } from "./TeatroComunale";
+import { BibliotecaVescovile } from "./BibliotecaVescovile";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -137,6 +138,16 @@ export const RemotionRoot: React.FC = () => {
         id="A4-04-TeatroComunale"
         component={TeatroComunale}
         durationInFrames={2152}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      {/* A4.05 — Biblioteca Storica Vescovile · durata audio: 68.94s → 2068 frame */}
+      <Composition
+        id="A4-05-BibliotecaVescovile"
+        component={BibliotecaVescovile}
+        durationInFrames={2068}
         fps={30}
         width={1920}
         height={1080}
