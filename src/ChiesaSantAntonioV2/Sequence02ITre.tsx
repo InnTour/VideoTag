@@ -39,7 +39,7 @@ export const Sequence02ITre: React.FC = () => {
 			{/* Layer 1: due nobili in velluto */}
 			<div style={{position: 'absolute', inset: 0, opacity: 1 - dissolveProgress}}>
 				<KenBurnsImage
-					src="images/TAG A2.03 - CHIESA SANT'ANTONIO (CONGIURA)/image_eb64892f.png"
+					src="images/TAG A2.03 - CHIESA SANT'ANTONIO (CONGIURA)/image_eb64892f-e908-4618-89b0-20e0f27d355f.png"
 					motion="pan-right"
 					intensity={0.04}
 					overlayOpacity={0.50 + candleFlicker}
@@ -50,7 +50,7 @@ export const Sequence02ITre: React.FC = () => {
 			{/* Layer 2: nobile con candela e frate */}
 			<div style={{position: 'absolute', inset: 0, opacity: dissolveProgress}}>
 				<KenBurnsImage
-					src="images/TAG A2.03 - CHIESA SANT'ANTONIO (CONGIURA)/image_cc45b20b.png"
+					src="images/TAG A2.03 - CHIESA SANT'ANTONIO (CONGIURA)/image_cc45b20b-033e-48ab-b384-1d7874d3969b.png"
 					motion="zoom-in"
 					intensity={0.04}
 					overlayOpacity={0.52}

@@ -61,7 +61,7 @@ export const Sequence02Personaggio: React.FC = () => {
 			 *  Effetto: Ken Burns pan-right, partenza dal dettaglio della firma
 			 */}
 			<KenBurnsImage
-				src="images/Nicola Vella/image_e2347f6d-a155-4cef-91ae-63b25d9192d1.png"
+				src="images/TAG A1.05 - PIAZZETTA NICOLA VELLA/image_e2347f6d-a155-4cef-91ae-63b25d9192d1.png"
 				motion="pan-right"
 				intensity={0.055}
 				overlayOpacity={0}

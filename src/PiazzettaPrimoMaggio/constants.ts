@@ -21,7 +21,7 @@ export const COLORS = {
 };
 
 // === TIMING SEQUENZE (secondi, basato su audio 68.28s) ===
-// Audio: 68.28s → 2048 frame @30fps
+// Audio: 76.96s → 2309 frame @30fps (voce Iapetus)
 // Struttura narrativa:
 //   00:00–00:07  INTRO       piazzetta + Ignimbrite + 1456
 //   00:07–00:22  ROCCIA      Ignimbrite + 1980 ricostruzione
@@ -34,7 +34,7 @@ export const SEQUENCES = {
 	ROCCIA:   {start:  7,    duration: 15,    label: 'La Roccia'},
 	MARCIA:   {start: 22,    duration: 22,    label: 'La Marcia'},
 	RISCATTO: {start: 44,    duration: 20,    label: 'Il Riscatto'},
-	OUTRO:    {start: 64,    duration:  4.28, label: 'Outro'},
+	OUTRO:    {start: 64,    duration: 12.96, label: 'Outro'},
 };
 
 // === SOTTOTITOLI (dal trascritto Whisper, ms precisi) ===

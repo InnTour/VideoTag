@@ -61,7 +61,7 @@ export const Sequence04Spazio: React.FC = () => {
 			 *  Posizione: focus sul personaggio a sinistra, cantiere e cielo a destra
 			 */}
 			<KenBurnsImage
-				src="images/Nicola Vella/image_1046a492-2045-4539-be44-8a0b9ed2fc79.png"
+				src="images/TAG A1.05 - PIAZZETTA NICOLA VELLA/image_1046a492-2045-4539-be44-8a0b9ed2fc79.png"
 				motion="zoom-out"
 				intensity={0.06}
 				overlayOpacity={0}

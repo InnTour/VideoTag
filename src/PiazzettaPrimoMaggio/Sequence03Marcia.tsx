@@ -36,7 +36,7 @@ export const Sequence03Marcia: React.FC = () => {
 			{/* LAYER 1: Folla "Pane e Lavoro" nella piazzetta */}
 			<div style={{position: 'absolute', inset: 0, opacity: 1 - crossProgress}}>
 				<KenBurnsImage
-					src="images/Primo Maggio/image_0587f294-69e4-4a84-8e09-527e00877d7d.png"
+					src="images/TAG A1.06 - PIAZZETTA PRIMO MAGGIO/image_0587f294-69e4-4a84-8e09-527e00877d7d.png"
 					motion="zoom-in"
 					intensity={0.07}
 					overlayOpacity={0}
@@ -47,7 +47,7 @@ export const Sequence03Marcia: React.FC = () => {
 			{/* LAYER 2: Colonna con bandiere rosse — la marcia verso Chiancarelle */}
 			<div style={{position: 'absolute', inset: 0, opacity: crossProgress}}>
 				<KenBurnsImage
-					src="images/Primo Maggio/image_9db3a61d-54a2-4157-b796-cfac145351dd.png"
+					src="images/TAG A1.06 - PIAZZETTA PRIMO MAGGIO/image_9db3a61d-54a2-4157-b796-cfac145351dd.png"
 					motion="pan-left"
 					intensity={0.06}
 					overlayOpacity={0}

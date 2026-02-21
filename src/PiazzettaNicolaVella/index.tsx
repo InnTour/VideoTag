@@ -36,9 +36,9 @@ export const PiazzettaNicolaVella: React.FC = () => {
 
 	return (
 		<AbsoluteFill style={{backgroundColor: '#080810'}}>
-			{/* === AUDIO — Voce Leda ITA · 56.83s === */}
+			{/* === AUDIO — Voce Iapetus ITA · 54.47s === */}
 			<Audio
-				src={staticFile('audio/TAG_A1.05_PIAZZETTA_NICOLA_VELLA_Leda_ITA.mp3')}
+				src={staticFile('audio/TAG_A1.05_PIAZZETTA_NICOLA_VELLA_Iapetus_ITA.mp3')}
 				volume={0.82}
 				startFrom={0}
 			/>

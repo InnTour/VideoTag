@@ -43,7 +43,7 @@ export const Sequence03LOstia: React.FC = () => {
 			{/* Layer 1: prete con ostia consacrata */}
 			<div style={{position: 'absolute', inset: 0, opacity: 1 - dissolveProgress}}>
 				<KenBurnsImage
-					src="images/TAG A2.03 - CHIESA SANT'ANTONIO (CONGIURA)/image_68cbb35c.png"
+					src="images/TAG A2.03 - CHIESA SANT'ANTONIO (CONGIURA)/image_68cbb35c-52d0-499b-8584-185162a14643.png"
 					motion="zoom-in"
 					intensity={0.035}
 					overlayOpacity={0.45 + candleFlicker}
@@ -60,7 +60,7 @@ export const Sequence03LOstia: React.FC = () => {
 			{/* Layer 2: mani illuminate sui Vangeli */}
 			<div style={{position: 'absolute', inset: 0, opacity: dissolveProgress}}>
 				<KenBurnsImage
-					src="images/TAG A2.03 - CHIESA SANT'ANTONIO (CONGIURA)/image_3d85aafc.png"
+					src="images/TAG A2.03 - CHIESA SANT'ANTONIO (CONGIURA)/image_3d85aafc-f542-4920-9c29-6d58b1b0ac81.png"
 					motion="zoom-out"
 					intensity={0.04}
 					overlayOpacity={0.40}

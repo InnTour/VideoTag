@@ -23,7 +23,7 @@ export const PortaDiSopra: React.FC = () => {
 		<AbsoluteFill>
 			{/* === AUDIO NARRAZIONE === */}
 			<Audio
-				src={staticFile('audio/TAG_A1.10_PORTA_DI_SOPRA_Leda_ITA.mp3')}
+				src={staticFile('audio/TAG_A1.10_PORTA_DI_SOPRA_Iapetus_ITA.mp3')}
 				startFrom={0}
 				volume={1}
 			/>

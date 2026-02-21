@@ -41,7 +41,7 @@ export const Sequence04LaPenna: React.FC = () => {
 		<AbsoluteFill style={{background: COLORS.bgSepia, opacity: fadeOut}}>
 			{/* Immagine: nobili al tavolo con mappe */}
 			<KenBurnsImage
-				src="images/TAG A2.03 - CHIESA SANT'ANTONIO (CONGIURA)/image_51f5aa45.png"
+				src="images/TAG A2.03 - CHIESA SANT'ANTONIO (CONGIURA)/image_51f5aa45-ec39-472d-a2d8-f4aa061fcf2f.png"
 				motion="pan-left"
 				intensity={0.04}
 				overlayOpacity={0.55 + candleFlicker}

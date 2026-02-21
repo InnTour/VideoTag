@@ -93,7 +93,7 @@ export const Sequence03Storia: React.FC = () => {
 			 */}
 			<div style={{position: 'absolute', inset: 0, opacity: 1 - crossDissolveProgress}}>
 				<KenBurnsImage
-					src="images/Nicola Vella/image_0ba1c98b-9c5b-4c5b-8210-8d38f8b6af49.png"
+					src="images/TAG A1.05 - PIAZZETTA NICOLA VELLA/image_0ba1c98b-9c5b-4c5b-8210-8d38f8b6af49.png"
 					motion="zoom-in"
 					intensity={0.05}
 					overlayOpacity={0}
@@ -106,7 +106,7 @@ export const Sequence03Storia: React.FC = () => {
 			 */}
 			<div style={{position: 'absolute', inset: 0, opacity: crossDissolveProgress}}>
 				<KenBurnsImage
-					src="images/Nicola Vella/image_a9776721-50c1-49c8-8ef6-ba1f5bb0aad2.png"
+					src="images/TAG A1.05 - PIAZZETTA NICOLA VELLA/image_a9776721-50c1-49c8-8ef6-ba1f5bb0aad2.png"
 					motion="pan-left"
 					intensity={0.05}
 					overlayOpacity={0}

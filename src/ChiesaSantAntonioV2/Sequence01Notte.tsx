@@ -33,7 +33,7 @@ export const Sequence01Notte: React.FC = () => {
 		<AbsoluteFill style={{background: COLORS.bgPergamena, opacity: fadeIn}}>
 			{/* Immagine hero: nobili nella chiesa con torce */}
 			<KenBurnsImage
-				src="images/TAG A2.03 - CHIESA SANT'ANTONIO (CONGIURA)/image_0312fcac.png"
+				src="images/TAG A2.03 - CHIESA SANT'ANTONIO (CONGIURA)/image_0312fcac-c625-4312-9ce2-3f95a674877a.png"
 				motion="zoom-out"
 				intensity={0.05}
 				overlayOpacity={0.55 + candleFlicker2}

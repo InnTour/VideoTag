@@ -32,9 +32,9 @@ export const COLORS = {
 	glassBorder: 'rgba(255,255,255,0.15)',
 } as const;
 
-// --- Durata: 56.83s → 1705 frame @30fps ---
+// --- Durata: 54.47s → 1634 frame @30fps (voce Iapetus) ---
 export const FPS = 30;
-export const TOTAL_FRAMES = 1705;
+export const TOTAL_FRAMES = 1634;
 
 // --- Timing Sequenze (aggiornati su testo reale Whisper) ---
 // Atto I   0:00–0:07  → Intro piazzetta + identità Vella

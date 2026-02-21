@@ -36,9 +36,9 @@ export const PiazzettaPrimoMaggio: React.FC = () => {
 
 	return (
 		<AbsoluteFill style={{backgroundColor: '#06060e'}}>
-			{/* === AUDIO — Voce Leda ITA · 68.28s === */}
+			{/* === AUDIO — Voce Iapetus ITA · 76.96s · 76.96s === */}
 			<Audio
-				src={staticFile('audio/TAG_A1.06_PIAZZETTA_PRIMO_MAGGIO_Leda_ITA(1).mp3')}
+				src={staticFile('audio/TAG_A1.06_PIAZZETTA_PRIMO_MAGGIO_Iapetus_ITA(1).mp3')}
 				volume={0.82}
 				startFrom={0}
 			/>

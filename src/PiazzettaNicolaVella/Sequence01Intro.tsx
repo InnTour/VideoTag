@@ -34,7 +34,7 @@ export const Sequence01Intro: React.FC = () => {
 			 *  Effetto: Ken Burns zoom-in lento, spostamento centrato sul personaggio
 			 */}
 			<KenBurnsImage
-				src="images/Nicola Vella/image_695bd7aa-712e-4c8b-98a4-5194d99a2efa.png"
+				src="images/TAG A1.05 - PIAZZETTA NICOLA VELLA/image_695bd7aa-712e-4c8b-98a4-5194d99a2efa.png"
 				motion="zoom-in"
 				intensity={0.06}
 				overlayOpacity={0}

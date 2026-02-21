@@ -56,7 +56,7 @@ export const Sequence05Eco: React.FC = () => {
 		<AbsoluteFill style={{opacity, backgroundColor: COLORS.bgNero}}>
 			{/* LAYER 1: Pittura — famiglia inginocchiata sotto arco di luce (sacralità perduta) */}
 			<KenBurnsImage
-				src="images/TAG A1.10 - PORTA DI SOPRA (DEMOLITA)/image_d39c6922.png"
+				src="images/TAG A1.10 - PORTA DI SOPRA (DEMOLITA)/image_d39c6922-9224-4436-81ae-84779e7ddbcd.png"
 				motion="zoom-out"
 				intensity={0.04}
 				overlayOpacity={0}

@@ -34,7 +34,7 @@ export const Sequence05Outro: React.FC = () => {
 			 *  Effetto: zoom-out lento, come se ci si allontanasse dalla storia per tornare al presente
 			 */}
 			<KenBurnsImage
-				src="images/Nicola Vella/image_695bd7aa-712e-4c8b-98a4-5194d99a2efa.png"
+				src="images/TAG A1.05 - PIAZZETTA NICOLA VELLA/image_695bd7aa-712e-4c8b-98a4-5194d99a2efa.png"
 				motion="zoom-out"
 				intensity={0.04}
 				overlayOpacity={0}
