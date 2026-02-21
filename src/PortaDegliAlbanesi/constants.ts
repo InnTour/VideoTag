@@ -34,8 +34,8 @@ export const COLORS = {
 
 export const SEQUENCES = {
 	INTRO:    {start:  0,    duration:  8,    label: 'Intro'},
-	ALBANESI: {start:  8,    duration: 14,    label: 'Albanesi'},
-	ASSALTO:  {start: 22,    duration: 16,    label: 'Assalto'},
+	ALBANESI: {start:  8,    duration: 11,    label: 'Albanesi'},   // ridotto di 3s (era 14s)
+	ASSALTO:  {start: 19,    duration: 19,    label: 'Assalto'},   // anticipato + allungato (era start:22, dur:16)
 	SIMBOLO:  {start: 38,    duration: 24,    label: 'Simbolo'},
 	OUTRO:    {start: 62,    duration:  3.57, label: 'Outro'},
 };

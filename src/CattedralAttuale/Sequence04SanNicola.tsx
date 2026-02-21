@@ -111,7 +111,7 @@ export const Sequence04SanNicola: React.FC = () => {
 			<div style={{
 				position: 'absolute', top: 42, right: 68,
 				opacity: torciaPulse * glowOp * 0.6,
-				fontSize: 36,
+				fontSize: 42,
 				pointerEvents: 'none',
 			}}>
 				🕯️
@@ -132,7 +132,7 @@ export const Sequence04SanNicola: React.FC = () => {
 					}}>
 						San Nicola di Bari
 					</h2>
-					<p style={{fontFamily: latoFont, fontSize: 15, color: COLORS.oroSacro, margin: '6px 0 0', letterSpacing: '0.14em', textTransform: 'uppercase'}}>
+					<p style={{fontFamily: latoFont, fontSize: 17, color: COLORS.oroSacro, margin: '6px 0 0', letterSpacing: '0.14em', textTransform: 'uppercase'}}>
 						Patrono di Lacedonia · dal 1456
 					</p>
 				</div>
@@ -147,8 +147,8 @@ export const Sequence04SanNicola: React.FC = () => {
 					backdropFilter: 'blur(18px)',
 					maxWidth: 480,
 				}}>
-					<p style={{fontFamily: latoFont, fontSize: 11, color: COLORS.oroSacro, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>1456 · Il Voto</p>
-					<p style={{fontFamily: playfairFont, fontSize: 20, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
+					<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.oroSacro, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>1456 · Il Voto</p>
+					<p style={{fontFamily: playfairFont, fontSize: 26, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
 						Dopo il terremoto del 1456, la comunità si pone sotto la protezione di San Nicola di Bari — patrono eterno della città
 					</p>
 				</div>
@@ -163,8 +163,8 @@ export const Sequence04SanNicola: React.FC = () => {
 					backdropFilter: 'blur(18px)',
 					maxWidth: 480,
 				}}>
-					<p style={{fontFamily: latoFont, fontSize: 11, color: COLORS.oroChiaro, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>La Cattedrale</p>
-					<p style={{fontFamily: playfairFont, fontSize: 20, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
+					<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.oroChiaro, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>La Cattedrale</p>
+					<p style={{fontFamily: playfairFont, fontSize: 26, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
 						Non solo un monumento — il <em style={{color: COLORS.oroSacro}}>rifugio spirituale della comunità</em>, custodito dal patrono
 					</p>
 				</div>
@@ -179,8 +179,8 @@ export const Sequence04SanNicola: React.FC = () => {
 					backdropFilter: 'blur(18px)',
 					maxWidth: 480,
 				}}>
-					<p style={{fontFamily: latoFont, fontSize: 11, color: COLORS.pietraCalce, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>La Tradizione Viva</p>
-					<p style={{fontFamily: playfairFont, fontSize: 19, color: COLORS.pietraCalce, margin: 0, lineHeight: 1.4}}>
+					<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.pietraCalce, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>La Tradizione Viva</p>
+					<p style={{fontFamily: playfairFont, fontSize: 23, color: COLORS.pietraCalce, margin: 0, lineHeight: 1.4}}>
 						Ogni anno le torce illuminano la notte · la processione è il cuore del borgo · secoli di fede che non si spengono
 					</p>
 				</div>

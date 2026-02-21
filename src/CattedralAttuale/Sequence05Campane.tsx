@@ -111,7 +111,7 @@ export const Sequence05Campane: React.FC = () => {
 				{/* Titolo */}
 				<h2 style={{
 					fontFamily: playfairFont,
-					fontSize: 46,
+					fontSize: 54,
 					fontWeight: 700,
 					color: COLORS.avorio,
 					margin: '0 0 8px',
@@ -130,8 +130,8 @@ export const Sequence05Campane: React.FC = () => {
 						backdropFilter: 'blur(18px)',
 						maxWidth: 500,
 					}}>
-						<p style={{fontFamily: latoFont, fontSize: 11, color: COLORS.oroSacro, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>L'importanza storica</p>
-						<p style={{fontFamily: playfairFont, fontSize: 20, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
+						<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.oroSacro, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>L'importanza storica</p>
+						<p style={{fontFamily: playfairFont, fontSize: 26, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
 							La sede vescovile lacedoniese era riconosciuta nel <em style={{color: COLORS.oroChiaro}}>Regno di Napoli</em> — da 1 navata alle attuali 3, crescendo con la sua autorità
 						</p>
 					</div>
@@ -146,8 +146,8 @@ export const Sequence05Campane: React.FC = () => {
 						backdropFilter: 'blur(18px)',
 						maxWidth: 500,
 					}}>
-						<p style={{fontFamily: latoFont, fontSize: 11, color: COLORS.azzurroCielo, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>Le iscrizioni romane</p>
-						<p style={{fontFamily: playfairFont, fontSize: 20, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
+						<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.azzurroCielo, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>Le iscrizioni romane</p>
+						<p style={{fontFamily: playfairFont, fontSize: 26, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
 							Frammenti epigrafici romani reimpiegati nelle mura — strati di tempo sovrapposti, <em style={{color: COLORS.oroSacro}}>Roma sotto il sacro medievale</em>
 						</p>
 					</div>
@@ -165,13 +165,26 @@ export const Sequence05Campane: React.FC = () => {
 							backdropFilter: 'blur(20px)',
 							display: 'flex', alignItems: 'center', justifyContent: 'center',
 						}}>
-							<Img src={staticFile('Logo facicon.png')} style={{height: 54, width: 'auto', objectFit: 'contain'}} />
+							<Img src={staticFile('logo-inntour.png')} style={{height: 54, width: 'auto', objectFit: 'contain'}} />
 						</div>
 					</div>
+				{/* Logo Comune di Lacedonia */}
+				<div style={{opacity: logoOp, transform: `scale(${logoScale})`, marginTop: 4}}>
+					<div style={{
+						border: `1px solid ${COLORS.oroIrpino || COLORS.oroSacro || '#D4A843'}44`,
+						borderRadius: 8,
+						padding: '10px 32px',
+						background: 'rgba(6,6,14,0.72)',
+						backdropFilter: 'blur(16px)',
+						display: 'flex', alignItems: 'center', justifyContent: 'center',
+					}}>
+						<Img src={staticFile('lacedonia-logo.png')} style={{height: 48, width: 'auto', objectFit: 'contain'}} />
+					</div>
+				</div>
 				</div>
 
 				<p style={{
-					fontFamily: playfairFont, fontSize: 24, fontWeight: 700,
+					fontFamily: playfairFont, fontSize: 28, fontWeight: 700,
 					color: COLORS.avorio, margin: 0, letterSpacing: '0.04em',
 					opacity: subOp, textAlign: 'center',
 					textShadow: '0 2px 12px rgba(12,9,4,0.9)',
@@ -179,7 +192,7 @@ export const Sequence05Campane: React.FC = () => {
 					Comune di Lacedonia
 				</p>
 				<p style={{
-					fontFamily: latoFont, fontSize: 13, fontWeight: 300,
+					fontFamily: latoFont, fontSize: 16, fontWeight: 300,
 					color: COLORS.oroSacro, margin: 0, letterSpacing: '0.16em',
 					textTransform: 'uppercase', opacity: subOp,
 				}}>
@@ -195,7 +208,7 @@ export const Sequence05Campane: React.FC = () => {
 
 				{/* Citazione conclusiva */}
 				<p style={{
-					fontFamily: playfairFont, fontSize: 17, fontStyle: 'italic',
+					fontFamily: playfairFont, fontSize: 19, fontStyle: 'italic',
 					color: COLORS.oroSacro, margin: 0, opacity: citaOp * 0.82,
 					textAlign: 'center', maxWidth: 680,
 					textShadow: '0 1px 8px rgba(12,9,4,0.9)',
@@ -213,7 +226,7 @@ export const Sequence05Campane: React.FC = () => {
 					backdropFilter: 'blur(12px)',
 				}}>
 					<div style={{width: 6, height: 6, borderRadius: '50%', backgroundColor: COLORS.oroSacro, boxShadow: `0 0 7px ${COLORS.oroSacro}`}} />
-					<span style={{fontFamily: latoFont, fontSize: 11, color: COLORS.oroSacro, letterSpacing: '0.14em'}}>
+					<span style={{fontFamily: latoFont, fontSize: 16, color: COLORS.oroSacro, letterSpacing: '0.14em'}}>
 						A2.01 · Cattedrale Attuale · Architettura e Monumenti
 					</span>
 				</div>

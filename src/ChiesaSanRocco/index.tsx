@@ -6,13 +6,14 @@ import { Sequence01Intro } from './Sequence01Intro';
 import { Sequence02IlSanto } from './Sequence02IlSanto';
 import { Sequence03LaChiesa } from './Sequence03LaChiesa';
 import { Sequence04LaPromessa } from './Sequence04LaPromessa';
-import { Sequence05Outro } from './Sequence05Outro';
+import { Sequence05GrandeRitorno } from './Sequence05GrandeRitorno';
+import { Sequence06Outro } from './Sequence06Outro';
 import { AUDIO, COLORS, SEQ_DUR } from './constants';
 
 // ──────────────────────────────────────────────────────────────────────
 // TAG A3.04 — Chiesa di San Rocco
 // 93.96s · 2819 frame @30fps
-// 310+590+580+560+859 - 4×20 = 2899 - 80 = 2819 ✓
+// 310+590+580+560+300+579 - 5×20 = 2919 - 100 = 2819 ✓
 // ──────────────────────────────────────────────────────────────────────
 
 export const ChiesaSanRocco: React.FC = () => {
@@ -52,9 +53,16 @@ export const ChiesaSanRocco: React.FC = () => {
 
         <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
 
-        {/* Seq 05 — La Festa/Outro ~28.6s */}
-        <TransitionSeries.Sequence durationInFrames={SEQ_DUR.s05}>
-          <Sequence05Outro />
+        {/* Seq 05 — Il Grande Ritorno ~10.0s */}
+        <TransitionSeries.Sequence durationInFrames={SEQ_DUR.s05} premountFor={SEQ_DUR.transition}>
+          <Sequence05GrandeRitorno />
+        </TransitionSeries.Sequence>
+
+        <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+
+        {/* Seq 06 — La Festa/Outro ~19.3s */}
+        <TransitionSeries.Sequence durationInFrames={SEQ_DUR.s06}>
+          <Sequence06Outro />
         </TransitionSeries.Sequence>
       </TransitionSeries>
     </AbsoluteFill>

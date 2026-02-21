@@ -41,8 +41,8 @@ export const Sequence04LaStatua: React.FC = () => {
       }}>SEICENTO</div>
 
       <div style={{ position: 'absolute', left: 72, top: 120, opacity: interpolate(card1, [0, 1], [0, 1]), transform: `translateY(${interpolate(card1, [0, 1], [30, 0])}px)`, background: 'rgba(8,8,12,0.80)', backdropFilter: 'blur(18px)', borderRadius: 8, border: `1px solid rgba(212,168,67,0.28)`, padding: '22px 30px', maxWidth: 520 }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.20em', textTransform: 'uppercase', color: COLORS.oroSacro, marginBottom: 10 }}>La statua lignea del '600</div>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 24, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.20em', textTransform: 'uppercase', color: COLORS.oroSacro, marginBottom: 10 }}>La statua lignea del '600</div>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 28, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           Intagliata nel <strong style={{ color: COLORS.oroSacro }}>XVII secolo</strong>, custodisce<br />
           tutta l'arte devozionale dell'epoca barocca.<br />
           Il Santo con il piviale dorato e il bastone.
@@ -50,8 +50,8 @@ export const Sequence04LaStatua: React.FC = () => {
       </div>
 
       <div style={{ position: 'absolute', left: 72, bottom: 240, opacity: interpolate(card2, [0, 1], [0, 1]), transform: `translateY(${interpolate(card2, [0, 1], [30, 0])}px)`, background: 'rgba(8,8,12,0.76)', backdropFilter: 'blur(18px)', borderRadius: 8, border: `1px solid rgba(240,192,64,0.25)`, padding: '20px 28px', maxWidth: 500 }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.gialloFesta, marginBottom: 8 }}>6 dicembre — La festa</div>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 22, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.gialloFesta, marginBottom: 8 }}>6 dicembre — La festa</div>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 27, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           Il giorno di San Nicola,<br />
           campane, dolci tipici e processione:<br />
           <em style={{ color: COLORS.gialloFesta }}>Lacedonia onora il suo patrono.</em>
@@ -59,7 +59,7 @@ export const Sequence04LaStatua: React.FC = () => {
       </div>
 
       <div style={{ position: 'absolute', left: 72, bottom: 90, opacity: interpolate(card3, [0, 1], [0, 1]), transform: `translateY(${interpolate(card3, [0, 1], [25, 0])}px)` }}>
-        <div style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontSize: 28, color: COLORS.oroSacro, borderLeft: `4px solid ${COLORS.oroSacro}`, paddingLeft: 24, maxWidth: 580 }}>
+        <div style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontSize: 32, color: COLORS.oroSacro, borderLeft: `4px solid ${COLORS.oroSacro}`, paddingLeft: 24, maxWidth: 580 }}>
           Ogni anno le stesse campane,<br />la stessa statua, la stessa devozione.
         </div>
       </div>

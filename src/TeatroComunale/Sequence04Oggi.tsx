@@ -32,19 +32,19 @@ const ProgramCard: React.FC<ProgramCardProps> = ({ icon, label, value, detail, c
     opacity,
     transform: `translateY(${translateY}px)`,
   }}>
-    <span style={{ fontSize: 30 }}>{icon}</span>
+    <span style={{ fontSize: 34 }}>{icon}</span>
     <div>
       <div style={{
-        fontFamily: 'Lato, sans-serif', fontSize: 11,
+        fontFamily: 'Lato, sans-serif', fontSize: 16,
         color: COLORS.grigio, letterSpacing: '0.18em',
         textTransform: 'uppercase', marginBottom: 4,
       }}>{label}</div>
       <div style={{
-        fontFamily: 'Playfair Display, serif', fontSize: 26,
+        fontFamily: 'Playfair Display, serif', fontSize: 30,
         fontWeight: 700, color, marginBottom: 2,
       }}>{value}</div>
       <div style={{
-        fontFamily: 'Lato, sans-serif', fontSize: 13,
+        fontFamily: 'Lato, sans-serif', fontSize: 16,
         color: COLORS.biancoCalce, opacity: 0.72, lineHeight: 1.4,
       }}>{detail}</div>
     </div>
@@ -80,7 +80,7 @@ export const Sequence04Oggi: React.FC = () => {
 
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
-      <KenBurnsImage src={IMAGES.oggi} motion="pan-right" intensity={0.04} />
+      <KenBurnsImage src={IMAGES.anfiteatro} motion="pan-right" intensity={0.04} />
 
       {/* Overlay moderno */}
       <div style={{
@@ -117,7 +117,7 @@ export const Sequence04Oggi: React.FC = () => {
           }} />
           <div style={{
             fontFamily: 'Lato, sans-serif', fontWeight: 700,
-            fontSize: 14, letterSpacing: '0.22em',
+            fontSize: 16, letterSpacing: '0.22em',
             color: COLORS.verdeInnTour, textTransform: 'uppercase',
           }}>Oggi · L'Eredità Continua</div>
         </div>
@@ -174,7 +174,7 @@ export const Sequence04Oggi: React.FC = () => {
           borderRadius: 4, padding: '18px 26px',
         }}>
           <p style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 21,
+            fontFamily: 'Lato, sans-serif', fontSize: 26,
             color: COLORS.biancoCalce, lineHeight: 1.65,
             margin: 0, fontWeight: 300,
           }}>
@@ -192,10 +192,10 @@ export const Sequence04Oggi: React.FC = () => {
           border: `1px solid rgba(46,204,113,0.25)`,
           borderRadius: 4, padding: '12px 20px', textAlign: 'center',
         }}>
-          <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 44, fontWeight: 700, color: COLORS.verdeInnTour }}>
+          <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 50, fontWeight: 700, color: COLORS.verdeInnTour }}>
             2000+
           </div>
-          <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, color: COLORS.biancoCalce, opacity: 0.75, letterSpacing: '0.14em', textTransform: 'uppercase' }}>
+          <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 16, color: COLORS.biancoCalce, opacity: 0.75, letterSpacing: '0.14em', textTransform: 'uppercase' }}>
             anni di DNA culturale
           </div>
         </div>

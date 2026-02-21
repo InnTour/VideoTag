@@ -60,21 +60,21 @@ export const Sequence01Intro: React.FC = () => {
 			{/* === Badge InnTour in alto === */}
 			<div style={{position: 'absolute', top: 48, left: 56, display: 'flex', alignItems: 'center', gap: 14, opacity: subOp}}>
 				<div style={{width: 3, height: 28, backgroundColor: COLORS.verdeInnTour, borderRadius: 2}} />
-				<span style={{fontFamily: latoFont, fontSize: 12, fontWeight: 700, color: COLORS.verdeInnTour, letterSpacing: '0.18em', textTransform: 'uppercase'}}>
+				<span style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.verdeInnTour, letterSpacing: '0.18em', textTransform: 'uppercase'}}>
 					Architettura e Monumenti
 				</span>
-				<span style={{fontFamily: latoFont, fontSize: 12, color: COLORS.grigioCaldo, letterSpacing: '0.12em'}}>· A1.05</span>
+				<span style={{fontFamily: latoFont, fontSize: 16, color: COLORS.grigioCaldo, letterSpacing: '0.12em'}}>· A1.05</span>
 			</div>
 
 			{/* === Testo principale — sinistra === */}
 			<div style={{position: 'absolute', left: 56, top: '50%', transform: 'translateY(-52%)', maxWidth: 680}}>
 				{/* Tag piccolo */}
-				<p style={{fontFamily: latoFont, fontSize: 13, fontWeight: 400, color: COLORS.neonBlue, letterSpacing: '0.22em', textTransform: 'uppercase', margin: 0, marginBottom: 16, opacity: subOp}}>
+				<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 400, color: COLORS.neonBlue, letterSpacing: '0.22em', textTransform: 'uppercase', margin: 0, marginBottom: 16, opacity: subOp}}>
 					Lacedonia · Centro Storico
 				</p>
 
 				{/* Titolo principale */}
-				<h1 style={{fontFamily: playfairFont, fontSize: 80, fontWeight: 700, color: COLORS.biancaCalce, margin: 0, lineHeight: 1.05, opacity: titleOp, transform: `translateY(${titleY}px)`, textShadow: `0 0 40px ${COLORS.oroIrpino}55`}}>
+				<h1 style={{fontFamily: playfairFont, fontSize: 96, fontWeight: 700, color: COLORS.biancaCalce, margin: 0, lineHeight: 1.05, opacity: titleOp, transform: `translateY(${titleY}px)`, textShadow: `0 0 40px ${COLORS.oroIrpino}55`}}>
 					Piazzetta
 					<br />
 					<span style={{color: COLORS.oroIrpino, fontStyle: 'italic'}}>Nicola Vella</span>
@@ -87,7 +87,7 @@ export const Sequence01Intro: React.FC = () => {
 				</div>
 
 				{/* Sottotitolo */}
-				<p style={{fontFamily: latoFont, fontSize: 19, fontWeight: 300, color: COLORS.biancaCalce, margin: 0, opacity: subOp, letterSpacing: '0.06em', lineHeight: 1.6}}>
+				<p style={{fontFamily: latoFont, fontSize: 23, fontWeight: 300, color: COLORS.biancaCalce, margin: 0, opacity: subOp, letterSpacing: '0.06em', lineHeight: 1.6}}>
 					Un angolo di storia dove la memoria
 					<br />incontra la vita civile del borgo
 				</p>
@@ -95,8 +95,8 @@ export const Sequence01Intro: React.FC = () => {
 
 			{/* InnTour bottom */}
 			<div style={{position: 'absolute', bottom: 38, left: 56, opacity: subOp * 0.55, display: 'flex', alignItems: 'center', gap: 8}}>
-				<span style={{fontFamily: latoFont, fontSize: 14, fontWeight: 700, color: COLORS.verdeInnTour, letterSpacing: '0.12em'}}>INNTOUR</span>
-				<span style={{fontFamily: latoFont, fontSize: 14, color: COLORS.grigioCaldo}}>· Cicerone Digitale di Lacedonia</span>
+				<span style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.verdeInnTour, letterSpacing: '0.12em'}}>INNTOUR</span>
+				<span style={{fontFamily: latoFont, fontSize: 16, color: COLORS.grigioCaldo}}>· Cicerone Digitale di Lacedonia</span>
 			</div>
 		</AbsoluteFill>
 	);

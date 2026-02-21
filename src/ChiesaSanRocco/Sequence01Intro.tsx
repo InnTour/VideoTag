@@ -23,20 +23,20 @@ export const Sequence01Intro: React.FC = () => {
       {flashOp > 0 && <div style={{ position: 'absolute', inset: 0, background: COLORS.biancoCalce, opacity: flashOp }} />}
 
       <div style={{ position: 'absolute', top: 52, left: 72, opacity: badge, transform: `translateX(${interpolate(badge, [0, 1], [-40, 0])}px)` }}>
-        <div style={{ background: COLORS.azzurroOceano, padding: '6px 20px', borderRadius: 2, fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 13, letterSpacing: '0.16em', color: COLORS.biancoCalce, textTransform: 'uppercase' }}>
+        <div style={{ background: COLORS.azzurroOceano, padding: '6px 20px', borderRadius: 2, fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.16em', color: COLORS.biancoCalce, textTransform: 'uppercase' }}>
           Sezione A3 · Architettura e Monumenti
         </div>
       </div>
 
       <div style={{ position: 'absolute', left: 72, bottom: 230, opacity: interpolate(title, [0, 1], [0, 1]), transform: `translateY(${interpolate(title, [0, 1], [40, 0])}px)` }}>
         <div style={{ width: lineW, height: 3, background: `linear-gradient(to right, ${COLORS.oroSanto}, transparent)`, marginBottom: 22 }} />
-        <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 88, fontWeight: 700, color: COLORS.biancoCalce, lineHeight: 1.05, textShadow: '0 2px 32px rgba(0,0,0,0.95)', maxWidth: 860 }}>
+        <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 100, fontWeight: 700, color: COLORS.biancoCalce, lineHeight: 1.05, textShadow: '0 2px 32px rgba(0,0,0,0.95)', maxWidth: 860 }}>
           Chiesa di<br /><span style={{ color: COLORS.oroSanto }}>San Rocco</span>
         </div>
         <div style={{ position: 'absolute', right: -120, top: -30, fontFamily: 'Playfair Display, serif', fontSize: 150, fontWeight: 700, color: COLORS.oroSanto, opacity: 0.06, pointerEvents: 'none' }}>A3.04</div>
       </div>
 
-      <div style={{ position: 'absolute', left: 72, bottom: 148, opacity: sub, transform: `translateY(${interpolate(sub, [0, 1], [14, 0])}px)`, maxWidth: 700, fontFamily: 'Lato, sans-serif', fontSize: 26, fontWeight: 300, color: COLORS.biancoCalce, letterSpacing: '0.04em', textShadow: '0 1px 10px rgba(0,0,0,0.95)' }}>
+      <div style={{ position: 'absolute', left: 72, bottom: 148, opacity: sub, transform: `translateY(${interpolate(sub, [0, 1], [14, 0])}px)`, maxWidth: 700, fontFamily: 'Lato, sans-serif', fontSize: 30, fontWeight: 300, color: COLORS.biancoCalce, letterSpacing: '0.04em', textShadow: '0 1px 10px rgba(0,0,0,0.95)' }}>
         Patrono degli emigranti — il Santo che unisce chi è partito e chi è rimasto
       </div>
 

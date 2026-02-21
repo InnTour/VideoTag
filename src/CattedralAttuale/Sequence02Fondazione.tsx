@@ -47,7 +47,7 @@ export const Sequence02Fondazione: React.FC = () => {
 			{/* LAYER 1: Vescovo con pergamena */}
 			<div style={{position: 'absolute', inset: 0, opacity: 1 - dissolve}}>
 				<KenBurnsImage
-					src="images/TAG A2.01 - CATTEDRALE ATTUALE/image_aa8f2c75-2401-439c-8567-f1b4d9767dd5.png"
+					src="images/TAG A2.01 - CATTEDRALE ATTUALE/image_a807ba56-a624-43c6-890b-d62e04ee8b48.png"
 					motion="pan-left"
 					intensity={0.05}
 					overlayOpacity={0}
@@ -108,7 +108,7 @@ export const Sequence02Fondazione: React.FC = () => {
 				{/* Titolo sequenza */}
 				<h2 style={{
 					fontFamily: playfairFont,
-					fontSize: 52,
+					fontSize: 60,
 					fontWeight: 700,
 					color: COLORS.avorio,
 					margin: '0 0 6px',
@@ -129,8 +129,8 @@ export const Sequence02Fondazione: React.FC = () => {
 					backdropFilter: 'blur(18px)',
 					maxWidth: 460,
 				}}>
-					<p style={{fontFamily: latoFont, fontSize: 11, color: COLORS.oroSacro, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>1696 · Il Vescovo</p>
-					<p style={{fontFamily: playfairFont, fontSize: 20, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
+					<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.oroSacro, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>1696 · Il Vescovo</p>
+					<p style={{fontFamily: playfairFont, fontSize: 26, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
 						Giovanni Battista La Morea osserva le rovine della Chiesa di Sant'Antonio — luogo della <em style={{color: COLORS.oroChiaro}}>congiura dei baroni</em>
 					</p>
 				</div>
@@ -146,8 +146,8 @@ export const Sequence02Fondazione: React.FC = () => {
 					backdropFilter: 'blur(18px)',
 					maxWidth: 460,
 				}}>
-					<p style={{fontFamily: latoFont, fontSize: 11, color: COLORS.oroChiaro, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>1696–1709 · La Costruzione</p>
-					<p style={{fontFamily: playfairFont, fontSize: 20, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
+					<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.oroChiaro, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>1696–1709 · La Costruzione</p>
+					<p style={{fontFamily: playfairFont, fontSize: 26, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
 						Tredici anni di lavori · il portale in <em style={{color: COLORS.oroSacro}}>marmo rosso screziato</em> che ancora oggi ammiriamo
 					</p>
 				</div>
@@ -163,8 +163,8 @@ export const Sequence02Fondazione: React.FC = () => {
 					backdropFilter: 'blur(18px)',
 					maxWidth: 460,
 				}}>
-					<p style={{fontFamily: latoFont, fontSize: 11, color: COLORS.pietraCalce, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>Strati di storia</p>
-					<p style={{fontFamily: playfairFont, fontSize: 19, color: COLORS.pietraCalce, margin: 0, lineHeight: 1.4}}>
+					<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.pietraCalce, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>Strati di storia</p>
+					<p style={{fontFamily: playfairFont, fontSize: 23, color: COLORS.pietraCalce, margin: 0, lineHeight: 1.4}}>
 						Sulle rovine di Sant'Antonio · sul terreno della congiura · nasce il cuore spirituale della città
 					</p>
 				</div>

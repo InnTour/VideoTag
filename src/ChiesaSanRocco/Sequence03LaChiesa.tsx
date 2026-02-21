@@ -32,8 +32,8 @@ export const Sequence03LaChiesa: React.FC = () => {
       <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at center, transparent 44%, rgba(0,0,0,0.72) 100%)' }} />
 
       <div style={{ position: 'absolute', left: 72, top: 120, opacity: interpolate(card1, [0, 1], [0, 1]), transform: `translateY(${interpolate(card1, [0, 1], [30, 0])}px)`, background: 'rgba(8,8,12,0.80)', backdropFilter: 'blur(18px)', borderRadius: 8, border: `1px solid rgba(212,168,67,0.28)`, padding: '22px 30px', maxWidth: 520 }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.20em', textTransform: 'uppercase', color: COLORS.oroSanto, marginBottom: 10 }}>Il Grande Esodo</div>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 24, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.20em', textTransform: 'uppercase', color: COLORS.oroSanto, marginBottom: 10 }}>Il Grande Esodo</div>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 28, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           Tra gli anni '<strong style={{ color: COLORS.oroSanto }}>50</strong> e '<strong style={{ color: COLORS.oroSanto }}>60</strong>, centinaia di lacedonesi<br />
           lasciano il paese in cerca di lavoro.<br />
           San Rocco li accompagna nel cuore.
@@ -48,21 +48,21 @@ export const Sequence03LaChiesa: React.FC = () => {
             <div key={i} style={{
               opacity: meteBadge, transform: `scale(${interpolate(meteBadge, [0, 1], [0.7, 1])})`,
               background: COLORS.azzurroOceano, padding: '6px 18px', borderRadius: 20,
-              fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, color: COLORS.biancoCalce,
+              fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 18, color: COLORS.biancoCalce,
             }}>{m}</div>
           );
         })}
       </div>
 
       <div style={{ position: 'absolute', left: 72, bottom: 210, opacity: interpolate(card2, [0, 1], [0, 1]), transform: `translateY(${interpolate(card2, [0, 1], [30, 0])}px)`, background: 'rgba(8,8,12,0.76)', backdropFilter: 'blur(18px)', borderRadius: 8, border: `1px solid rgba(26,74,122,0.28)`, padding: '20px 28px', maxWidth: 500 }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.azzurroOceano, marginBottom: 8 }}>La promessa</div>
-        <div style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontSize: 24, color: COLORS.oroSanto, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.azzurroOceano, marginBottom: 8 }}>La promessa</div>
+        <div style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontSize: 28, color: COLORS.oroSanto, lineHeight: 1.55 }}>
           "Se troverò fortuna,<br />contribuirò al restauro."
         </div>
       </div>
 
       <div style={{ position: 'absolute', left: 72, bottom: 80, opacity: interpolate(card3, [0, 1], [0, 1]), transform: `translateY(${interpolate(card3, [0, 1], [25, 0])}px)`, background: 'rgba(8,8,12,0.76)', backdropFilter: 'blur(18px)', borderRadius: 8, border: `1px solid rgba(212,168,67,0.22)`, padding: '18px 26px', maxWidth: 500 }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 21, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 26, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           Anni 2000: un <strong style={{ color: COLORS.oroSanto }}>nuovo altare</strong> viene finanziato<br />
           dagli emigranti che mantennero la promessa.
         </div>

@@ -56,10 +56,10 @@ export const Sequence01Intro: React.FC = () => {
 			{/* === BADGE SEZIONE — in alto a sinistra === */}
 			<div style={{position: 'absolute', top: 50, left: 60, display: 'flex', alignItems: 'center', gap: 14, opacity: subOp}}>
 				<div style={{width: 4, height: 32, backgroundColor: COLORS.rossoBandiera, borderRadius: 2, boxShadow: `0 0 10px ${COLORS.rossoBandiera}88`}} />
-				<span style={{fontFamily: latoFont, fontSize: 13, fontWeight: 700, color: COLORS.rossoBandiera, letterSpacing: '0.18em', textTransform: 'uppercase'}}>
+				<span style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.rossoBandiera, letterSpacing: '0.18em', textTransform: 'uppercase'}}>
 					Architettura e Monumenti
 				</span>
-				<span style={{fontFamily: latoFont, fontSize: 13, color: COLORS.grigioCaldo, letterSpacing: '0.1em'}}>· A1.06</span>
+				<span style={{fontFamily: latoFont, fontSize: 16, color: COLORS.grigioCaldo, letterSpacing: '0.1em'}}>· A1.06</span>
 			</div>
 
 			{/* === TESTO PRINCIPALE — sinistra === */}
@@ -67,7 +67,7 @@ export const Sequence01Intro: React.FC = () => {
 
 				{/* Soprattitolo */}
 				<p style={{
-					fontFamily: latoFont, fontSize: 14, fontWeight: 400,
+					fontFamily: latoFont, fontSize: 16, fontWeight: 400,
 					color: COLORS.oroIrpino, letterSpacing: '0.22em',
 					textTransform: 'uppercase', margin: 0, marginBottom: 18,
 					opacity: subOp,
@@ -101,7 +101,7 @@ export const Sequence01Intro: React.FC = () => {
 
 				{/* Sottotitolo */}
 				<p style={{
-					fontFamily: latoFont, fontSize: 21, fontWeight: 300,
+					fontFamily: latoFont, fontSize: 26, fontWeight: 300,
 					color: COLORS.biancaCalce, margin: 0,
 					opacity: subOp, letterSpacing: '0.05em', lineHeight: 1.65,
 					textShadow: '0 1px 10px rgba(6,6,14,0.7)',
@@ -123,17 +123,17 @@ export const Sequence01Intro: React.FC = () => {
 				backdropFilter: 'blur(16px)',
 				boxShadow: `0 0 30px ${COLORS.rossoBandiera}44`,
 			}}>
-				<p style={{fontFamily: latoFont, fontSize: 13, fontWeight: 700, color: COLORS.rossoBandiera, letterSpacing: '0.2em', textTransform: 'uppercase', margin: 0}}>Festa del</p>
+				<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.rossoBandiera, letterSpacing: '0.2em', textTransform: 'uppercase', margin: 0}}>Festa del</p>
 				<p style={{fontFamily: playfairFont, fontSize: 58, fontWeight: 700, color: COLORS.oroIrpino, margin: 0, lineHeight: 1, textShadow: `0 0 20px ${COLORS.oroIrpino}88`}}>1°</p>
-				<p style={{fontFamily: playfairFont, fontSize: 34, fontWeight: 700, color: COLORS.oroIrpino, margin: 0, letterSpacing: '0.05em'}}>MAGGIO</p>
+				<p style={{fontFamily: playfairFont, fontSize: 40, fontWeight: 700, color: COLORS.oroIrpino, margin: 0, letterSpacing: '0.05em'}}>MAGGIO</p>
 				<div style={{width: '100%', height: 1.5, backgroundColor: COLORS.oroIrpino, opacity: 0.4, marginTop: 10, marginBottom: 8}} />
-				<p style={{fontFamily: latoFont, fontSize: 12, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0}}>Lacedonia</p>
+				<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0}}>Lacedonia</p>
 			</div>
 
 			{/* InnTour bottom */}
 			<div style={{position: 'absolute', bottom: 42, left: 60, opacity: subOp * 0.5, display: 'flex', alignItems: 'center', gap: 10}}>
-				<span style={{fontFamily: latoFont, fontSize: 14, fontWeight: 700, color: COLORS.verdeInnTour, letterSpacing: '0.12em'}}>INNTOUR</span>
-				<span style={{fontFamily: latoFont, fontSize: 14, color: COLORS.grigioCaldo}}>· Cicerone Digitale di Lacedonia</span>
+				<span style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.verdeInnTour, letterSpacing: '0.12em'}}>INNTOUR</span>
+				<span style={{fontFamily: latoFont, fontSize: 16, color: COLORS.grigioCaldo}}>· Cicerone Digitale di Lacedonia</span>
 			</div>
 		</AbsoluteFill>
 	);

@@ -20,7 +20,7 @@ export const CattedralAttuale: React.FC = () => {
 	const toFrames = (s: number) => Math.round(s * 30);
 
 	return (
-		<AbsoluteFill>
+		<AbsoluteFill style={{backgroundColor: '#0A0906'}}>
 			{/* === AUDIO NARRAZIONE === */}
 			<Audio
 				src={staticFile('audio/TAG_A2.01_CATTEDRALE_ATTUALE_Iapetus_ITA(1).mp3')}

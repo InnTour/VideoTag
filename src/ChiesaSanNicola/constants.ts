@@ -15,13 +15,14 @@ export const IMAGES = {
 
 export const AUDIO = 'audio/TAG_A3.06_CHIESA_SAN_NICOLA_Iapetus_ITA.mp3';
 
-// s01+s02+s03+s04+s05 = 2451 - 4×20 = 2371 ✓
+// s01+s02+s03+s04+s05+s06 = 2471 - 5×20 = 2371 ✓
 export const SEQ_DUR = {
   s01: 290,  // Intro               ~9.7s
   s02: 490,  // Il Portale          ~16.3s
   s03: 470,  // La Devozione        ~15.7s
   s04: 450,  // La Statua           ~15.0s
-  s05: 751,  // La Festa/Outro      ~25.0s
+  s05: 300,  // Il Seicento Vivo    ~10.0s
+  s06: 471,  // La Festa/Outro      ~15.7s
   transition: 20,
 } as const;
 

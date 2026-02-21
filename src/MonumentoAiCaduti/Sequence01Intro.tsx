@@ -90,7 +90,7 @@ export const Sequence01Intro: React.FC = () => {
           background: COLORS.rossoPapavero,
           padding: '8px 22px', borderRadius: 2,
           fontFamily: 'Lato, sans-serif', fontWeight: 700,
-          fontSize: 15, letterSpacing: '0.16em',
+          fontSize: 17, letterSpacing: '0.16em',
           color: COLORS.biancoLapide, textTransform: 'uppercase',
         }}>
           Sezione A4 · Luoghi della Memoria
@@ -109,7 +109,7 @@ export const Sequence01Intro: React.FC = () => {
         }} />
         <div style={{
           fontFamily: 'Playfair Display, serif',
-          fontSize: 96, fontWeight: 700, lineHeight: 1.0,
+          fontSize: 108, fontWeight: 700, lineHeight: 1.0,
           color: COLORS.biancoLapide,
           textShadow: '0 2px 40px rgba(0,0,0,0.95)',
           maxWidth: 840,
@@ -124,7 +124,7 @@ export const Sequence01Intro: React.FC = () => {
         position: 'absolute', left: 72, bottom: 148,
         opacity: subEnt, transform: `translateY(${subY}px)`,
         maxWidth: 700,
-        fontFamily: 'Lato, sans-serif', fontSize: 28, fontWeight: 300,
+        fontFamily: 'Lato, sans-serif', fontSize: 32, fontWeight: 300,
         color: COLORS.biancoLapide, letterSpacing: '0.04em',
         textShadow: '0 1px 10px rgba(0,0,0,0.95)',
       }}>

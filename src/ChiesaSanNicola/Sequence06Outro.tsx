@@ -4,7 +4,7 @@ import { KenBurnsImage } from './components/KenBurnsImage';
 import { ScanLines } from './components/ScanLines';
 import { IMAGES, COLORS } from './constants';
 
-export const Sequence05Outro: React.FC = () => {
+export const Sequence06Outro: React.FC = () => {
   const frame = useCurrentFrame();
   const { durationInFrames, fps } = useVideoConfig();
 
@@ -21,65 +21,40 @@ export const Sequence05Outro: React.FC = () => {
   const irisP = interpolate(frame, [durationInFrames - 90, durationInFrames - 8], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
   const irisR = interpolate(irisP, [0, 1], [1600, 0]);
 
-  // Timeline nodi
-  const nodi = [
-    { anno: '1697', color: COLORS.oroVescovile, delay: 30 },
-    { anno: '1856', color: COLORS.marmoRosso, delay: 80 },
-    { anno: '1980', color: COLORS.azzurroCielo, delay: 130 },
-    { anno: '2002', color: COLORS.verdeInnTour, delay: 180 },
-  ];
+  const festaPulse = Math.sin(frame / 30) * 0.04 + 0.10;
 
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
-      <KenBurnsImage src={IMAGES.outro} motion="zoom-out" intensity={0.06} objectPosition="center center" />
+      <KenBurnsImage src={IMAGES.festa} motion="zoom-out" intensity={0.06} objectPosition="center center" />
       <div style={{ position: 'absolute', inset: 0, background: ['linear-gradient(to top, rgba(8,8,12,0.96) 0%, rgba(8,8,12,0.70) 45%, rgba(8,8,12,0.28) 100%)', 'radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.78) 100%)'].join(', ') }} />
+      <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse 600px 400px at 50% 45%, rgba(240,192,64,${festaPulse}), transparent 70%)` }} />
 
-      {/* Timeline resilienza */}
-      <div style={{ position: 'absolute', left: '50%', top: 80, transform: 'translateX(-50%)', display: 'flex', alignItems: 'center', gap: 0 }}>
-        {nodi.map((n, i) => {
-          const nOp = spring({ frame: Math.max(0, frame - n.delay), fps, config: { damping: 180 } });
-          return (
-            <React.Fragment key={i}>
-              {i > 0 && (
-                <div style={{ width: interpolate(nOp, [0, 1], [0, 80]), height: 2, background: `linear-gradient(to right, ${nodi[i-1].color}, ${n.color})`, opacity: 0.55 }} />
-              )}
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: nOp }}>
-                <div style={{ width: 14, height: 14, borderRadius: '50%', background: n.color, boxShadow: `0 0 12px ${n.color}` }} />
-                <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 22, fontWeight: 700, color: n.color, marginTop: 8 }}>{n.anno}</div>
-              </div>
-            </React.Fragment>
-          );
-        })}
-      </div>
-
-      {/* TAGLINE */}
       <div style={{
         position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column',
         alignItems: 'center', justifyContent: 'center', paddingBottom: 130,
         opacity: Math.min(interpolate(tagE, [0, 1], [0, 1]), tagFade),
         transform: `translateY(${interpolate(tagE, [0, 1], [20, 0])}px)`,
       }}>
-        <div style={{ width: lineT, height: 2, background: `linear-gradient(to right, transparent, ${COLORS.oroVescovile}, transparent)`, marginBottom: 32 }} />
-        <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 16, color: COLORS.oroVescovile, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: 20, opacity: 0.80 }}>Cappella Santissima Trinità · Lacedonia</div>
+        <div style={{ width: lineT, height: 2, background: `linear-gradient(to right, transparent, ${COLORS.oroSacro}, transparent)`, marginBottom: 32 }} />
+        <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 16, color: COLORS.oroSacro, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: 20, opacity: 0.80 }}>Chiesa di San Nicola · Lacedonia</div>
         <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 50, fontWeight: 700, color: COLORS.biancoCalce, textAlign: 'center', lineHeight: 1.42, maxWidth: 860, textShadow: '0 2px 24px rgba(0,0,0,0.95)' }}>
-          Terremoti, demoni e secoli di fede:<br />
-          <em style={{ color: COLORS.oroVescovile }}>la Trinità resiste ancora.</em>
+          Dal 1456, lo stesso Santo<br />
+          <em style={{ color: COLORS.oroSacro }}>veglia su Lacedonia e i suoi figli.</em>
         </div>
-        <div style={{ width: lineB, height: 2, background: `linear-gradient(to right, transparent, ${COLORS.oroVescovile}, transparent)`, marginTop: 32 }} />
+        <div style={{ width: lineB, height: 2, background: `linear-gradient(to right, transparent, ${COLORS.oroSacro}, transparent)`, marginTop: 32 }} />
       </div>
 
-      {/* LOGHI */}
       <div style={{ position: 'absolute', bottom: 52, left: 120, display: 'flex', alignItems: 'center', gap: 16, opacity: lc * lFade, transform: `translateY(${interpolate(lc, [0, 1], [16, 0])}px)` }}>
         <Img src={staticFile(IMAGES.logoComune)} style={{ height: 56, objectFit: 'contain', filter: 'drop-shadow(0 2px 10px rgba(0,0,0,0.9))' }} />
         <div>
           <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.10em', color: COLORS.biancoCalce, textTransform: 'uppercase', textShadow: '0 1px 4px rgba(0,0,0,0.9)' }}>Comune di Lacedonia</div>
-          <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 16, letterSpacing: '0.06em', color: COLORS.oroVescovile, opacity: 0.90 }}>Alta Irpinia · Campania</div>
+          <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 16, letterSpacing: '0.06em', color: COLORS.oroSacro, opacity: 0.90 }}>Alta Irpinia · Campania</div>
         </div>
       </div>
       <div style={{ position: 'absolute', bottom: 52, left: '50%', transform: 'translateX(-50%)', opacity: Math.min(lc, li) * lFade, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
-        <div style={{ width: 1, height: 36, background: `rgba(200,152,48,0.45)` }} />
-        <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 9, color: COLORS.oroVescovile, letterSpacing: '0.12em', textTransform: 'uppercase', opacity: 0.70 }}>×</div>
-        <div style={{ width: 1, height: 36, background: `rgba(200,152,48,0.45)` }} />
+        <div style={{ width: 1, height: 36, background: `rgba(212,168,67,0.45)` }} />
+        <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 9, color: COLORS.oroSacro, letterSpacing: '0.12em', textTransform: 'uppercase', opacity: 0.70 }}>×</div>
+        <div style={{ width: 1, height: 36, background: `rgba(212,168,67,0.45)` }} />
       </div>
       <div style={{ position: 'absolute', bottom: 52, right: 120, display: 'flex', alignItems: 'center', gap: 16, opacity: li * lFade, transform: `translateY(${interpolate(li, [0, 1], [16, 0])}px)` }}>
         <div style={{ textAlign: 'right' }}>
@@ -95,8 +70,8 @@ export const Sequence05Outro: React.FC = () => {
       {irisP > 0 && (
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
           <svg width="1920" height="1080" style={{ position: 'absolute', inset: 0 }}>
-            <defs><mask id="iris-mask-ct"><rect width="1920" height="1080" fill="white" /><circle cx="960" cy="540" r={irisR} fill="black" /></mask></defs>
-            <rect width="1920" height="1080" fill="black" mask="url(#iris-mask-ct)" />
+            <defs><mask id="iris-mask-csn"><rect width="1920" height="1080" fill="white" /><circle cx="960" cy="540" r={irisR} fill="black" /></mask></defs>
+            <rect width="1920" height="1080" fill="black" mask="url(#iris-mask-csn)" />
           </svg>
         </div>
       )}

@@ -118,7 +118,7 @@ export const Sequence02IlSisma: React.FC = () => {
         position: 'absolute', right: 60, top: '50%',
         transform: 'translateY(-50%)',
         fontFamily: 'Playfair Display, serif',
-        fontSize: 88, fontWeight: 700, fontStyle: 'italic',
+        fontSize: 100, fontWeight: 700, fontStyle: 'italic',
         color: COLORS.rossoSisma, opacity: ghostOp,
         pointerEvents: 'none',
         writingMode: 'vertical-rl', letterSpacing: '0.06em',
@@ -133,7 +133,7 @@ export const Sequence02IlSisma: React.FC = () => {
       <div style={{ position: 'absolute', left: 72, top: 62, opacity: titleEnt }}>
         <div style={{
           fontFamily: 'Lato, sans-serif', fontWeight: 700,
-          fontSize: 16, letterSpacing: '0.20em',
+          fontSize: 18, letterSpacing: '0.20em',
           color: COLORS.rossoSisma, textTransform: 'uppercase', marginBottom: 9,
         }}>Il Sisma · Il Vulture Sussultò · Ore 3:00</div>
         <div style={{ width: 310, height: 2, background: `linear-gradient(to right, ${COLORS.rossoSisma}, transparent)` }} />
@@ -153,19 +153,19 @@ export const Sequence02IlSisma: React.FC = () => {
         }}>
           <span style={{
             fontFamily: 'Playfair Display, serif',
-            fontSize: 92, fontWeight: 700, lineHeight: 1,
+            fontSize: 104, fontWeight: 700, lineHeight: 1,
             color: counterVal >= 200 ? COLORS.rossoSisma : COLORS.biancoMarmo,
           }}>
             {counterVal === 200 ? '~200' : counterVal}
           </span>
           <div style={{ paddingBottom: 10 }}>
             <div style={{
-              fontFamily: 'Lato, sans-serif', fontSize: 17,
+              fontFamily: 'Lato, sans-serif', fontSize: 19,
               color: COLORS.biancoMarmo, opacity: 0.88,
               letterSpacing: '0.10em', textTransform: 'uppercase',
             }}>vittime</div>
             <div style={{
-              fontFamily: 'Lato, sans-serif', fontSize: 14,
+              fontFamily: 'Lato, sans-serif', fontSize: 16,
               color: COLORS.grigioLapide,
               letterSpacing: '0.06em',
             }}>a Lacedonia</div>
@@ -184,7 +184,7 @@ export const Sequence02IlSisma: React.FC = () => {
           borderRadius: 4, padding: '20px 28px', maxWidth: 500,
         }}>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 16,
+            fontFamily: 'Lato, sans-serif', fontSize: 18,
             color: COLORS.oroSperanza, letterSpacing: '0.16em',
             textTransform: 'uppercase', marginBottom: 10,
           }}>⚠️ Scala Mercalli</div>
@@ -194,7 +194,7 @@ export const Sequence02IlSisma: React.FC = () => {
             color: COLORS.rossoSisma, lineHeight: 1,
           }}>X°</div>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 20,
+            fontFamily: 'Lato, sans-serif', fontSize: 26,
             color: COLORS.biancoMarmo, opacity: 0.80,
             fontWeight: 300, lineHeight: 1.50, marginTop: 8,
           }}>Decimo grado — radendo al suolo<br />gran parte del borgo antico</div>
@@ -209,7 +209,7 @@ export const Sequence02IlSisma: React.FC = () => {
       }}>
         <div style={{ borderLeft: `4px solid ${COLORS.oroSperanza}`, paddingLeft: 22 }}>
           <p style={{
-            fontFamily: 'Georgia, serif', fontSize: 24,
+            fontFamily: 'Georgia, serif', fontSize: 28,
             fontStyle: 'italic', color: COLORS.biancoMarmo,
             lineHeight: 1.58, margin: 0,
             textShadow: '0 1px 8px rgba(0,0,0,0.95)',

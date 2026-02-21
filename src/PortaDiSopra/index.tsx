@@ -20,7 +20,7 @@ export const PortaDiSopra: React.FC = () => {
 	const toFrames = (s: number) => Math.round(s * 30);
 
 	return (
-		<AbsoluteFill>
+		<AbsoluteFill style={{backgroundColor: '#030303'}}>
 			{/* === AUDIO NARRAZIONE === */}
 			<Audio
 				src={staticFile('audio/TAG_A1.10_PORTA_DI_SOPRA_Iapetus_ITA.mp3')}

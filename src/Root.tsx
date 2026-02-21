@@ -123,11 +123,11 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
       />
 
-      {/* A2.03 — Chiesa Sant'Antonio (Congiura) v1 · voce Leda: 39.70s → 1191 frame */}
+      {/* A2.03 — Chiesa Sant'Antonio (Congiura) v1 · voce Leda: 80.00s → 2400 frame */}
       <Composition
         id="A2-03-ChiesaSantAntonio"
         component={ChiesaSantAntonio}
-        durationInFrames={1191}
+        durationInFrames={2400}
         fps={30}
         width={1920}
         height={1080}
@@ -153,11 +153,11 @@ export const RemotionRoot: React.FC = () => {
         height={1080}
       />
 
-      {/* A2.09 — Chiesa Santa Maria della Cancellata · voce Iapetus: 39.58s → 1187 frame */}
+      {/* A2.09 — Chiesa Santa Maria della Cancellata · voce Iapetus: 80.00s → 2400 frame */}
       <Composition
         id="A2-09-ChiesaSantaMaria"
         component={ChiesaSantaMaria}
-        durationInFrames={1187}
+        durationInFrames={2400}
         fps={30}
         width={1920}
         height={1080}

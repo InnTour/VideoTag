@@ -124,7 +124,7 @@ export const Sequence03Encyclopedie: React.FC = () => {
       <div style={{ position: 'absolute', left: 72, top: 62, opacity: titleOpacity }}>
         <div style={{
           fontFamily: 'Lato, sans-serif', fontWeight: 700,
-          fontSize: 14, letterSpacing: '0.22em',
+          fontSize: 16, letterSpacing: '0.22em',
           color: COLORS.oroAntico, textTransform: 'uppercase', marginBottom: 8,
         }}>Il Tesoro Più Raro · L'Encyclopédie</div>
         <div style={{ width: 300, height: 2, background: `linear-gradient(to right, ${COLORS.oroAntico}, transparent)` }} />
@@ -143,17 +143,17 @@ export const Sequence03Encyclopedie: React.FC = () => {
           borderRadius: 4, padding: '22px 30px', maxWidth: 520,
         }}>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 11,
+            fontFamily: 'Lato, sans-serif', fontSize: 16,
             color: COLORS.oroAntico, letterSpacing: '0.20em',
             textTransform: 'uppercase', marginBottom: 10,
           }}>📚 Il Pezzo di Punta</div>
           <div style={{
-            fontFamily: 'Playfair Display, serif', fontSize: 36,
+            fontFamily: 'Playfair Display, serif', fontSize: 42,
             fontWeight: 700, color: COLORS.biancoCalce,
             marginBottom: 10, lineHeight: 1.1,
           }}>Diderot & d'Alembert</div>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 18,
+            fontFamily: 'Lato, sans-serif', fontSize: 22,
             color: COLORS.biancoCalce, opacity: 0.82,
             lineHeight: 1.55, fontWeight: 300,
           }}>
@@ -180,7 +180,7 @@ export const Sequence03Encyclopedie: React.FC = () => {
             color: COLORS.oroAntico, lineHeight: 1,
           }}>{volCounter}</span>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 16,
+            fontFamily: 'Lato, sans-serif', fontSize: 18,
             color: COLORS.biancoCalce, opacity: 0.78,
             letterSpacing: '0.10em', textTransform: 'uppercase',
             paddingBottom: 8,
@@ -201,7 +201,7 @@ export const Sequence03Encyclopedie: React.FC = () => {
           borderRadius: 4, padding: '20px 28px',
         }}>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 13,
+            fontFamily: 'Lato, sans-serif', fontSize: 16,
             color: COLORS.oroAntico, letterSpacing: '0.15em',
             textTransform: 'uppercase', marginBottom: 12,
           }}>Rarità Assoluta</div>
@@ -216,10 +216,10 @@ export const Sequence03Encyclopedie: React.FC = () => {
               <div key={item.label}>
                 <div style={{
                   fontFamily: 'Playfair Display, serif',
-                  fontSize: 28, fontWeight: 700, color: COLORS.oroAntico,
+                  fontSize: 32, fontWeight: 700, color: COLORS.oroAntico,
                 }}>{item.val}</div>
                 <div style={{
-                  fontFamily: 'Lato, sans-serif', fontSize: 13,
+                  fontFamily: 'Lato, sans-serif', fontSize: 16,
                   color: COLORS.biancoCalce, opacity: 0.72,
                   letterSpacing: '0.08em',
                 }}>{item.label}</div>

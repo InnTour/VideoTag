@@ -59,17 +59,17 @@ export const Sequence01Intro: React.FC = () => {
 			{/* === BADGE SEZIONE — in alto ===  */}
 			<div style={{position: 'absolute', top: 50, left: 60, display: 'flex', alignItems: 'center', gap: 14, opacity: subOp}}>
 				<div style={{width: 4, height: 30, background: `linear-gradient(180deg, ${COLORS.oroBrillante}, ${COLORS.pietraDorata})`, borderRadius: 2}} />
-				<span style={{fontFamily: latoFont, fontSize: 13, fontWeight: 700, color: COLORS.oroBrillante, letterSpacing: '0.18em', textTransform: 'uppercase'}}>
+				<span style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.oroBrillante, letterSpacing: '0.18em', textTransform: 'uppercase'}}>
 					Architettura e Monumenti
 				</span>
-				<span style={{fontFamily: latoFont, fontSize: 13, color: COLORS.grigioCaldo}}>· A1.07</span>
+				<span style={{fontFamily: latoFont, fontSize: 16, color: COLORS.grigioCaldo}}>· A1.07</span>
 			</div>
 
 			{/* === TESTO PRINCIPALE === */}
 			<div style={{position: 'absolute', left: 60, bottom: 140, maxWidth: 740}}>
 				{/* Tag geografico */}
 				<p style={{
-					fontFamily: latoFont, fontSize: 14, fontWeight: 400,
+					fontFamily: latoFont, fontSize: 16, fontWeight: 400,
 					color: COLORS.azureInnTour, letterSpacing: '0.22em',
 					textTransform: 'uppercase', margin: 0, marginBottom: 16,
 					opacity: subOp,
@@ -79,7 +79,7 @@ export const Sequence01Intro: React.FC = () => {
 
 				{/* Titolo a due righe — grande e pesante */}
 				<h1 style={{
-					fontFamily: playfairFont, fontSize: 90, fontWeight: 700,
+					fontFamily: playfairFont, fontSize: 102, fontWeight: 700,
 					color: COLORS.biancaCalce, margin: 0, lineHeight: 0.95,
 					opacity: titleOp, transform: `translateY(${titleY}px)`,
 					textShadow: `0 4px 30px rgba(8,6,10,0.95), 0 0 60px rgba(8,6,10,0.6)`,
@@ -101,7 +101,7 @@ export const Sequence01Intro: React.FC = () => {
 
 				{/* Sottotitolo — porta orientale */}
 				<p style={{
-					fontFamily: latoFont, fontSize: 21, fontWeight: 300,
+					fontFamily: latoFont, fontSize: 26, fontWeight: 300,
 					color: COLORS.biancaCalce, margin: 0, lineHeight: 1.65,
 					opacity: subOp, letterSpacing: '0.05em',
 					textShadow: '0 1px 12px rgba(8,6,10,0.8)',
@@ -113,8 +113,8 @@ export const Sequence01Intro: React.FC = () => {
 
 			{/* InnTour bottom */}
 			<div style={{position: 'absolute', bottom: 42, right: 60, opacity: subOp * 0.5, display: 'flex', alignItems: 'center', gap: 10}}>
-				<span style={{fontFamily: latoFont, fontSize: 14, fontWeight: 700, color: COLORS.verdeInnTour, letterSpacing: '0.12em'}}>INNTOUR</span>
-				<span style={{fontFamily: latoFont, fontSize: 14, color: COLORS.grigioCaldo}}>· Cicerone Digitale di Lacedonia</span>
+				<span style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.verdeInnTour, letterSpacing: '0.12em'}}>INNTOUR</span>
+				<span style={{fontFamily: latoFont, fontSize: 16, color: COLORS.grigioCaldo}}>· Cicerone Digitale di Lacedonia</span>
 			</div>
 		</AbsoluteFill>
 	);

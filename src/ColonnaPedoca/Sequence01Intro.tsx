@@ -94,7 +94,7 @@ export const Sequence01Intro: React.FC = () => {
           background: COLORS.rossoVescovile,
           padding: '6px 20px', borderRadius: 2,
           fontFamily: 'Lato, sans-serif', fontWeight: 700,
-          fontSize: 15, letterSpacing: '0.16em',
+          fontSize: 17, letterSpacing: '0.16em',
           color: COLORS.biancoCalce, textTransform: 'uppercase',
         }}>
           A4 · Architettura e Monumenti · 1587
@@ -116,7 +116,7 @@ export const Sequence01Intro: React.FC = () => {
 
         <div style={{
           fontFamily: 'Playfair Display, serif',
-          fontSize: 92, fontWeight: 700,
+          fontSize: 104, fontWeight: 700,
           color: COLORS.biancoCalce, lineHeight: 1.05,
           textShadow: '0 2px 32px rgba(0,0,0,0.95), 0 0 80px rgba(200,152,48,0.16)',
           maxWidth: 860,
@@ -141,7 +141,7 @@ export const Sequence01Intro: React.FC = () => {
         opacity: subEntrance,
         transform: `translateY(${subY}px)`,
         maxWidth: 700,
-        fontFamily: 'Lato, sans-serif', fontSize: 26, fontWeight: 300,
+        fontFamily: 'Lato, sans-serif', fontSize: 30, fontWeight: 300,
         color: COLORS.biancoCalce, letterSpacing: '0.04em',
         textShadow: '0 1px 10px rgba(0,0,0,0.95)',
       }}>

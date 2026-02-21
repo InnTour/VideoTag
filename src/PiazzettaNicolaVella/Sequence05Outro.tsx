@@ -1,4 +1,4 @@
-import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {COLORS, playfairFont, latoFont} from './constants';
 import {ParticleField} from './components/ParticleField';
 import {ScanLines} from './components/ScanLines';
@@ -57,29 +57,42 @@ export const Sequence05Outro: React.FC = () => {
 
 			{/* Contenuto centrato */}
 			<AbsoluteFill style={{justifyContent: 'center', alignItems: 'center', flexDirection: 'column', gap: 20}}>
-				{/* Logo InnTour */}
+				{/* Logo InnTour — immagine reale */}
 				<div style={{opacity: logoOp, transform: `scale(${logoScale * pulse})`}}>
 					<div style={{
 						border: `1.5px solid ${COLORS.verdeInnTour}66`,
 						borderRadius: 8,
-						padding: '10px 36px',
+						padding: '12px 40px',
 						background: 'rgba(5,5,15,0.82)',
 						backdropFilter: 'blur(20px)',
+						display: 'flex', alignItems: 'center', justifyContent: 'center',
 					}}>
-						<p style={{fontFamily: latoFont, fontSize: 38, fontWeight: 700, color: COLORS.verdeInnTour, margin: 0, letterSpacing: '0.12em', textShadow: `0 0 20px ${COLORS.verdeInnTour}88`}}>
-							INNTOUR
-						</p>
+						<Img src={staticFile('logo-inntour.png')} style={{height: 60, width: 'auto', objectFit: 'contain'}} />
+					</div>
+				</div>
+
+				{/* Logo Comune di Lacedonia */}
+				<div style={{opacity: subOp, transform: `scale(${logoScale})`}}>
+					<div style={{
+						border: `1px solid ${COLORS.oroIrpino}44`,
+						borderRadius: 8,
+						padding: '10px 32px',
+						background: 'rgba(5,5,15,0.72)',
+						backdropFilter: 'blur(16px)',
+						display: 'flex', alignItems: 'center', justifyContent: 'center',
+					}}>
+						<Img src={staticFile('lacedonia-logo.png')} style={{height: 48, width: 'auto', objectFit: 'contain'}} />
 					</div>
 				</div>
 
 				{/* Linea neon */}
 				<div style={{width: lineW, height: 1, background: `linear-gradient(90deg, transparent, ${COLORS.oroIrpino}, transparent)`, boxShadow: `0 0 6px ${COLORS.oroIrpino}66`}} />
 
-				{/* Comune */}
-				<p style={{fontFamily: playfairFont, fontSize: 22, fontWeight: 400, color: COLORS.biancaCalce, margin: 0, letterSpacing: '0.06em', opacity: subOp, textAlign: 'center', textShadow: '0 2px 12px rgba(5,5,15,0.8)'}}>
+				{/* Label */}
+				<p style={{fontFamily: playfairFont, fontSize: 27, fontWeight: 400, color: COLORS.biancaCalce, margin: 0, letterSpacing: '0.06em', opacity: subOp, textAlign: 'center', textShadow: '0 2px 12px rgba(5,5,15,0.8)'}}>
 					Comune di Lacedonia
 				</p>
-				<p style={{fontFamily: latoFont, fontSize: 14, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0, letterSpacing: '0.14em', textTransform: 'uppercase', opacity: subOp}}>
+				<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0, letterSpacing: '0.14em', textTransform: 'uppercase', opacity: subOp}}>
 					Cicerone Digitale · Virtual Tour
 				</p>
 
@@ -94,7 +107,7 @@ export const Sequence05Outro: React.FC = () => {
 					backdropFilter: 'blur(12px)',
 				}}>
 					<div style={{width: 6, height: 6, borderRadius: '50%', backgroundColor: COLORS.verdeInnTour}} />
-					<span style={{fontFamily: latoFont, fontSize: 12, color: COLORS.grigioCaldo, letterSpacing: '0.14em'}}>
+					<span style={{fontFamily: latoFont, fontSize: 16, color: COLORS.grigioCaldo, letterSpacing: '0.14em'}}>
 						A1.05 · Piazzetta Nicola Vella · Architettura e Monumenti
 					</span>
 				</div>

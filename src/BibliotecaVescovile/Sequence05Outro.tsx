@@ -81,14 +81,14 @@ export const Sequence05Outro: React.FC = () => {
 
         {/* Label decorativa */}
         <div style={{
-          fontFamily: 'Lato, sans-serif', fontSize: 12,
+          fontFamily: 'Lato, sans-serif', fontSize: 16,
           color: COLORS.oroAntico, letterSpacing: '0.25em',
           textTransform: 'uppercase', marginBottom: 20, opacity: 0.80,
         }}>Biblioteca Storica Vescovile · Lacedonia</div>
 
         <div style={{
           fontFamily: 'Playfair Display, serif',
-          fontSize: 44, fontWeight: 700,
+          fontSize: 50, fontWeight: 700,
           color: COLORS.biancoCalce,
           textAlign: 'center', lineHeight: 1.42,
           maxWidth: 860,
@@ -97,7 +97,7 @@ export const Sequence05Outro: React.FC = () => {
           Il fruscio delle pagine e il profumo<br />
           <em style={{ color: COLORS.oroAntico }}>dell'antico inchiostro:</em><br />
           <span style={{
-            fontSize: 30, fontWeight: 400, fontStyle: 'italic',
+            fontSize: 34, fontWeight: 400, fontStyle: 'italic',
             color: COLORS.biancoCalce, opacity: 0.80,
           }}>qui il silenzio è la voce della storia.</span>
         </div>
@@ -125,13 +125,13 @@ export const Sequence05Outro: React.FC = () => {
         <div>
           <div style={{
             fontFamily: 'Lato, sans-serif', fontWeight: 700,
-            fontSize: 13, letterSpacing: '0.10em',
+            fontSize: 16, letterSpacing: '0.10em',
             color: COLORS.biancoCalce, textTransform: 'uppercase',
             textShadow: '0 1px 4px rgba(0,0,0,0.9)',
           }}>Comune di Lacedonia</div>
           <div style={{
             fontFamily: 'Lato, sans-serif', fontWeight: 300,
-            fontSize: 11, letterSpacing: '0.06em',
+            fontSize: 16, letterSpacing: '0.06em',
             color: COLORS.oroAntico, opacity: 0.90,
           }}>Alta Irpinia · Campania</div>
         </div>
@@ -163,13 +163,13 @@ export const Sequence05Outro: React.FC = () => {
         <div style={{ textAlign: 'right' }}>
           <div style={{
             fontFamily: 'Lato, sans-serif', fontWeight: 700,
-            fontSize: 13, letterSpacing: '0.10em',
+            fontSize: 16, letterSpacing: '0.10em',
             color: COLORS.biancoCalce, textTransform: 'uppercase',
             textShadow: '0 1px 4px rgba(0,0,0,0.9)',
           }}>InnTour S.R.L.</div>
           <div style={{
             fontFamily: 'Lato, sans-serif', fontWeight: 300,
-            fontSize: 11, letterSpacing: '0.06em',
+            fontSize: 16, letterSpacing: '0.06em',
             color: COLORS.verdeInnTour, opacity: 0.90,
           }}>MetaBorghi Initiative</div>
         </div>
@@ -186,7 +186,7 @@ export const Sequence05Outro: React.FC = () => {
         opacity: urlOpacity * logoFade,
       }}>
         <div style={{
-          fontFamily: 'Lato, sans-serif', fontSize: 12,
+          fontFamily: 'Lato, sans-serif', fontSize: 16,
           color: COLORS.biancoCalce, opacity: 0.55,
           letterSpacing: '0.08em',
         }}>

@@ -75,12 +75,12 @@ export const Sequence03Assalto: React.FC = () => {
 					{/* Label */}
 					<div style={{display: 'flex', alignItems: 'center', gap: 12}}>
 						<div style={{width: 4, height: 34, backgroundColor: COLORS.rossoBanditi, borderRadius: 2, boxShadow: `0 0 12px ${COLORS.rossoBanditi}88`}} />
-						<span style={{fontFamily: latoFont, fontSize: 12, fontWeight: 700, color: COLORS.rossoBanditi, letterSpacing: '0.20em', textTransform: 'uppercase'}}>La Cronaca · Evento Drammatico</span>
+						<span style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.rossoBanditi, letterSpacing: '0.20em', textTransform: 'uppercase'}}>La Cronaca · Evento Drammatico</span>
 					</div>
 
 					{/* Data rivelazione progressiva */}
 					<p style={{
-						fontFamily: playfairFont, fontSize: 38, fontWeight: 700,
+						fontFamily: playfairFont, fontSize: 44, fontWeight: 700,
 						color: COLORS.oroBrillante, margin: 0, letterSpacing: '0.08em',
 						textShadow: `0 0 20px ${COLORS.oroBrillante}66`,
 					}}>
@@ -109,7 +109,7 @@ export const Sequence03Assalto: React.FC = () => {
 							alignSelf: 'flex-start',
 						}}>
 							<span style={{
-								fontFamily: playfairFont, fontSize: 72, fontWeight: 700,
+								fontFamily: playfairFont, fontSize: 96, fontWeight: 700,
 								color: COLORS.rossoBanditi,
 								textShadow: `0 0 30px ${COLORS.rossoBanditi}88`,
 								lineHeight: 1,
@@ -117,8 +117,8 @@ export const Sequence03Assalto: React.FC = () => {
 								{banditiVal}
 							</span>
 							<div>
-								<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.biancaCalce, margin: 0}}>banditi armati</p>
-								<p style={{fontFamily: latoFont, fontSize: 13, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0}}>entrano dalla Porta degli Albanesi</p>
+								<p style={{fontFamily: latoFont, fontSize: 18, fontWeight: 700, color: COLORS.biancaCalce, margin: 0}}>banditi armati</p>
+								<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0}}>entrano dalla Porta degli Albanesi</p>
 							</div>
 						</div>
 					)}
@@ -135,12 +135,12 @@ export const Sequence03Assalto: React.FC = () => {
 						borderRadius: 10, padding: '18px 22px',
 						backdropFilter: 'blur(18px)',
 					}}>
-						<p style={{fontFamily: latoFont, fontSize: 11, fontWeight: 700, color: COLORS.oroBrillante, letterSpacing: '0.18em', textTransform: 'uppercase', margin: 0, marginBottom: 10}}>La vittima</p>
+						<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.oroBrillante, letterSpacing: '0.18em', textTransform: 'uppercase', margin: 0, marginBottom: 10}}>La vittima</p>
 						<div style={{display: 'flex', alignItems: 'center', gap: 14}}>
-							<span style={{fontSize: 30}}>✝️</span>
+							<span style={{fontSize: 34}}>✝️</span>
 							<div>
-								<p style={{fontFamily: playfairFont, fontSize: 24, fontWeight: 700, color: COLORS.biancaCalce, margin: 0}}>Vescovo Benedetto Bartoli</p>
-								<p style={{fontFamily: latoFont, fontSize: 13, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0, marginTop: 3}}>Sequestrato per ottenerne il riscatto</p>
+								<p style={{fontFamily: playfairFont, fontSize: 28, fontWeight: 700, color: COLORS.biancaCalce, margin: 0}}>Vescovo Benedetto Bartoli</p>
+								<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0, marginTop: 3}}>Sequestrato per ottenerne il riscatto</p>
 							</div>
 						</div>
 					</div>
@@ -155,10 +155,10 @@ export const Sequence03Assalto: React.FC = () => {
 						borderRadius: '0 10px 10px 0', padding: '16px 20px',
 						backdropFilter: 'blur(18px)',
 					}}>
-						<p style={{fontFamily: latoFont, fontSize: 11, fontWeight: 700, color: COLORS.rossoBanditi, letterSpacing: '0.18em', textTransform: 'uppercase', margin: 0, marginBottom: 8}}>Il capobanda</p>
-						<p style={{fontFamily: playfairFont, fontSize: 26, fontWeight: 700, color: COLORS.biancaCalce, margin: 0}}>Giovanni Botta</p>
-						<p style={{fontFamily: latoFont, fontSize: 15, fontWeight: 400, fontStyle: 'italic', color: COLORS.oroBrillante, margin: 0, marginTop: 4}}>"detto l'Albanese"</p>
-						<p style={{fontFamily: latoFont, fontSize: 13, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0, marginTop: 6, lineHeight: 1.5}}>
+						<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.rossoBanditi, letterSpacing: '0.18em', textTransform: 'uppercase', margin: 0, marginBottom: 8}}>Il capobanda</p>
+						<p style={{fontFamily: playfairFont, fontSize: 30, fontWeight: 700, color: COLORS.biancaCalce, margin: 0}}>Giovanni Botta</p>
+						<p style={{fontFamily: latoFont, fontSize: 17, fontWeight: 400, fontStyle: 'italic', color: COLORS.oroBrillante, margin: 0, marginTop: 4}}>"detto l'Albanese"</p>
+						<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0, marginTop: 6, lineHeight: 1.5}}>
 							Secondo alcune fonti, fu lui a guidare
 							l'incursione del 1682.
 						</p>

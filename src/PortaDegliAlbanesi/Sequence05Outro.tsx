@@ -55,9 +55,22 @@ export const Sequence05Outro: React.FC = () => {
 						display: 'flex', alignItems: 'center', justifyContent: 'center',
 					}}>
 						<Img
-							src={staticFile('Logo facicon.png')}
+							src={staticFile('logo-inntour.png')}
 							style={{height: 54, width: 'auto', objectFit: 'contain'}}
 						/>
+					</div>
+				</div>
+				{/* Logo Comune di Lacedonia */}
+				<div style={{opacity: logoOp, transform: `scale(${logoScale})`, marginTop: 4}}>
+					<div style={{
+						border: `1px solid ${COLORS.oroIrpino || COLORS.oroSacro || '#D4A843'}44`,
+						borderRadius: 8,
+						padding: '10px 32px',
+						background: 'rgba(6,6,14,0.72)',
+						backdropFilter: 'blur(16px)',
+						display: 'flex', alignItems: 'center', justifyContent: 'center',
+					}}>
+						<Img src={staticFile('lacedonia-logo.png')} style={{height: 48, width: 'auto', objectFit: 'contain'}} />
 					</div>
 				</div>
 
@@ -69,7 +82,7 @@ export const Sequence05Outro: React.FC = () => {
 				}} />
 
 				<p style={{
-					fontFamily: playfairFont, fontSize: 24, fontWeight: 400,
+					fontFamily: playfairFont, fontSize: 28, fontWeight: 400,
 					color: COLORS.biancaCalce, margin: 0,
 					letterSpacing: '0.06em', opacity: subOp, textAlign: 'center',
 					textShadow: '0 2px 10px rgba(8,6,10,0.8)',
@@ -77,7 +90,7 @@ export const Sequence05Outro: React.FC = () => {
 					Comune di Lacedonia
 				</p>
 				<p style={{
-					fontFamily: latoFont, fontSize: 14, fontWeight: 300,
+					fontFamily: latoFont, fontSize: 16, fontWeight: 300,
 					color: COLORS.grigioCaldo, margin: 0,
 					letterSpacing: '0.14em', textTransform: 'uppercase', opacity: subOp,
 				}}>
@@ -95,7 +108,7 @@ export const Sequence05Outro: React.FC = () => {
 					backdropFilter: 'blur(12px)',
 				}}>
 					<div style={{width: 7, height: 7, borderRadius: '50%', backgroundColor: COLORS.oroBrillante, boxShadow: `0 0 8px ${COLORS.oroBrillante}`}} />
-					<span style={{fontFamily: latoFont, fontSize: 12, color: COLORS.grigioCaldo, letterSpacing: '0.14em'}}>
+					<span style={{fontFamily: latoFont, fontSize: 16, color: COLORS.grigioCaldo, letterSpacing: '0.14em'}}>
 						A1.07 · Porta degli Albanesi · Architettura e Monumenti
 					</span>
 				</div>

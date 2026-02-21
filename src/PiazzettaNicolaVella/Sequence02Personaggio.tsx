@@ -23,9 +23,9 @@ const GlassCard: React.FC<{label: string; value: string; detail?: string; delay:
 				padding: '12px 22px',
 				minWidth: 260,
 			}}>
-				<p style={{fontFamily: latoFont, fontSize: 11, fontWeight: 700, color: accent, letterSpacing: '0.18em', textTransform: 'uppercase', margin: 0, marginBottom: 4}}>{label}</p>
-				<p style={{fontFamily: playfairFont, fontSize: 26, fontWeight: 700, color: COLORS.biancaCalce, margin: 0, lineHeight: 1.1}}>{value}</p>
-				{detail && <p style={{fontFamily: latoFont, fontSize: 13, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0, marginTop: 4}}>{detail}</p>}
+				<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: accent, letterSpacing: '0.18em', textTransform: 'uppercase', margin: 0, marginBottom: 4}}>{label}</p>
+				<p style={{fontFamily: playfairFont, fontSize: 30, fontWeight: 700, color: COLORS.biancaCalce, margin: 0, lineHeight: 1.1}}>{value}</p>
+				{detail && <p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0, marginTop: 4}}>{detail}</p>}
 			</div>
 		</div>
 	);
@@ -85,12 +85,12 @@ export const Sequence02Personaggio: React.FC = () => {
 			<div style={{position: 'absolute', left: 56, top: '50%', transform: 'translateY(-52%)', maxWidth: 540}}>
 				<div style={{display: 'flex', alignItems: 'center', gap: 10, marginBottom: 20, opacity: titleOp}}>
 					<div style={{width: 28, height: 2, background: `linear-gradient(90deg, ${COLORS.verdeInnTour}, ${COLORS.neonBlue})`}} />
-					<span style={{fontFamily: latoFont, fontSize: 12, fontWeight: 700, color: COLORS.verdeInnTour, letterSpacing: '0.18em', textTransform: 'uppercase'}}>Il Personaggio</span>
+					<span style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.verdeInnTour, letterSpacing: '0.18em', textTransform: 'uppercase'}}>Il Personaggio</span>
 				</div>
 
-				<h2 style={{fontFamily: playfairFont, fontSize: 50, fontWeight: 700, color: COLORS.biancaCalce, margin: 0, marginBottom: 28, lineHeight: 1.1, opacity: titleOp, transform: `translateY(${titleY}px)`}}>
+				<h2 style={{fontFamily: playfairFont, fontSize: 58, fontWeight: 700, color: COLORS.biancaCalce, margin: 0, marginBottom: 28, lineHeight: 1.1, opacity: titleOp, transform: `translateY(${titleY}px)`}}>
 					Il primo sindaco
-					<br /><span style={{color: COLORS.oroIrpino, fontSize: 38}}>democratico</span>
+					<br /><span style={{color: COLORS.oroIrpino, fontSize: 44}}>democratico</span>
 				</h2>
 
 				<div style={{display: 'flex', flexDirection: 'column', gap: 14}}>
@@ -112,13 +112,13 @@ export const Sequence02Personaggio: React.FC = () => {
 					opacity: yearProgress,
 					transform: `translateY(${interpolate(yearProgress, [0, 1], [20, 0])}px)`,
 				}}>
-					<p style={{fontFamily: latoFont, fontSize: 11, fontWeight: 700, color: COLORS.neonBlue, letterSpacing: '0.2em', textTransform: 'uppercase', margin: 0, marginBottom: 4}}>Anno di elezione</p>
-					<p style={{fontFamily: playfairFont, fontSize: 48, fontWeight: 700, color: COLORS.oroIrpino, margin: 0, letterSpacing: '0.05em', textShadow: `0 0 20px ${COLORS.oroIrpino}88`}}>
+					<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.neonBlue, letterSpacing: '0.2em', textTransform: 'uppercase', margin: 0, marginBottom: 4}}>Anno di elezione</p>
+					<p style={{fontFamily: playfairFont, fontSize: 56, fontWeight: 700, color: COLORS.oroIrpino, margin: 0, letterSpacing: '0.05em', textShadow: `0 0 20px ${COLORS.oroIrpino}88`}}>
 						{yearDisplay}
 					</p>
 					<div style={{display: 'flex', alignItems: 'center', gap: 6, marginTop: 4, opacity: 0.7}}>
 						<div style={{width: 28, height: 2, backgroundColor: COLORS.verdeInnTour, borderRadius: 1}} />
-						<p style={{fontFamily: latoFont, fontSize: 11, fontWeight: 400, color: COLORS.grigioCaldo, margin: 0}}>Prima democrazia locale</p>
+						<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 400, color: COLORS.grigioCaldo, margin: 0}}>Prima democrazia locale</p>
 					</div>
 				</div>
 			)}
@@ -133,9 +133,9 @@ export const Sequence02Personaggio: React.FC = () => {
 				borderRadius: 6, padding: '8px 22px',
 				backdropFilter: 'blur(12px)',
 			}}>
-				<p style={{fontFamily: latoFont, fontSize: 11, fontWeight: 700, color: COLORS.neonBlue, letterSpacing: '0.2em', textTransform: 'uppercase', margin: 0}}>Dedicata a</p>
-				<h2 style={{fontFamily: playfairFont, fontSize: 28, fontWeight: 700, color: COLORS.oroIrpino, margin: 0, fontStyle: 'italic'}}>Nicola Vella</h2>
-				<p style={{fontFamily: latoFont, fontSize: 12, fontWeight: 400, color: COLORS.grigioCaldo, margin: 0, marginTop: 2, letterSpacing: '0.06em'}}>Sindaco · Avvocato · Uomo del Popolo</p>
+				<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.neonBlue, letterSpacing: '0.2em', textTransform: 'uppercase', margin: 0}}>Dedicata a</p>
+				<h2 style={{fontFamily: playfairFont, fontSize: 32, fontWeight: 700, color: COLORS.oroIrpino, margin: 0, fontStyle: 'italic'}}>Nicola Vella</h2>
+				<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 400, color: COLORS.grigioCaldo, margin: 0, marginTop: 2, letterSpacing: '0.06em'}}>Sindaco · Avvocato · Uomo del Popolo</p>
 			</div>
 		</AbsoluteFill>
 	);

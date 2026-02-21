@@ -77,10 +77,10 @@ export const Sequence01Intro: React.FC = () => {
 			{/* === BADGE SEZIONE — in alto === */}
 			<div style={{position: 'absolute', top: 50, left: 60, display: 'flex', alignItems: 'center', gap: 14, opacity: subOp}}>
 				<div style={{width: 4, height: 30, background: `linear-gradient(180deg, ${COLORS.oroMemoria}, ${COLORS.oroAntico})`, borderRadius: 2}} />
-				<span style={{fontFamily: latoFont, fontSize: 13, fontWeight: 700, color: COLORS.oroMemoria, letterSpacing: '0.18em', textTransform: 'uppercase'}}>
+				<span style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.oroMemoria, letterSpacing: '0.18em', textTransform: 'uppercase'}}>
 					Architettura e Monumenti
 				</span>
-				<span style={{fontFamily: latoFont, fontSize: 13, color: COLORS.grigio60}}>· A1.10</span>
+				<span style={{fontFamily: latoFont, fontSize: 16, color: COLORS.grigio60}}>· A1.10</span>
 			</div>
 
 			{/* Badge "(DEMOLITA)" — piccolo, discreto, drammatico */}
@@ -91,7 +91,7 @@ export const Sequence01Intro: React.FC = () => {
 				border: `1px solid ${COLORS.grigio40}`,
 				borderRadius: 4, padding: '5px 16px',
 			}}>
-				<span style={{fontFamily: latoFont, fontSize: 12, fontWeight: 700, color: COLORS.grigio60, letterSpacing: '0.2em', textTransform: 'uppercase'}}>demolita · 1851</span>
+				<span style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.grigio60, letterSpacing: '0.2em', textTransform: 'uppercase'}}>demolita · 1851</span>
 			</div>
 
 			{/* === TESTO PRINCIPALE === */}
@@ -99,7 +99,7 @@ export const Sequence01Intro: React.FC = () => {
 
 				{/* "COSA MANCA?" — domanda rivelata lettera per lettera */}
 				<p style={{
-					fontFamily: latoFont, fontSize: 22, fontWeight: 700,
+					fontFamily: latoFont, fontSize: 27, fontWeight: 700,
 					color: COLORS.oroMemoria, letterSpacing: '0.28em',
 					textTransform: 'uppercase', margin: 0, marginBottom: 14,
 					opacity: domandaLen > 0 ? 1 : 0,
@@ -110,7 +110,7 @@ export const Sequence01Intro: React.FC = () => {
 
 				{/* Titolo */}
 				<h1 style={{
-					fontFamily: playfairFont, fontSize: 88, fontWeight: 700,
+					fontFamily: playfairFont, fontSize: 100, fontWeight: 700,
 					color: COLORS.biancaCalce, margin: 0, lineHeight: 0.95,
 					opacity: titleOp, transform: `translateY(${titleY}px)`,
 					textShadow: '0 4px 30px rgba(8,8,8,0.98), 0 0 60px rgba(8,8,8,0.7)',
@@ -132,7 +132,7 @@ export const Sequence01Intro: React.FC = () => {
 
 				{/* Sottotitolo */}
 				<p style={{
-					fontFamily: latoFont, fontSize: 21, fontWeight: 300,
+					fontFamily: latoFont, fontSize: 26, fontWeight: 300,
 					color: COLORS.grigio90, margin: 0, lineHeight: 1.65,
 					opacity: subOp, letterSpacing: '0.04em',
 					textShadow: '0 1px 12px rgba(8,8,8,0.9)',

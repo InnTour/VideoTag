@@ -42,8 +42,8 @@ export const Sequence02IlPortale: React.FC = () => {
       <div style={{ position: 'absolute', top: '50%', right: 80, transform: 'translateY(-50%)', fontFamily: 'Playfair Display, serif', fontStyle: 'italic', fontSize: 140, fontWeight: 700, color: COLORS.avorioCarta, opacity: 0.07 * (1 - dissolve), pointerEvents: 'none', writingMode: 'vertical-rl' }}>AGNELLO</div>
 
       <div style={{ position: 'absolute', left: 72, top: 120, opacity: interpolate(card1, [0, 1], [0, 1]), transform: `translateY(${interpolate(card1, [0, 1], [30, 0])}px)`, background: 'rgba(8,8,12,0.80)', backdropFilter: 'blur(18px)', borderRadius: 8, border: `1px solid rgba(212,168,67,0.28)`, padding: '22px 30px', maxWidth: 520 }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.20em', textTransform: 'uppercase', color: COLORS.oroSacro, marginBottom: 10 }}>Il portale gotico</div>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 24, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.20em', textTransform: 'uppercase', color: COLORS.oroSacro, marginBottom: 10 }}>Il portale gotico</div>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 28, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           Al centro del portale: un <strong style={{ color: COLORS.avorioCarta }}>agnello</strong>.<br />
           Prova che la chiesa era in origine<br />
           dedicata a <em style={{ color: COLORS.oroSacro }}>San Giovanni Battista</em>.
@@ -51,8 +51,8 @@ export const Sequence02IlPortale: React.FC = () => {
       </div>
 
       <div style={{ position: 'absolute', left: 72, bottom: 240, opacity: interpolate(card2, [0, 1], [0, 1]), transform: `translateY(${interpolate(card2, [0, 1], [30, 0])}px)`, background: 'rgba(8,8,12,0.76)', backdropFilter: 'blur(18px)', borderRadius: 8, border: `1px solid rgba(26,74,122,0.28)`, padding: '20px 28px', maxWidth: 500 }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.azzurroNicola, marginBottom: 8 }}>Il patronato 1456</div>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 22, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.azzurroNicola, marginBottom: 8 }}>Il patronato 1456</div>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 27, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           Dopo il <strong style={{ color: COLORS.azzurroNicola }}>terremoto del 1456</strong>, Lacedonia sceglie<br />
           San Nicola di Bari come suo patrono.<br />
           La chiesa prende il suo nome.
@@ -60,7 +60,7 @@ export const Sequence02IlPortale: React.FC = () => {
       </div>
 
       <div style={{ position: 'absolute', left: 72, bottom: 90, opacity: interpolate(card3, [0, 1], [0, 1]), transform: `translateY(${interpolate(card3, [0, 1], [25, 0])}px)`, background: 'rgba(8,8,12,0.76)', backdropFilter: 'blur(18px)', borderRadius: 8, border: `1px solid rgba(155,42,42,0.25)`, padding: '18px 26px', maxWidth: 500 }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 21, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 26, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           Il <strong style={{ color: COLORS.rossoMarmo }}>portale gotico</strong> testimonia secoli di stratificazione:<br />
           ogni arco è una pagina di pietra.
         </div>

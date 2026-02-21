@@ -110,7 +110,7 @@ export const Sequence03Portale: React.FC = () => {
 			<AbsoluteFill style={{justifyContent: 'center', alignItems: 'flex-end', paddingRight: 72, flexDirection: 'column', gap: 14}}>
 				<h2 style={{
 					fontFamily: playfairFont,
-					fontSize: 44,
+					fontSize: 50,
 					fontWeight: 700,
 					color: COLORS.avorio,
 					margin: '0 0 10px',
@@ -132,8 +132,8 @@ export const Sequence03Portale: React.FC = () => {
 						minWidth: 360,
 					}}>
 						<div style={{flex: 1}}>
-							<p style={{fontFamily: latoFont, fontSize: 11, color: n.color, margin: '0 0 3px', letterSpacing: '0.14em', textTransform: 'uppercase', textAlign: 'right'}}>{n.label}</p>
-							<p style={{fontFamily: playfairFont, fontSize: 26, color: COLORS.avorio, margin: 0, textAlign: 'right', fontWeight: 700}}>{n.year}</p>
+							<p style={{fontFamily: latoFont, fontSize: 16, color: n.color, margin: '0 0 3px', letterSpacing: '0.14em', textTransform: 'uppercase', textAlign: 'right'}}>{n.label}</p>
+							<p style={{fontFamily: playfairFont, fontSize: 30, color: COLORS.avorio, margin: 0, textAlign: 'right', fontWeight: 700}}>{n.year}</p>
 						</div>
 					</div>
 				))}
@@ -147,7 +147,7 @@ export const Sequence03Portale: React.FC = () => {
 					padding: '8px 18px',
 					backdropFilter: 'blur(14px)',
 				}}>
-					<p style={{fontFamily: playfairFont, fontSize: 14, fontStyle: 'italic', color: COLORS.oroSacro, margin: 0, textAlign: 'right'}}>
+					<p style={{fontFamily: playfairFont, fontSize: 16, fontStyle: 'italic', color: COLORS.oroSacro, margin: 0, textAlign: 'right'}}>
 						"…con la posa del portale in marmo rosso screziato, che ancora oggi ammiriamo."
 					</p>
 				</div>

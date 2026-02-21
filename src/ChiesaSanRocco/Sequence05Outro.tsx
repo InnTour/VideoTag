@@ -36,8 +36,8 @@ export const Sequence05Outro: React.FC = () => {
         transform: `translateY(${interpolate(tagE, [0, 1], [20, 0])}px)`,
       }}>
         <div style={{ width: lineT, height: 2, background: `linear-gradient(to right, transparent, ${COLORS.oroSanto}, transparent)`, marginBottom: 32 }} />
-        <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, color: COLORS.oroSanto, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: 20, opacity: 0.80 }}>Chiesa di San Rocco · Lacedonia</div>
-        <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 44, fontWeight: 700, color: COLORS.biancoCalce, textAlign: 'center', lineHeight: 1.42, maxWidth: 860, textShadow: '0 2px 24px rgba(0,0,0,0.95)' }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 16, color: COLORS.oroSanto, letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: 20, opacity: 0.80 }}>Chiesa di San Rocco · Lacedonia</div>
+        <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 50, fontWeight: 700, color: COLORS.biancoCalce, textAlign: 'center', lineHeight: 1.42, maxWidth: 860, textShadow: '0 2px 24px rgba(0,0,0,0.95)' }}>
           Ogni 16 agosto, il mondo torna a Lacedonia.<br />
           <em style={{ color: COLORS.oroSanto }}>San Rocco li aspetta, come sempre.</em>
         </div>
@@ -47,8 +47,8 @@ export const Sequence05Outro: React.FC = () => {
       <div style={{ position: 'absolute', bottom: 52, left: 120, display: 'flex', alignItems: 'center', gap: 16, opacity: lc * lFade, transform: `translateY(${interpolate(lc, [0, 1], [16, 0])}px)` }}>
         <Img src={staticFile(IMAGES.logoComune)} style={{ height: 56, objectFit: 'contain', filter: 'drop-shadow(0 2px 10px rgba(0,0,0,0.9))' }} />
         <div>
-          <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 13, letterSpacing: '0.10em', color: COLORS.biancoCalce, textTransform: 'uppercase', textShadow: '0 1px 4px rgba(0,0,0,0.9)' }}>Comune di Lacedonia</div>
-          <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 11, letterSpacing: '0.06em', color: COLORS.oroSanto, opacity: 0.90 }}>Alta Irpinia · Campania</div>
+          <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.10em', color: COLORS.biancoCalce, textTransform: 'uppercase', textShadow: '0 1px 4px rgba(0,0,0,0.9)' }}>Comune di Lacedonia</div>
+          <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 16, letterSpacing: '0.06em', color: COLORS.oroSanto, opacity: 0.90 }}>Alta Irpinia · Campania</div>
         </div>
       </div>
       <div style={{ position: 'absolute', bottom: 52, left: '50%', transform: 'translateX(-50%)', opacity: Math.min(lc, li) * lFade, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
@@ -58,13 +58,13 @@ export const Sequence05Outro: React.FC = () => {
       </div>
       <div style={{ position: 'absolute', bottom: 52, right: 120, display: 'flex', alignItems: 'center', gap: 16, opacity: li * lFade, transform: `translateY(${interpolate(li, [0, 1], [16, 0])}px)` }}>
         <div style={{ textAlign: 'right' }}>
-          <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 13, letterSpacing: '0.10em', color: COLORS.biancoCalce, textTransform: 'uppercase', textShadow: '0 1px 4px rgba(0,0,0,0.9)' }}>InnTour S.R.L.</div>
-          <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 11, letterSpacing: '0.06em', color: COLORS.verdeInnTour, opacity: 0.90 }}>MetaBorghi Initiative</div>
+          <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.10em', color: COLORS.biancoCalce, textTransform: 'uppercase', textShadow: '0 1px 4px rgba(0,0,0,0.9)' }}>InnTour S.R.L.</div>
+          <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 16, letterSpacing: '0.06em', color: COLORS.verdeInnTour, opacity: 0.90 }}>MetaBorghi Initiative</div>
         </div>
         <Img src={staticFile(IMAGES.logoInnTour)} style={{ height: 56, objectFit: 'contain', filter: 'drop-shadow(0 2px 10px rgba(0,0,0,0.9))' }} />
       </div>
       <div style={{ position: 'absolute', bottom: 24, left: 0, right: 0, textAlign: 'center', opacity: urlOp * lFade }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 12, color: COLORS.biancoCalce, opacity: 0.55, letterSpacing: '0.08em' }}>Cicerone Digitale di Lacedonia · Virtual Tour</div>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 16, color: COLORS.biancoCalce, opacity: 0.55, letterSpacing: '0.08em' }}>Cicerone Digitale di Lacedonia · Virtual Tour</div>
       </div>
 
       {irisP > 0 && (

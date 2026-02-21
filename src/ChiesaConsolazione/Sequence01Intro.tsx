@@ -31,7 +31,7 @@ export const Sequence01Intro: React.FC = () => {
       <div style={{ position: 'absolute', top: 52, left: 72, opacity: badge, transform: `translateX(${interpolate(badge, [0, 1], [-40, 0])}px)` }}>
         <div style={{
           background: COLORS.acquaBlu, padding: '6px 20px', borderRadius: 2,
-          fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 13,
+          fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16,
           letterSpacing: '0.16em', color: COLORS.biancoCalce, textTransform: 'uppercase',
         }}>Sezione A3 · Architettura e Monumenti</div>
       </div>
@@ -39,7 +39,7 @@ export const Sequence01Intro: React.FC = () => {
       <div style={{ position: 'absolute', left: 72, bottom: 230, opacity: interpolate(title, [0, 1], [0, 1]), transform: `translateY(${interpolate(title, [0, 1], [40, 0])}px)` }}>
         <div style={{ width: lineW, height: 3, background: `linear-gradient(to right, ${COLORS.oroAntico}, transparent)`, marginBottom: 22 }} />
         <div style={{
-          fontFamily: 'Playfair Display, serif', fontSize: 88, fontWeight: 700,
+          fontFamily: 'Playfair Display, serif', fontSize: 100, fontWeight: 700,
           color: COLORS.biancoCalce, lineHeight: 1.05,
           textShadow: '0 2px 32px rgba(0,0,0,0.95)', maxWidth: 860,
         }}>
@@ -55,7 +55,7 @@ export const Sequence01Intro: React.FC = () => {
       <div style={{
         position: 'absolute', left: 72, bottom: 148,
         opacity: sub, transform: `translateY(${interpolate(sub, [0, 1], [14, 0])}px)`,
-        maxWidth: 700, fontFamily: 'Lato, sans-serif', fontSize: 26, fontWeight: 300,
+        maxWidth: 700, fontFamily: 'Lato, sans-serif', fontSize: 30, fontWeight: 300,
         color: COLORS.biancoCalce, letterSpacing: '0.04em', textShadow: '0 1px 10px rgba(0,0,0,0.95)',
       }}>
         Dal Solo Lateranense del 1503 alla sirena medievale — una chiesa di soglie e misteri

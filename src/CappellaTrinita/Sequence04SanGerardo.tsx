@@ -47,8 +47,8 @@ export const Sequence04SanGerardo: React.FC = () => {
       <div style={{ position: 'absolute', top: 0, right: 50, writingMode: 'vertical-rl', fontFamily: 'Lato, sans-serif', fontSize: 100, fontWeight: 700, color: COLORS.lightningGold, opacity: 0.06, pointerEvents: 'none', lineHeight: 1, letterSpacing: '0.04em' }}>TEMPESTA</div>
 
       <div style={{ position: 'absolute', left: 72, top: 120, opacity: interpolate(card1, [0, 1], [0, 1]), transform: `translateY(${interpolate(card1, [0, 1], [30, 0])}px)`, background: 'rgba(8,8,12,0.80)', backdropFilter: 'blur(18px)', borderRadius: 8, border: `1px solid rgba(240,208,96,0.28)`, padding: '22px 30px', maxWidth: 520 }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.20em', textTransform: 'uppercase', color: COLORS.lightningGold, marginBottom: 10 }}>San Gerardo Maiella</div>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 24, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.20em', textTransform: 'uppercase', color: COLORS.lightningGold, marginBottom: 10 }}>San Gerardo Maiella</div>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 28, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           Proprio qui, in questa cappella,<br />
           durante una <strong style={{ color: COLORS.lightningGold }}>tempesta violenta</strong>,<br />
           Gerardo affronta il demonio.
@@ -56,7 +56,7 @@ export const Sequence04SanGerardo: React.FC = () => {
       </div>
 
       <div style={{ position: 'absolute', left: 72, bottom: 240, opacity: interpolate(card2, [0, 1], [0, 1]), transform: `translateY(${interpolate(card2, [0, 1], [30, 0])}px)`, background: 'rgba(8,8,12,0.76)', backdropFilter: 'blur(18px)', borderRadius: 8, border: `1px solid rgba(58,122,154,0.25)`, padding: '20px 28px', maxWidth: 500 }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 22, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 27, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           Prega intensamente e la tempesta cessa.<br />
           Il murales in <em style={{ color: COLORS.azzurroCielo }}>ceramica sulla facciata</em><br />
           immortala l'episodio ancora oggi.
@@ -64,8 +64,8 @@ export const Sequence04SanGerardo: React.FC = () => {
       </div>
 
       <div style={{ position: 'absolute', left: 72, bottom: 90, opacity: interpolate(card3, [0, 1], [0, 1]), transform: `translateY(${interpolate(card3, [0, 1], [25, 0])}px)`, background: 'rgba(8,8,12,0.78)', backdropFilter: 'blur(18px)', borderRadius: 8, border: `1px solid rgba(200,152,48,0.25)`, padding: '18px 26px', maxWidth: 520 }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.oroVescovile, marginBottom: 8 }}>Sisma 1980 → Riapertura 2002</div>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 21, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.oroVescovile, marginBottom: 8 }}>Sisma 1980 → Riapertura 2002</div>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 26, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           Il terremoto dell'Irpinia la danneggia gravemente.<br />
           <em style={{ color: COLORS.oroVescovile }}>Riedificata e riconsacrata nel 2002.</em>
         </div>

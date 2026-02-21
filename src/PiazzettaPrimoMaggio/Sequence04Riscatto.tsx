@@ -26,13 +26,13 @@ const TrasformazioneCard: React.FC<{da: string; a: string; delay: number; accent
 		}}>
 			{/* Da */}
 			<div style={{textAlign: 'right', flex: 1}}>
-				<p style={{fontFamily: latoFont, fontSize: 11, fontWeight: 700, color: COLORS.grigioCaldo, letterSpacing: '0.14em', textTransform: 'uppercase', margin: 0}}>Da</p>
-				<p style={{fontFamily: playfairFont, fontSize: 22, fontWeight: 700, color: COLORS.biancaCalce, margin: 0}}>{da}</p>
+				<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.grigioCaldo, letterSpacing: '0.14em', textTransform: 'uppercase', margin: 0}}>Da</p>
+				<p style={{fontFamily: playfairFont, fontSize: 27, fontWeight: 700, color: COLORS.biancaCalce, margin: 0}}>{da}</p>
 			</div>
 
 			{/* Freccia */}
 			<div style={{
-				color: accent, fontSize: 28, fontWeight: 700,
+				color: accent, fontSize: 32, fontWeight: 700,
 				opacity: arrowProgress,
 				transform: `scale(${arrowProgress})`,
 				textShadow: `0 0 12px ${accent}`,
@@ -40,8 +40,8 @@ const TrasformazioneCard: React.FC<{da: string; a: string; delay: number; accent
 
 			{/* A */}
 			<div style={{textAlign: 'left', flex: 1}}>
-				<p style={{fontFamily: latoFont, fontSize: 11, fontWeight: 700, color: accent, letterSpacing: '0.14em', textTransform: 'uppercase', margin: 0}}>A</p>
-				<p style={{fontFamily: playfairFont, fontSize: 22, fontWeight: 700, color: accent, margin: 0}}>{a}</p>
+				<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: accent, letterSpacing: '0.14em', textTransform: 'uppercase', margin: 0}}>A</p>
+				<p style={{fontFamily: playfairFont, fontSize: 27, fontWeight: 700, color: accent, margin: 0}}>{a}</p>
 			</div>
 		</div>
 	);
@@ -108,7 +108,7 @@ export const Sequence04Riscatto: React.FC = () => {
 					{/* Label sezione */}
 					<div style={{display: 'flex', alignItems: 'center', gap: 12, opacity: titleOp}}>
 						<div style={{width: 22, height: 2, background: `linear-gradient(90deg, ${COLORS.verdeInnTour}, ${COLORS.oroIrpino})`}} />
-						<span style={{fontFamily: latoFont, fontSize: 12, fontWeight: 700, color: COLORS.verdeInnTour, letterSpacing: '0.2em', textTransform: 'uppercase'}}>La conquista</span>
+						<span style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.verdeInnTour, letterSpacing: '0.2em', textTransform: 'uppercase'}}>La conquista</span>
 					</div>
 
 					{/* Titolo */}
@@ -124,7 +124,7 @@ export const Sequence04Riscatto: React.FC = () => {
 
 					{/* Parola DIGNITÀ */}
 					<h1 style={{
-						fontFamily: playfairFont, fontSize: 96, fontWeight: 700,
+						fontFamily: playfairFont, fontSize: 108, fontWeight: 700,
 						color: COLORS.verdeInnTour, margin: 0, lineHeight: 0.9,
 						opacity: dignitaProgress,
 						transform: `translateY(${interpolate(dignitaProgress, [0, 1], [40, 0])}px)`,
@@ -151,13 +151,13 @@ export const Sequence04Riscatto: React.FC = () => {
 						backdropFilter: 'blur(18px)',
 					}}>
 						<div style={{display: 'flex', alignItems: 'center', gap: 12, marginBottom: 14}}>
-							<span style={{fontSize: 28}}>🎓</span>
+							<span style={{fontSize: 32}}>🎓</span>
 							<div>
-								<p style={{fontFamily: latoFont, fontSize: 11, fontWeight: 700, color: COLORS.oroIrpino, letterSpacing: '0.18em', textTransform: 'uppercase', margin: 0}}>Il faro dell'istruzione</p>
-								<p style={{fontFamily: playfairFont, fontSize: 24, fontWeight: 700, color: COLORS.biancaCalce, margin: 0}}>Istituto Magistrale</p>
+								<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.oroIrpino, letterSpacing: '0.18em', textTransform: 'uppercase', margin: 0}}>Il faro dell'istruzione</p>
+								<p style={{fontFamily: playfairFont, fontSize: 28, fontWeight: 700, color: COLORS.biancaCalce, margin: 0}}>Istituto Magistrale</p>
 							</div>
 						</div>
-						<p style={{fontFamily: latoFont, fontSize: 15, fontWeight: 300, color: COLORS.biancaCalce, margin: 0, lineHeight: 1.65}}>
+						<p style={{fontFamily: latoFont, fontSize: 17, fontWeight: 300, color: COLORS.biancaCalce, margin: 0, lineHeight: 1.65}}>
 							Dall'analfabetismo dei campi all'istruzione pubblica.
 							La scuola come secondo atto del riscatto,
 							dopo la conquista della terra.
@@ -171,8 +171,8 @@ export const Sequence04Riscatto: React.FC = () => {
 						borderRadius: 8, padding: '14px 20px',
 						backdropFilter: 'blur(14px)',
 					}}>
-						<p style={{fontFamily: latoFont, fontSize: 11, fontWeight: 700, color: COLORS.verdeInnTour, letterSpacing: '0.16em', textTransform: 'uppercase', margin: 0, marginBottom: 8}}>Oggi · Piazzetta Primo Maggio</p>
-						<p style={{fontFamily: latoFont, fontSize: 15, fontWeight: 300, color: COLORS.biancaCalce, margin: 0, lineHeight: 1.6}}>
+						<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.verdeInnTour, letterSpacing: '0.16em', textTransform: 'uppercase', margin: 0, marginBottom: 8}}>Oggi · Piazzetta Primo Maggio</p>
+						<p style={{fontFamily: latoFont, fontSize: 17, fontWeight: 300, color: COLORS.biancaCalce, margin: 0, lineHeight: 1.6}}>
 							Monumento vivente alla memoria
 							<br />di chi ha trasformato Lacedonia
 							<br />con le proprie mani.

@@ -95,7 +95,7 @@ export const Sequence03ISalvati: React.FC = () => {
       <div style={{ position: 'absolute', left: 72, top: 62, opacity: titleEnt }}>
         <div style={{
           fontFamily: 'Lato, sans-serif', fontWeight: 700,
-          fontSize: 16, letterSpacing: '0.20em',
+          fontSize: 18, letterSpacing: '0.20em',
           color: COLORS.oroSperanza, textTransform: 'uppercase', marginBottom: 9,
         }}>I Salvati · Una Casualità che Cambiò il Destino</div>
         <div style={{ width: 360, height: 2, background: `linear-gradient(to right, ${COLORS.oroSperanza}, transparent)` }} />
@@ -115,19 +115,19 @@ export const Sequence03ISalvati: React.FC = () => {
         }}>
           <span style={{
             fontFamily: 'Playfair Display, serif',
-            fontSize: 90, fontWeight: 700, lineHeight: 1,
+            fontSize: 102, fontWeight: 700, lineHeight: 1,
             color: COLORS.biancoMarmo,
           }}>
             {feritiVal >= 1000 ? '1.000+' : feritiVal.toLocaleString('it-IT')}
           </span>
           <div style={{ paddingBottom: 10 }}>
             <div style={{
-              fontFamily: 'Lato, sans-serif', fontSize: 17,
+              fontFamily: 'Lato, sans-serif', fontSize: 19,
               color: COLORS.biancoMarmo, opacity: 0.88,
               letterSpacing: '0.10em', textTransform: 'uppercase',
             }}>feriti</div>
             <div style={{
-              fontFamily: 'Lato, sans-serif', fontSize: 14,
+              fontFamily: 'Lato, sans-serif', fontSize: 16,
               color: COLORS.grigioLapide, letterSpacing: '0.06em',
             }}>nel sisma del 1930</div>
           </div>
@@ -148,12 +148,12 @@ export const Sequence03ISalvati: React.FC = () => {
           borderRadius: 4, padding: '22px 28px',
         }}>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 16,
+            fontFamily: 'Lato, sans-serif', fontSize: 18,
             color: COLORS.oroSperanza, letterSpacing: '0.16em',
             textTransform: 'uppercase', marginBottom: 12,
           }}>🌾 Estate 1930 · La Mietitura</div>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 23,
+            fontFamily: 'Lato, sans-serif', fontSize: 28,
             color: COLORS.biancoMarmo, fontWeight: 300,
             lineHeight: 1.55, opacity: 0.88,
           }}>
@@ -177,12 +177,12 @@ export const Sequence03ISalvati: React.FC = () => {
           borderRadius: 4, padding: '22px 28px',
         }}>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 16,
+            fontFamily: 'Lato, sans-serif', fontSize: 18,
             color: COLORS.rossoSisma, letterSpacing: '0.16em',
             textTransform: 'uppercase', marginBottom: 12,
           }}>⛪ Fra le Macerie Storiche</div>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 22,
+            fontFamily: 'Lato, sans-serif', fontSize: 27,
             color: COLORS.biancoMarmo, fontWeight: 300,
             lineHeight: 1.55, opacity: 0.88,
           }}>

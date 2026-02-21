@@ -4,7 +4,7 @@ import { KenBurnsImage } from './components/KenBurnsImage';
 import { ScanLines } from './components/ScanLines';
 import { IMAGES, COLORS } from './constants';
 
-export const Sequence05Outro: React.FC = () => {
+export const Sequence06Outro: React.FC = () => {
   const frame = useCurrentFrame();
   const { durationInFrames, fps } = useVideoConfig();
 

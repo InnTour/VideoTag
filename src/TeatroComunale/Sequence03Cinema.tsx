@@ -136,7 +136,7 @@ export const Sequence03Cinema: React.FC = () => {
       <div style={{ position: 'absolute', left: 72, top: 62, opacity: titleOpacity }}>
         <div style={{
           fontFamily: 'Lato, sans-serif', fontWeight: 700,
-          fontSize: 14, letterSpacing: '0.22em',
+          fontSize: 16, letterSpacing: '0.22em',
           color: COLORS.oroLampade, textTransform: 'uppercase', marginBottom: 8,
         }}>Il Novecento · Cinema Argentino</div>
         <div style={{ width: 280, height: 2, background: `linear-gradient(to right, ${COLORS.oroLampade}, transparent)` }} />
@@ -152,16 +152,16 @@ export const Sequence03Cinema: React.FC = () => {
         }}>
           <span style={{
             fontFamily: 'Playfair Display, serif',
-            fontSize: 72, fontWeight: 700,
+            fontSize: 96, fontWeight: 700,
             color: COLORS.oroLampade, lineHeight: 1,
           }}>{counterVal}</span>
           <div>
             <span style={{
               fontFamily: 'Playfair Display, serif',
-              fontSize: 36, fontWeight: 700, color: COLORS.oroChiaro,
+              fontSize: 42, fontWeight: 700, color: COLORS.oroChiaro,
             }}>+</span>
             <div style={{
-              fontFamily: 'Lato, sans-serif', fontSize: 16,
+              fontFamily: 'Lato, sans-serif', fontSize: 18,
               color: COLORS.biancoCalce, opacity: 0.80,
               letterSpacing: '0.12em', textTransform: 'uppercase',
             }}>anni di cultura</div>
@@ -182,17 +182,17 @@ export const Sequence03Cinema: React.FC = () => {
           borderRadius: 4, padding: '22px 30px', maxWidth: 520,
         }}>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 11,
+            fontFamily: 'Lato, sans-serif', fontSize: 16,
             color: COLORS.oroLampade, letterSpacing: '0.20em',
             textTransform: 'uppercase', marginBottom: 10,
           }}>🎬 Il Fondatore · L'Uomo della Luce</div>
           <div style={{
-            fontFamily: 'Playfair Display, serif', fontSize: 38,
+            fontFamily: 'Playfair Display, serif', fontSize: 44,
             fontWeight: 700, color: COLORS.biancoCalce,
             marginBottom: 10, lineHeight: 1.1,
           }}>Gerardo Vigorita</div>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 18,
+            fontFamily: 'Lato, sans-serif', fontSize: 22,
             color: COLORS.biancoCalce, opacity: 0.82,
             lineHeight: 1.55, fontWeight: 300,
           }}>
@@ -206,7 +206,7 @@ export const Sequence03Cinema: React.FC = () => {
       <div style={{ position: 'absolute', left: 72, bottom: 110, opacity: citOpacity, maxWidth: 620 }}>
         <div style={{ borderLeft: `4px solid ${COLORS.rossoTelone}`, paddingLeft: 20 }}>
           <p style={{
-            fontFamily: 'Georgia, serif', fontSize: 22,
+            fontFamily: 'Georgia, serif', fontSize: 27,
             fontStyle: 'italic', color: COLORS.biancoCalce,
             lineHeight: 1.6, margin: 0,
             textShadow: '0 1px 6px rgba(0,0,0,0.9)',

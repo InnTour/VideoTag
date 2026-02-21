@@ -31,9 +31,9 @@ const EpocaItem: React.FC<{secolo: string; label: string; dettaglio: string; ind
 				flex: 1,
 				backdropFilter: 'blur(16px)',
 			}}>
-				<p style={{fontFamily: playfairFont, fontSize: 22, fontWeight: 700, color: accent, margin: 0}}>{secolo}</p>
-				<p style={{fontFamily: latoFont, fontSize: 14, fontWeight: 700, color: COLORS.biancaCalce, margin: 0, marginTop: 2}}>{label}</p>
-				<p style={{fontFamily: latoFont, fontSize: 12, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0, marginTop: 3, lineHeight: 1.4}}>{dettaglio}</p>
+				<p style={{fontFamily: playfairFont, fontSize: 27, fontWeight: 700, color: accent, margin: 0}}>{secolo}</p>
+				<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.biancaCalce, margin: 0, marginTop: 2}}>{label}</p>
+				<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0, marginTop: 3, lineHeight: 1.4}}>{dettaglio}</p>
 			</div>
 		</div>
 	);
@@ -106,7 +106,7 @@ export const Sequence02Albanesi: React.FC = () => {
 					<div style={{opacity: titleOp, transform: `translateY(${titleY}px)`}}>
 						<div style={{display: 'inline-flex', alignItems: 'center', gap: 12, marginBottom: 14}}>
 							<div style={{width: 28, height: 2, background: `linear-gradient(90deg, ${COLORS.oroBrillante}, transparent)`}} />
-							<span style={{fontFamily: latoFont, fontSize: 12, fontWeight: 700, color: COLORS.oroBrillante, letterSpacing: '0.20em', textTransform: 'uppercase'}}>La Comunità</span>
+							<span style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.oroBrillante, letterSpacing: '0.20em', textTransform: 'uppercase'}}>La Comunità</span>
 						</div>
 						<h2 style={{
 							fontFamily: playfairFont, fontSize: 58, fontWeight: 700,
@@ -114,13 +114,13 @@ export const Sequence02Albanesi: React.FC = () => {
 							textShadow: '0 2px 18px rgba(8,6,10,0.95)',
 						}}>
 							Gli Arbëreshë
-							<br /><span style={{color: COLORS.oroBrillante, fontSize: 46}}>a Lacedonia</span>
+							<br /><span style={{color: COLORS.oroBrillante, fontSize: 54}}>a Lacedonia</span>
 						</h2>
 					</div>
 
 					{/* Sottotitolo esplicativo */}
 					<p style={{
-						fontFamily: latoFont, fontSize: 18, fontWeight: 300,
+						fontFamily: latoFont, fontSize: 22, fontWeight: 300,
 						color: COLORS.biancaCalce, margin: 0, lineHeight: 1.7,
 						opacity: titleOp, maxWidth: 460,
 						textShadow: '0 1px 8px rgba(8,6,10,0.8)',
@@ -150,12 +150,12 @@ export const Sequence02Albanesi: React.FC = () => {
 						padding: '18px 22px',
 						backdropFilter: 'blur(18px)',
 					}}>
-						<p style={{fontFamily: latoFont, fontSize: 11, fontWeight: 700, color: COLORS.oroBrillante, letterSpacing: '0.18em', textTransform: 'uppercase', margin: 0, marginBottom: 10}}>Dedicata al patrono</p>
+						<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.oroBrillante, letterSpacing: '0.18em', textTransform: 'uppercase', margin: 0, marginBottom: 10}}>Dedicata al patrono</p>
 						<div style={{display: 'flex', alignItems: 'center', gap: 14}}>
-							<span style={{fontSize: 32}}>⛪</span>
+							<span style={{fontSize: 38}}>⛪</span>
 							<div>
-								<p style={{fontFamily: playfairFont, fontSize: 26, fontWeight: 700, color: COLORS.biancaCalce, margin: 0}}>San Nicola di Bari</p>
-								<p style={{fontFamily: latoFont, fontSize: 13, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0, marginTop: 3}}>Protettore degli Albanesi in diaspora</p>
+								<p style={{fontFamily: playfairFont, fontSize: 30, fontWeight: 700, color: COLORS.biancaCalce, margin: 0}}>San Nicola di Bari</p>
+								<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0, marginTop: 3}}>Protettore degli Albanesi in diaspora</p>
 							</div>
 						</div>
 					</div>
@@ -168,8 +168,8 @@ export const Sequence02Albanesi: React.FC = () => {
 						borderRadius: 10, padding: '16px 22px',
 						backdropFilter: 'blur(18px)',
 					}}>
-						<p style={{fontFamily: latoFont, fontSize: 11, fontWeight: 700, color: COLORS.azureInnTour, letterSpacing: '0.16em', textTransform: 'uppercase', margin: 0, marginBottom: 8}}>Stratificazione demografica</p>
-						<p style={{fontFamily: latoFont, fontSize: 15, fontWeight: 300, color: COLORS.biancaCalce, margin: 0, lineHeight: 1.65}}>
+						<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.azureInnTour, letterSpacing: '0.16em', textTransform: 'uppercase', margin: 0, marginBottom: 8}}>Stratificazione demografica</p>
+						<p style={{fontFamily: latoFont, fontSize: 17, fontWeight: 300, color: COLORS.biancaCalce, margin: 0, lineHeight: 1.65}}>
 							Sanniti → Romani → Longobardi
 							<br />→ Normanni → <span style={{color: COLORS.oroBrillante, fontWeight: 600}}>Albanesi</span>
 							<br />Ogni popolo ha lasciato il suo segno.
@@ -186,11 +186,11 @@ export const Sequence02Albanesi: React.FC = () => {
 						padding: '12px 18px',
 						backdropFilter: 'blur(12px)',
 					}}>
-						<p style={{fontFamily: playfairFont, fontSize: 17, fontStyle: 'italic', color: COLORS.biancaCalce, margin: 0, lineHeight: 1.6}}>
+						<p style={{fontFamily: playfairFont, fontSize: 19, fontStyle: 'italic', color: COLORS.biancaCalce, margin: 0, lineHeight: 1.6}}>
 							"Segno dell'espansione del borgo
 							<br />oltre il nucleo medievale più antico."
 						</p>
-						<p style={{fontFamily: latoFont, fontSize: 11, color: COLORS.grigioCaldo, margin: 0, marginTop: 6}}>Cicerone Digitale · A1.07</p>
+						<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.grigioCaldo, margin: 0, marginTop: 6}}>Cicerone Digitale · A1.07</p>
 					</div>
 				</div>
 			</div>

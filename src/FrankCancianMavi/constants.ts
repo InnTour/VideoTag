@@ -16,8 +16,12 @@ export const IMAGES = {
   bambiniBW:    `${DIR}/image_d615f189-ad04-481e-830c-5843d6c1f7c4.png`, // B&W: bambini in classe
   contadini:    `${DIR}/image_bea476be-79bd-42d4-bc5e-63dfd3a0f402.png`, // pittoresco: scene contadine
 
-  // Seq04 — Il Museo MAVI
-  maviInterno:  `${DIR}/image_1596ff07-adf6-4be1-a771-9533885722b5.png`, // MAVI: visitatore guarda foto grande
+  // Seq04 — Il Museo MAVI (4 nuove foto reali del MAVI)
+  maviInterno:      `${DIR}/image_1596ff07-adf6-4be1-a771-9533885722b5.png`, // MAVI: visitatore guarda foto grande
+  cancianRitratto:  `${DIR}/frank-cancian-1-500x500.jpg`,                     // ritratto di Frank Cancian
+  scena1957:        `${DIR}/i__id152_crop600x600c__1x.jpg`,                   // scena irpina 1957
+  inaugurazione:    `${DIR}/inaugurazione-museo-cancian.jpg`,                 // inaugurazione museo MAVI
+  fotoArchivio:     `${DIR}/photo_2.jpg`,                                     // foto d'archivio Cancian
 
   // Seq05 — Outro / L'Anima
   emigrazione:  `${DIR}/image_d8d2c82f-f160-4f20-bb5e-cbc9d577b8a9.png`, // porta dorata: l'emigrazione

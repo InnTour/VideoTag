@@ -22,9 +22,9 @@ const DatoCard: React.FC<{label: string; valore: string; dettaglio?: string; del
 			padding: '14px 22px',
 			backdropFilter: 'blur(18px)',
 		}}>
-			<p style={{fontFamily: latoFont, fontSize: 11, fontWeight: 700, color: accent, letterSpacing: '0.18em', textTransform: 'uppercase', margin: 0, marginBottom: 5}}>{label}</p>
-			<p style={{fontFamily: playfairFont, fontSize: 32, fontWeight: 700, color: COLORS.biancaCalce, margin: 0, lineHeight: 1.1}}>{valore}</p>
-			{dettaglio && <p style={{fontFamily: latoFont, fontSize: 13, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0, marginTop: 4}}>{dettaglio}</p>}
+			<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: accent, letterSpacing: '0.18em', textTransform: 'uppercase', margin: 0, marginBottom: 5}}>{label}</p>
+			<p style={{fontFamily: playfairFont, fontSize: 38, fontWeight: 700, color: COLORS.biancaCalce, margin: 0, lineHeight: 1.1}}>{valore}</p>
+			{dettaglio && <p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0, marginTop: 4}}>{dettaglio}</p>}
 		</div>
 	);
 };
@@ -98,7 +98,7 @@ export const Sequence02Roccia: React.FC = () => {
 					<div style={{opacity: titleOp, transform: `translateY(${titleY}px)`}}>
 						<div style={{display: 'inline-flex', alignItems: 'center', gap: 12, marginBottom: 14}}>
 							<div style={{width: 30, height: 2, background: `linear-gradient(90deg, ${COLORS.terrabruciata}, ${COLORS.oroIrpino})`}} />
-							<span style={{fontFamily: latoFont, fontSize: 12, fontWeight: 700, color: COLORS.oroIrpino, letterSpacing: '0.2em', textTransform: 'uppercase'}}>Le Fondamenta</span>
+							<span style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.oroIrpino, letterSpacing: '0.2em', textTransform: 'uppercase'}}>Le Fondamenta</span>
 						</div>
 						<h2 style={{
 							fontFamily: playfairFont, fontSize: 60, fontWeight: 700,
@@ -121,7 +121,7 @@ export const Sequence02Roccia: React.FC = () => {
 				{/* COLONNA DESTRA: diagramma strati geologici visivo */}
 				<div style={{flex: 0.8, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 0, opacity: stratiProgress}}>
 					<p style={{
-						fontFamily: latoFont, fontSize: 12, fontWeight: 700,
+						fontFamily: latoFont, fontSize: 16, fontWeight: 700,
 						color: COLORS.grigioCaldo, letterSpacing: '0.16em',
 						textTransform: 'uppercase', margin: 0, marginBottom: 14,
 					}}>Sezione stratigrafica</p>
@@ -144,7 +144,7 @@ export const Sequence02Roccia: React.FC = () => {
 									borderRadius: 4,
 									boxShadow: 'inset 0 -2px 6px rgba(0,0,0,0.4)',
 								}} />
-								<p style={{fontFamily: latoFont, fontSize: 12, color: COLORS.grigioCaldo, margin: 0, minWidth: 160}}>{strato.label}</p>
+								<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.grigioCaldo, margin: 0, minWidth: 160}}>{strato.label}</p>
 							</div>
 						);
 					})}

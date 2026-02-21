@@ -51,7 +51,7 @@ export const Sequence04IlConfineSacro: React.FC = () => {
     <div style={{ position: 'absolute', inset: 0 }}>
 
       {/* Contadini / ingresso al borgo — pan lento a destra */}
-      <KenBurnsImage src={IMAGES.contadini} motion="pan-right" intensity={0.06} objectPosition="center center" />
+      <KenBurnsImage src={IMAGES.contadini} motion="pan-right" intensity={0.06} objectPosition="center top" />
 
       {/* Overlay bitonale */}
       <div style={{
@@ -91,7 +91,7 @@ export const Sequence04IlConfineSacro: React.FC = () => {
       <div style={{ position: 'absolute', left: 72, top: 62, opacity: titleEntrance }}>
         <div style={{
           fontFamily: 'Lato, sans-serif', fontWeight: 700,
-          fontSize: 15, letterSpacing: '0.22em',
+          fontSize: 17, letterSpacing: '0.22em',
           color: COLORS.oroVescovile, textTransform: 'uppercase', marginBottom: 8,
         }}>Il Confine Sacro</div>
         <div style={{ width: 260, height: 2, background: `linear-gradient(to right, ${COLORS.oroVescovile}, transparent)` }} />
@@ -110,17 +110,17 @@ export const Sequence04IlConfineSacro: React.FC = () => {
           borderRadius: 4, padding: '22px 30px', maxWidth: 520,
         }}>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 15,
+            fontFamily: 'Lato, sans-serif', fontSize: 17,
             color: COLORS.oroVescovile, letterSpacing: '0.20em',
             textTransform: 'uppercase', marginBottom: 10,
           }}>Ingresso Storico del Borgo</div>
           <div style={{
-            fontFamily: 'Playfair Display, serif', fontSize: 36,
+            fontFamily: 'Playfair Display, serif', fontSize: 42,
             fontWeight: 700, color: COLORS.biancoCalce,
             marginBottom: 10, lineHeight: 1.15,
           }}>Luogo di Sosta</div>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 22,
+            fontFamily: 'Lato, sans-serif', fontSize: 27,
             color: COLORS.biancoCalce, opacity: 0.82,
             lineHeight: 1.55, fontWeight: 300,
           }}>
@@ -144,7 +144,7 @@ export const Sequence04IlConfineSacro: React.FC = () => {
         }}>
           <div style={{ borderLeft: `4px solid ${COLORS.travertino}`, paddingLeft: 20 }}>
             <p style={{
-              fontFamily: 'Georgia, serif', fontSize: 24,
+              fontFamily: 'Georgia, serif', fontSize: 28,
               fontStyle: 'italic', color: COLORS.biancoCalce,
               lineHeight: 1.6, margin: 0,
               textShadow: '0 1px 8px rgba(0,0,0,0.95)',
@@ -162,7 +162,7 @@ export const Sequence04IlConfineSacro: React.FC = () => {
           }} />
 
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 16,
+            fontFamily: 'Lato, sans-serif', fontSize: 18,
             color: COLORS.grigioIscrizione, paddingLeft: 24,
             letterSpacing: '0.06em',
           }}>

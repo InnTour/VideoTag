@@ -36,8 +36,8 @@ export const Sequence02Lamorea: React.FC = () => {
       <div style={{ position: 'absolute', top: 0, right: 50, writingMode: 'vertical-rl', fontFamily: 'Playfair Display, serif', fontSize: 200, fontWeight: 700, color: COLORS.oroVescovile, opacity: 0.07, pointerEvents: 'none', lineHeight: 1 }}>1697</div>
 
       <div style={{ position: 'absolute', left: 72, top: 120, opacity: interpolate(card1, [0, 1], [0, 1]), transform: `translateY(${interpolate(card1, [0, 1], [30, 0])}px)`, background: 'rgba(8,8,12,0.80)', backdropFilter: 'blur(18px)', borderRadius: 8, border: `1px solid rgba(200,152,48,0.28)`, padding: '22px 30px', maxWidth: 520 }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.20em', textTransform: 'uppercase', color: COLORS.oroVescovile, marginBottom: 10 }}>1697 · Vescovo La Morea</div>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 24, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.20em', textTransform: 'uppercase', color: COLORS.oroVescovile, marginBottom: 10 }}>1697 · Vescovo La Morea</div>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 28, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           Il vescovo <strong style={{ color: COLORS.oroVescovile }}>Giovanni Battista La Morea</strong><br />
           ordina la ricostruzione della cappella.<br />
           L'iscrizione sul portale lo ricorda ancora.
@@ -45,8 +45,8 @@ export const Sequence02Lamorea: React.FC = () => {
       </div>
 
       <div style={{ position: 'absolute', left: 72, bottom: 240, opacity: interpolate(card2, [0, 1], [0, 1]), transform: `translateY(${interpolate(card2, [0, 1], [30, 0])}px)`, background: 'rgba(8,8,12,0.76)', backdropFilter: 'blur(18px)', borderRadius: 8, border: `1px solid rgba(155,42,42,0.28)`, padding: '20px 28px', maxWidth: 500 }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.marmoRosso, marginBottom: 8 }}>Epigrafe romana</div>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 22, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.marmoRosso, marginBottom: 8 }}>Epigrafe romana</div>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 27, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           Lo storico <strong style={{ color: COLORS.marmoRosso }}>Pasquale Palmese</strong> identifica<br />
           un'iscrizione dedicata a <em style={{ color: COLORS.oroVescovile }}>Lucio Licinio</em><br />
           — il link diretto con l'antica <strong>Aquilonia</strong>.
@@ -55,7 +55,7 @@ export const Sequence02Lamorea: React.FC = () => {
 
       {/* Iscrizione reveal */}
       <div style={{ position: 'absolute', left: 72, bottom: 100, opacity: interpolate(card3, [0, 1], [0, 1]) }}>
-        <div style={{ fontFamily: 'Georgia, serif', fontSize: 28, fontStyle: 'italic', color: COLORS.pietraChiara, letterSpacing: '0.12em' }}>
+        <div style={{ fontFamily: 'Georgia, serif', fontSize: 32, fontStyle: 'italic', color: COLORS.pietraChiara, letterSpacing: '0.12em' }}>
           {iscrizione.slice(0, charsVisible)}{cursor ? '|' : ''}
         </div>
       </div>

@@ -1,48 +1,51 @@
-import {AbsoluteFill, Audio, Sequence, staticFile} from 'remotion';
-import {SEQUENCES} from './constants';
+import {AbsoluteFill, Audio, staticFile} from 'remotion';
+import {TransitionSeries, linearTiming} from '@remotion/transitions';
+import {fade} from '@remotion/transitions/fade';
+import {SEQ_DUR, COLORS, AUDIO} from './constants';
 import {Sequence01Intro} from './Sequence01Intro';
 import {Sequence02Congiurati} from './Sequence02Congiurati';
 import {Sequence03Giuramento} from './Sequence03Giuramento';
 import {Sequence04Atto} from './Sequence04Atto';
 import {Sequence05Epilogo} from './Sequence05Epilogo';
 
+// TAG A2.03 — Chiesa di Sant'Antonio (Congiura dei Baroni)
+// Audio: TAG_A2.03_CHIESA_SANTANTONIO_Leda_ITA.mp3 · 80s = 2400 frame @30fps
+
 export const ChiesaSantAntonio: React.FC = () => {
-	const toFrames = (s: number) => Math.round(s * 30);
+	const fadeTiming = linearTiming({durationInFrames: SEQ_DUR.transition});
 
 	return (
-		<AbsoluteFill>
-			{/* === AUDIO NARRAZIONE === */}
-			<Audio
-				src={staticFile('audio/TAG_A2.03_CHIESA_SANTANTONIO_Leda_ITA.mp3')}
-				startFrom={0}
-				volume={1}
-			/>
+		<AbsoluteFill style={{backgroundColor: COLORS.bgNero}}>
+			<Audio src={staticFile(AUDIO)} startFrom={0} volume={1} />
+			<TransitionSeries>
+				<TransitionSeries.Sequence durationInFrames={SEQ_DUR.s01} premountFor={SEQ_DUR.transition}>
+					<Sequence01Intro />
+				</TransitionSeries.Sequence>
 
-			{/* SEQ 01 — INTRO · 0–8s · La notte del 10 settembre 1486 */}
-			<Sequence from={toFrames(SEQUENCES.INTRO.start)} durationInFrames={toFrames(SEQUENCES.INTRO.duration)}>
-				<Sequence01Intro />
-			</Sequence>
+				<TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
 
-			{/* SEQ 02 — CONGIURATI · 8–27s · I tre principi */}
-			<Sequence from={toFrames(SEQUENCES.CONGIURATI.start)} durationInFrames={toFrames(SEQUENCES.CONGIURATI.duration)}>
-				<Sequence02Congiurati />
-			</Sequence>
+				<TransitionSeries.Sequence durationInFrames={SEQ_DUR.s02} premountFor={SEQ_DUR.transition}>
+					<Sequence02Congiurati />
+				</TransitionSeries.Sequence>
 
-			{/* SEQ 03 — GIURAMENTO · 27–45s · L'ostia e i Vangeli */}
-			<Sequence from={toFrames(SEQUENCES.GIURAMENTO.start)} durationInFrames={toFrames(SEQUENCES.GIURAMENTO.duration)}>
-				<Sequence03Giuramento />
-			</Sequence>
+				<TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
 
-			{/* SEQ 04 — ATTO · 45–63s · Il notaio, i testimoni */}
-			<Sequence from={toFrames(SEQUENCES.ATTO.start)} durationInFrames={toFrames(SEQUENCES.ATTO.duration)}>
-				<Sequence04Atto />
-			</Sequence>
+				<TransitionSeries.Sequence durationInFrames={SEQ_DUR.s03} premountFor={SEQ_DUR.transition}>
+					<Sequence03Giuramento />
+				</TransitionSeries.Sequence>
 
-			{/* SEQ 05 — EPILOGO · 63–79.34s · La città dorme · outro */}
-			<Sequence from={toFrames(SEQUENCES.EPILOGO.start)} durationInFrames={toFrames(SEQUENCES.EPILOGO.duration)}>
-				<Sequence05Epilogo />
-			</Sequence>
+				<TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
 
+				<TransitionSeries.Sequence durationInFrames={SEQ_DUR.s04} premountFor={SEQ_DUR.transition}>
+					<Sequence04Atto />
+				</TransitionSeries.Sequence>
+
+				<TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+
+				<TransitionSeries.Sequence durationInFrames={SEQ_DUR.s05}>
+					<Sequence05Epilogo />
+				</TransitionSeries.Sequence>
+			</TransitionSeries>
 		</AbsoluteFill>
 	);
 };

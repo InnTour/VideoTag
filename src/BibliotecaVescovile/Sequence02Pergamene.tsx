@@ -99,7 +99,7 @@ export const Sequence02Pergamene: React.FC = () => {
       <div style={{ position: 'absolute', left: 72, top: 62, opacity: titleEntrance }}>
         <div style={{
           fontFamily: 'Lato, sans-serif', fontWeight: 700,
-          fontSize: 14, letterSpacing: '0.22em',
+          fontSize: 16, letterSpacing: '0.22em',
           color: COLORS.oroAntico, textTransform: 'uppercase', marginBottom: 8,
         }}>Le Pergamene Medievali</div>
         <div style={{ width: 260, height: 2, background: `linear-gradient(to right, ${COLORS.oroAntico}, transparent)` }} />
@@ -118,16 +118,16 @@ export const Sequence02Pergamene: React.FC = () => {
         }}>
           <span style={{
             fontFamily: 'Playfair Display, serif',
-            fontSize: 80, fontWeight: 700,
+            fontSize: 96, fontWeight: 700,
             color: COLORS.oroAntico, lineHeight: 1,
           }}>{counterVal}</span>
           <div>
             <span style={{
               fontFamily: 'Playfair Display, serif',
-              fontSize: 40, fontWeight: 700, color: '#F0C060',
+              fontSize: 46, fontWeight: 700, color: '#F0C060',
             }}>+</span>
             <div style={{
-              fontFamily: 'Lato, sans-serif', fontSize: 16,
+              fontFamily: 'Lato, sans-serif', fontSize: 18,
               color: COLORS.biancoCalce, opacity: 0.80,
               letterSpacing: '0.12em', textTransform: 'uppercase',
             }}>pergamene</div>
@@ -148,17 +148,17 @@ export const Sequence02Pergamene: React.FC = () => {
           borderRadius: 4, padding: '22px 30px', maxWidth: 500,
         }}>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 11,
+            fontFamily: 'Lato, sans-serif', fontSize: 16,
             color: COLORS.oroAntico, letterSpacing: '0.20em',
             textTransform: 'uppercase', marginBottom: 10,
           }}>📜 XII–XIII Secolo · Documenti Originali</div>
           <div style={{
-            fontFamily: 'Playfair Display, serif', fontSize: 34,
+            fontFamily: 'Playfair Display, serif', fontSize: 40,
             fontWeight: 700, color: COLORS.biancoCalce,
             marginBottom: 10, lineHeight: 1.1,
           }}>Le Pergamene di Lacedonia</div>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 18,
+            fontFamily: 'Lato, sans-serif', fontSize: 22,
             color: COLORS.biancoCalce, opacity: 0.82,
             lineHeight: 1.55, fontWeight: 300,
           }}>
@@ -177,7 +177,7 @@ export const Sequence02Pergamene: React.FC = () => {
       }}>
         <div style={{ borderLeft: `4px solid ${COLORS.rossoVescovile}`, paddingLeft: 20 }}>
           <p style={{
-            fontFamily: 'Georgia, serif', fontSize: 22,
+            fontFamily: 'Georgia, serif', fontSize: 27,
             fontStyle: 'italic', color: COLORS.biancoCalce,
             lineHeight: 1.6, margin: 0,
             textShadow: '0 1px 8px rgba(0,0,0,0.95)',

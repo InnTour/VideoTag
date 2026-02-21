@@ -6,13 +6,14 @@ import { Sequence01Intro } from './Sequence01Intro';
 import { Sequence02Lamorea } from './Sequence02Lamorea';
 import { Sequence03Altare } from './Sequence03Altare';
 import { Sequence04SanGerardo } from './Sequence04SanGerardo';
-import { Sequence05Outro } from './Sequence05Outro';
+import { Sequence05SanGerardoMiracolo } from './Sequence05SanGerardoMiracolo';
+import { Sequence06Outro } from './Sequence06Outro';
 import { AUDIO, COLORS, SEQ_DUR } from './constants';
 
 // ──────────────────────────────────────────────────────────────────────
 // TAG A3.02 — Cappella Santissima Trinità
 // 91.74s · 2752 frame @30fps
-// 300+580+560+540+852 - 4×20 = 2832 - 80 = 2752 ✓
+// 300+580+560+540+450+422 - 5×20 = 2852 - 100 = 2752 ✓
 // ──────────────────────────────────────────────────────────────────────
 
 export const CappellaTrinita: React.FC = () => {
@@ -52,9 +53,16 @@ export const CappellaTrinita: React.FC = () => {
 
         <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
 
-        {/* Seq 05 — Rinascita/Outro ~28.4s */}
-        <TransitionSeries.Sequence durationInFrames={SEQ_DUR.s05}>
-          <Sequence05Outro />
+        {/* Seq 05 — Il Miracolo murales ~15.0s */}
+        <TransitionSeries.Sequence durationInFrames={SEQ_DUR.s05} premountFor={SEQ_DUR.transition}>
+          <Sequence05SanGerardoMiracolo />
+        </TransitionSeries.Sequence>
+
+        <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+
+        {/* Seq 06 — Rinascita/Outro ~14.1s */}
+        <TransitionSeries.Sequence durationInFrames={SEQ_DUR.s06}>
+          <Sequence06Outro />
         </TransitionSeries.Sequence>
       </TransitionSeries>
     </AbsoluteFill>

@@ -91,7 +91,7 @@ export const Sequence01Intro: React.FC = () => {
           background: 'rgba(139,26,26,0.88)',
           padding: '8px 22px', borderRadius: 2,
           fontFamily: 'Lato, sans-serif', fontWeight: 700,
-          fontSize: 15, letterSpacing: '0.16em',
+          fontSize: 17, letterSpacing: '0.16em',
           color: COLORS.biancoCalce, textTransform: 'uppercase',
         }}>
           Sezione C3 · Fotografia &amp; Memoria
@@ -110,13 +110,13 @@ export const Sequence01Intro: React.FC = () => {
         }} />
         <div style={{
           fontFamily: 'Playfair Display, serif',
-          fontSize: 96, fontWeight: 700, lineHeight: 1.0,
+          fontSize: 108, fontWeight: 700, lineHeight: 1.0,
           color: COLORS.biancoCalce,
           textShadow: '0 2px 36px rgba(0,0,0,0.95)',
           maxWidth: 820,
         }}>
           <span style={{ color: COLORS.oroMavi }}>MAVI</span><br />
-          <span style={{ fontSize: 48, fontWeight: 400, fontStyle: 'italic', color: COLORS.biancoCalce, opacity: 0.88 }}>
+          <span style={{ fontSize: 56, fontWeight: 400, fontStyle: 'italic', color: COLORS.biancoCalce, opacity: 0.88 }}>
             Museo Antropologico<br />Visivo Irpino
           </span>
         </div>
@@ -127,7 +127,7 @@ export const Sequence01Intro: React.FC = () => {
         position: 'absolute', left: 72, bottom: 100,
         opacity: subEnt, transform: `translateY(${subY}px)`,
         maxWidth: 680,
-        fontFamily: 'Lato, sans-serif', fontSize: 28, fontWeight: 300,
+        fontFamily: 'Lato, sans-serif', fontSize: 32, fontWeight: 300,
         color: COLORS.biancoCalce, opacity: subEnt * 0.80,
         letterSpacing: '0.04em',
         textShadow: '0 1px 10px rgba(0,0,0,0.95)',

@@ -137,7 +137,7 @@ export const Sequence04Cinquecentine: React.FC = () => {
       <div style={{ position: 'absolute', left: 72, top: 62, opacity: titleEntrance }}>
         <div style={{
           fontFamily: 'Lato, sans-serif', fontWeight: 700,
-          fontSize: 14, letterSpacing: '0.22em',
+          fontSize: 16, letterSpacing: '0.22em',
           color: COLORS.oroAntico, textTransform: 'uppercase', marginBottom: 8,
         }}>Cinquecentine & Seicentine · 1799</div>
         <div style={{ width: 280, height: 2, background: `linear-gradient(to right, ${COLORS.oroAntico}, transparent)` }} />
@@ -153,11 +153,11 @@ export const Sequence04Cinquecentine: React.FC = () => {
         }}>
           <span style={{
             fontFamily: 'Playfair Display, serif',
-            fontSize: 72, fontWeight: 700,
+            fontSize: 96, fontWeight: 700,
             color: COLORS.oroAntico, lineHeight: 1,
           }}>{volCounter}</span>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 15,
+            fontFamily: 'Lato, sans-serif', fontSize: 17,
             color: COLORS.biancoCalce, opacity: 0.78,
             letterSpacing: '0.10em', textTransform: 'uppercase',
             paddingBottom: 8,
@@ -178,12 +178,12 @@ export const Sequence04Cinquecentine: React.FC = () => {
           borderRadius: 4, padding: '20px 28px', maxWidth: 500,
         }}>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 11,
+            fontFamily: 'Lato, sans-serif', fontSize: 16,
             color: COLORS.oroAntico, letterSpacing: '0.18em',
             textTransform: 'uppercase', marginBottom: 8,
           }}>📖 Sopravvissuti a Secoli di Storia</div>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 18,
+            fontFamily: 'Lato, sans-serif', fontSize: 22,
             color: COLORS.biancoCalce, opacity: 0.82,
             lineHeight: 1.55, fontWeight: 300,
           }}>
@@ -206,7 +206,7 @@ export const Sequence04Cinquecentine: React.FC = () => {
           textShadow: '0 2px 30px rgba(139,26,26,0.60)',
         }}>1799</div>
         <div style={{
-          fontFamily: 'Lato, sans-serif', fontSize: 20,
+          fontFamily: 'Lato, sans-serif', fontSize: 26,
           color: COLORS.biancoCalce, opacity: 0.85,
           letterSpacing: '0.10em', textTransform: 'uppercase',
           marginTop: 4,
@@ -226,17 +226,17 @@ export const Sequence04Cinquecentine: React.FC = () => {
           borderRadius: 4, padding: '22px 30px', maxWidth: 540,
         }}>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 11,
+            fontFamily: 'Lato, sans-serif', fontSize: 16,
             color: '#D4A843', letterSpacing: '0.20em',
             textTransform: 'uppercase', marginBottom: 10,
           }}>⛪ Il Vescovo Custode</div>
           <div style={{
-            fontFamily: 'Playfair Display, serif', fontSize: 34,
+            fontFamily: 'Playfair Display, serif', fontSize: 40,
             fontWeight: 700, color: COLORS.biancoCalce,
             marginBottom: 10, lineHeight: 1.1,
           }}>Vescovo Romanzi</div>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 18,
+            fontFamily: 'Lato, sans-serif', fontSize: 22,
             color: COLORS.biancoCalce, opacity: 0.82,
             lineHeight: 1.55, fontWeight: 300,
           }}>

@@ -17,13 +17,14 @@ export const IMAGES = {
 
 export const AUDIO = 'audio/TAG_A3.02_CAPPELLA_TRINITA_Iapetus_ITA.mp3';
 
-// s01+s02+s03+s04+s05 = 2832 - 4×20 = 2752 ✓
+// s01+s02+s03+s04+s05+s06 = 2852 - 5×20 = 2752 ✓
 export const SEQ_DUR = {
   s01: 300,  // Intro               ~10.0s
   s02: 580,  // Lamorea & Iscrizione ~19.3s
   s03: 560,  // L'Altare            ~18.7s
   s04: 540,  // San Gerardo         ~18.0s
-  s05: 852,  // Rinascita/Outro     ~28.4s
+  s05: 450,  // Il Miracolo murales ~15.0s
+  s06: 422,  // Rinascita/Outro     ~14.1s
   transition: 20,
 } as const;
 

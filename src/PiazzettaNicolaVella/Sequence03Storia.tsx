@@ -17,11 +17,11 @@ const TimelineItem: React.FC<{year: string; label: string; detail: string; index
 	return (
 		<div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', flex: 1, opacity: op, transform: `scale(${scl})`}}>
 			<div style={{background: isHighlight ? `rgba(212,168,67,0.25)` : 'rgba(0,212,255,0.15)', border: `1.5px solid ${accent}`, borderRadius: 6, padding: '6px 14px', marginBottom: 10}}>
-				<span style={{fontFamily: playfairFont, fontSize: 22, fontWeight: 700, color: accent}}>{year}</span>
+				<span style={{fontFamily: playfairFont, fontSize: 27, fontWeight: 700, color: accent}}>{year}</span>
 			</div>
 			<div style={{width: 10, height: 10, borderRadius: '50%', backgroundColor: accent, boxShadow: `0 0 12px ${accent}`, marginBottom: 8}} />
-			<p style={{fontFamily: latoFont, fontSize: 13, fontWeight: 700, color: COLORS.biancaCalce, margin: 0, textAlign: 'center', letterSpacing: '0.04em', lineHeight: 1.3}}>{label}</p>
-			<p style={{fontFamily: latoFont, fontSize: 11, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0, marginTop: 4, textAlign: 'center', lineHeight: 1.4}}>{detail}</p>
+			<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.biancaCalce, margin: 0, textAlign: 'center', letterSpacing: '0.04em', lineHeight: 1.3}}>{label}</p>
+			<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0, marginTop: 4, textAlign: 'center', lineHeight: 1.4}}>{detail}</p>
 		</div>
 	);
 };
@@ -49,10 +49,10 @@ const SfidaCard: React.FC<{icon: string; label: string; desc: string; delay: num
 			borderRadius: 8, padding: '10px 16px',
 			backdropFilter: 'blur(16px)',
 		}}>
-			<span style={{fontSize: 22}}>{icon}</span>
+			<span style={{fontSize: 27}}>{icon}</span>
 			<div>
-				<p style={{fontFamily: latoFont, fontSize: 13, fontWeight: 700, color: COLORS.oroIrpino, margin: 0}}>{label}</p>
-				<p style={{fontFamily: latoFont, fontSize: 11, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0}}>{desc}</p>
+				<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.oroIrpino, margin: 0}}>{label}</p>
+				<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0}}>{desc}</p>
 			</div>
 		</div>
 	);
@@ -134,9 +134,9 @@ export const Sequence03Storia: React.FC = () => {
 					<div style={{opacity: titleOp, transform: `translateY(${titleY}px)`}}>
 						<div style={{display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 12}}>
 							<div style={{width: 32, height: 1.5, background: `linear-gradient(90deg, transparent, ${COLORS.neonBlue})`}} />
-							<span style={{fontFamily: latoFont, fontSize: 11, fontWeight: 700, color: COLORS.neonBlue, letterSpacing: '0.2em', textTransform: 'uppercase'}}>Il Mandato</span>
+							<span style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.neonBlue, letterSpacing: '0.2em', textTransform: 'uppercase'}}>Il Mandato</span>
 						</div>
-						<h2 style={{fontFamily: playfairFont, fontSize: 52, fontWeight: 700, color: COLORS.biancaCalce, margin: 0, lineHeight: 1.1, textShadow: '0 2px 12px rgba(5,5,15,0.9)'}}>
+						<h2 style={{fontFamily: playfairFont, fontSize: 60, fontWeight: 700, color: COLORS.biancaCalce, margin: 0, lineHeight: 1.1, textShadow: '0 2px 12px rgba(5,5,15,0.9)'}}>
 							Lacedonia,<br />
 							<span style={{color: COLORS.oroIrpino}}>anni cruciali</span>
 						</h2>
@@ -158,7 +158,7 @@ export const Sequence03Storia: React.FC = () => {
 				{/* === COLONNA DESTRA: Sfide del dopoguerra === */}
 				<div style={{flex: 0.9, display: 'flex', flexDirection: 'column', gap: 16}}>
 					<p style={{
-						fontFamily: latoFont, fontSize: 12, fontWeight: 700,
+						fontFamily: latoFont, fontSize: 16, fontWeight: 700,
 						color: COLORS.grigioCaldo, letterSpacing: '0.18em',
 						textTransform: 'uppercase', margin: 0, marginBottom: 4,
 						opacity: interpolate(frame, [sfideTrigger, sfideTrigger + 10], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
@@ -180,12 +180,12 @@ export const Sequence03Storia: React.FC = () => {
 						backdropFilter: 'blur(12px)',
 						opacity: interpolate(frame, [sfideTrigger + 50, sfideTrigger + 80], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}),
 					}}>
-						<p style={{fontFamily: playfairFont, fontSize: 17, fontStyle: 'italic', color: COLORS.biancaCalce, margin: 0, lineHeight: 1.6}}>
+						<p style={{fontFamily: playfairFont, fontSize: 19, fontStyle: 'italic', color: COLORS.biancaCalce, margin: 0, lineHeight: 1.6}}>
 							"La lotta per l'acqua,
 							<br />la quotizzazione delle terre incolte
 							<br />e il riscatto sociale dei contadini."
 						</p>
-						<p style={{fontFamily: latoFont, fontSize: 11, color: COLORS.grigioCaldo, margin: 0, marginTop: 8}}>
+						<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.grigioCaldo, margin: 0, marginTop: 8}}>
 							Dal testo del Cicerone Digitale · A1.05
 						</p>
 					</div>

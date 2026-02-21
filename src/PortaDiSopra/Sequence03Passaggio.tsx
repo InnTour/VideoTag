@@ -86,7 +86,7 @@ export const Sequence03Passaggio: React.FC = () => {
 					<div style={{opacity: titleOp, transform: `translateY(${titleY}px)`}}>
 						<div style={{display: 'inline-flex', alignItems: 'center', gap: 12, marginBottom: 14}}>
 							<div style={{width: 28, height: 2, background: `linear-gradient(90deg, ${COLORS.oroMemoria}, transparent)`}} />
-							<span style={{fontFamily: latoFont, fontSize: 12, fontWeight: 700, color: COLORS.oroMemoria, letterSpacing: '0.20em', textTransform: 'uppercase'}}>Il Passaggio · Decine di Secoli</span>
+							<span style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.oroMemoria, letterSpacing: '0.20em', textTransform: 'uppercase'}}>Il Passaggio · Decine di Secoli</span>
 						</div>
 						<h2 style={{
 							fontFamily: playfairFont, fontSize: 58, fontWeight: 700,
@@ -113,13 +113,13 @@ export const Sequence03Passaggio: React.FC = () => {
 									borderRadius: 8, padding: '12px 18px',
 									backdropFilter: 'blur(16px)',
 								}}>
-									<span style={{fontSize: 26, flexShrink: 0}}>{icon}</span>
+									<span style={{fontSize: 30, flexShrink: 0}}>{icon}</span>
 									<div>
 										<div style={{display: 'flex', alignItems: 'baseline', gap: 10}}>
-											<p style={{fontFamily: playfairFont, fontSize: 22, fontWeight: 700, color: COLORS.biancaCalce, margin: 0}}>{ruolo}</p>
-											<p style={{fontFamily: latoFont, fontSize: 12, color: COLORS.oroMemoria, margin: 0, letterSpacing: '0.08em'}}>{periodo}</p>
+											<p style={{fontFamily: playfairFont, fontSize: 27, fontWeight: 700, color: COLORS.biancaCalce, margin: 0}}>{ruolo}</p>
+											<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.oroMemoria, margin: 0, letterSpacing: '0.08em'}}>{periodo}</p>
 										</div>
-										<p style={{fontFamily: latoFont, fontSize: 13, fontWeight: 300, color: COLORS.grigio60, margin: 0, marginTop: 2}}>{desc}</p>
+										<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 300, color: COLORS.grigio60, margin: 0, marginTop: 2}}>{desc}</p>
 									</div>
 								</div>
 							);
@@ -135,7 +135,7 @@ export const Sequence03Passaggio: React.FC = () => {
 						backdropFilter: 'blur(12px)',
 						borderRadius: '0 6px 6px 0',
 					}}>
-						<p style={{fontFamily: playfairFont, fontSize: 20, fontStyle: 'italic', color: COLORS.grigio90, margin: 0, lineHeight: 1.6}}>
+						<p style={{fontFamily: playfairFont, fontSize: 26, fontStyle: 'italic', color: COLORS.grigio90, margin: 0, lineHeight: 1.6}}>
 							"Portando con sé la sacralità
 							<br />del loro ruolo."
 						</p>

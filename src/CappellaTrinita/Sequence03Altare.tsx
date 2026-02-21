@@ -37,8 +37,8 @@ export const Sequence03Altare: React.FC = () => {
       <div style={{ position: 'absolute', inset: 0, background: `radial-gradient(ellipse 500px 350px at 65% 42%, rgba(155,42,42,${marmoGlow}), transparent 70%)` }} />
 
       <div style={{ position: 'absolute', left: 72, top: 120, opacity: interpolate(card1, [0, 1], [0, 1]), transform: `translateY(${interpolate(card1, [0, 1], [30, 0])}px)`, background: 'rgba(8,8,12,0.80)', backdropFilter: 'blur(18px)', borderRadius: 8, border: `1px solid rgba(155,42,42,0.30)`, padding: '22px 30px', maxWidth: 520 }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.20em', textTransform: 'uppercase', color: COLORS.marmoRosso, marginBottom: 10 }}>Altare in marmo rosso</div>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 24, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.20em', textTransform: 'uppercase', color: COLORS.marmoRosso, marginBottom: 10 }}>Altare in marmo rosso</div>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 28, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           Marmo rosso pregiato, donato nel<br />
           <strong style={{ color: COLORS.marmoRosso }}>{counterOp > 0.5 ? counterVal : '···'}</strong>{counterOp > 0.5 ? '' : ''} — una testimonianza<br />
           di devozione e signoria.
@@ -47,21 +47,21 @@ export const Sequence03Altare: React.FC = () => {
 
       {counterOp > 0 && (
         <div style={{ position: 'absolute', right: 180, top: 180, opacity: counterOp, textAlign: 'center' }}>
-          <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 96, fontWeight: 700, color: COLORS.marmoRosso, lineHeight: 1, textShadow: `0 0 40px rgba(155,42,42,0.45)` }}>{counterVal}</div>
-          <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 14, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.pietraChiara, marginTop: 8 }}>anno della donazione</div>
+          <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 108, fontWeight: 700, color: COLORS.marmoRosso, lineHeight: 1, textShadow: `0 0 40px rgba(155,42,42,0.45)` }}>{counterVal}</div>
+          <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 16, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.pietraChiara, marginTop: 8 }}>anno della donazione</div>
         </div>
       )}
 
       <div style={{ position: 'absolute', left: 72, bottom: 220, opacity: interpolate(card2, [0, 1], [0, 1]), transform: `translateY(${interpolate(card2, [0, 1], [30, 0])}px)`, background: 'rgba(8,8,12,0.76)', backdropFilter: 'blur(18px)', borderRadius: 8, border: `1px solid rgba(200,152,48,0.25)`, padding: '20px 28px', maxWidth: 500 }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.oroVescovile, marginBottom: 8 }}>Lo stemma della Cicogna</div>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 22, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.oroVescovile, marginBottom: 8 }}>Lo stemma della Cicogna</div>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 27, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           Scolpito nell'altare — araldica signorile<br />
           che lega questa cappella alla <em style={{ color: COLORS.oroVescovile }}>Chiesa di San Nicola</em>.
         </div>
       </div>
 
       <div style={{ position: 'absolute', left: 72, bottom: 80, opacity: interpolate(card3, [0, 1], [0, 1]), transform: `translateY(${interpolate(card3, [0, 1], [25, 0])}px)`, background: 'rgba(8,8,12,0.76)', backdropFilter: 'blur(18px)', borderRadius: 8, border: `1px solid rgba(155,42,42,0.22)`, padding: '18px 26px', maxWidth: 480 }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 21, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 26, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           L'altare fu trasferito qui nel 1856<br />
           dalla <em style={{ color: COLORS.marmoRosso }}>vicina chiesa di San Nicola</em><br />
           — un passaggio tra fratelli.

@@ -42,8 +42,8 @@ export const Sequence02Laterano: React.FC = () => {
         background: 'rgba(8,8,12,0.80)', backdropFilter: 'blur(18px)',
         borderRadius: 8, border: `1px solid rgba(200,152,48,0.28)`, padding: '22px 30px', maxWidth: 520,
       }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.20em', textTransform: 'uppercase', color: COLORS.oroAntico, marginBottom: 10 }}>Edificata nel 1503</div>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 24, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.20em', textTransform: 'uppercase', color: COLORS.oroAntico, marginBottom: 10 }}>Edificata nel 1503</div>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 28, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           Il sacerdote <strong style={{ color: COLORS.oroAntico }}>Giovanni Giacomo di Muro</strong><br />
           dona il terreno — "Solo Lateranense" —<br />
           alla Basilica di San Giovanni in Laterano.
@@ -56,8 +56,8 @@ export const Sequence02Laterano: React.FC = () => {
         background: 'rgba(8,8,12,0.76)', backdropFilter: 'blur(18px)',
         borderRadius: 8, border: `1px solid rgba(42,96,128,0.28)`, padding: '20px 28px', maxWidth: 500,
       }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.acquaBlu, marginBottom: 8 }}>Il Portale</div>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 22, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.acquaBlu, marginBottom: 8 }}>Il Portale</div>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 27, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           Travertino romanico con l'<strong style={{ color: COLORS.acquaBlu }}>insegna della Basilica Lateranense</strong>.<br />
           Ancora visibile dopo 500 anni.
         </div>
@@ -69,7 +69,7 @@ export const Sequence02Laterano: React.FC = () => {
         background: 'rgba(8,8,12,0.76)', backdropFilter: 'blur(18px)',
         borderRadius: 8, border: `1px solid rgba(200,152,48,0.22)`, padding: '18px 26px', maxWidth: 500,
       }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 21, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 26, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           Sull'altare maggiore: la <em style={{ color: COLORS.oroAntico }}>Tela della Visitazione</em>.<br />
           Sopravvissuta ai terremoti del 1930 e del 1980.
         </div>

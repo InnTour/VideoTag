@@ -120,7 +120,7 @@ export const Sequence01Intro: React.FC = () => {
           background: 'rgba(139,26,26,0.90)',
           padding: '8px 22px', borderRadius: 2,
           fontFamily: 'Lato, sans-serif', fontWeight: 700,
-          fontSize: 15, letterSpacing: '0.16em',
+          fontSize: 17, letterSpacing: '0.16em',
           color: COLORS.biancoMarmo, textTransform: 'uppercase',
         }}>
           A4 · Memoria del Sisma · 22 Luglio 1930
@@ -145,7 +145,7 @@ export const Sequence01Intro: React.FC = () => {
         }}>
           <div style={{
             fontFamily: 'Playfair Display, serif',
-            fontSize: 88, fontWeight: 700, lineHeight: 1.10,
+            fontSize: 100, fontWeight: 700, lineHeight: 1.10,
             color: COLORS.biancoMarmo,
             textShadow: '0 2px 32px rgba(0,0,0,0.98)',
             maxWidth: 820,
@@ -158,7 +158,7 @@ export const Sequence01Intro: React.FC = () => {
         {/* Sottotitolo — hook */}
         <div style={{
           opacity: subEnt, marginTop: 28, maxWidth: 600,
-          fontFamily: 'Lato, sans-serif', fontSize: 26, fontWeight: 300,
+          fontFamily: 'Lato, sans-serif', fontSize: 30, fontWeight: 300,
           color: COLORS.biancoMarmo, opacity: subEnt * 0.80,
           lineHeight: 1.55,
           textShadow: '0 1px 10px rgba(0,0,0,0.98)',
@@ -178,12 +178,12 @@ export const Sequence01Intro: React.FC = () => {
         <ClockIcon opacity={1} />
         <div style={{
           fontFamily: 'Playfair Display, serif', fontStyle: 'italic',
-          fontSize: 22, color: COLORS.oroSperanza, opacity: 0.88,
+          fontSize: 27, color: COLORS.oroSperanza, opacity: 0.88,
           textShadow: '0 1px 8px rgba(0,0,0,0.95)',
         }}>ore 3:00</div>
         <div style={{
           fontFamily: 'Lato, sans-serif', fontWeight: 300,
-          fontSize: 13, color: COLORS.biancoMarmo, opacity: 0.65,
+          fontSize: 16, color: COLORS.biancoMarmo, opacity: 0.65,
           letterSpacing: '0.08em', textTransform: 'uppercase',
         }}>il momento del sisma</div>
       </div>

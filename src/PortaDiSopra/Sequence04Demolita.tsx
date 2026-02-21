@@ -99,7 +99,7 @@ export const Sequence04Demolita: React.FC = () => {
 
 					{/* Titolo */}
 					<h2 style={{
-						fontFamily: playfairFont, fontSize: 52, fontWeight: 700,
+						fontFamily: playfairFont, fontSize: 60, fontWeight: 700,
 						color: COLORS.biancaCalce, margin: 0, lineHeight: 1.05,
 						opacity: titleOp, transform: `translateY(${titleY}px)`,
 						textShadow: '0 2px 18px rgba(8,8,8,0.98)',
@@ -125,9 +125,9 @@ export const Sequence04Demolita: React.FC = () => {
 								padding: '10px 18px',
 								backdropFilter: 'blur(14px)',
 							}}>
-								<p style={{fontFamily: latoFont, fontSize: 11, fontWeight: 700, color: COLORS.oroMemoria, letterSpacing: '0.16em', textTransform: 'uppercase', margin: 0, marginBottom: 3}}>{label}</p>
-								<p style={{fontFamily: playfairFont, fontSize: 20, fontWeight: 700, color: COLORS.biancaCalce, margin: 0}}>{valore}</p>
-								<p style={{fontFamily: latoFont, fontSize: 12, fontWeight: 300, color: COLORS.grigio60, margin: 0, marginTop: 2}}>{detail}</p>
+								<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.oroMemoria, letterSpacing: '0.16em', textTransform: 'uppercase', margin: 0, marginBottom: 3}}>{label}</p>
+								<p style={{fontFamily: playfairFont, fontSize: 26, fontWeight: 700, color: COLORS.biancaCalce, margin: 0}}>{valore}</p>
+								<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 300, color: COLORS.grigio60, margin: 0, marginTop: 2}}>{detail}</p>
 							</div>
 						))}
 					</div>

@@ -78,7 +78,7 @@ export const Sequence04Simbolo: React.FC = () => {
 
 					<div style={{display: 'flex', alignItems: 'center', gap: 12, opacity: titleOp}}>
 						<div style={{width: 22, height: 2, background: `linear-gradient(90deg, ${COLORS.oroBrillante}, transparent)`}} />
-						<span style={{fontFamily: latoFont, fontSize: 12, fontWeight: 700, color: COLORS.oroBrillante, letterSpacing: '0.20em', textTransform: 'uppercase'}}>Oggi · Il Significato</span>
+						<span style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.oroBrillante, letterSpacing: '0.20em', textTransform: 'uppercase'}}>Oggi · Il Significato</span>
 					</div>
 
 					<h2 style={{
@@ -104,7 +104,7 @@ export const Sequence04Simbolo: React.FC = () => {
 
 					{/* Claim finale */}
 					<p style={{
-						fontFamily: latoFont, fontSize: 18, fontWeight: 300,
+						fontFamily: latoFont, fontSize: 22, fontWeight: 300,
 						color: COLORS.biancaCalce, margin: 0,
 						lineHeight: 1.7, opacity: parolaProgress,
 						maxWidth: 440,
@@ -118,7 +118,7 @@ export const Sequence04Simbolo: React.FC = () => {
 
 				{/* DESTRA: Tre pillole dell'eredità */}
 				<div style={{flex: 0.8, display: 'flex', flexDirection: 'column', gap: 16}}>
-					<p style={{fontFamily: latoFont, fontSize: 11, fontWeight: 700, color: COLORS.grigioCaldo, letterSpacing: '0.18em', textTransform: 'uppercase', margin: 0, marginBottom: 4, opacity: card1Op}}>
+					<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.grigioCaldo, letterSpacing: '0.18em', textTransform: 'uppercase', margin: 0, marginBottom: 4, opacity: card1Op}}>
 						L'eredità di questa porta
 					</p>
 
@@ -138,10 +138,10 @@ export const Sequence04Simbolo: React.FC = () => {
 							display: 'flex', alignItems: 'flex-start', gap: 14,
 							backdropFilter: 'blur(16px)',
 						}}>
-							<span style={{fontSize: 22, flexShrink: 0}}>{icon}</span>
+							<span style={{fontSize: 27, flexShrink: 0}}>{icon}</span>
 							<div>
-								<p style={{fontFamily: latoFont, fontSize: 14, fontWeight: 700, color: accent, margin: 0, marginBottom: 3}}>{titolo}</p>
-								<p style={{fontFamily: latoFont, fontSize: 13, fontWeight: 300, color: COLORS.biancaCalce, margin: 0, lineHeight: 1.5}}>{testo}</p>
+								<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: accent, margin: 0, marginBottom: 3}}>{titolo}</p>
+								<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 300, color: COLORS.biancaCalce, margin: 0, lineHeight: 1.5}}>{testo}</p>
 							</div>
 						</div>
 					))}

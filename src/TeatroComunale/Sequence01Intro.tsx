@@ -84,7 +84,7 @@ export const Sequence01Intro: React.FC = () => {
           background: COLORS.rossoTelone,
           padding: '6px 20px', borderRadius: 2,
           fontFamily: 'Lato, sans-serif', fontWeight: 700,
-          fontSize: 13, letterSpacing: '0.16em',
+          fontSize: 16, letterSpacing: '0.16em',
           color: COLORS.biancoCalce, textTransform: 'uppercase',
         }}>
           Sezione A4 · Luoghi della Cultura
@@ -106,7 +106,7 @@ export const Sequence01Intro: React.FC = () => {
 
         <div style={{
           fontFamily: 'Playfair Display, serif',
-          fontSize: 92, fontWeight: 700,
+          fontSize: 104, fontWeight: 700,
           color: COLORS.biancoCalce, lineHeight: 1.04,
           textShadow: '0 2px 28px rgba(0,0,0,0.85), 0 0 70px rgba(212,168,67,0.14)',
           maxWidth: 840,
@@ -131,7 +131,7 @@ export const Sequence01Intro: React.FC = () => {
         opacity: subOpacity,
         transform: `translateY(${subY}px)`,
         maxWidth: 680,
-        fontFamily: 'Lato, sans-serif', fontSize: 26, fontWeight: 300,
+        fontFamily: 'Lato, sans-serif', fontSize: 30, fontWeight: 300,
         color: COLORS.biancoCalce, letterSpacing: '0.04em',
         textShadow: '0 1px 8px rgba(0,0,0,0.9)',
       }}>

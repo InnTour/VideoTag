@@ -22,8 +22,8 @@ const ArchiCard: React.FC<{elemento: string; desc: string; delay: number}> = ({e
 			padding: '10px 18px',
 			backdropFilter: 'blur(16px)',
 		}}>
-			<p style={{fontFamily: playfairFont, fontSize: 20, fontWeight: 700, color: COLORS.oroMemoria, margin: 0}}>{elemento}</p>
-			<p style={{fontFamily: latoFont, fontSize: 13, fontWeight: 300, color: COLORS.grigio90, margin: 0, marginTop: 3, lineHeight: 1.4}}>{desc}</p>
+			<p style={{fontFamily: playfairFont, fontSize: 26, fontWeight: 700, color: COLORS.oroMemoria, margin: 0}}>{elemento}</p>
+			<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 300, color: COLORS.grigio90, margin: 0, marginTop: 3, lineHeight: 1.4}}>{desc}</p>
 		</div>
 	);
 };
@@ -117,7 +117,7 @@ export const Sequence02Maestosa: React.FC = () => {
 					<div style={{opacity: titleOp, transform: `translateY(${titleY}px)`}}>
 						<div style={{display: 'inline-flex', alignItems: 'center', gap: 12, marginBottom: 14}}>
 							<div style={{width: 28, height: 2, background: `linear-gradient(90deg, ${COLORS.oroMemoria}, transparent)`}} />
-							<span style={{fontFamily: latoFont, fontSize: 12, fontWeight: 700, color: COLORS.oroMemoria, letterSpacing: '0.20em', textTransform: 'uppercase'}}>La Struttura · Come Era</span>
+							<span style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.oroMemoria, letterSpacing: '0.20em', textTransform: 'uppercase'}}>La Struttura · Come Era</span>
 						</div>
 						<h2 style={{
 							fontFamily: playfairFont, fontSize: 60, fontWeight: 700,
@@ -140,11 +140,11 @@ export const Sequence02Maestosa: React.FC = () => {
 						alignSelf: 'flex-start',
 					}}>
 						<div style={{textAlign: 'center'}}>
-							<p style={{fontFamily: latoFont, fontSize: 11, fontWeight: 700, color: COLORS.oroMemoria, letterSpacing: '0.18em', textTransform: 'uppercase', margin: 0}}>Diocesi dal</p>
-							<p style={{fontFamily: playfairFont, fontSize: 48, fontWeight: 700, color: COLORS.biancaCalce, margin: 0, lineHeight: 1, textShadow: `0 0 20px ${COLORS.oroMemoria}44`}}>1059</p>
+							<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.oroMemoria, letterSpacing: '0.18em', textTransform: 'uppercase', margin: 0}}>Diocesi dal</p>
+							<p style={{fontFamily: playfairFont, fontSize: 56, fontWeight: 700, color: COLORS.biancaCalce, margin: 0, lineHeight: 1, textShadow: `0 0 20px ${COLORS.oroMemoria}44`}}>1059</p>
 						</div>
 						<div style={{width: 1, height: 50, backgroundColor: COLORS.oroMemoria, opacity: 0.4}} />
-						<p style={{fontFamily: latoFont, fontSize: 14, fontWeight: 300, color: COLORS.grigio90, margin: 0, lineHeight: 1.5, maxWidth: 200}}>Ingresso d'onore per i prelati che hanno governato Lacedonia</p>
+						<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 300, color: COLORS.grigio90, margin: 0, lineHeight: 1.5, maxWidth: 200}}>Ingresso d'onore per i prelati che hanno governato Lacedonia</p>
 					</div>
 
 					{/* Elementi architettonici */}

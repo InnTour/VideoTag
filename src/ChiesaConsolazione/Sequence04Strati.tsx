@@ -47,7 +47,7 @@ export const Sequence04Strati: React.FC = () => {
       {/* Titolo sezione */}
       <div style={{
         position: 'absolute', left: 72, top: 80,
-        fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 13,
+        fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16,
         letterSpacing: '0.22em', textTransform: 'uppercase',
         color: COLORS.oroAntico,
         opacity: spring({ frame: Math.max(0, frame - 10), fps, config: { damping: 200 } }),
@@ -70,8 +70,8 @@ export const Sequence04Strati: React.FC = () => {
                 minWidth: 0, transition: 'none',
               }} />
               <div>
-                <span style={{ fontFamily: 'Playfair Display, serif', fontSize: 20, fontWeight: 700, color: s.color }}>{s.anno}</span>
-                <span style={{ fontFamily: 'Lato, sans-serif', fontSize: 18, fontWeight: 300, color: COLORS.biancoCalce, marginLeft: 12, opacity: 0.88 }}>{s.label}</span>
+                <span style={{ fontFamily: 'Playfair Display, serif', fontSize: 26, fontWeight: 700, color: s.color }}>{s.anno}</span>
+                <span style={{ fontFamily: 'Lato, sans-serif', fontSize: 22, fontWeight: 300, color: COLORS.biancoCalce, marginLeft: 12, opacity: 0.88 }}>{s.label}</span>
               </div>
             </div>
           );
@@ -85,7 +85,7 @@ export const Sequence04Strati: React.FC = () => {
         background: 'rgba(8,8,12,0.80)', backdropFilter: 'blur(18px)',
         borderRadius: 8, border: `1px solid rgba(26,122,106,0.28)`, padding: '20px 28px', maxWidth: 560,
       }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 22, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 27, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           La stessa terra ha visto Iside, Cristo,<br />
           vescovi e contadini. <em style={{ color: COLORS.sirenoTeal }}>La Consolazione</em><br />
           è tutto questo insieme.

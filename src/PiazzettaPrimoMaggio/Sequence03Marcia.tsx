@@ -78,7 +78,7 @@ export const Sequence03Marcia: React.FC = () => {
 					<div style={{display: 'flex', alignItems: 'center', gap: 14, opacity: titleOp}}>
 						<div style={{width: 4, height: 36, backgroundColor: COLORS.rossoBandiera, borderRadius: 2, boxShadow: `0 0 12px ${COLORS.rossoBandiera}88`}} />
 						<p style={{
-							fontFamily: playfairFont, fontSize: 28, fontWeight: 700,
+							fontFamily: playfairFont, fontSize: 32, fontWeight: 700,
 							color: COLORS.oroIrpino, margin: 0,
 							letterSpacing: '0.12em',
 							textShadow: `0 0 20px ${COLORS.oroIrpino}66`,
@@ -118,8 +118,8 @@ export const Sequence03Marcia: React.FC = () => {
 								{counterVal > 0 ? `+${counterVal}` : ''}
 							</span>
 							<div>
-								<p style={{fontFamily: latoFont, fontSize: 15, fontWeight: 700, color: COLORS.biancaCalce, margin: 0}}>contadini</p>
-								<p style={{fontFamily: latoFont, fontSize: 13, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0}}>uomini e donne con le zappe</p>
+								<p style={{fontFamily: latoFont, fontSize: 17, fontWeight: 700, color: COLORS.biancaCalce, margin: 0}}>contadini</p>
+								<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0}}>uomini e donne con le zappe</p>
 							</div>
 						</div>
 					)}
@@ -136,9 +136,9 @@ export const Sequence03Marcia: React.FC = () => {
 							borderRadius: 7, padding: '10px 20px',
 							backdropFilter: 'blur(14px)',
 						}}>
-							<p style={{fontFamily: latoFont, fontSize: 12, fontWeight: 700, color: COLORS.oroIrpino, letterSpacing: '0.15em', textTransform: 'uppercase', margin: 0}}>Destinazione</p>
-							<p style={{fontFamily: playfairFont, fontSize: 26, fontWeight: 700, color: COLORS.biancaCalce, margin: 0}}>Contrada Chiancarelle</p>
-							<p style={{fontFamily: latoFont, fontSize: 13, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0}}>Occupazione dei latifondi</p>
+							<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.oroIrpino, letterSpacing: '0.15em', textTransform: 'uppercase', margin: 0}}>Destinazione</p>
+							<p style={{fontFamily: playfairFont, fontSize: 30, fontWeight: 700, color: COLORS.biancaCalce, margin: 0}}>Contrada Chiancarelle</p>
+							<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 300, color: COLORS.grigioCaldo, margin: 0}}>Occupazione dei latifondi</p>
 						</div>
 					</div>
 				</div>
@@ -157,11 +157,11 @@ export const Sequence03Marcia: React.FC = () => {
 						backdropFilter: 'blur(16px)',
 						boxShadow: `inset 0 0 30px rgba(204,34,34,0.08)`,
 					}}>
-						<p style={{fontFamily: latoFont, fontSize: 12, fontWeight: 700, color: COLORS.rossoBandiera, letterSpacing: '0.16em', textTransform: 'uppercase', margin: 0, marginBottom: 8}}>Al canto di</p>
-						<p style={{fontFamily: playfairFont, fontSize: 32, fontWeight: 700, fontStyle: 'italic', color: COLORS.oroIrpino, margin: 0, lineHeight: 1.2}}>
+						<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.rossoBandiera, letterSpacing: '0.16em', textTransform: 'uppercase', margin: 0, marginBottom: 8}}>Al canto di</p>
+						<p style={{fontFamily: playfairFont, fontSize: 38, fontWeight: 700, fontStyle: 'italic', color: COLORS.oroIrpino, margin: 0, lineHeight: 1.2}}>
 							"Bandiera Rossa"
 						</p>
-						<p style={{fontFamily: latoFont, fontSize: 15, fontWeight: 300, color: COLORS.biancaCalce, margin: 0, marginTop: 10, lineHeight: 1.6}}>
+						<p style={{fontFamily: latoFont, fontSize: 17, fontWeight: 300, color: COLORS.biancaCalce, margin: 0, marginTop: 10, lineHeight: 1.6}}>
 							sfidarono un sistema dove i braccianti
 							<br />erano trattati come asini dai galantuomini,
 							<br />privi di diritti e di dignità.
@@ -185,8 +185,8 @@ export const Sequence03Marcia: React.FC = () => {
 								borderRadius: 7, padding: '10px 16px',
 								backdropFilter: 'blur(12px)',
 							}}>
-								<span style={{fontSize: 20}}>{icon}</span>
-								<p style={{fontFamily: latoFont, fontSize: 15, fontWeight: 400, color: COLORS.biancaCalce, margin: 0}}>{testo}</p>
+								<span style={{fontSize: 26}}>{icon}</span>
+								<p style={{fontFamily: latoFont, fontSize: 17, fontWeight: 400, color: COLORS.biancaCalce, margin: 0}}>{testo}</p>
 							</div>
 						))}
 					</div>

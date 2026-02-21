@@ -77,7 +77,7 @@ export const Sequence01Intro: React.FC = () => {
 				backdropFilter: 'blur(14px)',
 			}}>
 				<div style={{width: 7, height: 7, borderRadius: '50%', backgroundColor: COLORS.oroSacro, boxShadow: `0 0 8px ${COLORS.oroSacro}`}} />
-				<span style={{fontFamily: latoFont, fontSize: 12, color: COLORS.oroSacro, letterSpacing: '0.16em', textTransform: 'uppercase'}}>
+				<span style={{fontFamily: latoFont, fontSize: 16, color: COLORS.oroSacro, letterSpacing: '0.16em', textTransform: 'uppercase'}}>
 					Architettura & Monumenti
 				</span>
 			</div>
@@ -87,7 +87,7 @@ export const Sequence01Intro: React.FC = () => {
 				<div style={{opacity: titleOp, transform: `translateY(${titleY}px)`}}>
 					<h1 style={{
 						fontFamily: playfairFont,
-						fontSize: 90,
+						fontSize: 102,
 						fontWeight: 700,
 						color: COLORS.avorio,
 						margin: 0,
@@ -97,7 +97,7 @@ export const Sequence01Intro: React.FC = () => {
 						maxWidth: 780,
 					}}>
 						Concattedrale<br />
-						<span style={{color: COLORS.oroSacro, fontSize: 72}}>di Santa Maria Sunta</span>
+						<span style={{color: COLORS.oroSacro, fontSize: 96}}>di Santa Maria Assunta</span>
 					</h1>
 				</div>
 
@@ -111,7 +111,7 @@ export const Sequence01Intro: React.FC = () => {
 				<div style={{opacity: subOp, display: 'flex', flexDirection: 'column', gap: 6}}>
 					<p style={{
 						fontFamily: latoFont,
-						fontSize: 22,
+						fontSize: 27,
 						fontWeight: 300,
 						color: COLORS.pietraCalce,
 						margin: 0,
@@ -122,7 +122,7 @@ export const Sequence01Intro: React.FC = () => {
 					</p>
 					<p style={{
 						fontFamily: playfairFont,
-						fontSize: 18,
+						fontSize: 22,
 						fontStyle: 'italic',
 						color: COLORS.oroSacro,
 						margin: 0,

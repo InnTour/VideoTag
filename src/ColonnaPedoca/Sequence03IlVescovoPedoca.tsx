@@ -136,7 +136,7 @@ export const Sequence03IlVescovoPedoca: React.FC = () => {
       <div style={{ position: 'absolute', left: 72, top: 62, opacity: titleEntrance }}>
         <div style={{
           fontFamily: 'Lato, sans-serif', fontWeight: 700,
-          fontSize: 15, letterSpacing: '0.22em',
+          fontSize: 17, letterSpacing: '0.22em',
           color: COLORS.oroVescovile, textTransform: 'uppercase', marginBottom: 8,
         }}>Il Vescovo Pedoca</div>
         <div style={{ width: 260, height: 2, background: `linear-gradient(to right, ${COLORS.oroVescovile}, transparent)` }} />
@@ -155,17 +155,17 @@ export const Sequence03IlVescovoPedoca: React.FC = () => {
           borderRadius: 4, padding: '22px 30px', maxWidth: 520,
         }}>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 15,
+            fontFamily: 'Lato, sans-serif', fontSize: 17,
             color: COLORS.oroVescovile, letterSpacing: '0.20em',
             textTransform: 'uppercase', marginBottom: 10,
           }}>Controriforma · XVI Secolo</div>
           <div style={{
-            fontFamily: 'Playfair Display, serif', fontSize: 38,
+            fontFamily: 'Playfair Display, serif', fontSize: 44,
             fontWeight: 700, color: COLORS.biancoCalce,
             marginBottom: 10, lineHeight: 1.1,
           }}>Marco Pedoca</div>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 22,
+            fontFamily: 'Lato, sans-serif', fontSize: 27,
             color: COLORS.biancoCalce, opacity: 0.82,
             lineHeight: 1.55, fontWeight: 300,
           }}>
@@ -186,12 +186,12 @@ export const Sequence03IlVescovoPedoca: React.FC = () => {
           borderRadius: 4, padding: '16px 24px', maxWidth: 600,
         }}>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 11,
+            fontFamily: 'Lato, sans-serif', fontSize: 16,
             color: COLORS.grigioIscrizione, letterSpacing: '0.18em',
             textTransform: 'uppercase', marginBottom: 8,
           }}>Iscrizione sulla Colonna · 1586</div>
           <div style={{
-            fontFamily: 'Georgia, serif', fontSize: 30,
+            fontFamily: 'Georgia, serif', fontSize: 34,
             fontWeight: 400, color: COLORS.travertino,
             letterSpacing: '0.12em',
             textShadow: '0 1px 6px rgba(0,0,0,0.90)',
@@ -223,12 +223,12 @@ export const Sequence03IlVescovoPedoca: React.FC = () => {
           }}>{counterVal}</span>
           <div>
             <div style={{
-              fontFamily: 'Lato, sans-serif', fontSize: 16,
+              fontFamily: 'Lato, sans-serif', fontSize: 18,
               color: COLORS.biancoCalce, opacity: 0.80,
               letterSpacing: '0.12em', textTransform: 'uppercase',
             }}>la croce sovrapposta</div>
             <div style={{
-              fontFamily: 'Lato, sans-serif', fontSize: 13,
+              fontFamily: 'Lato, sans-serif', fontSize: 16,
               color: COLORS.travertino, opacity: 0.65,
               marginTop: 4,
             }}>riconsacrazione della colonna pagana</div>

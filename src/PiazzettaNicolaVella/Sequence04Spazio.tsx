@@ -22,10 +22,10 @@ const CaricaCard: React.FC<{icon: string; ruolo: string; desc: string; delay: nu
 			display: 'flex', alignItems: 'flex-start', gap: 14,
 			backdropFilter: 'blur(16px)',
 		}}>
-			<span style={{fontSize: 24, lineHeight: 1, flexShrink: 0}}>{icon}</span>
+			<span style={{fontSize: 28, lineHeight: 1, flexShrink: 0}}>{icon}</span>
 			<div>
-				<p style={{fontFamily: latoFont, fontSize: 14, fontWeight: 700, color: accent, margin: 0, marginBottom: 3, letterSpacing: '0.06em'}}>{ruolo}</p>
-				<p style={{fontFamily: latoFont, fontSize: 13, fontWeight: 300, color: COLORS.biancaCalce, margin: 0, lineHeight: 1.5}}>{desc}</p>
+				<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: accent, margin: 0, marginBottom: 3, letterSpacing: '0.06em'}}>{ruolo}</p>
+				<p style={{fontFamily: latoFont, fontSize: 16, fontWeight: 300, color: COLORS.biancaCalce, margin: 0, lineHeight: 1.5}}>{desc}</p>
 			</div>
 		</div>
 	);
@@ -87,7 +87,7 @@ export const Sequence04Spazio: React.FC = () => {
 				<div style={{flex: 1}}>
 					<div style={{display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16, opacity: titleOp}}>
 						<div style={{width: 22, height: 2, backgroundColor: COLORS.verdeInnTour, borderRadius: 1}} />
-						<span style={{fontFamily: latoFont, fontSize: 11, fontWeight: 700, color: COLORS.verdeInnTour, letterSpacing: '0.2em', textTransform: 'uppercase'}}>L'eredità civile</span>
+						<span style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.verdeInnTour, letterSpacing: '0.2em', textTransform: 'uppercase'}}>L'eredità civile</span>
 					</div>
 
 					<h2 style={{fontFamily: playfairFont, fontSize: 54, fontWeight: 700, color: COLORS.biancaCalce, margin: 0, marginBottom: 6, lineHeight: 1.05, opacity: titleOp, transform: `translateY(${titleY}px)`, textShadow: '0 2px 12px rgba(5,5,15,0.9)'}}>
@@ -107,7 +107,7 @@ export const Sequence04Spazio: React.FC = () => {
 					</h1>
 
 					<p style={{
-						fontFamily: latoFont, fontSize: 16, fontWeight: 300,
+						fontFamily: latoFont, fontSize: 18, fontWeight: 300,
 						color: COLORS.biancaCalce, margin: 0, marginTop: 18,
 						lineHeight: 1.7, opacity: wordProgress,
 						maxWidth: 380,
@@ -122,7 +122,7 @@ export const Sequence04Spazio: React.FC = () => {
 				{/* DESTRA: Cariche istituzionali */}
 				<div style={{flex: 1, display: 'flex', flexDirection: 'column', gap: 14}}>
 					<p style={{
-						fontFamily: latoFont, fontSize: 11, fontWeight: 700,
+						fontFamily: latoFont, fontSize: 16, fontWeight: 700,
 						color: COLORS.grigioCaldo, letterSpacing: '0.18em',
 						textTransform: 'uppercase', margin: 0, marginBottom: 8,
 						opacity: titleOp,

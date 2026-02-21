@@ -24,8 +24,8 @@ interface TimelineNodeProps {
 const TimelineNode: React.FC<TimelineNodeProps> = ({ label, year, color, opacity, x }) => (
   <div style={{ position: 'absolute', left: x, top: 0, opacity, textAlign: 'center', transform: 'translateX(-50%)' }}>
     <div style={{ width: 12, height: 12, borderRadius: '50%', background: color, margin: '0 auto 6px' }} />
-    <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 13, fontWeight: 700, color, letterSpacing: '0.08em' }}>{year}</div>
-    <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: COLORS.biancoCalce, opacity: 0.75, maxWidth: 110, lineHeight: 1.3 }}>{label}</div>
+    <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 16, fontWeight: 700, color, letterSpacing: '0.08em' }}>{year}</div>
+    <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 16, color: COLORS.biancoCalce, opacity: 0.75, maxWidth: 110, lineHeight: 1.3 }}>{label}</div>
   </div>
 );
 
@@ -68,7 +68,7 @@ export const Sequence02Origini: React.FC = () => {
       {/* ── IMMAGINI: anfiteatro PRIMA (0→dissolve), archivio DOPO ── */}
       {/* Anfiteatro Romano — narrato per primo */}
       <div style={{ position: 'absolute', inset: 0, opacity: 1 - dissolve }}>
-        <KenBurnsImage src={IMAGES.anfiteatro} motion="pan-right" intensity={0.05} />
+        <KenBurnsImage src={IMAGES.oggi} motion="pan-right" intensity={0.05} />
       </div>
       {/* Archivio storico — appare con il XVIII secolo */}
       <div style={{ position: 'absolute', inset: 0, opacity: dissolve }}>
@@ -101,7 +101,7 @@ export const Sequence02Origini: React.FC = () => {
       {/* ── TITOLO (spring entrance) ─────────────────────────────── */}
       <div style={{ position: 'absolute', left: 72, top: 60, opacity: titleOpacity }}>
         <div style={{
-          fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 14,
+          fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16,
           letterSpacing: '0.22em', color: COLORS.oroLampade,
           textTransform: 'uppercase', marginBottom: 8,
         }}>Le Radici Romane</div>
@@ -117,7 +117,7 @@ export const Sequence02Origini: React.FC = () => {
           borderRadius: 4, padding: '20px 28px',
         }}>
           <p style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 21, color: COLORS.biancoCalce,
+            fontFamily: 'Lato, sans-serif', fontSize: 26, color: COLORS.biancoCalce,
             lineHeight: 1.65, margin: 0, fontWeight: 300,
             textShadow: '0 1px 4px rgba(0,0,0,0.8)',
           }}>
@@ -138,13 +138,13 @@ export const Sequence02Origini: React.FC = () => {
           borderLeft: `4px solid ${COLORS.oroLampade}`,
           borderRadius: 4, padding: '14px 22px', minWidth: 340,
         }}>
-          <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: COLORS.grigio, letterSpacing: '0.18em', textTransform: 'uppercase', marginBottom: 4 }}>
+          <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 16, color: COLORS.grigio, letterSpacing: '0.18em', textTransform: 'uppercase', marginBottom: 4 }}>
             🏛 Anfiteatro Romano
           </div>
-          <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 28, fontWeight: 700, color: COLORS.oroLampade, marginBottom: 4 }}>
+          <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 32, fontWeight: 700, color: COLORS.oroLampade, marginBottom: 4 }}>
             Epoca Imperiale
           </div>
-          <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 14, color: COLORS.biancoCalce, opacity: 0.75 }}>
+          <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 16, color: COLORS.biancoCalce, opacity: 0.75 }}>
             Alle spalle dell'Istituto Magistrale
           </div>
         </div>
@@ -161,13 +161,13 @@ export const Sequence02Origini: React.FC = () => {
           borderLeft: `4px solid ${COLORS.rossoVivo}`,
           borderRadius: 4, padding: '14px 22px', minWidth: 340,
         }}>
-          <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 11, color: COLORS.grigio, letterSpacing: '0.18em', textTransform: 'uppercase', marginBottom: 4 }}>
+          <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 16, color: COLORS.grigio, letterSpacing: '0.18em', textTransform: 'uppercase', marginBottom: 4 }}>
             ⛏ Smantellamento
           </div>
-          <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 28, fontWeight: 700, color: COLORS.rossoVivo, marginBottom: 4 }}>
+          <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 32, fontWeight: 700, color: COLORS.rossoVivo, marginBottom: 4 }}>
             XVIII Secolo
           </div>
-          <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 14, color: COLORS.biancoCalce, opacity: 0.75 }}>
+          <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 16, color: COLORS.biancoCalce, opacity: 0.75 }}>
             Blocchi riusati per il campanile della Cattedrale
           </div>
         </div>
@@ -180,7 +180,7 @@ export const Sequence02Origini: React.FC = () => {
           borderRadius: 4, padding: '16px 24px',
         }}>
           <p style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 19,
+            fontFamily: 'Lato, sans-serif', fontSize: 23,
             color: COLORS.biancoCalce, lineHeight: 1.6,
             margin: 0, fontStyle: 'italic', fontWeight: 300,
           }}>

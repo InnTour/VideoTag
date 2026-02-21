@@ -90,7 +90,7 @@ export const Sequence04LaCerimonia: React.FC = () => {
         position: 'absolute', right: 60, top: '50%',
         transform: 'translateY(-50%)',
         fontFamily: 'Playfair Display, serif',
-        fontSize: 80, fontWeight: 700, fontStyle: 'italic',
+        fontSize: 96, fontWeight: 700, fontStyle: 'italic',
         color: COLORS.biancoLapide, opacity: ghostOp,
         pointerEvents: 'none', writingMode: 'vertical-rl',
         letterSpacing: '0.10em',
@@ -100,7 +100,7 @@ export const Sequence04LaCerimonia: React.FC = () => {
       <div style={{ position: 'absolute', left: 72, top: 62, opacity: titleEnt }}>
         <div style={{
           fontFamily: 'Lato, sans-serif', fontWeight: 700,
-          fontSize: 16, letterSpacing: '0.20em',
+          fontSize: 18, letterSpacing: '0.20em',
           color: COLORS.oroLuce, textTransform: 'uppercase', marginBottom: 9,
         }}>La Cerimonia · Ogni Anno · 4 Novembre</div>
         <div style={{ width: 320, height: 2, background: `linear-gradient(to right, ${COLORS.oroLuce}, transparent)` }} />
@@ -117,7 +117,7 @@ export const Sequence04LaCerimonia: React.FC = () => {
           color: COLORS.oroLuce, lineHeight: 1,
           textShadow: '0 2px 30px rgba(212,168,67,0.45)',
         }}>4<br />
-          <span style={{ fontSize: 48, fontWeight: 400, fontStyle: 'italic' }}>Novembre</span>
+          <span style={{ fontSize: 56, fontWeight: 400, fontStyle: 'italic' }}>Novembre</span>
         </div>
       </div>
 
@@ -133,12 +133,12 @@ export const Sequence04LaCerimonia: React.FC = () => {
           borderRadius: 4, padding: '22px 30px', maxWidth: 540,
         }}>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 16,
+            fontFamily: 'Lato, sans-serif', fontSize: 18,
             color: COLORS.oroLuce, letterSpacing: '0.16em',
             textTransform: 'uppercase', marginBottom: 12,
           }}>🎺 Il Rito Annuale</div>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 26,
+            fontFamily: 'Lato, sans-serif', fontSize: 30,
             color: COLORS.biancoLapide, opacity: 0.90,
             lineHeight: 1.55, fontWeight: 300,
           }}>
@@ -160,12 +160,12 @@ export const Sequence04LaCerimonia: React.FC = () => {
           borderRadius: 4, padding: '22px 30px',
         }}>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 16,
+            fontFamily: 'Lato, sans-serif', fontSize: 18,
             color: COLORS.oroLuce, letterSpacing: '0.14em',
             textTransform: 'uppercase', marginBottom: 14,
           }}>Il Legame Rinnovato</div>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 26,
+            fontFamily: 'Lato, sans-serif', fontSize: 30,
             color: COLORS.biancoLapide, opacity: 0.88,
             lineHeight: 1.55, fontWeight: 300,
           }}>

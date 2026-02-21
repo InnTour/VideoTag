@@ -77,14 +77,14 @@ export const Sequence05Outro: React.FC = () => {
         }} />
 
         <div style={{
-          fontFamily: 'Lato, sans-serif', fontSize: 15,
+          fontFamily: 'Lato, sans-serif', fontSize: 17,
           color: COLORS.oroLuce, letterSpacing: '0.24em',
           textTransform: 'uppercase', marginBottom: 24, opacity: 0.80,
         }}>Monumento ai Caduti · Lacedonia</div>
 
         <div style={{
           fontFamily: 'Playfair Display, serif',
-          fontSize: 44, fontWeight: 700,
+          fontSize: 50, fontWeight: 700,
           color: COLORS.biancoLapide,
           textAlign: 'center', lineHeight: 1.42, maxWidth: 900,
           textShadow: '0 2px 28px rgba(0,0,0,0.95)',
@@ -92,7 +92,7 @@ export const Sequence05Outro: React.FC = () => {
           Erano contadini e studenti partiti con speranza:<br />
           <em style={{ color: COLORS.oroLuce }}>la guerra li ha presi,</em><br />
           <span style={{
-            fontSize: 32, fontWeight: 400, fontStyle: 'italic',
+            fontSize: 38, fontWeight: 400, fontStyle: 'italic',
             color: COLORS.biancoLapide, opacity: 0.82,
           }}>
             ma il marmo li restituisce oggi<br />
@@ -122,13 +122,13 @@ export const Sequence05Outro: React.FC = () => {
         <div>
           <div style={{
             fontFamily: 'Lato, sans-serif', fontWeight: 700,
-            fontSize: 15, letterSpacing: '0.10em',
+            fontSize: 17, letterSpacing: '0.10em',
             color: COLORS.biancoLapide, textTransform: 'uppercase',
             textShadow: '0 1px 6px rgba(0,0,0,0.9)',
           }}>Comune di Lacedonia</div>
           <div style={{
             fontFamily: 'Lato, sans-serif', fontWeight: 300,
-            fontSize: 13, color: COLORS.oroLuce, opacity: 0.90,
+            fontSize: 16, color: COLORS.oroLuce, opacity: 0.90,
           }}>Alta Irpinia · Campania</div>
         </div>
       </div>
@@ -155,13 +155,13 @@ export const Sequence05Outro: React.FC = () => {
         <div style={{ textAlign: 'right' }}>
           <div style={{
             fontFamily: 'Lato, sans-serif', fontWeight: 700,
-            fontSize: 15, letterSpacing: '0.10em',
+            fontSize: 17, letterSpacing: '0.10em',
             color: COLORS.biancoLapide, textTransform: 'uppercase',
             textShadow: '0 1px 6px rgba(0,0,0,0.9)',
           }}>InnTour S.R.L.</div>
           <div style={{
             fontFamily: 'Lato, sans-serif', fontWeight: 300,
-            fontSize: 13, color: COLORS.verdeInnTour, opacity: 0.90,
+            fontSize: 16, color: COLORS.verdeInnTour, opacity: 0.90,
           }}>MetaBorghi Initiative</div>
         </div>
         <Img
@@ -176,7 +176,7 @@ export const Sequence05Outro: React.FC = () => {
         textAlign: 'center', opacity: urlOp * logoFade,
       }}>
         <div style={{
-          fontFamily: 'Lato, sans-serif', fontSize: 13,
+          fontFamily: 'Lato, sans-serif', fontSize: 16,
           color: COLORS.biancoLapide, opacity: 0.55, letterSpacing: '0.08em',
         }}>Cicerone Digitale di Lacedonia · Virtual Tour</div>
       </div>

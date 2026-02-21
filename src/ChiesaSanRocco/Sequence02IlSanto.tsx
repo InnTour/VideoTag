@@ -27,8 +27,8 @@ export const Sequence02IlSanto: React.FC = () => {
       <div style={{ position: 'absolute', top: 0, right: 50, writingMode: 'vertical-rl', fontFamily: 'Playfair Display, serif', fontSize: 200, fontWeight: 700, color: COLORS.oroSanto, opacity: ghostOp, pointerEvents: 'none', lineHeight: 1 }}>XIV</div>
 
       <div style={{ position: 'absolute', left: 72, top: 110, opacity: interpolate(card1, [0, 1], [0, 1]), transform: `translateY(${interpolate(card1, [0, 1], [30, 0])}px)`, background: 'rgba(8,8,12,0.80)', backdropFilter: 'blur(18px)', borderRadius: 8, border: `1px solid rgba(212,168,67,0.28)`, padding: '22px 30px', maxWidth: 520 }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.20em', textTransform: 'uppercase', color: COLORS.oroSanto, marginBottom: 10 }}>San Rocco · XIV secolo</div>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 24, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.20em', textTransform: 'uppercase', color: COLORS.oroSanto, marginBottom: 10 }}>San Rocco · XIV secolo</div>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 28, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           Pellegrino francese che curava i malati<br />
           durante la <strong style={{ color: COLORS.rossoPeste }}>Grande Peste</strong>.<br />
           Si ammalò lui stesso, guarì per miracolo.
@@ -36,23 +36,23 @@ export const Sequence02IlSanto: React.FC = () => {
       </div>
 
       <div style={{ position: 'absolute', left: 72, bottom: 340, opacity: interpolate(card2, [0, 1], [0, 1]), transform: `translateY(${interpolate(card2, [0, 1], [30, 0])}px)`, background: 'rgba(8,8,12,0.76)', backdropFilter: 'blur(18px)', borderRadius: 8, border: `1px solid rgba(139,26,26,0.28)`, padding: '20px 28px', maxWidth: 500 }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.rossoPeste, marginBottom: 8 }}>Il cane fedele</div>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 22, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.rossoPeste, marginBottom: 8 }}>Il cane fedele</div>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 27, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           Un cane gli portava il pane quando giaceva ammalato.<br />
           <em style={{ color: COLORS.oroSanto }}>Ancora oggi lo troviamo al suo fianco</em> nella statua.
         </div>
       </div>
 
       <div style={{ position: 'absolute', left: 72, bottom: 190, opacity: interpolate(card3, [0, 1], [0, 1]), transform: `translateY(${interpolate(card3, [0, 1], [25, 0])}px)`, background: 'rgba(8,8,12,0.76)', backdropFilter: 'blur(18px)', borderRadius: 8, border: `1px solid rgba(26,74,122,0.28)`, padding: '18px 26px', maxWidth: 480 }}>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.azzurroOceano, marginBottom: 8 }}>Patrono degli emigranti</div>
-        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 21, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 16, letterSpacing: '0.18em', textTransform: 'uppercase', color: COLORS.azzurroOceano, marginBottom: 8 }}>Patrono degli emigranti</div>
+        <div style={{ fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 26, color: COLORS.biancoCalce, lineHeight: 1.55 }}>
           Chi parte per terre lontane lo porta nel cuore.<br />
           <em style={{ color: COLORS.azzurroOceano }}>Protegge chi è in cammino.</em>
         </div>
       </div>
 
       <div style={{ position: 'absolute', left: 72, bottom: 60, opacity: interpolate(card4, [0, 1], [0, 1]), transform: `translateY(${interpolate(card4, [0, 1], [20, 0])}px)` }}>
-        <div style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontSize: 26, color: COLORS.oroSanto, borderLeft: `4px solid ${COLORS.oroSanto}`, paddingLeft: 24, maxWidth: 560 }}>
+        <div style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic', fontSize: 30, color: COLORS.oroSanto, borderLeft: `4px solid ${COLORS.oroSanto}`, paddingLeft: 24, maxWidth: 560 }}>
           La chiesa fu eretta nel XVI secolo, dopo un'epidemia che decimò il paese.
         </div>
       </div>

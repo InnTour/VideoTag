@@ -102,7 +102,7 @@ export const Sequence04LaRicostruzione: React.FC = () => {
       <div style={{ position: 'absolute', left: 72, top: 62, opacity: titleEnt }}>
         <div style={{
           fontFamily: 'Lato, sans-serif', fontWeight: 700,
-          fontSize: 16, letterSpacing: '0.20em',
+          fontSize: 18, letterSpacing: '0.20em',
           color: COLORS.oroSperanza, textTransform: 'uppercase', marginBottom: 9,
         }}>La Ricostruzione · Dalle Macerie una Nuova Lacedonia</div>
         <div style={{ width: 390, height: 2, background: `linear-gradient(to right, ${COLORS.oroSperanza}, transparent)` }} />
@@ -120,12 +120,12 @@ export const Sequence04LaRicostruzione: React.FC = () => {
           borderRadius: 4, padding: '22px 28px', maxWidth: 540,
         }}>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 16,
+            fontFamily: 'Lato, sans-serif', fontSize: 18,
             color: COLORS.rossoSisma, letterSpacing: '0.16em',
             textTransform: 'uppercase', marginBottom: 12,
           }}>🏛️ La Decisione · 1930</div>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 24,
+            fontFamily: 'Lato, sans-serif', fontSize: 28,
             color: COLORS.biancoMarmo, opacity: 0.88,
             lineHeight: 1.55, fontWeight: 300,
           }}>
@@ -149,12 +149,12 @@ export const Sequence04LaRicostruzione: React.FC = () => {
           borderRadius: 4, padding: '22px 28px',
         }}>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 16,
+            fontFamily: 'Lato, sans-serif', fontSize: 18,
             color: COLORS.oroSperanza, letterSpacing: '0.16em',
             textTransform: 'uppercase', marginBottom: 12,
           }}>⛰️ La Nuova Lacedonia</div>
           <div style={{
-            fontFamily: 'Lato, sans-serif', fontSize: 24,
+            fontFamily: 'Lato, sans-serif', fontSize: 28,
             color: COLORS.biancoMarmo, fontWeight: 300,
             lineHeight: 1.55, opacity: 0.88,
           }}>

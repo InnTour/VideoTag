@@ -116,7 +116,7 @@ export const Sequence05Eco: React.FC = () => {
 				<div style={{opacity: titleOp, transform: `translateY(${titleY}px)`, textAlign: 'center'}}>
 					<h2 style={{
 						fontFamily: playfairFont,
-						fontSize: 46,
+						fontSize: 54,
 						fontWeight: 700,
 						color: COLORS.biancaCalce,
 						margin: 0,
@@ -128,7 +128,7 @@ export const Sequence05Eco: React.FC = () => {
 					</h2>
 					<p style={{
 						fontFamily: latoFont,
-						fontSize: 16,
+						fontSize: 18,
 						fontWeight: 300,
 						color: COLORS.grigio60,
 						margin: '6px 0 0',
@@ -158,15 +158,28 @@ export const Sequence05Eco: React.FC = () => {
 						display: 'flex', alignItems: 'center', justifyContent: 'center',
 					}}>
 						<Img
-							src={staticFile('Logo facicon.png')}
+							src={staticFile('logo-inntour.png')}
 							style={{height: 52, width: 'auto', objectFit: 'contain'}}
 						/>
+					</div>
+				</div>
+				{/* Logo Comune di Lacedonia */}
+				<div style={{opacity: logoOp, transform: `scale(${logoScale})`, marginTop: 4}}>
+					<div style={{
+						border: `1px solid ${COLORS.oroIrpino || COLORS.oroSacro || '#D4A843'}44`,
+						borderRadius: 8,
+						padding: '10px 32px',
+						background: 'rgba(6,6,14,0.72)',
+						backdropFilter: 'blur(16px)',
+						display: 'flex', alignItems: 'center', justifyContent: 'center',
+					}}>
+						<Img src={staticFile('lacedonia-logo.png')} style={{height: 48, width: 'auto', objectFit: 'contain'}} />
 					</div>
 				</div>
 
 				<p style={{
 					fontFamily: playfairFont,
-					fontSize: 22,
+					fontSize: 27,
 					fontWeight: 400,
 					color: COLORS.biancaCalce,
 					margin: 0,
@@ -179,7 +192,7 @@ export const Sequence05Eco: React.FC = () => {
 				</p>
 				<p style={{
 					fontFamily: latoFont,
-					fontSize: 13,
+					fontSize: 16,
 					fontWeight: 300,
 					color: COLORS.grigio60,
 					margin: 0,
@@ -203,7 +216,7 @@ export const Sequence05Eco: React.FC = () => {
 					backdropFilter: 'blur(12px)',
 				}}>
 					<div style={{width: 6, height: 6, borderRadius: '50%', backgroundColor: COLORS.oroMemoria, boxShadow: `0 0 7px ${COLORS.oroMemoria}`}} />
-					<span style={{fontFamily: latoFont, fontSize: 11, color: COLORS.grigio60, letterSpacing: '0.14em'}}>
+					<span style={{fontFamily: latoFont, fontSize: 16, color: COLORS.grigio60, letterSpacing: '0.14em'}}>
 						A1.10 · Porta di Sopra (Demolita) · Architettura e Monumenti
 					</span>
 				</div>
@@ -222,7 +235,7 @@ export const Sequence05Eco: React.FC = () => {
 			}}>
 				<p style={{
 					fontFamily: playfairFont,
-					fontSize: 17,
+					fontSize: 19,
 					fontStyle: 'italic',
 					fontWeight: 400,
 					color: COLORS.oroMemoria,

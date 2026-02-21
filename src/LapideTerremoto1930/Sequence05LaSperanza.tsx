@@ -102,14 +102,14 @@ export const Sequence05LaSperanza: React.FC = () => {
         }} />
 
         <div style={{
-          fontFamily: 'Lato, sans-serif', fontSize: 15,
+          fontFamily: 'Lato, sans-serif', fontSize: 17,
           color: COLORS.grigioLapide, letterSpacing: '0.24em',
           textTransform: 'uppercase', marginBottom: 20, opacity: 0.85,
         }}>A4.09 · Lacedonia · 22–23 Luglio 1930</div>
 
         <div style={{
           fontFamily: 'Playfair Display, serif',
-          fontSize: 48, fontWeight: 700,
+          fontSize: 56, fontWeight: 700,
           color: COLORS.biancoMarmo,
           textAlign: 'center', lineHeight: 1.42,
           maxWidth: 920,
@@ -120,7 +120,7 @@ export const Sequence05LaSperanza: React.FC = () => {
           <em style={{ color: COLORS.oroSperanza }}>'terra ballerina'</em><br />
           che ha saputo rialzarsi —<br />
           <span style={{
-            fontSize: 34, fontWeight: 400, fontStyle: 'italic',
+            fontSize: 40, fontWeight: 400, fontStyle: 'italic',
             color: COLORS.biancoMarmo, opacity: 0.80,
           }}>
             trasformando la polvere<br />
@@ -149,13 +149,13 @@ export const Sequence05LaSperanza: React.FC = () => {
         <div>
           <div style={{
             fontFamily: 'Lato, sans-serif', fontWeight: 700,
-            fontSize: 15, letterSpacing: '0.10em',
+            fontSize: 17, letterSpacing: '0.10em',
             color: COLORS.biancoMarmo, textTransform: 'uppercase',
             textShadow: '0 1px 6px rgba(0,0,0,0.9)',
           }}>Comune di Lacedonia</div>
           <div style={{
             fontFamily: 'Lato, sans-serif', fontWeight: 300,
-            fontSize: 13, color: COLORS.oroSperanza, opacity: 0.88,
+            fontSize: 16, color: COLORS.oroSperanza, opacity: 0.88,
           }}>Alta Irpinia · Campania</div>
         </div>
       </div>
@@ -182,13 +182,13 @@ export const Sequence05LaSperanza: React.FC = () => {
         <div style={{ textAlign: 'right' }}>
           <div style={{
             fontFamily: 'Lato, sans-serif', fontWeight: 700,
-            fontSize: 15, letterSpacing: '0.10em',
+            fontSize: 17, letterSpacing: '0.10em',
             color: COLORS.biancoMarmo, textTransform: 'uppercase',
             textShadow: '0 1px 6px rgba(0,0,0,0.9)',
           }}>InnTour S.R.L.</div>
           <div style={{
             fontFamily: 'Lato, sans-serif', fontWeight: 300,
-            fontSize: 13, color: COLORS.verdeInnTour, opacity: 0.90,
+            fontSize: 16, color: COLORS.verdeInnTour, opacity: 0.90,
           }}>MetaBorghi Initiative</div>
         </div>
         <Img
@@ -203,7 +203,7 @@ export const Sequence05LaSperanza: React.FC = () => {
         textAlign: 'center', opacity: urlOp * logoFade,
       }}>
         <div style={{
-          fontFamily: 'Lato, sans-serif', fontSize: 13,
+          fontFamily: 'Lato, sans-serif', fontSize: 16,
           color: COLORS.biancoMarmo, opacity: 0.52, letterSpacing: '0.08em',
         }}>Cicerone Digitale di Lacedonia · Virtual Tour</div>
       </div>
