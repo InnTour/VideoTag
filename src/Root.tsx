@@ -1,11 +1,5 @@
 import "./index.css";
-import { Composition, staticFile } from "remotion";
-import {
-  CaptionedVideo,
-  calculateCaptionedVideoMetadata,
-  captionedVideoSchema,
-} from "./CaptionedVideo";
-import { LacedoniaVideo } from "./LacedoniaVideo";
+import { Composition } from "remotion";
 import { MetaBorghiVideo } from "./MetaBorghiVideo";
 import { PortaLaStella } from "./PortaLaStella";
 import { PiazzettaNicolaVella } from "./PiazzettaNicolaVella";
@@ -33,25 +27,6 @@ import { ColonnaPedoca } from "./ColonnaPedoca";
 export const RemotionRoot: React.FC = () => {
   return (
     <>
-      <Composition
-        id="CaptionedVideo"
-        component={CaptionedVideo}
-        calculateMetadata={calculateCaptionedVideoMetadata}
-        schema={captionedVideoSchema}
-        width={1080}
-        height={1920}
-        defaultProps={{
-          src: staticFile("sample-video.mp4"),
-        }}
-      />
-      <Composition
-        id="LacedoniaVideo"
-        component={LacedoniaVideo}
-        durationInFrames={1500}
-        fps={30}
-        width={1920}
-        height={1080}
-      />
       <Composition
         id="MetaBorghiVideo"
         component={MetaBorghiVideo}
