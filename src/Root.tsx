@@ -21,6 +21,7 @@ import { FrankCancianMavi } from "./FrankCancianMavi";
 import { MonumentoAiCaduti } from "./MonumentoAiCaduti";
 import { LapideTerremoto1930 } from "./LapideTerremoto1930";
 import { ColonnaPedoca } from "./ColonnaPedoca";
+import { PiazzaDeSanctis } from "./PiazzaDeSanctis";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -233,6 +234,16 @@ export const RemotionRoot: React.FC = () => {
         id="A4-10-ColonnaPedoca"
         component={ColonnaPedoca}
         durationInFrames={1776}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      {/* A1.01 — Piazza De Sanctis · "Il Telegramma" · voce Iapetus: 141.92s → 4258 frame */}
+      <Composition
+        id="A1-01-PiazzaDeSanctis"
+        component={PiazzaDeSanctis}
+        durationInFrames={4258}
         fps={30}
         width={1920}
         height={1080}
