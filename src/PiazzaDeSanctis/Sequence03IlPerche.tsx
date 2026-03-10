@@ -6,7 +6,6 @@ import React from 'react';
 import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig } from 'remotion';
 import { KenBurnsImage } from './components/KenBurnsImage';
 import { ParticleField } from './components/ParticleField';
-import { CaptionOverlay } from './components/CaptionOverlay';
 import { IMAGES, COLORS, PLAYFAIR, LATO } from './constants';
 
 export const Sequence03IlPerche: React.FC = () => {
@@ -206,8 +205,6 @@ export const Sequence03IlPerche: React.FC = () => {
         </div>
       </div>
 
-      {/* Sottotitoli */}
-      <CaptionOverlay />
     </AbsoluteFill>
   );
 };

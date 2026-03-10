@@ -3,7 +3,7 @@
 // Durata: 141.92s · 4258 frame @30fps · Voce: Iapetus
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const DURATION = 4258;
+export const DURATION = 3175;
 export const FPS = 30;
 
 const DIR = 'images/!!!!!TAG A1.01 - PIAZZA DE SANCTIS';
@@ -34,14 +34,14 @@ export const AUDIO = {
 
 export const CAPTIONS_SRC = 'captions/A1-01-PiazzaDeSanctis.json';
 
-// ── Durate sequenze (6 seq + 5 fade×20 = 4358−100=4258f ✓) ──────────────────
+// ── Durate sequenze (6 seq + 5 fade×20 = 3275−100=3175f ✓) ──────────────────
 export const SEQ_DUR = {
-  s01:        600,   // Intro · Busto · 20s
-  s02:        750,   // De Sanctis · Il Telegramma · 25s
-  s03:        750,   // Il Perché · Morra · 25s
-  s04:        600,   // La Piazza · Campane · 20s
-  s05:        750,   // I Contadini · Il Faro · 25s
-  s06:        908,   // Aforisma · Outro · 30.27s
+  s01:        460,   // Intro · Busto · 15.3s
+  s02:        560,   // De Sanctis · Il Telegramma · 18.7s
+  s03:        570,   // Il Perché · Morra · 19s
+  s04:        460,   // La Piazza · Campane · 15.3s
+  s05:        545,   // I Contadini · Il Faro · 18.2s
+  s06:        680,   // Aforisma · Outro · 22.7s
   transition:  20,
 } as const;
 

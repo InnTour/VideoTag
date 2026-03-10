@@ -6,7 +6,6 @@ import React from 'react';
 import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig, Img, staticFile } from 'remotion';
 import { KenBurnsImage } from './components/KenBurnsImage';
 import { ParticleField } from './components/ParticleField';
-import { CaptionOverlay } from './components/CaptionOverlay';
 import { IMAGES, COLORS, PLAYFAIR, LATO } from './constants';
 
 export const Sequence01Intro: React.FC = () => {
@@ -34,7 +33,7 @@ export const Sequence01Intro: React.FC = () => {
   return (
     <AbsoluteFill style={{ background: COLORS.neroFondo }}>
       {/* Background: busto/piazza — zoom-in lento */}
-      <KenBurnsImage src={IMAGES.hero} motion="zoom-in" intensity={0.04} />
+      <KenBurnsImage src={IMAGES.hero} motion="zoom-in" intensity={0.04} objectPosition="center top" />
 
       {/* Flash apertura bianca */}
       <AbsoluteFill style={{ background: 'white', opacity: flashOp, pointerEvents: 'none' }} />
@@ -178,12 +177,10 @@ export const Sequence01Intro: React.FC = () => {
           right: 80,
           opacity: labelFade,
         }}>
-          <Img src={staticFile(IMAGES.logoInnTour)} style={{ height: 52, objectFit: 'contain' }} />
+          <Img src={staticFile(IMAGES.logoInnTour)} style={{ height: 72, objectFit: 'contain' }} />
         </div>
       </AbsoluteFill>
 
-      {/* Sottotitoli */}
-      <CaptionOverlay />
     </AbsoluteFill>
   );
 };
