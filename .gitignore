@@ -3,3 +3,6 @@ out/
 .remotion/
 *.mp4
 *.mov
+whisper.cpp/
+temp/
+*.wav
