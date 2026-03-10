@@ -6,7 +6,6 @@ import React from 'react';
 import { AbsoluteFill, interpolate, Img, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
 import { KenBurnsImage } from './components/KenBurnsImage';
 import { ParticleField } from './components/ParticleField';
-import { CaptionOverlay } from './components/CaptionOverlay';
 import { IMAGES, COLORS, PLAYFAIR, LATO } from './constants';
 
 export const Sequence06Aforisma: React.FC = () => {
@@ -185,17 +184,15 @@ export const Sequence06Aforisma: React.FC = () => {
       }}>
         <Img
           src={staticFile(IMAGES.logoComune)}
-          style={{ height: 64, objectFit: 'contain' }}
+          style={{ height: 96, objectFit: 'contain' }}
         />
-        <div style={{ width: 1, height: 48, background: COLORS.grigioNebbia }} />
+        <div style={{ width: 1, height: 72, background: COLORS.grigioNebbia }} />
         <Img
           src={staticFile(IMAGES.logoInnTour)}
-          style={{ height: 52, objectFit: 'contain' }}
+          style={{ height: 80, objectFit: 'contain' }}
         />
       </div>
 
-      {/* Sottotitoli */}
-      <CaptionOverlay />
     </AbsoluteFill>
   );
 };

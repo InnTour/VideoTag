@@ -6,7 +6,6 @@ import React from 'react';
 import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig } from 'remotion';
 import { KenBurnsImage } from './components/KenBurnsImage';
 import { ParticleField } from './components/ParticleField';
-import { CaptionOverlay } from './components/CaptionOverlay';
 import { IMAGES, COLORS, PLAYFAIR, LATO } from './constants';
 
 export const Sequence02DeSanctis: React.FC = () => {
@@ -37,11 +36,11 @@ export const Sequence02DeSanctis: React.FC = () => {
     <AbsoluteFill style={{ background: COLORS.neroFondo }}>
       {/* Immagine 1: De Sanctis · pan-right */}
       <div style={{ position: 'absolute', inset: 0, opacity: 1 - dissolveProgress }}>
-        <KenBurnsImage src={IMAGES.deSanctis} motion="pan-right" intensity={0.04} />
+        <KenBurnsImage src={IMAGES.deSanctis} motion="pan-right" intensity={0.04} objectPosition="center top" />
       </div>
       {/* Immagine 2: Telegramma · zoom-in */}
       <div style={{ position: 'absolute', inset: 0, opacity: dissolveProgress }}>
-        <KenBurnsImage src={IMAGES.telegramma} motion="zoom-in" intensity={0.035} />
+        <KenBurnsImage src={IMAGES.telegramma} motion="zoom-in" intensity={0.035} objectPosition="center top" />
       </div>
 
       {/* Overlay gradiente laterale */}
@@ -205,8 +204,6 @@ export const Sequence02DeSanctis: React.FC = () => {
         </div>
       </div>
 
-      {/* Sottotitoli */}
-      <CaptionOverlay />
     </AbsoluteFill>
   );
 };

@@ -7,7 +7,6 @@ import React from 'react';
 import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig } from 'remotion';
 import { KenBurnsImage } from './components/KenBurnsImage';
 import { ParticleField } from './components/ParticleField';
-import { CaptionOverlay } from './components/CaptionOverlay';
 import { IMAGES, COLORS, PLAYFAIR, LATO } from './constants';
 
 // SVG onda campana — visualizza l'audio ambiente
@@ -170,8 +169,6 @@ export const Sequence04LaPiazza: React.FC = () => {
         </div>
       </div>
 
-      {/* Sottotitoli */}
-      <CaptionOverlay />
     </AbsoluteFill>
   );
 };
