@@ -23,6 +23,7 @@ import { LapideTerremoto1930 } from "./LapideTerremoto1930";
 import { ColonnaPedoca } from "./ColonnaPedoca";
 import { PiazzaDeSanctis } from "./PiazzaDeSanctis";
 import { ViaTagliata } from "./ViaTagliata";
+import { PortaDiSotto } from "./PortaDiSotto";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -39,6 +40,16 @@ export const RemotionRoot: React.FC = () => {
       />
 
       {/* === CICERONE DIGITALE DI LACEDONIA — Clip Tematiche === */}
+
+      {/* A1.04 — Porta di Sotto · "La Porta dei Mercanti" · voce Leda: 41.98s → 1259 frame */}
+      <Composition
+        id="A1-04-PortaDiSotto"
+        component={PortaDiSotto}
+        durationInFrames={1259}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
 
       {/* A1.02 — Porta La Stella · "La Soglia Sepolta" · voce Iapetus: 65.25s → 1958 frame */}
       <Composition
