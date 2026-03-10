@@ -40,11 +40,11 @@ export const RemotionRoot: React.FC = () => {
 
       {/* === CICERONE DIGITALE DI LACEDONIA — Clip Tematiche === */}
 
-      {/* A1.02 — Porta la Stella · durata audio: ~64s → 1920 frame */}
+      {/* A1.02 — Porta La Stella · "La Soglia Sepolta" · voce Iapetus: 65.25s → 1958 frame */}
       <Composition
         id="A1-02-PortaLaStella"
         component={PortaLaStella}
-        durationInFrames={1920}
+        durationInFrames={1958}
         fps={30}
         width={1920}
         height={1080}
