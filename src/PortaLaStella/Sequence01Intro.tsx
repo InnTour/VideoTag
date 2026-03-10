@@ -1,249 +1,109 @@
-import {
-	AbsoluteFill,
-	interpolate,
-	spring,
-	useCurrentFrame,
-	useVideoConfig,
-} from 'remotion';
-import {COLORS, playfairFont, latoFont} from './constants';
-import {PortaSVG} from './svg/PortaSVG';
+/**
+ * Seq01 — Intro · Sotto le Rupi · La Soglia Sepolta
+ * 490f / 16.3s — porta hero · zoom-in top · hook "versante sud-ovest"
+ */
+import React from 'react';
+import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig, Img, staticFile } from 'remotion';
+import { KenBurnsImage } from './components/KenBurnsImage';
+import { ParticleField } from './components/ParticleField';
+import { IMAGES, COLORS, PLAYFAIR, LATO } from './constants';
 
 export const Sequence01Intro: React.FC = () => {
-	const frame = useCurrentFrame();
-	const {fps, durationInFrames} = useVideoConfig();
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
 
-	// Fade in/out della sequenza
-	const fadeIn = interpolate(frame, [0, fps * 0.6], [0, 1], {extrapolateRight: 'clamp'});
-	const fadeOut = interpolate(frame, [durationInFrames - fps * 0.5, durationInFrames], [1, 0], {
-		extrapolateLeft: 'clamp',
-	});
-	const opacity = Math.min(fadeIn, fadeOut);
+  const globalFade = interpolate(frame, [0, fps * 1.2], [0, 1], { extrapolateRight: 'clamp' });
+  const flashOp    = interpolate(frame, [0, 4, 16, 28], [0.6, 0, 0, 0], { extrapolateRight: 'clamp' });
+  const overlayOp  = interpolate(frame, [0, fps * 0.8], [0, 1], { extrapolateRight: 'clamp' });
 
-	// Logo/Badge InnTour in alto a sinistra
-	const badgeSpring = spring({frame, fps, config: {damping: 200}, durationInFrames: Math.round(0.7 * fps)});
-	const badgeX = interpolate(badgeSpring, [0, 1], [-160, 0]);
+  const labelFade  = interpolate(frame, [fps * 0.8, fps * 1.6], [0, 1], { extrapolateRight: 'clamp' });
+  const titleFade  = interpolate(frame, [fps * 1.1, fps * 2.0], [0, 1], { extrapolateRight: 'clamp' });
+  const titleShift = interpolate(frame, [fps * 1.1, fps * 2.0], [28, 0],  { extrapolateRight: 'clamp' });
+  const subFade    = interpolate(frame, [fps * 1.6, fps * 2.5], [0, 1], { extrapolateRight: 'clamp' });
+  const hookFade   = interpolate(frame, [fps * 2.8, fps * 3.8], [0, 1], { extrapolateRight: 'clamp' });
+  const hookShift  = interpolate(frame, [fps * 2.8, fps * 3.8], [18, 0],  { extrapolateRight: 'clamp' });
 
-	// Titolo principale "PORTA LA STELLA"
-	const titleSpring = spring({
-		frame: Math.max(0, frame - Math.round(0.5 * fps)),
-		fps,
-		config: {damping: 160},
-		durationInFrames: Math.round(1 * fps),
-	});
-	const titleY = interpolate(titleSpring, [0, 1], [50, 0]);
-	const titleOpacity = interpolate(titleSpring, [0, 1], [0, 1]);
-	const letterSpacing = interpolate(titleSpring, [0, 1], [30, 8]);
+  // Ghost "1456" — il sisma che la fece nascere
+  const ghostOp = interpolate(frame, [fps * 2.5, fps * 4], [0, 0.065], { extrapolateRight: 'clamp' });
 
-	// Sottotitolo sezione
-	const subSpring = spring({
-		frame: Math.max(0, frame - Math.round(1.2 * fps)),
-		fps,
-		config: {damping: 200},
-		durationInFrames: Math.round(0.8 * fps),
-	});
-	const subOpacity = interpolate(subSpring, [0, 1], [0, 1]);
-	const subY = interpolate(subSpring, [0, 1], [20, 0]);
+  return (
+    <AbsoluteFill style={{ background: COLORS.neroFondo }}>
+      <KenBurnsImage src={IMAGES.porta} motion="zoom-in" intensity={0.04} objectPosition="center top" />
 
-	// Linea decorativa orizzontale
-	const lineWidth = interpolate(
-		frame,
-		[Math.round(1.5 * fps), Math.round(2.2 * fps)],
-		[0, 300],
-		{extrapolateLeft: 'clamp', extrapolateRight: 'clamp'},
-	);
+      <AbsoluteFill style={{ background: 'white', opacity: flashOp, pointerEvents: 'none' }} />
+      <AbsoluteFill style={{
+        opacity: overlayOp,
+        background: 'linear-gradient(to right, rgba(10,8,4,0.88) 0%, rgba(10,8,4,0.55) 55%, rgba(10,8,4,0.18) 100%)',
+      }} />
+      <AbsoluteFill style={{
+        background: 'radial-gradient(ellipse at center, transparent 42%, rgba(10,8,4,0.58) 100%)',
+        opacity: overlayOp,
+      }} />
 
-	// Luce ambientale in fondo (vignette calda)
-	const warmth = interpolate(frame, [0, durationInFrames], [0, 0.12], {extrapolateRight: 'clamp'});
+      {/* Ghost "1456" */}
+      <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center', opacity: ghostOp, pointerEvents: 'none' }}>
+        <span style={{
+          fontFamily: PLAYFAIR, fontSize: 300, fontWeight: 700,
+          color: COLORS.oroOrsini, userSelect: 'none', letterSpacing: '-0.02em',
+        }}>1456</span>
+      </AbsoluteFill>
 
-	return (
-		<AbsoluteFill style={{opacity, backgroundColor: COLORS.bgScuro}}>
-			{/* Sfondo: gradiente cielo/roccia al tramonto */}
-			<AbsoluteFill
-				style={{
-					background: `linear-gradient(
-						175deg,
-						#0d0a06 0%,
-						#1a1208 25%,
-						#2a1a0e 50%,
-						${COLORS.pietraAntica}44 75%,
-						${COLORS.terraBruciata}33 100%
-					)`,
-				}}
-			/>
+      <ParticleField mode="pietra" opacity={0.18} count={32} />
 
-			{/* Overlay caldo progressivo */}
-			<AbsoluteFill
-				style={{
-					background: `radial-gradient(ellipse at 60% 80%, ${COLORS.oroIrpino}${Math.round(warmth * 255).toString(16).padStart(2, '0')} 0%, transparent 65%)`,
-					pointerEvents: 'none',
-				}}
-			/>
+      <AbsoluteFill style={{ opacity: globalFade }}>
+        {/* Badge sezione */}
+        <div style={{
+          position: 'absolute', top: 60, left: 80,
+          opacity: labelFade, display: 'flex', alignItems: 'center', gap: 12,
+        }}>
+          <div style={{ width: 4, height: 32, background: COLORS.oroOrsini, borderRadius: 2 }} />
+          <span style={{
+            fontFamily: LATO, fontSize: 15, fontWeight: 700,
+            letterSpacing: '0.20em', color: COLORS.oroOrsini, textTransform: 'uppercase',
+          }}>A1.02 · Architettura & Monumenti</span>
+        </div>
 
-			{/* Porta SVG — centrata, leggermente a destra */}
-			<div
-				style={{
-					position: 'absolute',
-					right: 120,
-					top: '50%',
-					transform: 'translateY(-50%)',
-					opacity: 0.92,
-				}}
-			>
-				<PortaSVG width={580} height={740} />
-			</div>
+        {/* Logo InnTour */}
+        <div style={{ position: 'absolute', top: 60, right: 80, opacity: labelFade }}>
+          <Img src={staticFile(IMAGES.logoInnTour)} style={{ height: 72, objectFit: 'contain' }} />
+        </div>
 
-			{/* Overlay vignette sinistra (dove sta il testo) */}
-			<AbsoluteFill
-				style={{
-					background:
-						'linear-gradient(90deg, rgba(10,8,4,0.92) 0%, rgba(10,8,4,0.75) 40%, transparent 65%)',
-					pointerEvents: 'none',
-				}}
-			/>
+        {/* Titolo */}
+        <div style={{
+          position: 'absolute', top: 160, left: 80, right: 80,
+          opacity: titleFade, transform: `translateY(${titleShift}px)`,
+        }}>
+          <div style={{
+            fontFamily: PLAYFAIR, fontSize: 104, fontWeight: 700,
+            color: COLORS.biancoCalce, lineHeight: 1.05,
+            textShadow: '0 4px 24px rgba(0,0,0,0.95)', maxWidth: 900,
+          }}>Porta La Stella</div>
+        </div>
 
-			{/* === BADGE SEZIONE in alto a sinistra === */}
-			<div
-				style={{
-					position: 'absolute',
-					top: 52,
-					left: 60,
-					transform: `translateX(${badgeX}px)`,
-					display: 'flex',
-					alignItems: 'center',
-					gap: 14,
-				}}
-			>
-				{/* Pill colorato */}
-				<div
-					style={{
-						backgroundColor: COLORS.verdeInnTour,
-						borderRadius: 4,
-						padding: '6px 18px',
-						display: 'flex',
-						alignItems: 'center',
-						gap: 8,
-					}}
-				>
-					<span style={{fontFamily: latoFont, fontSize: 13, fontWeight: 700, color: '#fff', letterSpacing: '0.12em'}}>
-						ARCHITETTURA E MONUMENTI
-					</span>
-				</div>
-				{/* Tag ID */}
-				<span style={{fontFamily: latoFont, fontSize: 14, color: COLORS.grigioCaldo, letterSpacing: '0.1em'}}>
-					A1.02
-				</span>
-			</div>
+        {/* Sottotitolo */}
+        <div style={{ position: 'absolute', top: 308, left: 80, opacity: subFade }}>
+          <div style={{
+            fontFamily: LATO, fontSize: 34, fontWeight: 300,
+            color: COLORS.oroOrsini, letterSpacing: '0.06em',
+            textShadow: '0 2px 12px rgba(0,0,0,0.85)',
+          }}>La Soglia Sepolta · Sotto le Rupi</div>
+        </div>
 
-			{/* === TESTO PRINCIPALE — lato sinistro === */}
-			<div
-				style={{
-					position: 'absolute',
-					left: 60,
-					top: '50%',
-					transform: 'translateY(-55%)',
-					maxWidth: 700,
-				}}
-			>
-				{/* Titolo principale */}
-				<h1
-					style={{
-						fontFamily: playfairFont,
-						fontSize: 88,
-						fontWeight: 700,
-						color: COLORS.biancaCalce,
-						letterSpacing,
-						opacity: titleOpacity,
-						transform: `translateY(${titleY}px)`,
-						margin: 0,
-						textShadow: `0 2px 20px rgba(0,0,0,0.8), 0 0 60px ${COLORS.oroIrpino}44`,
-						lineHeight: 1.05,
-					}}
-				>
-					PORTA
-					<br />
-					<span style={{color: COLORS.oroIrpino}}>LA STELLA</span>
-				</h1>
-
-				{/* Linea decorativa */}
-				<div
-					style={{
-						width: lineWidth,
-						height: 2,
-						backgroundColor: COLORS.oroIrpino,
-						marginTop: 24,
-						marginBottom: 18,
-						opacity: 0.8,
-					}}
-				/>
-
-				{/* Sottotitolo */}
-				<p
-					style={{
-						fontFamily: latoFont,
-						fontSize: 20,
-						fontWeight: 300,
-						color: COLORS.biancaCalce,
-						opacity: subOpacity,
-						transform: `translateY(${subY}px)`,
-						margin: 0,
-						letterSpacing: '0.18em',
-						textTransform: 'uppercase',
-					}}
-				>
-					Cinta Muraria · Porta degli Orsini
-				</p>
-
-				{/* Localizzazione */}
-				<p
-					style={{
-						fontFamily: latoFont,
-						fontSize: 16,
-						fontWeight: 400,
-						color: COLORS.grigioCaldo,
-						opacity: subOpacity * 0.8,
-						transform: `translateY(${subY}px)`,
-						margin: 0,
-						marginTop: 8,
-						letterSpacing: '0.08em',
-					}}
-				>
-					Versante sud-ovest della Cittadella · Zona delle Rupi
-				</p>
-			</div>
-
-			{/* InnTour logo testuale in basso a sinistra */}
-			<div
-				style={{
-					position: 'absolute',
-					bottom: 40,
-					left: 60,
-					opacity: subOpacity * 0.6,
-				}}
-			>
-				<span
-					style={{
-						fontFamily: latoFont,
-						fontSize: 16,
-						fontWeight: 700,
-						color: COLORS.verdeInnTour,
-						letterSpacing: '0.15em',
-					}}
-				>
-					INNTOUR
-				</span>
-				<span
-					style={{
-						fontFamily: latoFont,
-						fontSize: 16,
-						fontWeight: 300,
-						color: COLORS.grigioCaldo,
-						letterSpacing: '0.08em',
-						marginLeft: 8,
-					}}
-				>
-					· Cicerone Digitale di Lacedonia
-				</span>
-			</div>
-		</AbsoluteFill>
-	);
+        {/* Hook narrativo */}
+        <div style={{
+          position: 'absolute', bottom: 180, left: 80, right: 200,
+          opacity: hookFade, transform: `translateY(${hookShift}px)`,
+        }}>
+          <div style={{
+            fontFamily: LATO, fontSize: 28, fontWeight: 400,
+            color: COLORS.biancoCalce, lineHeight: 1.6,
+            textShadow: '0 2px 10px rgba(0,0,0,0.95)', maxWidth: 760,
+          }}>
+            Sul versante sud-ovest della cittadella, tra le rupi e il silenzio,
+            esiste una porta che ha più di cinque secoli — e che nessuno vede più.
+          </div>
+        </div>
+      </AbsoluteFill>
+    </AbsoluteFill>
+  );
 };

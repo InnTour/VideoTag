@@ -1,24 +1,24 @@
 /**
- * TAG A1.02 — Porta La Stella
- * "La Soglia Sepolta"
+ * TAG A1.04 — Porta di Sotto
+ * "La Porta dei Mercanti"
  *
- * Durata: 65.25s · 1958 frame @30fps · Voce: Iapetus
+ * Durata: 41.98s · 1259 frame @30fps · Voce: Leda
  * Sottotitoli: disabilitati — gestiti in Filmora
  *
  * Sequenze:
- *   s01=490 + s02=540 + s03=490 + s04=498 − 3×20 = 2018−60 = 1958 ✓
+ *   s01=310 + s02=330 + s03=310 + s04=369 − 3×20 = 1259 ✓
  */
 import React from 'react';
 import { AbsoluteFill, Audio, staticFile } from 'remotion';
 import { TransitionSeries, linearTiming } from '@remotion/transitions';
 import { fade } from '@remotion/transitions/fade';
-import { Sequence01Intro }       from './Sequence01Intro';
-import { Sequence02Storia }      from './Sequence02Storia';
-import { Sequence03Paradosso }   from './Sequence03Paradosso';
-import { Sequence04Risoluzione } from './Sequence04Risoluzione';
+import { Sequence01Intro }     from './Sequence01Intro';
+import { Sequence02Passaggio } from './Sequence02Passaggio';
+import { Sequence03Commercio } from './Sequence03Commercio';
+import { Sequence04Oggi }      from './Sequence04Oggi';
 import { AUDIO, COLORS, SEQ_DUR } from './constants';
 
-export const PortaLaStella: React.FC = () => {
+export const PortaDiSotto: React.FC = () => {
   const fadeTiming = linearTiming({ durationInFrames: SEQ_DUR.transition });
 
   return (
@@ -41,7 +41,7 @@ export const PortaLaStella: React.FC = () => {
           durationInFrames={SEQ_DUR.s02}
           premountFor={SEQ_DUR.transition}
         >
-          <Sequence02Storia />
+          <Sequence02Passaggio />
         </TransitionSeries.Sequence>
 
         <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
@@ -50,13 +50,13 @@ export const PortaLaStella: React.FC = () => {
           durationInFrames={SEQ_DUR.s03}
           premountFor={SEQ_DUR.transition}
         >
-          <Sequence03Paradosso />
+          <Sequence03Commercio />
         </TransitionSeries.Sequence>
 
         <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
 
         <TransitionSeries.Sequence durationInFrames={SEQ_DUR.s04}>
-          <Sequence04Risoluzione />
+          <Sequence04Oggi />
         </TransitionSeries.Sequence>
       </TransitionSeries>
     </AbsoluteFill>

@@ -1,373 +1,159 @@
-import {
-	AbsoluteFill,
-	interpolate,
-	spring,
-	useCurrentFrame,
-	useVideoConfig,
-} from 'remotion';
-import {COLORS, playfairFont, latoFont} from './constants';
-import {PortaSVG} from './svg/PortaSVG';
+/**
+ * Seq04 — Risoluzione · Il Recupero · Outro
+ * 498f / 16.6s — zoom-out bookend · percorsi naturalistici · loghi
+ */
+import React from 'react';
+import { AbsoluteFill, interpolate, Img, staticFile, useCurrentFrame, useVideoConfig } from 'remotion';
+import { KenBurnsImage } from './components/KenBurnsImage';
+import { ParticleField } from './components/ParticleField';
+import { IMAGES, COLORS, PLAYFAIR, LATO } from './constants';
 
 export const Sequence04Risoluzione: React.FC = () => {
-	const frame = useCurrentFrame();
-	const {fps, durationInFrames} = useVideoConfig();
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
 
-	// Fade in/out
-	const fadeIn = interpolate(frame, [0, fps * 0.6], [0, 1], {extrapolateRight: 'clamp'});
-	const fadeOut = interpolate(frame, [durationInFrames - fps * 0.8, durationInFrames], [1, 0], {
-		extrapolateLeft: 'clamp',
-	});
-	const opacity = Math.min(fadeIn, fadeOut);
+  const overlayOp = interpolate(frame, [0, fps * 1.5], [0.48, 0.70], { extrapolateRight: 'clamp' });
 
-	// --- TRANSIZIONE RESTAURO: porta sepolta → porta recuperata ---
-	// Dissolvenza da "buried" a "normale" nei primi 4s
-	const restoreProgress = interpolate(
-		frame,
-		[0, Math.round(3.5 * fps)],
-		[1, 0], // 1 = completamente sepolta, 0 = restaurata
-		{extrapolateLeft: 'clamp', extrapolateRight: 'clamp'},
-	);
-	// Porta sepolta scompare
-	const buriedOpacity = restoreProgress;
-	// Porta restaurata appare
-	const restoredOpacity = 1 - restoreProgress;
+  const card1Fade = interpolate(frame, [fps * 0.6, fps * 1.6], [0, 1], { extrapolateRight: 'clamp' });
+  const card1Lift = interpolate(frame, [fps * 0.6, fps * 1.6], [24, 0],  { extrapolateRight: 'clamp' });
+  const af1Fade   = interpolate(frame, [fps * 4.5, fps * 5.8], [0, 1], { extrapolateRight: 'clamp' });
+  const af1Lift   = interpolate(frame, [fps * 4.5, fps * 5.8], [24, 0],  { extrapolateRight: 'clamp' });
+  const af2Fade   = interpolate(frame, [fps * 6.2, fps * 7.5], [0, 1], { extrapolateRight: 'clamp' });
+  const tagFade   = interpolate(frame, [fps * 8.5, fps * 10.0], [0, 1], { extrapolateRight: 'clamp' });
+  const logoFade  = interpolate(frame, [fps * 10.5, fps * 12.0], [0, 1], { extrapolateRight: 'clamp' });
 
-	// Calore cromatico progressivo (da freddo/grigio a caldo/oro)
-	const warmOverlay = interpolate(
-		frame,
-		[0, Math.round(4 * fps)],
-		[0, 0.25],
-		{extrapolateRight: 'clamp'},
-	);
+  // Iris SVG outro
+  const irisProgress = interpolate(frame, [fps * 13.0, fps * 16.6], [0, 1], {
+    extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+  });
+  const irisRadius = irisProgress * 1200;
 
-	// Luce "rivelazione" che emerge dal centro della porta
-	const lightReveal = interpolate(
-		frame,
-		[Math.round(2 * fps), Math.round(4.5 * fps)],
-		[0, 1],
-		{extrapolateLeft: 'clamp', extrapolateRight: 'clamp'},
-	);
+  // Ghost "SOGLIA"
+  const ghostOp = interpolate(frame, [fps * 1, fps * 3], [0, 0.050], { extrapolateRight: 'clamp' });
 
-	// Testo "RECUPERATA" — appare con scala
-	const recuperataSpring = spring({
-		frame: Math.max(0, frame - Math.round(3.5 * fps)),
-		fps,
-		config: {damping: 140},
-		durationInFrames: Math.round(0.8 * fps),
-	});
-	const recuperataScale = interpolate(recuperataSpring, [0, 1], [0.8, 1]);
-	const recuperataOpacity = interpolate(recuperataSpring, [0, 1], [0, 1]);
+  // Linea oro
+  const lineW = interpolate(frame, [fps * 3.8, fps * 5.0], [0, 340], { extrapolateRight: 'clamp' });
+  const lineOp = interpolate(frame, [fps * 3.8, fps * 4.4], [0, 1], { extrapolateRight: 'clamp' });
 
-	// Icone percorsi naturalistici (appaiono una alla volta)
-	const icon1Spring = spring({
-		frame: Math.max(0, frame - Math.round(5 * fps)),
-		fps,
-		config: {damping: 180},
-		durationInFrames: Math.round(0.6 * fps),
-	});
-	const icon2Spring = spring({
-		frame: Math.max(0, frame - Math.round(6 * fps)),
-		fps,
-		config: {damping: 180},
-		durationInFrames: Math.round(0.6 * fps),
-	});
-	const icon3Spring = spring({
-		frame: Math.max(0, frame - Math.round(7 * fps)),
-		fps,
-		config: {damping: 180},
-		durationInFrames: Math.round(0.6 * fps),
-	});
+  return (
+    <AbsoluteFill style={{ background: COLORS.neroFondo }}>
+      {/* Bookend — zoom-out circolarità */}
+      <KenBurnsImage src={IMAGES.porta} motion="zoom-out" intensity={0.04} objectPosition="center top" />
 
-	// Tagline finale "SOGLIA" — lettera per lettera
-	const soglia = 'SOGLIA';
-	const sogliaChars = Math.floor(
-		interpolate(
-			frame,
-			[Math.round(8 * fps), Math.round(10 * fps)],
-			[0, soglia.length],
-			{extrapolateLeft: 'clamp', extrapolateRight: 'clamp'},
-		),
-	);
+      <AbsoluteFill style={{ background: `rgba(10,8,4,${overlayOp})` }} />
+      <AbsoluteFill style={{
+        background: 'linear-gradient(to bottom, rgba(10,8,4,0.30) 0%, rgba(10,8,4,0.65) 100%)',
+      }} />
 
-	// Frase finale
-	const finalLineSpring = spring({
-		frame: Math.max(0, frame - Math.round(10 * fps)),
-		fps,
-		config: {damping: 200},
-		durationInFrames: Math.round(0.8 * fps),
-	});
-	const finalOpacity = interpolate(finalLineSpring, [0, 1], [0, 1]);
-	const finalY = interpolate(finalLineSpring, [0, 1], [20, 0]);
+      {/* Iris SVG */}
+      {irisProgress > 0 && (
+        <svg
+          viewBox="0 0 1920 1080"
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }}
+        >
+          <defs>
+            <mask id="iris-pls">
+              <rect width="1920" height="1080" fill="white" />
+              <circle cx="960" cy="540" r={Math.max(0, irisRadius)} fill="black" />
+            </mask>
+          </defs>
+          <rect width="1920" height="1080" fill={COLORS.neroFondo} mask="url(#iris-pls)" />
+        </svg>
+      )}
 
-	// Outro: logo InnTour + Comune
-	const outroProgress = interpolate(
-		frame,
-		[Math.round(13.5 * fps), Math.round(15 * fps)],
-		[0, 1],
-		{extrapolateLeft: 'clamp', extrapolateRight: 'clamp'},
-	);
+      {/* Ghost "SOGLIA" */}
+      <AbsoluteFill style={{ justifyContent: 'center', alignItems: 'center', opacity: ghostOp, pointerEvents: 'none' }}>
+        <span style={{
+          fontFamily: PLAYFAIR, fontSize: 220, fontWeight: 700,
+          color: COLORS.verdeRupi, userSelect: 'none', letterSpacing: '-0.02em',
+        }}>SOGLIA</span>
+      </AbsoluteFill>
 
-	const percorsi = [
-		{label: 'Percorsi Naturalistici', icon: '🌿', spring: icon1Spring},
-		{label: 'Itinerari della Memoria', icon: '📜', spring: icon2Spring},
-		{label: 'Punto di Accesso Recuperato', icon: '🏛️', spring: icon3Spring},
-	];
+      <ParticleField mode="verde" opacity={0.14} count={28} />
 
-	return (
-		<AbsoluteFill style={{opacity, backgroundColor: COLORS.bgScuro}}>
-			{/* Sfondo: si scalda progressivamente da grigio a oro/terra */}
-			<AbsoluteFill
-				style={{
-					background: `linear-gradient(
-						170deg,
-						#0e0c08 0%,
-						${COLORS.bgPietra} 40%,
-						#2e1a08 100%
-					)`,
-				}}
-			/>
+      {/* Card recupero */}
+      <div style={{
+        position: 'absolute', top: 100, left: 80,
+        opacity: card1Fade, transform: `translateY(${card1Lift}px)`,
+      }}>
+        <div style={{
+          background: 'rgba(10,8,4,0.80)',
+          backdropFilter: 'blur(18px)',
+          border: '1px solid rgba(212,168,67,0.30)',
+          borderRadius: 16,
+          padding: '26px 34px',
+          maxWidth: 720,
+        }}>
+          <div style={{
+            fontFamily: LATO, fontSize: 14, fontWeight: 700,
+            letterSpacing: '0.20em', color: COLORS.oroOrsini,
+            textTransform: 'uppercase', marginBottom: 14,
+          }}>Il Ritorno alla Vita</div>
+          <div style={{
+            fontFamily: PLAYFAIR, fontSize: 40, fontWeight: 700,
+            color: COLORS.biancoCalce, lineHeight: 1.25, marginBottom: 14,
+          }}>La porta è stata recuperata come punto di accesso.</div>
+          <div style={{
+            fontFamily: LATO, fontSize: 24, fontWeight: 300,
+            color: COLORS.seppiaAntica, lineHeight: 1.6,
+          }}>
+            Grazie ai lavori di messa in sicurezza del costone delle Rupi,
+            oggi è soglia per{' '}
+            <strong style={{ color: COLORS.biancoCalce }}>
+              percorsi naturalistici e itinerari della memoria
+            </strong>.
+          </div>
+        </div>
+      </div>
 
-			{/* Overlay caldo (luce meridionale che entra) */}
-			<AbsoluteFill
-				style={{
-					background: `radial-gradient(ellipse at 55% 55%, ${COLORS.oroIrpino}${Math.round(warmOverlay * 255).toString(16).padStart(2, '0')} 0%, transparent 60%)`,
-					pointerEvents: 'none',
-				}}
-			/>
+      {/* Linea separatrice */}
+      <div style={{ position: 'absolute', bottom: 310, left: 80, opacity: lineOp }}>
+        <div style={{
+          width: lineW, height: 2,
+          background: `linear-gradient(to right, ${COLORS.oroOrsini}, transparent)`,
+        }} />
+      </div>
 
-			{/* Luce dalla porta (come se filtrasse dall'esterno) */}
-			<div
-				style={{
-					position: 'absolute',
-					right: 180,
-					top: '50%',
-					transform: 'translateY(-50%)',
-					width: 440,
-					height: 560,
-					background: `radial-gradient(ellipse at 50% 60%, ${COLORS.cieloIrpino}${Math.round(lightReveal * 120).toString(16).padStart(2, '0')} 0%, transparent 70%)`,
-					pointerEvents: 'none',
-				}}
-			/>
+      {/* Tagline narrativa */}
+      <div style={{
+        position: 'absolute', bottom: 240, left: 80,
+        opacity: af1Fade, transform: `translateY(${af1Lift}px)`,
+      }}>
+        <div style={{
+          fontFamily: PLAYFAIR, fontSize: 54, fontWeight: 700,
+          color: COLORS.biancoCalce,
+          textShadow: '0 4px 20px rgba(0,0,0,0.95)',
+          maxWidth: 900,
+        }}>Una soglia tra il borgo e il paesaggio rurale.</div>
+      </div>
 
-			{/* === PORTA: transizione da sepolta a restaurata === */}
-			<div
-				style={{
-					position: 'absolute',
-					right: 120,
-					top: '50%',
-					transform: 'translateY(-50%)',
-				}}
-			>
-				{/* Porta sepolta (scompare) */}
-				<div style={{position: 'absolute', opacity: buriedOpacity}}>
-					<PortaSVG width={540} height={690} buried={true} />
-				</div>
-				{/* Porta restaurata (appare) */}
-				<div style={{opacity: restoredOpacity}}>
-					<PortaSVG width={540} height={690} buried={false} />
-				</div>
-			</div>
+      {/* Chiusura poetica */}
+      <div style={{ position: 'absolute', bottom: 170, left: 80, opacity: af2Fade }}>
+        <div style={{
+          fontFamily: PLAYFAIR, fontSize: 34, fontWeight: 400, fontStyle: 'italic',
+          color: COLORS.oroOrsini, textShadow: '0 2px 14px rgba(0,0,0,0.90)',
+        }}>Restituita alla sua dignità, dopo cinque secoli di silenzio.</div>
+      </div>
 
-			{/* Overlay sfumatura dx → sx (area testo) */}
-			<AbsoluteFill
-				style={{
-					background:
-						'linear-gradient(90deg, rgba(10,8,4,0.95) 0%, rgba(10,8,4,0.80) 42%, transparent 62%)',
-					pointerEvents: 'none',
-				}}
-			/>
+      {/* InnTour tagline */}
+      <div style={{ position: 'absolute', bottom: 120, left: 80, opacity: tagFade }}>
+        <span style={{
+          fontFamily: LATO, fontSize: 17, fontWeight: 600,
+          letterSpacing: '0.18em', color: COLORS.oroSoft, textTransform: 'uppercase',
+        }}>Cicerone Digitale di Lacedonia · InnTour S.R.L.</span>
+      </div>
 
-			{/* === CONTENUTO TESTO — lato sinistro === */}
-			<div
-				style={{
-					position: 'absolute',
-					left: 60,
-					top: '50%',
-					transform: 'translateY(-55%)',
-					maxWidth: 680,
-				}}
-			>
-				{/* Badge recupero */}
-				<div
-					style={{
-						opacity: recuperataOpacity,
-						transform: `scale(${recuperataScale})`,
-						transformOrigin: 'left center',
-						display: 'inline-block',
-						backgroundColor: COLORS.verdeInnTour,
-						borderRadius: 4,
-						padding: '6px 20px',
-						marginBottom: 24,
-					}}
-				>
-					<span
-						style={{
-							fontFamily: latoFont,
-							fontSize: 13,
-							fontWeight: 700,
-							color: '#fff',
-							letterSpacing: '0.15em',
-						}}
-					>
-						RECENTEMENTE RECUPERATA
-					</span>
-				</div>
-
-				{/* Titolo SOGLIA — lettera per lettera */}
-				{sogliaChars > 0 && (
-					<div style={{marginBottom: 8}}>
-						<span
-							style={{
-								fontFamily: latoFont,
-								fontSize: 14,
-								fontWeight: 700,
-								color: COLORS.grigioCaldo,
-								letterSpacing: '0.15em',
-								textTransform: 'uppercase',
-								display: 'block',
-								marginBottom: 10,
-							}}
-						>
-							Porta come
-						</span>
-						<h1
-							style={{
-								fontFamily: playfairFont,
-								fontSize: 110,
-								fontWeight: 700,
-								color: COLORS.oroIrpino,
-								margin: 0,
-								lineHeight: 1,
-								textShadow: `0 0 60px ${COLORS.oroIrpino}55`,
-							}}
-						>
-							{soglia.slice(0, sogliaChars)}
-							<span style={{opacity: 0.12}}>{soglia.slice(sogliaChars)}</span>
-						</h1>
-					</div>
-				)}
-
-				{/* Frase conclusiva */}
-				<p
-					style={{
-						fontFamily: latoFont,
-						fontSize: 20,
-						fontWeight: 300,
-						color: COLORS.biancaCalce,
-						margin: 0,
-						marginBottom: 32,
-						lineHeight: 1.65,
-						opacity: finalOpacity,
-						transform: `translateY(${finalY}px)`,
-						fontStyle: 'italic',
-					}}
-				>
-					"Soglia tra il borgo
-					<br />e il paesaggio rurale"
-				</p>
-
-				{/* Percorsi e itinerari */}
-				<div style={{display: 'flex', flexDirection: 'column', gap: 14}}>
-					{percorsi.map(({label, icon, spring: s}, i) => {
-						const op = interpolate(s, [0, 1], [0, 1]);
-						const tx = interpolate(s, [0, 1], [-20, 0]);
-						return (
-							<div
-								key={i}
-								style={{
-									display: 'flex',
-									alignItems: 'center',
-									gap: 16,
-									opacity: op,
-									transform: `translateX(${tx}px)`,
-								}}
-							>
-								<span style={{fontSize: 22}}>{icon}</span>
-								<span
-									style={{
-										fontFamily: latoFont,
-										fontSize: 18,
-										fontWeight: 400,
-										color: COLORS.biancaCalce,
-										letterSpacing: '0.04em',
-									}}
-								>
-									{label}
-								</span>
-							</div>
-						);
-					})}
-				</div>
-			</div>
-
-			{/* === OUTRO: Logo + Comune + URL === */}
-			{outroProgress > 0 && (
-				<AbsoluteFill
-					style={{
-						backgroundColor: `rgba(10,8,4,${outroProgress * 0.92})`,
-						justifyContent: 'center',
-						alignItems: 'center',
-						flexDirection: 'column',
-						gap: 20,
-					}}
-				>
-					{/* Logo InnTour */}
-					<p
-						style={{
-							fontFamily: latoFont,
-							fontSize: 48,
-							fontWeight: 700,
-							color: COLORS.verdeInnTour,
-							margin: 0,
-							letterSpacing: '0.1em',
-							opacity: outroProgress,
-						}}
-					>
-						INNTOUR
-					</p>
-
-					{/* Linea divisoria */}
-					<div
-						style={{
-							width: interpolate(outroProgress, [0, 1], [0, 320]),
-							height: 1,
-							backgroundColor: COLORS.oroIrpino,
-							opacity: 0.6,
-						}}
-					/>
-
-					{/* Comune + Cicerone */}
-					<p
-						style={{
-							fontFamily: latoFont,
-							fontSize: 18,
-							fontWeight: 300,
-							color: COLORS.biancaCalce,
-							margin: 0,
-							letterSpacing: '0.12em',
-							textAlign: 'center',
-							opacity: outroProgress,
-						}}
-					>
-						Comune di Lacedonia · Cicerone Digitale
-					</p>
-
-					{/* TAG */}
-					<p
-						style={{
-							fontFamily: latoFont,
-							fontSize: 14,
-							fontWeight: 400,
-							color: COLORS.grigioCaldo,
-							margin: 0,
-							letterSpacing: '0.15em',
-							opacity: outroProgress * 0.7,
-						}}
-					>
-						A1.02 · PORTA LA STELLA · Architettura e Monumenti
-					</p>
-				</AbsoluteFill>
-			)}
-		</AbsoluteFill>
-	);
+      {/* Loghi */}
+      <div style={{
+        position: 'absolute',
+        bottom: 50, left: 0, right: 0,
+        display: 'flex', justifyContent: 'center', alignItems: 'center',
+        gap: 48, opacity: logoFade,
+      }}>
+        <Img src={staticFile(IMAGES.logoComune)} style={{ height: 96, objectFit: 'contain' }} />
+        <div style={{ width: 1, height: 72, background: COLORS.grigioPietra }} />
+        <Img src={staticFile(IMAGES.logoInnTour)} style={{ height: 80, objectFit: 'contain' }} />
+      </div>
+    </AbsoluteFill>
+  );
 };
