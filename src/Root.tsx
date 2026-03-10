@@ -22,6 +22,7 @@ import { MonumentoAiCaduti } from "./MonumentoAiCaduti";
 import { LapideTerremoto1930 } from "./LapideTerremoto1930";
 import { ColonnaPedoca } from "./ColonnaPedoca";
 import { PiazzaDeSanctis } from "./PiazzaDeSanctis";
+import { ViaTagliata } from "./ViaTagliata";
 
 // Each <Composition> is an entry in the sidebar!
 
@@ -244,6 +245,16 @@ export const RemotionRoot: React.FC = () => {
         id="A1-01-PiazzaDeSanctis"
         component={PiazzaDeSanctis}
         durationInFrames={3175}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+
+      {/* B2.01 — Via Tagliata · "La Strada che Custodisce il Sangue di Roma" · voce Iapetus: 173.35s → 5200 frame */}
+      <Composition
+        id="B2-01-ViaTagliata"
+        component={ViaTagliata}
+        durationInFrames={5200}
         fps={30}
         width={1920}
         height={1080}
