@@ -7,7 +7,6 @@ import { PiazzettaPrimoMaggio } from "./PiazzettaPrimoMaggio";
 import { PortaDegliAlbanesi } from "./PortaDegliAlbanesi";
 import { PortaDiSopra } from "./PortaDiSopra";
 import { CattedralAttuale } from "./CattedralAttuale";
-import { ChiesaSantAntonio } from "./ChiesaSantAntonio";
 import { ChiesaSantAntonioV2 } from "./ChiesaSantAntonioV2";
 import { PozzoDelMiracolo } from "./PozzoDelMiracolo";
 import { ChiesaSantaMaria } from "./ChiesaSantaMaria";
@@ -106,16 +105,6 @@ export const RemotionRoot: React.FC = () => {
         id="A2-01-CattedralAttuale"
         component={CattedralAttuale}
         durationInFrames={2248}
-        fps={30}
-        width={1920}
-        height={1080}
-      />
-
-      {/* A2.03 — Chiesa Sant'Antonio (Congiura) v1 · voce Leda: 80.00s → 2400 frame */}
-      <Composition
-        id="A2-03-ChiesaSantAntonio"
-        component={ChiesaSantAntonio}
-        durationInFrames={2400}
         fps={30}
         width={1920}
         height={1080}

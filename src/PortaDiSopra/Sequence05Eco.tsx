@@ -66,7 +66,7 @@ export const Sequence05Eco: React.FC = () => {
 			{/* LAYER 2 (fantasma): Portale gotico ornato — circolarità bookend con Seq01 */}
 			<div style={{position: 'absolute', inset: 0, opacity: fantasmaOp, mixBlendMode: 'screen'}}>
 				<KenBurnsImage
-					src="images/TAG A1.10 - PORTA DI SOPRA (DEMOLITA)/image_23e4c71c.png"
+					src="images/TAG A1.10 - PORTA DI SOPRA (DEMOLITA)/image_23e4c71c-d560-42a7-ad2c-009da43cded7.png"
 					motion="zoom-in"
 					intensity={0.03}
 					overlayOpacity={0}

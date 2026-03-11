@@ -18,6 +18,7 @@ export const COLORS = {
 	oroAntico:    '#8B6914',   // oro scuro — solennità
 	biancoLuce:   '#FFFFFF',
 	nebbiaGrigia: 'rgba(240,236,230,0.12)',
+	oroSacro:     '#D4A843',
 	verdeInnTour: '#2ECC71',
 	azureInnTour: '#3498DB',
 	glassScuro:   'rgba(8,8,8,0.84)',
