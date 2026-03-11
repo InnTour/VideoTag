@@ -3,11 +3,11 @@ export const FPS = 30;
 
 export const IMAGES = {
   // ── TAG A4.04 Teatro Comunale ──────────────────────────────────
-  hero:       'images/TAG A4.04 - TEATRO COMUNALE/image_09055990-42a6-4510-99fc-ddf93842579c.png',
-  archivio:   'images/TAG A4.04 - TEATRO COMUNALE/image_b0d3125e-68bb-4895-8355-78cf3a240640.png',
-  anfiteatro: 'images/TAG A4.04 - TEATRO COMUNALE/image_d6a7a600-31f6-42ab-82d6-ba9957f8ff1f.png',
-  cinema:     'images/TAG A4.04 - TEATRO COMUNALE/image_dd9cbe46-717c-427c-9404-b89a656f99fb.png',
-  oggi:       'images/TAG A4.04 - TEATRO COMUNALE/image_ee8cda8a-359b-4d77-bb35-d48de2212f69.png',
+  hero:       'images/TAG A4.04 - TEATRO COMUNALE/download.png',
+  archivio:   'images/TAG A4.04 - TEATRO COMUNALE/download (1).png',
+  anfiteatro: 'images/TAG A4.04 - TEATRO COMUNALE/download (2).png',
+  cinema:     'images/TAG A4.04 - TEATRO COMUNALE/download (4).png',
+  oggi:       'images/TAG A4.04 - TEATRO COMUNALE/download (4).png',
 
   // ── TAG L1.01 Gerardo Vigorita L'Uomo della Luce ──────────────
   vigorita1:  "images/TAG L1.01 - GERARDO VIGORITA L'UOMO DELLA LUCE/image_07985028-4234-4172-9d7e-4ca1b3ae904b.png",
