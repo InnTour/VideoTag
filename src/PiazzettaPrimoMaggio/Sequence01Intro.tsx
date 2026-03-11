@@ -31,7 +31,7 @@ export const Sequence01Intro: React.FC = () => {
 		<AbsoluteFill style={{opacity, backgroundColor: COLORS.bgScuro}}>
 			{/* SFONDO: contadini nella piazzetta al tramonto — pan lento da sinistra verso destra */}
 			<KenBurnsImage
-				src="images/TAG A1.06 - PIAZZETTA PRIMO MAGGIO/image_9592a387-dacb-4106-b6d6-367a62f89a2d.png"
+				src="images/TAG A1.06 - PIAZZETTA PRIMO MAGGIO/download.png"
 				motion="pan-right"
 				intensity={0.06}
 				overlayOpacity={0}

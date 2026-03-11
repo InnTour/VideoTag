@@ -28,7 +28,7 @@ export const Sequence05Outro: React.FC = () => {
 		<AbsoluteFill style={{opacity, backgroundColor: COLORS.bgScuro}}>
 			{/* SFONDO: ritorno alla piazzetta — circolarità con l'intro */}
 			<KenBurnsImage
-				src="images/TAG A1.06 - PIAZZETTA PRIMO MAGGIO/image_9592a387-dacb-4106-b6d6-367a62f89a2d.png"
+				src="images/TAG A1.06 - PIAZZETTA PRIMO MAGGIO/download.png"
 				motion="zoom-out"
 				intensity={0.04}
 				overlayOpacity={0}

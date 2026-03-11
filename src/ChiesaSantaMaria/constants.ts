@@ -9,14 +9,14 @@ export const FPS = 30;
 
 const DIR = 'images/TAG A2.09 - CHIESA SANTA MARIA DELLA CANCELLATA';
 export const IMAGES = {
-  hero:        `${DIR}/image_c81f9269-6946-41a1-bdcf-6fedb9ec799f.png`,
-  iside1:      `${DIR}/image_1f086b43-3848-44e3-95b0-d6fce43a00c6.png`,
-  iside2:      `${DIR}/image_8feb5932-2b08-4157-a73c-f10afb26541c.png`,
-  ibrido:      `${DIR}/image_9051dfe6-f1b3-419f-9054-1091b77ca769.png`,
-  mosaici:     `${DIR}/image_a441a81b-f95a-45cb-8964-8aedcbc25a24.png`,
-  vescovi:     `${DIR}/image_81a662d7-52ef-4466-b13f-4f9cf2ab53eb.png`,
-  madonna:     `${DIR}/image_f06d7a5c-6d42-41c3-a09c-9cf1a6a25237.png`,
-  processione: `${DIR}/image_7f38cc92-62c4-4d4a-9ad3-e5e44c09906f.png`,
+  hero:        `${DIR}/download.png`,
+  iside1:      `${DIR}/download (1).png`,
+  iside2:      `${DIR}/download (2).png`,
+  ibrido:      `${DIR}/download (3).png`,
+  mosaici:     `${DIR}/download (4).png`,
+  vescovi:     `${DIR}/download (5).png`,
+  madonna:     `${DIR}/download (6).png`,
+  processione: `${DIR}/download (7).png`,
   logoComune:  'lacedonia-logo.png',
   logoInnTour: 'logo-inntour.png',
 };

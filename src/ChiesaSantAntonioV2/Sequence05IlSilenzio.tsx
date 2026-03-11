@@ -45,7 +45,7 @@ export const Sequence05IlSilenzio: React.FC = () => {
 		<AbsoluteFill style={{background: COLORS.bgPergamena, opacity: fadeIn}}>
 			{/* Portale medievale di notte — bookend con Seq01 tramite atmosfera */}
 			<KenBurnsImage
-				src="images/TAG A2.03 - CHIESA SANT'ANTONIO (CONGIURA)/image_f7e33fa1-398a-4b8d-b5a3-63921a36ff3a.png"
+				src="images/TAG A2.03 - CHIESA SANT'ANTONIO (CONGIURA)/download (6).png"
 				motion="zoom-out"
 				intensity={0.04}
 				overlayOpacity={0.60 + candleFlicker + campanaPulse}

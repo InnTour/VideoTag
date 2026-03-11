@@ -76,7 +76,7 @@ export const Sequence04Riscatto: React.FC = () => {
 		<AbsoluteFill style={{opacity, backgroundColor: COLORS.bgScuro}}>
 			{/* SFONDO: la colonna dei contadini con bandiere — ora in senso di vittoria */}
 			<KenBurnsImage
-				src="images/TAG A1.06 - PIAZZETTA PRIMO MAGGIO/image_9db3a61d-54a2-4157-b796-cfac145351dd.png"
+				src="images/TAG A1.06 - PIAZZETTA PRIMO MAGGIO/download (4).png"
 				motion="zoom-out"
 				intensity={0.05}
 				overlayOpacity={0}

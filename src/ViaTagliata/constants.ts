@@ -10,25 +10,25 @@ const DIR = 'images/VIA TAGLIATA';
 
 export const IMAGES = {
   // Seq01 Intro hero + Seq05 Outro bookend (via oggi — selciato)
-  hero:         `${DIR}/image_1cd8652f-5760-4bc0-a443-426ecca1c910.png`,
+  hero:         `${DIR}/image_10f15eb7-c7f4-4f35-8a68-2df17b296892.png`,
   // Seq02 — 150 d.C. · diverticulum · Via Appia (layer 1)
-  viaAppia:     `${DIR}/image_2ebd31b9-3147-42ad-9343-e50886454c7b.png`,
+  viaAppia:     `${DIR}/image_2231b6d6-1761-4066-9500-a97b490918e3.png`,
   // Seq02 — Carri romani / botteghe (cross-dissolve)
   carri:        `${DIR}/image_83e7417c-e101-40e9-a7f4-62b1dd1e749b.png`,
   // Seq02 — Scure consolare 1820
-  scure:        `${DIR}/image_97d2b206-1aa3-4cd1-91ec-77c6bf069ac5.png`,
+  scure:        `${DIR}/image_4dfa478f-8b2f-4270-a746-6b65b13f0228.png`,
   // Seq03 — Annibale / esercito cartaginese (layer 1)
-  annibale:     `${DIR}/image_b8429402-7865-4ffb-9e97-303b9209fd17.png`,
+  annibale:     `${DIR}/image_5ab4e5bc-9384-4d5c-b48c-0f75da9dc7b7.png`,
   // Seq03 — Campo di battaglia / morti (cross-dissolve)
-  battaglia:    `${DIR}/image_c20d18b3-4e23-4219-b452-5dec5984eb96.png`,
+  battaglia:    `${DIR}/image_6927d291-a775-4d77-9071-da8dae6a396a.png`,
   // Seq04 — La caedes / esecuzione sul selciato (layer 1)
-  caedes:       `${DIR}/image_c7bb9333-fdbd-4048-8ff4-f062e36407db.png`,
+  caedes:       `${DIR}/image_a91bd130-6ab5-453d-8346-b02be768e973.png`,
   // Seq04 — Città bruciata / rovine (cross-dissolve)
-  rovine:       `${DIR}/image_cd6e3f41-90e1-40d1-a8c6-5aca122df092.png`,
+  rovine:       `${DIR}/image_b1d1a0b1-c5ab-4120-8b60-320fc1a11e2d.png`,
   // Seq05 — Vigneti / campagna irpina oggi
-  vigneti:      `${DIR}/image_eef06f58-214e-4eb0-8ae3-6e8a3c8f2f5a.png`,
+  vigneti:      `${DIR}/download.png`,
   // Seq05 — Pietre selciato / memoria (layer 2)
-  pietre:       `${DIR}/image_f696e461-f41f-4b48-8b53-65b2d4946d84.png`,
+  pietre:       `${DIR}/download (1).png`,
 
   logoComune:   'lacedonia-logo.png',
   logoInnTour:  'logo-inntour.png',

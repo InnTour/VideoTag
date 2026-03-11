@@ -34,7 +34,7 @@ export const Sequence01Intro: React.FC = () => {
 		<AbsoluteFill style={{opacity: opacity * glitch, backgroundColor: COLORS.bgScuro}}>
 			{/* SFONDO: arco in pietra dorata su roccia — zoom-in lentissimo verso l'arco */}
 			<KenBurnsImage
-				src="images/TAG A1.07 - PORTA DEGLI ALBANESI/image_378f3769-e71a-4c7f-882a-b655f06ba8ca.png"
+				src="images/TAG A1.07 - PORTA DEGLI ALBANESI/download.png"
 				motion="zoom-in"
 				intensity={0.08}
 				overlayOpacity={0}

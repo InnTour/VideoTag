@@ -10,17 +10,17 @@ const DIR = 'images/!!!!!TAG A1.01 - PIAZZA DE SANCTIS';
 
 export const IMAGES = {
   // Seq01 Intro hero + Seq06 Outro bookend (busto piazza)
-  hero:       `${DIR}/image_3ca9cc3c-df94-466d-93c9-cdc469eebb66.png`,
+  hero:       `${DIR}/image_be42db8a-313f-433f-806d-4d78fe9aa07b.png`,
   // Seq02 — De Sanctis (layer 1)
-  deSanctis:  `${DIR}/image_4e45bce7-604c-4eb4-bc83-122f7fb8d04a.png`,
+  deSanctis:  `${DIR}/image_ce5b4626-6630-4b90-bd96-203fb8ad82b3.png`,
   // Seq02 — Il telegramma (cross-dissolve)
-  telegramma: `${DIR}/image_a2074ab2-de2e-4ecc-b390-570a05f2b084.png`,
+  telegramma: `${DIR}/Gemini_Generated_Image_6ap6wd6ap6wd6ap6.png`,
   // Seq03 — La scuola magistrale
-  scuola:     `${DIR}/image_bacffcf0-d648-4f52-a9f9-d6d1b8d50b74.png`,
+  scuola:     `${DIR}/Gemini_Generated_Image_6ap6wd6ap6wd6ap62.png`,
   // Seq04 — La piazza, l'eco delle voci
-  piazza:     `${DIR}/image_ca315283-97f3-490b-96b4-7f8a28d92c9b.png`,
+  piazza:     `${DIR}/Gemini_Generated_Image_6ap6wd6ap6wd6ap6_modificata.png`,
   // Seq05 — I contadini (layer 1)
-  contadini:  `${DIR}/image_cc8fc3eb-c948-4f72-8e3f-20f070c522f9.png`,
+  contadini:  `${DIR}/Gemini_Generated_Image_6ap6wd6ap6wd6ap62_modificata.png`,
   // Seq05 — Le ragazze a scuola (cross-dissolve)
   studenti:   `${DIR}/image_d5cca18b-d18c-4853-b954-cbbe87ad34f5.png`,
 

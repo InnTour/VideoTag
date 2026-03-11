@@ -58,7 +58,7 @@ export const Sequence02Roccia: React.FC = () => {
 			{/* LAYER 1: Vicolo in pietra — la roccia nuda del borgo */}
 			<div style={{position: 'absolute', inset: 0, opacity: 1 - crossProgress}}>
 				<KenBurnsImage
-					src="images/TAG A1.06 - PIAZZETTA PRIMO MAGGIO/image_68f296c7-c027-45b6-a4c7-40bcf4c16974.png"
+					src="images/TAG A1.06 - PIAZZETTA PRIMO MAGGIO/download (1).png"
 					motion="zoom-in"
 					intensity={0.055}
 					overlayOpacity={0}
@@ -69,7 +69,7 @@ export const Sequence02Roccia: React.FC = () => {
 			{/* LAYER 2: Padre con bambini sul balcone — lo sguardo sul paesaggio dopo il '80 */}
 			<div style={{position: 'absolute', inset: 0, opacity: crossProgress}}>
 				<KenBurnsImage
-					src="images/TAG A1.06 - PIAZZETTA PRIMO MAGGIO/image_42537123-78b0-4ef0-ade9-a9b91370df87.png"
+					src="images/TAG A1.06 - PIAZZETTA PRIMO MAGGIO/download (2).png"
 					motion="pan-right"
 					intensity={0.05}
 					overlayOpacity={0}
