@@ -42,8 +42,8 @@ export const IMAGES = {
   puglia:   'images/PORTA DI SOTTO/image_94c00eff-d91a-4b54-bdf4-2f59cfba84bc.png',
   famiglie: 'images/PORTA DI SOTTO/image_e2476195-0944-41b1-993c-e268d04c42fe.png',
   costru:   'images/PORTA DI SOTTO/image_d953ad65-c621-422b-8ab2-72c482509737.png',
-  logoInnTour: 'Logo facicon.png',
-  logoComune:  'Logo Comune di Lacedonia.png',
+  logoInnTour: 'logo-inntour.png',
+  logoComune:  'lacedonia-logo.png',
 } as const;
 
 // ── Durate sequenze ────────────────────────────────────────────────────────

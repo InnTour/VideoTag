@@ -28,13 +28,13 @@ export const COLORS = {
 // === IMMAGINI ===
 const DIR = 'images/TAG A2.03 - CHIESA SANT\'ANTONIO (CONGIURA)';
 export const IMAGES = {
-	nobili:      `${DIR}/image_0312fcac-3c25-4700-9d2e-2c9ad97196e4.png`,
-	congiurati1: `${DIR}/image_eb64892f-3b5e-40f2-9063-08e9ec3e1a77.png`,
-	congiurati2: `${DIR}/image_cc45b20b-8e4d-4a39-891a-9da7c8d8fcf5.png`,
-	giuramento1: `${DIR}/image_68cbb35c-7a87-443c-a1ce-ef9f28e40e44.png`,
-	giuramento2: `${DIR}/image_3d85aafc-09c7-4c9e-8e32-2f0b2979a3f3.png`,
-	atto:        `${DIR}/image_51f5aa45-3b6e-4e38-8a26-42e8a15f1e96.png`,
-	epilogo:     `${DIR}/image_f7e33fa1-7c2e-4834-894b-0d80a5e4a3b1.png`,
+	nobili:      `${DIR}/image_0312fcac-c625-4312-9ce2-3f95a674877a.png`,
+	congiurati1: `${DIR}/image_eb64892f-e908-4618-89b0-20e0f27d355f.png`,
+	congiurati2: `${DIR}/image_cc45b20b-033e-48ab-b384-1d7874d3969b.png`,
+	giuramento1: `${DIR}/image_68cbb35c-52d0-499b-8584-185162a14643.png`,
+	giuramento2: `${DIR}/image_3d85aafc-f542-4920-9c29-6d58b1b0ac81.png`,
+	atto:        `${DIR}/image_51f5aa45-ec39-472d-a2d8-f4aa061fcf2f.png`,
+	epilogo:     `${DIR}/image_f7e33fa1-398a-4b8d-b5a3-63921a36ff3a.png`,
 	logoComune:  'lacedonia-logo.png',
 	logoInnTour: 'logo-inntour.png',
 };
