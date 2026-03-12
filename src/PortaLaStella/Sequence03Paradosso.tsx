@@ -28,8 +28,8 @@ export const Sequence03Paradosso: React.FC = () => {
 
   return (
     <AbsoluteFill style={{ background: COLORS.neroFondo }}>
-      {/* Immagine con zoom su porzione bassa — enfatizza il livello inferiore */}
-      <KenBurnsImage src={IMAGES.porta} motion="pan-down" intensity={0.04} objectPosition="center 70%" />
+      {/* La soglia interrata — zoom su porzione bassa per enfatizzare il seppellimento */}
+      <KenBurnsImage src={IMAGES.sogliaInterrata} motion="pan-down" intensity={0.04} objectPosition="center 70%" />
 
       {/* Overlay di appesantimento — la porta che sprofonda */}
       <AbsoluteFill style={{

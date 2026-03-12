@@ -9,8 +9,16 @@ export const FPS = 30;
 const DIR = 'images/PORTA LA STELLA';
 
 export const IMAGES = {
-  // Unica immagine — usata con objectPosition diverse per varietà
-  porta: `${DIR}/image_01a2db0f-1975-483d-9993-c8447ed813d9.png`,
+  // Seq01 Intro + Seq04 bookend circolare
+  porta:           `${DIR}/image_01a2db0f-1975-483d-9993-c8447ed813d9.png`,
+  // Seq02 Storia — layer 1 (contesto medievale / cinta muraria)
+  orsiniCinta:     `${DIR}/image_08423ad5-5815-49f5-94bd-d1892d1f6214.png`,
+  // Seq02 Storia — cross-dissolve layer 2 (portale / dettaglio murario)
+  portaleMurario:  `${DIR}/image_21788caa-59d2-4aaa-8d0b-a272283b9773.png`,
+  // Seq03 Paradosso — la soglia sepolta sotto l'asfalto
+  sogliaInterrata: `${DIR}/image_a921e047-e981-40f0-8131-9480fd919c23.png`,
+  // Seq04 Risoluzione — i percorsi naturalistici / le Rupi recuperate
+  rupiRecupero:    `${DIR}/image_e2cbd546-2a22-44c9-8323-79405d5dfb47.png`,
 
   logoComune:  'lacedonia-logo.png',
   logoInnTour: 'logo-inntour.png',
