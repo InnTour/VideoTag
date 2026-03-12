@@ -13,10 +13,7 @@ export const Sequence06Outro: React.FC = () => {
   const lineT = interpolate(frame, [5, 50], [0, 300], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
   const lineB = interpolate(frame, [20, 60], [0, 200], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
 
-  const lc = spring({ frame: Math.max(0, frame - 65), fps, config: { damping: 160 } });
-  const li = spring({ frame: Math.max(0, frame - 85), fps, config: { damping: 160 } });
   const lFade = interpolate(frame, [durationInFrames - 100, durationInFrames - 60], [1, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-  const urlOp = spring({ frame: Math.max(0, frame - 105), fps, config: { damping: 200 } });
 
   const irisP = interpolate(frame, [durationInFrames - 90, durationInFrames - 8], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
   const irisR = interpolate(irisP, [0, 1], [1600, 0]);
