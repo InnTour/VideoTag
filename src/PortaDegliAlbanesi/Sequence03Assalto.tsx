@@ -38,7 +38,7 @@ export const Sequence03Assalto: React.FC = () => {
 		<AbsoluteFill style={{opacity, backgroundColor: COLORS.bgScuro}}>
 			{/* SFONDO: mercante con mulo — interpretato qui come il capobanda/albanese che entra dalla porta */}
 			<KenBurnsImage
-				src="images/TAG A1.07 - PORTA DEGLI ALBANESI/image_8af3ff01-ab4c-4bfb-be46-f70284010602.png"
+				src="images/TAG A1.07 - PORTA DEGLI ALBANESI/download (3).png"
 				motion="pan-left"
 				intensity={0.055}
 				overlayOpacity={0}

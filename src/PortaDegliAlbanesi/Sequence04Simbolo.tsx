@@ -32,7 +32,7 @@ export const Sequence04Simbolo: React.FC = () => {
 			{/* LAYER 1: Porta al tramonto sui colli irpini — la soglia aperta sul mondo */}
 			<div style={{position: 'absolute', inset: 0, opacity: 1 - crossProgress}}>
 				<KenBurnsImage
-					src="images/TAG A1.07 - PORTA DEGLI ALBANESI/image_95f44ccd-d9e4-47a0-a226-186997220275.png"
+					src="images/TAG A1.07 - PORTA DEGLI ALBANESI/download (4).png"
 					motion="zoom-in"
 					intensity={0.06}
 					overlayOpacity={0}
@@ -43,7 +43,7 @@ export const Sequence04Simbolo: React.FC = () => {
 			{/* LAYER 2: Figura che apre la porta verso la luce — climax emotivo */}
 			<div style={{position: 'absolute', inset: 0, opacity: crossProgress}}>
 				<KenBurnsImage
-					src="images/TAG A1.07 - PORTA DEGLI ALBANESI/image_d30e338b-ff02-4a95-94c2-7d5b8bdbf3fc.png"
+					src="images/TAG A1.07 - PORTA DEGLI ALBANESI/download (5).png"
 					motion="zoom-in"
 					intensity={0.05}
 					overlayOpacity={0}

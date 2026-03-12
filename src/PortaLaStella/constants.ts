@@ -10,7 +10,7 @@ const DIR = 'images/PORTA LA STELLA';
 
 export const IMAGES = {
   // Unica immagine — usata con objectPosition diverse per varietà
-  porta: `${DIR}/image_5aa0d53d-a879-4964-afb3-3e92c90d59a3.png`,
+  porta: `${DIR}/image_01a2db0f-1975-483d-9993-c8447ed813d9.png`,
 
   logoComune:  'lacedonia-logo.png',
   logoInnTour: 'logo-inntour.png',

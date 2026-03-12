@@ -3,14 +3,14 @@ export const FPS = 30;
 
 export const IMAGES = {
   // ── TAG A4.05 Biblioteca Storica Vescovile ──────────────────────
-  hero:       'images/TAG A4.05 - BIBLIOTECA STORICA VESCOVILE/image_7f62077c-44c3-4187-97ca-a3662524365a.png',
-  pergamene:  'images/TAG A4.05 - BIBLIOTECA STORICA VESCOVILE/image_e375ce7f-f07a-4547-95d6-27d6edac7b27.png',
-  luce:       'images/TAG A4.05 - BIBLIOTECA STORICA VESCOVILE/image_b22ee069-18c6-4769-b9e0-203f7aeb4b5c.png',
-  volumi1:    'images/TAG A4.05 - BIBLIOTECA STORICA VESCOVILE/image_55679d34-ef9a-4edf-8db9-f6be983ef252.png',
-  volumi2:    'images/TAG A4.05 - BIBLIOTECA STORICA VESCOVILE/image_6e75bfa5-96c2-4676-b79c-56c920ccbd06.png',
-  biblioteca: 'images/TAG A4.05 - BIBLIOTECA STORICA VESCOVILE/image_5d27520e-1b2a-4744-ba75-c80b05073c78.png',
-  giacobini:  'images/TAG A4.05 - BIBLIOTECA STORICA VESCOVILE/image_306912f6-3dd5-442e-9ce4-4f0fc78f9651.png',
-  romanzi:    'images/TAG A4.05 - BIBLIOTECA STORICA VESCOVILE/image_50c5a577-38a1-43d8-998d-34f9dc9fc0e9.png',
+  hero:       'images/TAG A4.05 - BIBLIOTECA STORICA VESCOVILE/download.png',
+  pergamene:  'images/TAG A4.05 - BIBLIOTECA STORICA VESCOVILE/download (1).png',
+  luce:       'images/TAG A4.05 - BIBLIOTECA STORICA VESCOVILE/download (2).png',
+  volumi1:    'images/TAG A4.05 - BIBLIOTECA STORICA VESCOVILE/download (3).png',
+  volumi2:    'images/TAG A4.05 - BIBLIOTECA STORICA VESCOVILE/download (4).png',
+  biblioteca: 'images/TAG A4.05 - BIBLIOTECA STORICA VESCOVILE/download (5).png',
+  giacobini:  'images/TAG A4.05 - BIBLIOTECA STORICA VESCOVILE/download (6).png',
+  romanzi:    'images/TAG A4.05 - BIBLIOTECA STORICA VESCOVILE/download (6).png',
 
   // ── Loghi ─────────────────────────────────────────────────────
   logoComune:  'lacedonia-logo.png',

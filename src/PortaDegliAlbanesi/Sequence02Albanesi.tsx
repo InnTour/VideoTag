@@ -65,7 +65,7 @@ export const Sequence02Albanesi: React.FC = () => {
 			{/* LAYER 1: Guardie medievali all'arco — la porta sorvegliata */}
 			<div style={{position: 'absolute', inset: 0, opacity: 1 - crossProgress}}>
 				<KenBurnsImage
-					src="images/TAG A1.07 - PORTA DEGLI ALBANESI/image_4d2fbfcf-5f11-41e5-9c3f-7b8b0be03709.png"
+					src="images/TAG A1.07 - PORTA DEGLI ALBANESI/download (1).png"
 					motion="zoom-in"
 					intensity={0.05}
 					overlayOpacity={0}
@@ -76,7 +76,7 @@ export const Sequence02Albanesi: React.FC = () => {
 			{/* LAYER 2: Mano sulla pietra — il tocco della memoria */}
 			<div style={{position: 'absolute', inset: 0, opacity: crossProgress}}>
 				<KenBurnsImage
-					src="images/TAG A1.07 - PORTA DEGLI ALBANESI/image_78152e82-b502-45d7-9a0e-5757ec79b041.png"
+					src="images/TAG A1.07 - PORTA DEGLI ALBANESI/download (2).png"
 					motion="zoom-out"
 					intensity={0.06}
 					overlayOpacity={0}

@@ -14,6 +14,7 @@ export const COLORS = {
 	pietraDorata:  '#8B7355',
 	pietraScura:   '#4A3728',
 	rossoBanditi:  '#8B1A1A',
+	oroSacro:      '#D4A843',
 	verdeInnTour:  '#2ECC71',
 	azureInnTour:  '#3498DB',
 	grigioCaldo:   '#9A8878',

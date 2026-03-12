@@ -26,7 +26,7 @@ export const Sequence05Outro: React.FC = () => {
 		<AbsoluteFill style={{opacity, backgroundColor: COLORS.bgScuro}}>
 			{/* Circolarità: la figura che apre la porta verso la luce — bookend con Seq04 */}
 			<KenBurnsImage
-				src="images/TAG A1.07 - PORTA DEGLI ALBANESI/image_d30e338b-ff02-4a95-94c2-7d5b8bdbf3fc.png"
+				src="images/TAG A1.07 - PORTA DEGLI ALBANESI/download (5).png"
 				motion="zoom-out"
 				intensity={0.04}
 				overlayOpacity={0}

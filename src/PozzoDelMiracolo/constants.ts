@@ -3,12 +3,12 @@ export const FPS = 30;
 
 const DIR = 'images/TAG A2.08 - POZZO DEL MIRACOLO';
 export const IMAGES = {
-  hero:      `${DIR}/image_03005989-fe37-48e3-a94d-954e23ae9b6f.png`,
-  gerardo:   `${DIR}/image_13dab0cc-caab-4a9c-9343-5400b7cd7c88.png`,
-  pozzo:     `${DIR}/image_667192fb-6364-40a4-9b6c-11acc31b8a4b.png`,
-  miracolo:  `${DIR}/image_6d2430a2-09aa-44b0-8b37-8b4148cae3e2.png`,
-  mistico:   `${DIR}/image_ae1b584a-4ed8-4414-9e53-be6265c8f05d.png`,
-  speranza:  `${DIR}/image_cb1f1249-dfba-47d0-a85e-aad660686446.png`,
+  hero:      `${DIR}/download.png`,
+  gerardo:   `${DIR}/download (1).png`,
+  pozzo:     `${DIR}/download (2).png`,
+  miracolo:  `${DIR}/download (3).png`,
+  mistico:   `${DIR}/download (6).png`,
+  speranza:  `${DIR}/download (6).png`,
   logoComune:  'lacedonia-logo.png',
   logoInnTour: 'logo-inntour.png',
 };

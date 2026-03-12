@@ -6,20 +6,20 @@ const DIR = 'images/TAG A4.09 - LAPIDE TERREMOTO 1930';
 
 export const IMAGES = {
   // Seq01 — Intro hero: lapide commemorativa
-  lapide:        `${DIR}/image_03b78576-b9e2-4251-8b88-f0dca0f40f71.png`,
+  lapide:        `${DIR}/download.png`,
 
   // Seq02 — Il Sisma: macerie e devastazione
-  macerie:       `${DIR}/image_0d87df3b-f0d2-4caa-88df-607c9b06e798.png`,
-  lapideNomi:    `${DIR}/image_173461cb-5f26-4f02-8cc9-a2a54e3a83f7.png`, // lapide con nomi incisi
+  macerie:       `${DIR}/download (1).png`,
+  lapideNomi:    `${DIR}/download (2).png`,
 
   // Seq03 — I Salvati: contadini nei campi / mietitura
-  contadini:     `${DIR}/image_2f0e0bf7-e3c3-4712-9bfe-77817c3bfe66.png`,
+  contadini:     `${DIR}/download (3).png`,
 
   // Seq04 — La Ricostruzione: nuovo paese / spianata
-  ricostruzione: `${DIR}/image_b3231da5-0341-492f-a711-2251f08b0b43.png`,
+  ricostruzione: `${DIR}/download (4).png`,
 
   // Seq05 — La Speranza / Outro bookend
-  speranza:      `${DIR}/image_e9c42da1-600f-4ab0-81cd-6861a15c04b4.png`,
+  speranza:      `${DIR}/download (7).png`,
 
   // Loghi
   logoComune:    'lacedonia-logo.png',

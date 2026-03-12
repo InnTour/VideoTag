@@ -10,6 +10,7 @@ export const COLORS = {
 	biancaCalce:  '#F8F4EE',
 	oroIrpino:    '#D4A843',
 	oroScuro:     '#A07830',
+	oroSacro:     '#D4A843',
 	verdeInnTour: '#2ECC71',
 	terrabruciata:'#A0522D',
 	rossoBandiera:'#CC2222',
