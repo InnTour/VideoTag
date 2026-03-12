@@ -154,7 +154,7 @@ export const Sequence05IlSilenzio: React.FC = () => {
 				}}>
 					{/* Logo InnTour */}
 					<Img
-						src={staticFile('Logo facicon.png')}
+						src={staticFile('logo-inntour.png')}
 						style={{
 							width: 52,
 							height: 52,
