@@ -35,10 +35,17 @@ export const Sequence04Risoluzione: React.FC = () => {
   const lineW = interpolate(frame, [fps * 3.8, fps * 5.0], [0, 340], { extrapolateRight: 'clamp' });
   const lineOp = interpolate(frame, [fps * 3.8, fps * 4.4], [0, 1], { extrapolateRight: 'clamp' });
 
+  // Cross-dissolve: rupiRecupero → porta (bookend circolare, ~3–6s)
+  const dissolve = interpolate(frame, [fps * 3, fps * 6], [0, 1], { extrapolateRight: 'clamp' });
+
   return (
     <AbsoluteFill style={{ background: COLORS.neroFondo }}>
-      {/* Bookend — zoom-out circolarità */}
-      <KenBurnsImage src={IMAGES.porta} motion="zoom-out" intensity={0.04} objectPosition="center top" />
+      {/* Layer 1: i percorsi naturalistici sulle Rupi recuperate */}
+      <KenBurnsImage src={IMAGES.rupiRecupero} motion="zoom-in" intensity={0.04} objectPosition="center 60%" />
+      {/* Layer 2: dissolve verso porta hero — bookend circolare */}
+      <div style={{ position: 'absolute', inset: 0, opacity: dissolve }}>
+        <KenBurnsImage src={IMAGES.porta} motion="zoom-out" intensity={0.04} objectPosition="center top" />
+      </div>
 
       <AbsoluteFill style={{ background: `rgba(10,8,4,${overlayOp})` }} />
       <AbsoluteFill style={{

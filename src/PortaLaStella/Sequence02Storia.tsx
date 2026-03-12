@@ -23,10 +23,17 @@ export const Sequence02Storia: React.FC = () => {
   // Ghost "ORSINI" — la famiglia che la volle
   const ghostOp = interpolate(frame, [fps * 0.5, fps * 2], [0, 0.055], { extrapolateRight: 'clamp' });
 
+  // Cross-dissolve: orsiniCinta → portaleMurario (a ~9s, prima della card3)
+  const dissolve = interpolate(frame, [fps * 9, fps * 11], [0, 1], { extrapolateRight: 'clamp' });
+
   return (
     <AbsoluteFill style={{ background: COLORS.neroFondo }}>
-      {/* Stessa immagine, pan-left per dare movimento diverso */}
-      <KenBurnsImage src={IMAGES.porta} motion="pan-left" intensity={0.04} objectPosition="center 40%" />
+      {/* Layer 1: cinta muraria medievale */}
+      <KenBurnsImage src={IMAGES.orsiniCinta} motion="pan-left" intensity={0.04} objectPosition="center 40%" />
+      {/* Layer 2: portale / dettaglio murario — cross-dissolve a ~9s */}
+      <div style={{ position: 'absolute', inset: 0, opacity: dissolve }}>
+        <KenBurnsImage src={IMAGES.portaleMurario} motion="zoom-in" intensity={0.03} objectPosition="center center" />
+      </div>
 
       <AbsoluteFill style={{
         background: 'linear-gradient(to right, rgba(10,8,4,0.85) 0%, rgba(10,8,4,0.52) 58%, rgba(10,8,4,0.18) 100%)',
