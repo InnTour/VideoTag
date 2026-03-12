@@ -183,7 +183,7 @@ export const Sequence05Outro: React.FC = () => {
               fontFamily: LATO, fontSize: 18, fontWeight: 600,
               letterSpacing: '0.18em', color: COLORS.oroSoft, textTransform: 'uppercase',
             }}>
-              Cicerone Digitale di Lacedonia · InnTour S.R.L.
+              Narratore Digitale di Lacedonia · InnTour S.R.L.
             </span>
           </div>
         </div>

@@ -156,7 +156,7 @@ export const Sequence04Oggi: React.FC = () => {
         <span style={{
           fontFamily: LATO, fontSize: 17, fontWeight: 600,
           letterSpacing: '0.18em', color: COLORS.oroSoft, textTransform: 'uppercase',
-        }}>Cicerone Digitale di Lacedonia · InnTour S.R.L.</span>
+        }}>Narratore Digitale di Lacedonia · InnTour S.R.L.</span>
       </div>
 
       {/* Loghi */}

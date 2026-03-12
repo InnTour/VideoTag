@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "skills": {
+    "agent-tools": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "b7dc4bc5a5fe0aee778ed86e3a24cbf8c26377cf0c7e57c7b5cba63f6a23bb00"
+    },
+    "ai-image-generation": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "4ac521f800708c50383d6581e0918453719627ebfe5ae66635bcf5835401084b"
+    },
+    "explainer-video-guide": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "c014380b9ee0f36fef93e8cb4d76961e5dc603f8655ed97042aa20f4681596c9"
+    },
+    "image-to-video": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "5c1918c2a3eb68da1378ec172fa0a88a048f9b3f29ca5d0fb3ed5cfad0fb972d"
+    },
+    "storyboard-creation": {
+      "source": "inference-sh/skills",
+      "sourceType": "github",
+      "computedHash": "28277c4bfbb81bb86c9c690251edc7cfa185530b15d2de4ace8c77ee37a83d1d"
+    }
+  }
+}

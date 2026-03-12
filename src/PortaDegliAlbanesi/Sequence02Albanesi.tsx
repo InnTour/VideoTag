@@ -190,7 +190,7 @@ export const Sequence02Albanesi: React.FC = () => {
 							"Segno dell'espansione del borgo
 							<br />oltre il nucleo medievale più antico."
 						</p>
-						<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.grigioCaldo, margin: 0, marginTop: 6}}>Cicerone Digitale · A1.07</p>
+						<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.grigioCaldo, margin: 0, marginTop: 6}}>Narratore Digitale · A1.07</p>
 					</div>
 				</div>
 			</div>

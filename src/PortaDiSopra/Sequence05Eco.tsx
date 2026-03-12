@@ -200,7 +200,7 @@ export const Sequence05Eco: React.FC = () => {
 					textTransform: 'uppercase',
 					opacity: subOp,
 				}}>
-					Cicerone Digitale · Virtual Tour
+					Narratore Digitale · Virtual Tour
 				</p>
 
 				<div style={{width: 1, height: 22, backgroundColor: COLORS.glassBorder, opacity: subOp}} />

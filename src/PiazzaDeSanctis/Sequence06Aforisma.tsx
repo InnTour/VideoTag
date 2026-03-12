@@ -164,7 +164,7 @@ export const Sequence06Aforisma: React.FC = () => {
               color: COLORS.oroSoft,
               textTransform: 'uppercase',
             }}>
-              Cicerone Digitale di Lacedonia · InnTour S.R.L.
+              Narratore Digitale di Lacedonia · InnTour S.R.L.
             </span>
           </div>
         </div>
