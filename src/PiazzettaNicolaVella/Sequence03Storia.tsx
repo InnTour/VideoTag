@@ -186,7 +186,7 @@ export const Sequence03Storia: React.FC = () => {
 							<br />e il riscatto sociale dei contadini."
 						</p>
 						<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.grigioCaldo, margin: 0, marginTop: 8}}>
-							Dal testo del Cicerone Digitale · A1.05
+							Dal testo del Narratore Digitale · A1.05
 						</p>
 					</div>
 				</div>

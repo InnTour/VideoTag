@@ -35,15 +35,10 @@ export const Sequence05Outro: React.FC = () => {
   const lineWidthTop = interpolate(frame, [5, 50], [0, 300], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
   const lineWidthBot = interpolate(frame, [20, 60], [0, 200], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
 
-  // ── Loghi: entrano in sequenza ─────────────────────────────
-  const logoComune = spring({ frame: Math.max(0, frame - 55), fps, config: { damping: 160 } });
-  const logoInnTour = spring({ frame: Math.max(0, frame - 75), fps, config: { damping: 160 } });
+  // ── Loghi ─────────────────────────────────────────────────
   const logoFade = interpolate(frame, [durationInFrames - 100, durationInFrames - 60], [1, 0], {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   });
-
-  // ── URL fade-in ────────────────────────────────────────────
-  const urlOpacity = spring({ frame: Math.max(0, frame - 95), fps, config: { damping: 200 } });
 
   // ── Iris outro: cerchio che si chiude ──────────────────────
   const irisProgress = interpolate(frame, [durationInFrames - 80, durationInFrames - 8], [0, 1], {
@@ -130,87 +125,20 @@ export const Sequence05Outro: React.FC = () => {
       </div>
 
       {/* ── LOGHI ─────────────────────────────────────────────── */}
-      {/* Logo Comune di Lacedonia — a sinistra */}
       <div style={{
-        position: 'absolute', bottom: 52, left: 120,
-        display: 'flex', alignItems: 'center', gap: 16,
-        opacity: logoComune * logoFade,
-        transform: `translateY(${interpolate(logoComune, [0, 1], [16, 0])}px)`,
+        position: 'absolute',
+        bottom: 60,
+        left: 0,
+        right: 0,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: 48,
+        opacity: logoFade,
       }}>
-        <Img
-          src={staticFile(IMAGES.logoComune)}
-          style={{ height: 56, objectFit: 'contain', filter: 'drop-shadow(0 2px 10px rgba(0,0,0,0.9))' }}
-        />
-        <div>
-          <div style={{
-            fontFamily: 'Lato, sans-serif', fontWeight: 700,
-            fontSize: 16, letterSpacing: '0.10em',
-            color: COLORS.biancoCalce, textTransform: 'uppercase',
-            textShadow: '0 1px 4px rgba(0,0,0,0.9)',
-          }}>Comune di Lacedonia</div>
-          <div style={{
-            fontFamily: 'Lato, sans-serif', fontWeight: 300,
-            fontSize: 16, letterSpacing: '0.06em',
-            color: COLORS.oroVescovile, opacity: 0.90,
-          }}>Alta Irpinia · Campania</div>
-        </div>
-      </div>
-
-      {/* Separatore centrale */}
-      <div style={{
-        position: 'absolute', bottom: 52, left: '50%',
-        transform: 'translateX(-50%)',
-        opacity: Math.min(logoComune, logoInnTour) * logoFade,
-        display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4,
-      }}>
-        <div style={{ width: 1, height: 36, background: 'rgba(200,152,48,0.45)' }} />
-        <div style={{
-          fontFamily: 'Lato, sans-serif', fontSize: 9,
-          color: COLORS.oroVescovile, letterSpacing: '0.12em',
-          textTransform: 'uppercase', opacity: 0.70,
-        }}>×</div>
-        <div style={{ width: 1, height: 36, background: 'rgba(200,152,48,0.45)' }} />
-      </div>
-
-      {/* Logo InnTour — a destra */}
-      <div style={{
-        position: 'absolute', bottom: 52, right: 120,
-        display: 'flex', alignItems: 'center', gap: 16,
-        opacity: logoInnTour * logoFade,
-        transform: `translateY(${interpolate(logoInnTour, [0, 1], [16, 0])}px)`,
-      }}>
-        <div style={{ textAlign: 'right' }}>
-          <div style={{
-            fontFamily: 'Lato, sans-serif', fontWeight: 700,
-            fontSize: 16, letterSpacing: '0.10em',
-            color: COLORS.biancoCalce, textTransform: 'uppercase',
-            textShadow: '0 1px 4px rgba(0,0,0,0.9)',
-          }}>InnTour S.R.L.</div>
-          <div style={{
-            fontFamily: 'Lato, sans-serif', fontWeight: 300,
-            fontSize: 16, letterSpacing: '0.06em',
-            color: COLORS.verdeInnTour, opacity: 0.90,
-          }}>MetaBorghi Initiative</div>
-        </div>
-        <Img
-          src={staticFile(IMAGES.logoInnTour)}
-          style={{ height: 56, objectFit: 'contain', filter: 'drop-shadow(0 2px 10px rgba(0,0,0,0.9))' }}
-        />
-      </div>
-
-      {/* URL virtual tour */}
-      <div style={{
-        position: 'absolute', bottom: 24, left: 0, right: 0,
-        textAlign: 'center',
-        opacity: urlOpacity * logoFade,
-      }}>
-        <div style={{
-          fontFamily: 'Lato, sans-serif', fontSize: 16,
-          color: COLORS.biancoCalce, opacity: 0.55,
-          letterSpacing: '0.08em',
-        }}>
-          Cicerone Digitale di Lacedonia · Virtual Tour
-        </div>
+        <Img src={staticFile(IMAGES.logoComune)} style={{ height: 96, objectFit: 'contain' }} />
+        <div style={{ width: 1, height: 72, background: '#666666' }} />
+        <Img src={staticFile(IMAGES.logoInnTour)} style={{ height: 80, objectFit: 'contain' }} />
       </div>
 
       {/* ── IRIS OUTRO ────────────────────────────────────────── */}

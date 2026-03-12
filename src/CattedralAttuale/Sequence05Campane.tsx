@@ -196,7 +196,7 @@ export const Sequence05Campane: React.FC = () => {
 					color: COLORS.oroSacro, margin: 0, letterSpacing: '0.16em',
 					textTransform: 'uppercase', opacity: subOp,
 				}}>
-					Cicerone Digitale · Virtual Tour
+					Narratore Digitale · Virtual Tour
 				</p>
 
 				{/* Linea oro */}

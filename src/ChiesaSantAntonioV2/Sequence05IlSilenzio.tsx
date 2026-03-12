@@ -172,7 +172,7 @@ export const Sequence05IlSilenzio: React.FC = () => {
 						textTransform: 'uppercase',
 						opacity: 0.7,
 					}}>
-						InnTour · Cicerone Digitale di Lacedonia
+						InnTour · Narratore Digitale di Lacedonia
 					</div>
 					{/* Versetto colofone */}
 					<div style={{

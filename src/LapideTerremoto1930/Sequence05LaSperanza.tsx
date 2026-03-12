@@ -29,12 +29,9 @@ export const Sequence05LaSperanza: React.FC = () => {
   const lineW = interpolate(frame, [6, 58], [0, 300], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
 
   // Loghi
-  const logoC    = spring({ frame: Math.max(0, frame - 58), fps, config: { damping: 160 } });
-  const logoI    = spring({ frame: Math.max(0, frame - 75), fps, config: { damping: 160 } });
   const logoFade = interpolate(frame, [durationInFrames - 95, durationInFrames - 55], [1, 0], {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
   });
-  const urlOp = spring({ frame: Math.max(0, frame - 100), fps, config: { damping: 200 } });
 
   // Ghost "SPERANZA" — grande, in oro, si dissolve lentamente
   const ghostOp = interpolate(frame, [20, 80, durationInFrames - 120, durationInFrames - 72], [0, 0.060, 0.060, 0], {
@@ -135,77 +132,15 @@ export const Sequence05LaSperanza: React.FC = () => {
         }} />
       </div>
 
-      {/* LOGO Comune di Lacedonia */}
+      {/* LOGHI */}
       <div style={{
-        position: 'absolute', bottom: 52, left: 120,
-        display: 'flex', alignItems: 'center', gap: 16,
-        opacity: logoC * logoFade,
-        transform: `translateY(${interpolate(logoC, [0, 1], [16, 0])}px)`,
+        position: 'absolute', bottom: 60, left: 0, right: 0,
+        display: 'flex', justifyContent: 'center', alignItems: 'center',
+        gap: 48, opacity: logoFade,
       }}>
-        <Img
-          src={staticFile(IMAGES.logoComune)}
-          style={{ height: 58, objectFit: 'contain', filter: 'drop-shadow(0 2px 12px rgba(0,0,0,0.9))' }}
-        />
-        <div>
-          <div style={{
-            fontFamily: 'Lato, sans-serif', fontWeight: 700,
-            fontSize: 17, letterSpacing: '0.10em',
-            color: COLORS.biancoMarmo, textTransform: 'uppercase',
-            textShadow: '0 1px 6px rgba(0,0,0,0.9)',
-          }}>Comune di Lacedonia</div>
-          <div style={{
-            fontFamily: 'Lato, sans-serif', fontWeight: 300,
-            fontSize: 16, color: COLORS.oroSperanza, opacity: 0.88,
-          }}>Alta Irpinia · Campania</div>
-        </div>
-      </div>
-
-      {/* Separatore */}
-      <div style={{
-        position: 'absolute', bottom: 52, left: '50%',
-        transform: 'translateX(-50%)',
-        opacity: Math.min(logoC, logoI) * logoFade,
-        display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4,
-      }}>
-        <div style={{ width: 1, height: 38, background: `rgba(200,168,75,0.45)` }} />
-        <div style={{ fontFamily: 'Lato, sans-serif', fontSize: 10, color: COLORS.oroSperanza, opacity: 0.68 }}>×</div>
-        <div style={{ width: 1, height: 38, background: `rgba(200,168,75,0.45)` }} />
-      </div>
-
-      {/* LOGO InnTour */}
-      <div style={{
-        position: 'absolute', bottom: 52, right: 120,
-        display: 'flex', alignItems: 'center', gap: 16,
-        opacity: logoI * logoFade,
-        transform: `translateY(${interpolate(logoI, [0, 1], [16, 0])}px)`,
-      }}>
-        <div style={{ textAlign: 'right' }}>
-          <div style={{
-            fontFamily: 'Lato, sans-serif', fontWeight: 700,
-            fontSize: 17, letterSpacing: '0.10em',
-            color: COLORS.biancoMarmo, textTransform: 'uppercase',
-            textShadow: '0 1px 6px rgba(0,0,0,0.9)',
-          }}>InnTour S.R.L.</div>
-          <div style={{
-            fontFamily: 'Lato, sans-serif', fontWeight: 300,
-            fontSize: 16, color: COLORS.verdeInnTour, opacity: 0.90,
-          }}>MetaBorghi Initiative</div>
-        </div>
-        <Img
-          src={staticFile(IMAGES.logoInnTour)}
-          style={{ height: 58, objectFit: 'contain', filter: 'drop-shadow(0 2px 12px rgba(0,0,0,0.9))' }}
-        />
-      </div>
-
-      {/* URL */}
-      <div style={{
-        position: 'absolute', bottom: 24, left: 0, right: 0,
-        textAlign: 'center', opacity: urlOp * logoFade,
-      }}>
-        <div style={{
-          fontFamily: 'Lato, sans-serif', fontSize: 16,
-          color: COLORS.biancoMarmo, opacity: 0.52, letterSpacing: '0.08em',
-        }}>Cicerone Digitale di Lacedonia · Virtual Tour</div>
+        <Img src={staticFile(IMAGES.logoComune)} style={{ height: 96, objectFit: 'contain' }} />
+        <div style={{ width: 1, height: 72, background: '#666666' }} />
+        <Img src={staticFile(IMAGES.logoInnTour)} style={{ height: 80, objectFit: 'contain' }} />
       </div>
 
       {/* IRIS OUTRO */}

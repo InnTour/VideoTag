@@ -133,7 +133,7 @@ export const Sequence01Intro: React.FC = () => {
 			{/* InnTour bottom */}
 			<div style={{position: 'absolute', bottom: 42, left: 60, opacity: subOp * 0.5, display: 'flex', alignItems: 'center', gap: 10}}>
 				<span style={{fontFamily: latoFont, fontSize: 16, fontWeight: 700, color: COLORS.verdeInnTour, letterSpacing: '0.12em'}}>INNTOUR</span>
-				<span style={{fontFamily: latoFont, fontSize: 16, color: COLORS.grigioCaldo}}>· Cicerone Digitale di Lacedonia</span>
+				<span style={{fontFamily: latoFont, fontSize: 16, color: COLORS.grigioCaldo}}>· Narratore Digitale di Lacedonia</span>
 			</div>
 		</AbsoluteFill>
 	);
