@@ -10,7 +10,7 @@
  *   s01=720 + s02=1050 + s03=1080 + s04=1050 + s05=1380 − 4×20 = 5280−80 = 5200 ✓
  */
 import React from 'react';
-import { AbsoluteFill, Audio, staticFile } from 'remotion';
+import { AbsoluteFill, Audio, interpolate, staticFile, useVideoConfig } from 'remotion';
 import { TransitionSeries, springTiming } from '@remotion/transitions';
 import { fade } from '@remotion/transitions/fade';
 import { Sequence01Intro }    from './Sequence01Intro';
@@ -21,13 +21,23 @@ import { Sequence05Outro }    from './Sequence05Outro';
 import { AUDIO, COLORS, SEQ_DUR } from './constants';
 
 export const ViaTagliata: React.FC = () => {
-  const springT = springTiming({ config: { damping: 200 }, durationInFrames: 30 });
+  const { fps } = useVideoConfig();
+  const TRANSITION_DUR = 30;
+  const springT = springTiming({ config: { damping: 200 }, durationInFrames: TRANSITION_DUR });
 
   return (
     <AbsoluteFill style={{ background: COLORS.neroFondo }}>
       {/* ── Narrazione principale ──────────────────────────────────────────────── */}
-      <Audio src={staticFile(AUDIO.narrazione)} volume={1} />
-      <Audio src={staticFile('music/romano-ambient.mp3')} volume={0.18} loop />
+      <Audio
+        src={staticFile(AUDIO.narrazione)}
+        startFrom={0}
+        volume={(f) => interpolate(f, [0, 30], [0, 1], { extrapolateRight: 'clamp' })}
+      />
+      <Audio
+        src={staticFile('music/romano-ambient.mp3')}
+        volume={(f) => interpolate(f, [0, fps], [0, 0.18], { extrapolateRight: 'clamp' })}
+        loop
+      />
 
       {/* ── Sequenze ──────────────────────────────────────────────────────────── */}
       <TransitionSeries>

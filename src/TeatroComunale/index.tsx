@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Audio, staticFile } from 'remotion';
+import { AbsoluteFill, Audio, interpolate, staticFile, useVideoConfig } from 'remotion';
 import { TransitionSeries, springTiming } from '@remotion/transitions';
 import { fade } from '@remotion/transitions/fade';
 import { Sequence01Intro } from './Sequence01Intro';
@@ -10,13 +10,23 @@ import { Sequence05Outro } from './Sequence05Outro';
 import { AUDIO, COLORS, SEQ_DUR } from './constants';
 
 export const TeatroComunale: React.FC = () => {
-  const springT = springTiming({ config: { damping: 200 }, durationInFrames: 30 });
+  const { fps } = useVideoConfig();
+  const TRANSITION_DUR = 30;
+  const springT = springTiming({ config: { damping: 200 }, durationInFrames: TRANSITION_DUR });
 
   return (
     <AbsoluteFill style={{ background: COLORS.neroSala }}>
       {/* Audio narrazione — parte dall'inizio della composizione */}
-      <Audio src={staticFile(AUDIO)} />
-      <Audio src={staticFile('music/teatrale-grandioso.mp3')} volume={0.20} loop />
+      <Audio
+        src={staticFile(AUDIO)}
+        startFrom={0}
+        volume={(f) => interpolate(f, [0, 30], [0, 1], { extrapolateRight: 'clamp' })}
+      />
+      <Audio
+        src={staticFile('music/teatrale-grandioso.mp3')}
+        volume={(f) => interpolate(f, [0, fps], [0, 0.20], { extrapolateRight: 'clamp' })}
+        loop
+      />
 
       <TransitionSeries>
         {/* Seq 01 — Intro ~9.7s */}

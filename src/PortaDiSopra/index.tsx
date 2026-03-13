@@ -1,4 +1,4 @@
-import {AbsoluteFill, Audio, Sequence, staticFile} from 'remotion';
+import {AbsoluteFill, Audio, interpolate, Sequence, staticFile, useVideoConfig} from 'remotion';
 import {SEQUENCES} from './constants';
 import {Sequence01Intro} from './Sequence01Intro';
 import {Sequence02Maestosa} from './Sequence02Maestosa';
@@ -17,6 +17,7 @@ import {Sequence05Eco} from './Sequence05Eco';
  */
 
 export const PortaDiSopra: React.FC = () => {
+	const { fps } = useVideoConfig();
 	const toFrames = (s: number) => Math.round(s * 30);
 
 	return (
@@ -25,9 +26,13 @@ export const PortaDiSopra: React.FC = () => {
 			<Audio
 				src={staticFile('audio/TAG_A1.10_PORTA_DI_SOPRA_Iapetus_ITA.mp3')}
 				startFrom={0}
-				volume={1}
+				volume={(f) => interpolate(f, [0, 30], [0, 1], { extrapolateRight: 'clamp' })}
 			/>
-			<Audio src={staticFile('music/malinconico-archi.mp3')} volume={0.14} loop />
+			<Audio
+				src={staticFile('music/malinconico-archi.mp3')}
+				volume={(f) => interpolate(f, [0, fps], [0, 0.14], { extrapolateRight: 'clamp' })}
+				loop
+			/>
 
 			{/* SEQ 01 — INTRO · 0–8s */}
 			<Sequence from={toFrames(SEQUENCES.INTRO.start)} durationInFrames={toFrames(SEQUENCES.INTRO.duration)}>
