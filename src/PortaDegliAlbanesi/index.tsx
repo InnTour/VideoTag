@@ -42,6 +42,7 @@ export const PortaDegliAlbanesi: React.FC = () => {
 				volume={0.82}
 				startFrom={0}
 			/>
+			<Audio src={staticFile('music/epico-medievale.mp3')} volume={0.20} loop />
 
 			{sequences.map(({key, timing, Component}) => (
 				<Sequence

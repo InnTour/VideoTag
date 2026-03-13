@@ -18,6 +18,7 @@ export const ChiesaSantAntonioV2: React.FC = () => {
 				startFrom={0}
 				volume={1}
 			/>
+			<Audio src={staticFile('music/drammatico-thriller.mp3')} volume={0.19} loop />
 
 			{/* SEQUENZA 01 — La Notte (0–8s) */}
 			<Sequence

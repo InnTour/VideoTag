@@ -27,6 +27,7 @@ export const PortaDiSopra: React.FC = () => {
 				startFrom={0}
 				volume={1}
 			/>
+			<Audio src={staticFile('music/malinconico-archi.mp3')} volume={0.14} loop />
 
 			{/* SEQ 01 — INTRO · 0–8s */}
 			<Sequence from={toFrames(SEQUENCES.INTRO.start)} durationInFrames={toFrames(SEQUENCES.INTRO.duration)}>
