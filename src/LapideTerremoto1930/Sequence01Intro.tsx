@@ -1,7 +1,6 @@
 import React from 'react';
 import { useCurrentFrame, useVideoConfig, interpolate, spring } from 'remotion';
 import { KenBurnsImage } from './components/KenBurnsImage';
-import { SpotlightEffect } from './components/SpotlightEffect';
 import { FilmGrain } from './components/FilmGrain';
 import { ScanLines } from './components/ScanLines';
 import { IMAGES, COLORS } from './constants';
@@ -157,7 +156,7 @@ export const Sequence01Intro: React.FC = () => {
 
         {/* Sottotitolo — hook */}
         <div style={{
-          opacity: subEnt, marginTop: 28, maxWidth: 600,
+          marginTop: 28, maxWidth: 600,
           fontFamily: 'Lato, sans-serif', fontSize: 30, fontWeight: 300,
           color: COLORS.biancoMarmo, opacity: subEnt * 0.80,
           lineHeight: 1.55,

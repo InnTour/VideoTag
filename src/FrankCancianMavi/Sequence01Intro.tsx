@@ -125,7 +125,7 @@ export const Sequence01Intro: React.FC = () => {
       {/* SOTTOTITOLO */}
       <div style={{
         position: 'absolute', left: 72, bottom: 100,
-        opacity: subEnt, transform: `translateY(${subY}px)`,
+        transform: `translateY(${subY}px)`,
         maxWidth: 680,
         fontFamily: 'Lato, sans-serif', fontSize: 32, fontWeight: 300,
         color: COLORS.biancoCalce, opacity: subEnt * 0.80,
