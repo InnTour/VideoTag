@@ -9,9 +9,10 @@
  *   s01=490 + s02=540 + s03=490 + s04=498 − 3×20 = 2018−60 = 1958 ✓
  */
 import React from 'react';
-import { AbsoluteFill, Audio, staticFile } from 'remotion';
-import { TransitionSeries, linearTiming } from '@remotion/transitions';
+import { AbsoluteFill, Audio, interpolate, staticFile, useVideoConfig } from 'remotion';
+import { TransitionSeries, springTiming } from '@remotion/transitions';
 import { fade } from '@remotion/transitions/fade';
+import { LightLeak } from '@remotion/light-leaks';
 import { Sequence01Intro }       from './Sequence01Intro';
 import { Sequence02Storia }      from './Sequence02Storia';
 import { Sequence03Paradosso }   from './Sequence03Paradosso';
@@ -19,19 +20,27 @@ import { Sequence04Risoluzione } from './Sequence04Risoluzione';
 import { AUDIO, COLORS, SEQ_DUR } from './constants';
 
 export const PortaLaStella: React.FC = () => {
-  const fadeTiming = linearTiming({ durationInFrames: SEQ_DUR.transition });
+  const { fps } = useVideoConfig();
+  const fadeTiming = springTiming({ config: { damping: 200 }, durationInFrames: 30 });
 
   return (
     <AbsoluteFill style={{ background: COLORS.neroFondo }}>
       {/* ── Narrazione ──────────────────────────────────────────────────────── */}
-      <Audio src={staticFile(AUDIO.narrazione)} volume={1} />
-      <Audio src={staticFile('music/epico-medievale.mp3')} volume={0.18} loop />
+      <Audio
+        src={staticFile(AUDIO.narrazione)}
+        volume={(f) => interpolate(f, [0, 30], [0, 1], { extrapolateRight: 'clamp' })}
+      />
+      <Audio
+        src={staticFile('music/epico-medievale.mp3')}
+        volume={(f) => interpolate(f, [0, fps], [0, 0.18], { extrapolateRight: 'clamp' })}
+        loop
+      />
 
       {/* ── Sequenze ────────────────────────────────────────────────────────── */}
       <TransitionSeries>
         <TransitionSeries.Sequence
           durationInFrames={SEQ_DUR.s01}
-          premountFor={SEQ_DUR.transition}
+          premountFor={30}
         >
           <Sequence01Intro />
         </TransitionSeries.Sequence>
@@ -40,23 +49,29 @@ export const PortaLaStella: React.FC = () => {
 
         <TransitionSeries.Sequence
           durationInFrames={SEQ_DUR.s02}
-          premountFor={SEQ_DUR.transition}
+          premountFor={30}
         >
           <Sequence02Storia />
         </TransitionSeries.Sequence>
 
         <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+        <TransitionSeries.Overlay durationInFrames={20}>
+          <LightLeak seed={1} hueShift={30} />
+        </TransitionSeries.Overlay>
 
         <TransitionSeries.Sequence
           durationInFrames={SEQ_DUR.s03}
-          premountFor={SEQ_DUR.transition}
+          premountFor={30}
         >
           <Sequence03Paradosso />
         </TransitionSeries.Sequence>
 
         <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+        <TransitionSeries.Overlay durationInFrames={20}>
+          <LightLeak seed={2} hueShift={30} />
+        </TransitionSeries.Overlay>
 
-        <TransitionSeries.Sequence durationInFrames={SEQ_DUR.s04}>
+        <TransitionSeries.Sequence durationInFrames={SEQ_DUR.s04} premountFor={30}>
           <Sequence04Risoluzione />
         </TransitionSeries.Sequence>
       </TransitionSeries>
