@@ -1,28 +1,35 @@
 import React from 'react';
-import { useCurrentFrame, useVideoConfig, interpolate, spring, Img, staticFile } from 'remotion';
-import { KenBurnsImage } from './components/KenBurnsImage';
-import { ScanLines } from './components/ScanLines';
-import { IMAGES, COLORS } from './constants';
+import {Easing, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {loadFont as loadPlayfair} from '@remotion/google-fonts/PlayfairDisplay';
+import {loadFont as loadLato} from '@remotion/google-fonts/Lato';
+import {KenBurnsImage} from './components/KenBurnsImage';
+import {ScanLines} from './components/ScanLines';
+import {IMAGES, COLORS} from './constants';
+
+const {fontFamily: playfairFamily} = loadPlayfair();
+const {fontFamily: latoFamily} = loadLato();
 
 // ── Seq05 — Outro (~16.9s · 507 frame) ─────────────────────────
 // Bookend: speranza image · tagline · loghi · iris outro
 
 export const Sequence05Outro: React.FC = () => {
   const frame = useCurrentFrame();
-  const { durationInFrames, fps } = useVideoConfig();
+  const {durationInFrames, fps} = useVideoConfig();
 
-  const taglineEntrance = spring({ frame: Math.max(0, frame - 10), fps, config: { damping: 200 } });
+  const taglineEntrance = spring({frame: Math.max(0, frame - 10), fps, config: {damping: 200}});
   const taglineOpacity = interpolate(taglineEntrance, [0, 1], [0, 1]);
-  const taglineY = interpolate(taglineEntrance, [0, 1], [20, 0]);
+  const taglineY = interpolate(taglineEntrance, [0, 1], [20, 0], {easing: Easing.out(Easing.cubic)});
   const taglineFade = interpolate(frame, [durationInFrames - 90, durationInFrames - 55], [1, 0], {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+    easing: Easing.out(Easing.quad),
   });
 
-  const lineWidthTop = interpolate(frame, [5, 50], [0, 300], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
-  const lineWidthBot = interpolate(frame, [20, 60], [0, 200], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
+  const lineWidthTop = interpolate(frame, [5, 50], [0, 300], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)});
+  const lineWidthBot = interpolate(frame, [20, 60], [0, 200], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)});
 
   const logoFade = interpolate(frame, [durationInFrames - 85, durationInFrames - 50], [1, 0], {
     extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+    easing: Easing.out(Easing.quad),
   });
 
   const irisProgress = interpolate(frame, [durationInFrames - 80, durationInFrames - 8], [0, 1], {
@@ -33,7 +40,7 @@ export const Sequence05Outro: React.FC = () => {
   const waterPulse = Math.sin(frame / 40) * 0.04;
 
   return (
-    <div style={{ position: 'absolute', inset: 0 }}>
+    <div style={{position: 'absolute', inset: 0}}>
       <KenBurnsImage src={IMAGES.speranza} motion="zoom-out" intensity={0.06} objectPosition="center center" />
 
       <div style={{
@@ -66,13 +73,13 @@ export const Sequence05Outro: React.FC = () => {
         }} />
 
         <div style={{
-          fontFamily: 'Lato, sans-serif', fontSize: 12,
+          fontFamily: latoFamily, fontSize: 12,
           color: COLORS.oroMiracolo, letterSpacing: '0.25em',
           textTransform: 'uppercase', marginBottom: 20, opacity: 0.80,
         }}>Pozzo del Miracolo · Lacedonia</div>
 
         <div style={{
-          fontFamily: 'Playfair Display, serif',
+          fontFamily: playfairFamily,
           fontSize: 44, fontWeight: 700,
           color: COLORS.biancoCalce,
           textAlign: 'center', lineHeight: 1.42,
@@ -80,7 +87,7 @@ export const Sequence05Outro: React.FC = () => {
           textShadow: '0 2px 24px rgba(0,0,0,0.95), 0 0 60px rgba(240,192,64,0.14)',
         }}>
           C'è un pozzo nel cuore di Lacedonia<br />
-          <em style={{ color: COLORS.oroMiracolo }}>dove la fede è più antica dell'acqua.</em>
+          <em style={{color: COLORS.oroMiracolo}}>dove la fede è più antica dell'acqua.</em>
         </div>
 
         <div style={{
@@ -102,15 +109,15 @@ export const Sequence05Outro: React.FC = () => {
         gap: 48,
         opacity: logoFade,
       }}>
-        <Img src={staticFile(IMAGES.logoComune)} style={{ height: 96, objectFit: 'contain' }} />
-        <div style={{ width: 1, height: 72, background: '#666666' }} />
-        <Img src={staticFile(IMAGES.logoInnTour)} style={{ height: 80, objectFit: 'contain' }} />
+        <Img src={staticFile(IMAGES.logoComune)} style={{height: 96, objectFit: 'contain'}} />
+        <div style={{width: 1, height: 72, background: '#666666'}} />
+        <Img src={staticFile(IMAGES.logoInnTour)} style={{height: 80, objectFit: 'contain'}} />
       </div>
 
       {/* ── IRIS OUTRO ─────────────────────────────────────────── */}
       {irisProgress > 0 && (
-        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
-          <svg width="1920" height="1080" style={{ position: 'absolute', inset: 0 }}>
+        <div style={{position: 'absolute', inset: 0, pointerEvents: 'none'}}>
+          <svg width="1920" height="1080" style={{position: 'absolute', inset: 0}}>
             <defs>
               <mask id="iris-mask-pozzo">
                 <rect width="1920" height="1080" fill="white" />

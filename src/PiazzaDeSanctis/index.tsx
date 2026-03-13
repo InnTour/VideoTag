@@ -11,8 +11,8 @@
  *   s01=600 + s02=750 + s03=750 + s04=600 + s05=750 + s06=908 − 5×20 = 4258 ✓
  */
 import React from 'react';
-import { AbsoluteFill, Audio, staticFile } from 'remotion';
-import { TransitionSeries, linearTiming } from '@remotion/transitions';
+import { AbsoluteFill, Audio, interpolate, staticFile, useVideoConfig } from 'remotion';
+import { TransitionSeries, springTiming } from '@remotion/transitions';
 import { fade } from '@remotion/transitions/fade';
 import { Sequence01Intro }      from './Sequence01Intro';
 import { Sequence02DeSanctis }  from './Sequence02DeSanctis';
@@ -23,13 +23,23 @@ import { Sequence06Aforisma }   from './Sequence06Aforisma';
 import { AUDIO, COLORS, SEQ_DUR } from './constants';
 
 export const PiazzaDeSanctis: React.FC = () => {
-  const fadeTiming = linearTiming({ durationInFrames: SEQ_DUR.transition });
+  const { fps } = useVideoConfig();
+  const TRANSITION_DUR = 30;
+  const springT = springTiming({ config: { damping: 200 }, durationInFrames: TRANSITION_DUR });
 
   return (
     <AbsoluteFill style={{ background: COLORS.neroFondo }}>
       {/* ── Narrazione principale ─────────────────────────────────────────── */}
-      <Audio src={staticFile(AUDIO.narrazione)} volume={1} />
-      <Audio src={staticFile('music/orchestrale-elevato.mp3')} volume={0.16} loop />
+      <Audio
+        src={staticFile(AUDIO.narrazione)}
+        startFrom={0}
+        volume={(f) => interpolate(f, [0, 30], [0, 1], { extrapolateRight: 'clamp' })}
+      />
+      <Audio
+        src={staticFile('music/orchestrale-elevato.mp3')}
+        volume={(f) => interpolate(f, [0, fps], [0, 0.16], { extrapolateRight: 'clamp' })}
+        loop
+      />
 
       {/* ── Sequenze ─────────────────────────────────────────────────────── */}
       <TransitionSeries>
@@ -41,7 +51,7 @@ export const PiazzaDeSanctis: React.FC = () => {
           <Sequence01Intro />
         </TransitionSeries.Sequence>
 
-        <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+        <TransitionSeries.Transition presentation={fade()} timing={springT} />
 
         {/* Seq02 — De Sanctis · Il Telegramma · 25s */}
         <TransitionSeries.Sequence
@@ -51,7 +61,7 @@ export const PiazzaDeSanctis: React.FC = () => {
           <Sequence02DeSanctis />
         </TransitionSeries.Sequence>
 
-        <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+        <TransitionSeries.Transition presentation={fade()} timing={springT} />
 
         {/* Seq03 — Il Perché · Morra · 25s */}
         <TransitionSeries.Sequence
@@ -61,7 +71,7 @@ export const PiazzaDeSanctis: React.FC = () => {
           <Sequence03IlPerche />
         </TransitionSeries.Sequence>
 
-        <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+        <TransitionSeries.Transition presentation={fade()} timing={springT} />
 
         {/* Seq04 — La Piazza · Campane e voci · 20s */}
         <TransitionSeries.Sequence
@@ -71,7 +81,7 @@ export const PiazzaDeSanctis: React.FC = () => {
           <Sequence04LaPiazza />
         </TransitionSeries.Sequence>
 
-        <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+        <TransitionSeries.Transition presentation={fade()} timing={springT} />
 
         {/* Seq05 — Il Faro · Contadini e Studenti · 25s */}
         <TransitionSeries.Sequence
@@ -81,7 +91,7 @@ export const PiazzaDeSanctis: React.FC = () => {
           <Sequence05IlFaro />
         </TransitionSeries.Sequence>
 
-        <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+        <TransitionSeries.Transition presentation={fade()} timing={springT} />
 
         {/* Seq06 — Aforisma · Outro · 30.27s */}
         <TransitionSeries.Sequence durationInFrames={SEQ_DUR.s06}>

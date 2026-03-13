@@ -11,20 +11,145 @@
       "sourceType": "github",
       "computedHash": "4ac521f800708c50383d6581e0918453719627ebfe5ae66635bcf5835401084b"
     },
+    "awwwards-animations": {
+      "source": "devmartinese/awwwards-animations-skill",
+      "sourceType": "github",
+      "computedHash": "03ea7b6b4daf3de348c530ec0670cd63c21bc060591f5ca7f193234008a941b6"
+    },
+    "codegen": {
+      "source": "vercel-labs/json-render",
+      "sourceType": "github",
+      "computedHash": "058fec9bf514a97583ce670f9d084ba8bb1aacc3f63ab2ebe6afc7dd47b7302f"
+    },
+    "core": {
+      "source": "vercel-labs/json-render",
+      "sourceType": "github",
+      "computedHash": "5780c65940ea47b90c7984a64a450e6e58c8611415f463f21616760f04b93a0e"
+    },
     "explainer-video-guide": {
       "source": "inference-sh/skills",
       "sourceType": "github",
       "computedHash": "c014380b9ee0f36fef93e8cb4d76961e5dc603f8655ed97042aa20f4681596c9"
+    },
+    "ffmpeg": {
+      "source": "digitalsamba/claude-code-video-toolkit",
+      "sourceType": "github",
+      "computedHash": "51fa05bc18bb2691e622aefd1d8ec6d4d96a9e9c44cdf599003c9d6003d11a07"
+    },
+    "image": {
+      "source": "vercel-labs/json-render",
+      "sourceType": "github",
+      "computedHash": "f4e8c094db4900ddf1467f8a69596fc9445136b3a62c1312831ff968451f4eb5"
     },
     "image-to-video": {
       "source": "inference-sh/skills",
       "sourceType": "github",
       "computedHash": "5c1918c2a3eb68da1378ec172fa0a88a048f9b3f29ca5d0fb3ed5cfad0fb972d"
     },
+    "jotai": {
+      "source": "vercel-labs/json-render",
+      "sourceType": "github",
+      "computedHash": "1773e11369c7e45e30d52519869dc758e557e41ec4b3d923fa9911780a4bdde7"
+    },
+    "mcp": {
+      "source": "vercel-labs/json-render",
+      "sourceType": "github",
+      "computedHash": "b7cbc4e81c3115e1c9bdc4b9fd925488b00b600622b34e28361c1b7e081d42d1"
+    },
+    "react": {
+      "source": "vercel-labs/json-render",
+      "sourceType": "github",
+      "computedHash": "22dde85d5a69aaee45eb56aeed8e7f8fb5d2ae2559b38f71621d0654385bed1d"
+    },
+    "react-email": {
+      "source": "vercel-labs/json-render",
+      "sourceType": "github",
+      "computedHash": "fcdc6735efd9d8f4cfd8bd702608a77a6a312be0b5a4e8de58e47eba145045c3"
+    },
+    "react-native": {
+      "source": "vercel-labs/json-render",
+      "sourceType": "github",
+      "computedHash": "1cfeffbd71f8fc350e7fdb5cd1f76067d64b60f2fef2300fd83181ad90148451"
+    },
+    "react-pdf": {
+      "source": "vercel-labs/json-render",
+      "sourceType": "github",
+      "computedHash": "a02018e64af5fc7e07e09fdd27ed43cc2b34b4ff1fbfcc21c0b391564f6a9528"
+    },
+    "react-three-fiber": {
+      "source": "vercel-labs/json-render",
+      "sourceType": "github",
+      "computedHash": "be180952fa9739dda4d20c41706c8042aaddb1a13e9329fa1b3d96fd6c09b465"
+    },
+    "redux": {
+      "source": "vercel-labs/json-render",
+      "sourceType": "github",
+      "computedHash": "9b71c3a0dd33f8ff2cea3214eed4d7a0f3d4c04e0714ad069b8ce3efc08386f3"
+    },
+    "remotion": {
+      "source": "vercel-labs/json-render",
+      "sourceType": "github",
+      "computedHash": "391d340781220430ac6a8cc92fea99c5df026439d2e9be46b9d2c5d20488e3ef"
+    },
+    "remotion-best-practices": {
+      "source": "vercel-labs/json-render",
+      "sourceType": "github",
+      "computedHash": "4756068d1b2f92ef4f6d1301094a9862ef275687d3dbf26fda5e52cae3fca4c1"
+    },
+    "remotion-video-production": {
+      "source": "supercent-io/skills-template",
+      "sourceType": "github",
+      "computedHash": "792969beb7b321db2abdf10d4b1b232b34652af752b0d5b4f70db75f75f6bfdb"
+    },
+    "shadcn": {
+      "source": "vercel-labs/json-render",
+      "sourceType": "github",
+      "computedHash": "fa8e374b96f1f1d0a0f81adb97a843b82753e546d9ac176c0dace04f879090d3"
+    },
+    "skill-creator": {
+      "source": "vercel-labs/json-render",
+      "sourceType": "github",
+      "computedHash": "272d984e884ac4eddca9c78730d2bdd60c0c14864ca35e166fed89553d7f9c97"
+    },
+    "solid": {
+      "source": "vercel-labs/json-render",
+      "sourceType": "github",
+      "computedHash": "b9d43604f69a8dc6651f82047bfd1c407a5686f40ec9f10ba6d5c503ef50024f"
+    },
     "storyboard-creation": {
       "source": "inference-sh/skills",
       "sourceType": "github",
       "computedHash": "28277c4bfbb81bb86c9c690251edc7cfa185530b15d2de4ace8c77ee37a83d1d"
+    },
+    "svelte": {
+      "source": "vercel-labs/json-render",
+      "sourceType": "github",
+      "computedHash": "1f1b211c6339f49234e24e30b70e3d4214c9e8af01b7262d66dc8dbe6e1da669"
+    },
+    "video-motion-graphics": {
+      "source": "dylantarre/animation-principles",
+      "sourceType": "github",
+      "computedHash": "6b82db9dbef273739ac97bd34657fcd2d92420905dad40823e676671c0c85c01"
+    },
+    "videoagent-audio-studio": {
+      "source": "pexoai/pexo-skills",
+      "sourceType": "github",
+      "computedHash": "feb52bd9b3d05f31569e307fcc9ddc4d4d8ec5281f43f271be4b7c56045341b4"
+    },
+    "vue": {
+      "source": "vercel-labs/json-render",
+      "sourceType": "github",
+      "computedHash": "48423d8d0c69b434ce564f5b05dd66c9767acc77bc8c82fec3f0bf98256089bb"
+    },
+    "xstate": {
+      "source": "vercel-labs/json-render",
+      "sourceType": "github",
+      "computedHash": "38a8a16963a571a68902d40ca51c1b193442ae1c78399866d39e832a8f425b21"
+    },
+    "zustand": {
+      "source": "vercel-labs/json-render",
+      "sourceType": "github",
+      "computedHash": "41cb7e8b24638b78524e9b71a3fcd6f54a672009526b1643920a258f3baccb32"
     }
   }
 }

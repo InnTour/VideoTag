@@ -1,9 +1,14 @@
-import {AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Easing, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
 import {noise2D} from '@remotion/noise';
-import {COLORS, playfairFont, latoFont} from './constants';
+import {loadFont as loadPlayfair} from '@remotion/google-fonts/PlayfairDisplay';
+import {loadFont as loadLato} from '@remotion/google-fonts/Lato';
+import {COLORS} from './constants';
 import {KenBurnsImage} from './components/KenBurnsImage';
 import {ManuscriptFrame} from './components/ManuscriptFrame';
 import {CandleParticles} from './components/CandleParticles';
+
+const {fontFamily: playfairFamily} = loadPlayfair();
+const {fontFamily: latoFamily} = loadLato();
 
 // SEQUENZA 04 — "La Penna"
 // Il notaio scrive l'atto. Estetica: il documento come reperto storico.
@@ -31,10 +36,11 @@ export const Sequence04LaPenna: React.FC = () => {
 		interpolate(frame, [
 			Math.round((4 + lineIdx * 2.2) * fps),
 			Math.round((6 + lineIdx * 2.2) * fps),
-		], [0, 1], {extrapolateRight: 'clamp'});
+		], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
 
 	const fadeOut = interpolate(frame, [durationInFrames - 10, durationInFrames], [1, 0], {
 		extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+		easing: Easing.out(Easing.quad),
 	});
 
 	return (
@@ -88,13 +94,13 @@ export const Sequence04LaPenna: React.FC = () => {
 				paddingLeft: 100,
 			}}>
 				<div style={{
-					fontFamily: latoFont,
+					fontFamily: latoFamily,
 					fontSize: 13,
 					fontWeight: 300,
 					letterSpacing: '0.35em',
 					color: COLORS.oroLiturgico,
 					textTransform: 'uppercase',
-					opacity: interpolate(frame, [0, 10], [0, 1], {extrapolateRight: 'clamp'}),
+					opacity: interpolate(frame, [0, 10], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)}),
 				}}>
 					L'Atto Notarile
 				</div>
@@ -110,13 +116,13 @@ export const Sequence04LaPenna: React.FC = () => {
 			}}>
 				{/* Titolo documento */}
 				<div style={{
-					fontFamily: playfairFont,
+					fontFamily: playfairFamily,
 					fontSize: 18,
 					color: COLORS.oroLiturgico,
 					letterSpacing: '0.12em',
 					textTransform: 'uppercase',
 					marginBottom: 24,
-					opacity: interpolate(frame, [0, 12], [0, 1], {extrapolateRight: 'clamp'}),
+					opacity: interpolate(frame, [0, 12], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)}),
 				}}>
 					Instrumentum Coniurationis
 				</div>
@@ -166,6 +172,7 @@ export const Sequence04LaPenna: React.FC = () => {
 				<div style={{
 					opacity: interpolate(frame, [Math.round(14 * fps), Math.round(17 * fps)], [0, 1], {
 						extrapolateRight: 'clamp',
+						easing: Easing.out(Easing.quad),
 					}),
 					background: COLORS.brunoPergamena,
 					border: `1px solid ${COLORS.bordoMiniato}`,
@@ -176,7 +183,7 @@ export const Sequence04LaPenna: React.FC = () => {
 					textAlign: 'center',
 				}}>
 					<div style={{
-						fontFamily: playfairFont,
+						fontFamily: playfairFamily,
 						fontSize: 48,
 						color: COLORS.rossoMinio,
 						lineHeight: 1,
@@ -185,7 +192,7 @@ export const Sequence04LaPenna: React.FC = () => {
 						1486
 					</div>
 					<div style={{
-						fontFamily: latoFont,
+						fontFamily: latoFamily,
 						fontSize: 13,
 						color: COLORS.avorioCarta,
 						lineHeight: 1.5,

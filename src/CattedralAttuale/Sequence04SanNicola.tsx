@@ -1,8 +1,13 @@
-import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import {COLORS, playfairFont, latoFont} from './constants';
+import {AbsoluteFill, Easing, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {loadFont as loadPlayfair} from '@remotion/google-fonts/PlayfairDisplay';
+import {loadFont as loadLato} from '@remotion/google-fonts/Lato';
+import {COLORS} from './constants';
 import {KenBurnsImage} from './components/KenBurnsImage';
 import {ScanLines} from './components/ScanLines';
 import {ParticleField} from './components/ParticleField';
+
+const {fontFamily: playfairFamily} = loadPlayfair();
+const {fontFamily: latoFamily} = loadLato();
 
 // SEQ 04 — SAN NICOLA (35–50s · 15 secondi)
 // San Nicola di Bari — patrono di Lacedonia dal 1456
@@ -14,12 +19,11 @@ export const Sequence04SanNicola: React.FC = () => {
 	const frame = useCurrentFrame();
 	const {fps, durationInFrames} = useVideoConfig();
 
-	const fadeIn  = interpolate(frame, [0, Math.round(fps * 0.5)], [0, 1], {extrapolateRight: 'clamp'});
-	const fadeOut = interpolate(frame, [durationInFrames - Math.round(fps * 0.6), durationInFrames], [1, 0], {extrapolateLeft: 'clamp'});
+	const fadeIn  = interpolate(frame, [0, Math.round(fps * 0.5)], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)});
+	const fadeOut = interpolate(frame, [durationInFrames - Math.round(fps * 0.6), durationInFrames], [1, 0], {extrapolateLeft: 'clamp', easing: Easing.out(Easing.quad)});
 	const opacity = Math.min(fadeIn, fadeOut);
 
 	// Cross-dissolve: processione notturna → tramonto infuocato
-	// A ~9s locali → reveal del tramonto come climax
 	const dissolveStart = Math.round(8 * fps);
 	const dissolveEnd   = Math.round(10.5 * fps);
 	const dissolve = interpolate(frame, [dissolveStart, dissolveEnd], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
@@ -32,21 +36,21 @@ export const Sequence04SanNicola: React.FC = () => {
 	const torciaPulse = Math.sin(frame / (fps * 0.3)) * 0.12 + 0.88;
 
 	// Cards
-	const titleSpr = spring({frame: Math.max(0, frame - Math.round(0.4 * fps)), fps, config: {damping: 160}});
+	const titleSpr = spring({frame: Math.max(0, frame - Math.round(0.4 * fps)), fps, config: {damping: 200}});
 	const titleOp  = interpolate(titleSpr, [0, 1], [0, 1]);
-	const titleY   = interpolate(titleSpr, [0, 1], [35, 0]);
+	const titleY   = interpolate(titleSpr, [0, 1], [35, 0], {easing: Easing.out(Easing.cubic)});
 
-	const card1Spr = spring({frame: Math.max(0, frame - Math.round(1.5 * fps)), fps, config: {damping: 180}});
+	const card1Spr = spring({frame: Math.max(0, frame - Math.round(1.5 * fps)), fps, config: {damping: 200}});
 	const card1Op  = interpolate(card1Spr, [0, 1], [0, 1]);
 
-	const card2Spr = spring({frame: Math.max(0, frame - Math.round(3.5 * fps)), fps, config: {damping: 180}});
+	const card2Spr = spring({frame: Math.max(0, frame - Math.round(3.5 * fps)), fps, config: {damping: 200}});
 	const card2Op  = interpolate(card2Spr, [0, 1], [0, 1]);
 
-	const card3Spr = spring({frame: Math.max(0, frame - Math.round(6 * fps)), fps, config: {damping: 180}});
+	const card3Spr = spring({frame: Math.max(0, frame - Math.round(6 * fps)), fps, config: {damping: 200}});
 	const card3Op  = interpolate(card3Spr, [0, 1], [0, 1]);
 
 	// Glow arancione/oro — evoca le torce della processione
-	const glowOp = interpolate(frame, [0, Math.round(2 * fps)], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) * (1 - dissolve * 0.4);
+	const glowOp = interpolate(frame, [0, Math.round(2 * fps)], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)}) * (1 - dissolve * 0.4);
 
 	return (
 		<AbsoluteFill style={{opacity, backgroundColor: COLORS.bgNero}}>
@@ -94,7 +98,7 @@ export const Sequence04SanNicola: React.FC = () => {
 			{/* Anno 1456 ghost */}
 			<div style={{
 				position: 'absolute', top: 38, right: 64,
-				fontFamily: playfairFont,
+				fontFamily: playfairFamily,
 				fontSize: 110,
 				fontWeight: 700,
 				color: COLORS.oroSacro,
@@ -122,7 +126,7 @@ export const Sequence04SanNicola: React.FC = () => {
 
 				<div style={{opacity: titleOp, transform: `translateY(${titleY}px)`}}>
 					<h2 style={{
-						fontFamily: playfairFont,
+						fontFamily: playfairFamily,
 						fontSize: 54,
 						fontWeight: 700,
 						color: COLORS.avorio,
@@ -132,7 +136,7 @@ export const Sequence04SanNicola: React.FC = () => {
 					}}>
 						San Nicola di Bari
 					</h2>
-					<p style={{fontFamily: latoFont, fontSize: 17, color: COLORS.oroSacro, margin: '6px 0 0', letterSpacing: '0.14em', textTransform: 'uppercase'}}>
+					<p style={{fontFamily: latoFamily, fontSize: 17, color: COLORS.oroSacro, margin: '6px 0 0', letterSpacing: '0.14em', textTransform: 'uppercase'}}>
 						Patrono di Lacedonia · dal 1456
 					</p>
 				</div>
@@ -147,8 +151,8 @@ export const Sequence04SanNicola: React.FC = () => {
 					backdropFilter: 'blur(18px)',
 					maxWidth: 480,
 				}}>
-					<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.oroSacro, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>1456 · Il Voto</p>
-					<p style={{fontFamily: playfairFont, fontSize: 26, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
+					<p style={{fontFamily: latoFamily, fontSize: 16, color: COLORS.oroSacro, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>1456 · Il Voto</p>
+					<p style={{fontFamily: playfairFamily, fontSize: 26, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
 						Dopo il terremoto del 1456, la comunità si pone sotto la protezione di San Nicola di Bari — patrono eterno della città
 					</p>
 				</div>
@@ -163,8 +167,8 @@ export const Sequence04SanNicola: React.FC = () => {
 					backdropFilter: 'blur(18px)',
 					maxWidth: 480,
 				}}>
-					<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.oroChiaro, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>La Cattedrale</p>
-					<p style={{fontFamily: playfairFont, fontSize: 26, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
+					<p style={{fontFamily: latoFamily, fontSize: 16, color: COLORS.oroChiaro, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>La Cattedrale</p>
+					<p style={{fontFamily: playfairFamily, fontSize: 26, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
 						Non solo un monumento — il <em style={{color: COLORS.oroSacro}}>rifugio spirituale della comunità</em>, custodito dal patrono
 					</p>
 				</div>
@@ -179,8 +183,8 @@ export const Sequence04SanNicola: React.FC = () => {
 					backdropFilter: 'blur(18px)',
 					maxWidth: 480,
 				}}>
-					<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.pietraCalce, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>La Tradizione Viva</p>
-					<p style={{fontFamily: playfairFont, fontSize: 23, color: COLORS.pietraCalce, margin: 0, lineHeight: 1.4}}>
+					<p style={{fontFamily: latoFamily, fontSize: 16, color: COLORS.pietraCalce, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>La Tradizione Viva</p>
+					<p style={{fontFamily: playfairFamily, fontSize: 23, color: COLORS.pietraCalce, margin: 0, lineHeight: 1.4}}>
 						Ogni anno le torce illuminano la notte · la processione è il cuore del borgo · secoli di fede che non si spengono
 					</p>
 				</div>

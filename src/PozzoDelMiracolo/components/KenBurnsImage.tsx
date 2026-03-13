@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Img, useCurrentFrame, useVideoConfig, interpolate, staticFile } from 'remotion';
+import { AbsoluteFill, Easing, Img, useCurrentFrame, useVideoConfig, interpolate, staticFile } from 'remotion';
 
 type Motion = 'zoom-in' | 'zoom-out' | 'pan-left' | 'pan-right' | 'pan-up' | 'pan-down';
 
@@ -51,7 +51,7 @@ export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
     frame + introPadFrames,
     [0, virtualTotal],
     [0, 1],
-    { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' },
+    { extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.quad) },
   );
 
   // Calcolo scala e traslazione.

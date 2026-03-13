@@ -1,9 +1,14 @@
-import {AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Easing, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
 import {noise2D} from '@remotion/noise';
-import {COLORS, playfairFont, latoFont, TESTI_STORICI} from './constants';
+import {loadFont as loadPlayfair} from '@remotion/google-fonts/PlayfairDisplay';
+import {loadFont as loadLato} from '@remotion/google-fonts/Lato';
+import {COLORS, TESTI_STORICI} from './constants';
 import {KenBurnsImage} from './components/KenBurnsImage';
 import {ManuscriptFrame} from './components/ManuscriptFrame';
 import {CandleParticles} from './components/CandleParticles';
+
+const {fontFamily: playfairFamily} = loadPlayfair();
+const {fontFamily: latoFamily} = loadLato();
 
 // SEQUENZA 03 — "L'Ostia"
 // Il momento sacrilego — il cuore teologico della scena.
@@ -31,11 +36,13 @@ export const Sequence03LOstia: React.FC = () => {
 	const giuramentoText = TESTI_STORICI.giuramento;
 	const textReveal = interpolate(frame, [Math.round(12 * fps), Math.round(16 * fps)], [0, 1], {
 		extrapolateRight: 'clamp',
+		easing: Easing.out(Easing.quad),
 	});
 	const textChars = Math.floor(textReveal * giuramentoText.length);
 
 	const fadeOut = interpolate(frame, [durationInFrames - 10, durationInFrames], [1, 0], {
 		extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+		easing: Easing.out(Easing.quad),
 	});
 
 	return (
@@ -95,13 +102,13 @@ export const Sequence03LOstia: React.FC = () => {
 				paddingTop: 68,
 			}}>
 				<div style={{
-					fontFamily: latoFont,
+					fontFamily: latoFamily,
 					fontSize: 13,
 					fontWeight: 300,
 					letterSpacing: '0.35em',
 					color: COLORS.oroLiturgico,
 					textTransform: 'uppercase',
-					opacity: interpolate(frame, [0, 10], [0, 1], {extrapolateRight: 'clamp'}),
+					opacity: interpolate(frame, [0, 10], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)}),
 				}}>
 					Il Giuramento
 				</div>
@@ -122,7 +129,7 @@ export const Sequence03LOstia: React.FC = () => {
 				}}>
 					{/* Virgolette di apertura decorative */}
 					<div style={{
-						fontFamily: playfairFont,
+						fontFamily: playfairFamily,
 						fontSize: 72,
 						color: COLORS.oroLiturgico,
 						lineHeight: 0.5,
@@ -150,7 +157,7 @@ export const Sequence03LOstia: React.FC = () => {
 
 					{/* Prete */}
 					<div style={{
-						fontFamily: latoFont,
+						fontFamily: latoFamily,
 						fontSize: 13,
 						fontWeight: 300,
 						color: COLORS.oroPallido,
@@ -159,6 +166,7 @@ export const Sequence03LOstia: React.FC = () => {
 						marginTop: 14,
 						opacity: interpolate(frame, [Math.round(15 * fps), Math.round(17 * fps)], [0, 1], {
 							extrapolateRight: 'clamp',
+							easing: Easing.out(Easing.quad),
 						}),
 					}}>
 						Celebrato da {TESTI_STORICI.prete}

@@ -1,24 +1,29 @@
 import React from 'react';
-import { useCurrentFrame, useVideoConfig, interpolate, spring } from 'remotion';
-import { KenBurnsImage } from './components/KenBurnsImage';
-import { ParticleField } from './components/ParticleField';
-import { ScanLines } from './components/ScanLines';
-import { IMAGES, COLORS } from './constants';
+import {Easing, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {loadFont as loadPlayfair} from '@remotion/google-fonts/PlayfairDisplay';
+import {loadFont as loadLato} from '@remotion/google-fonts/Lato';
+import {KenBurnsImage} from './components/KenBurnsImage';
+import {ParticleField} from './components/ParticleField';
+import {ScanLines} from './components/ScanLines';
+import {IMAGES, COLORS} from './constants';
+
+const {fontFamily: playfairFamily} = loadPlayfair();
+const {fontFamily: latoFamily} = loadLato();
 
 // ── Seq02 — San Gerardo (~13.3s · 400 frame) ───────────────────
 // Gerardo Maiella · 1741-44 · Vescovo Albini · storia del Santo
 
 export const Sequence02SanGerardo: React.FC = () => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+  const {fps} = useVideoConfig();
 
-  const cardEntrance = spring({ frame: Math.max(0, frame - 20), fps, config: { damping: 160, stiffness: 90 } });
+  const cardEntrance = spring({frame: Math.max(0, frame - 20), fps, config: {damping: 200}});
   const cardOpacity = interpolate(cardEntrance, [0, 1], [0, 1]);
-  const cardY = interpolate(cardEntrance, [0, 1], [30, 0]);
+  const cardY = interpolate(cardEntrance, [0, 1], [30, 0], {easing: Easing.out(Easing.cubic)});
 
-  const card2Entrance = spring({ frame: Math.max(0, frame - 70), fps, config: { damping: 160, stiffness: 90 } });
+  const card2Entrance = spring({frame: Math.max(0, frame - 70), fps, config: {damping: 200}});
   const card2Opacity = interpolate(card2Entrance, [0, 1], [0, 1]);
-  const card2Y = interpolate(card2Entrance, [0, 1], [30, 0]);
+  const card2Y = interpolate(card2Entrance, [0, 1], [30, 0], {easing: Easing.out(Easing.cubic)});
 
   const yearGhost = Math.sin(frame / 60) * 0.01 + 0.07;
 
@@ -28,11 +33,11 @@ export const Sequence02SanGerardo: React.FC = () => {
   });
 
   return (
-    <div style={{ position: 'absolute', inset: 0 }}>
-      <div style={{ position: 'absolute', inset: 0, opacity: 1 - dissolve }}>
+    <div style={{position: 'absolute', inset: 0}}>
+      <div style={{position: 'absolute', inset: 0, opacity: 1 - dissolve}}>
         <KenBurnsImage src={IMAGES.hero} motion="pan-right" intensity={0.04} />
       </div>
-      <div style={{ position: 'absolute', inset: 0, opacity: dissolve }}>
+      <div style={{position: 'absolute', inset: 0, opacity: dissolve}}>
         <KenBurnsImage src={IMAGES.gerardo} motion="zoom-in" intensity={0.05} objectPosition="center top" />
       </div>
 
@@ -53,7 +58,7 @@ export const Sequence02SanGerardo: React.FC = () => {
       {/* Ghost anno */}
       <div style={{
         position: 'absolute', top: 0, right: 60,
-        fontFamily: 'Playfair Display, serif', fontSize: 240, fontWeight: 700,
+        fontFamily: playfairFamily, fontSize: 240, fontWeight: 700,
         color: COLORS.oroMiracolo, opacity: yearGhost,
         pointerEvents: 'none', lineHeight: 1,
         writingMode: 'vertical-rl',
@@ -68,16 +73,16 @@ export const Sequence02SanGerardo: React.FC = () => {
         padding: '24px 32px', maxWidth: 500,
       }}>
         <div style={{
-          fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 11,
+          fontFamily: latoFamily, fontWeight: 700, fontSize: 11,
           letterSpacing: '0.20em', textTransform: 'uppercase',
           color: COLORS.oroMiracolo, marginBottom: 10,
         }}>San Gerardo Maiella · 1726–1755</div>
         <div style={{
-          fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 24,
+          fontFamily: latoFamily, fontWeight: 300, fontSize: 24,
           color: COLORS.biancoCalce, lineHeight: 1.55,
         }}>
           Giovane laico redentorista, ospite del<br />
-          vescovo <strong style={{ color: COLORS.azzurroAcqua }}>Claudio Albini</strong> a Lacedonia<br />
+          vescovo <strong style={{color: COLORS.azzurroAcqua}}>Claudio Albini</strong> a Lacedonia<br />
           tra il 1741 e il 1744.
         </div>
       </div>
@@ -91,16 +96,16 @@ export const Sequence02SanGerardo: React.FC = () => {
         padding: '20px 28px', maxWidth: 480,
       }}>
         <div style={{
-          fontFamily: 'Lato, sans-serif', fontWeight: 700, fontSize: 11,
+          fontFamily: latoFamily, fontWeight: 700, fontSize: 11,
           letterSpacing: '0.18em', textTransform: 'uppercase',
           color: COLORS.azzurroAcqua, marginBottom: 8,
         }}>Il carisma che si svela</div>
         <div style={{
-          fontFamily: 'Lato, sans-serif', fontWeight: 300, fontSize: 22,
+          fontFamily: latoFamily, fontWeight: 300, fontSize: 22,
           color: COLORS.biancoCalce, lineHeight: 1.55,
         }}>
           Un episodio avviene in questi mesi:<br />
-          <em style={{ color: COLORS.oroMiracolo }}>il primo segno soprannaturale</em><br />
+          <em style={{color: COLORS.oroMiracolo}}>il primo segno soprannaturale</em><br />
           del futuro Santo.
         </div>
       </div>

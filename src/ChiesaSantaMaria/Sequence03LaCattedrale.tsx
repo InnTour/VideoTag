@@ -1,9 +1,14 @@
 import React from 'react';
-import {useCurrentFrame, useVideoConfig, interpolate, spring} from 'remotion';
+import {Easing, useCurrentFrame, useVideoConfig, interpolate, spring} from 'remotion';
+import {loadFont as loadPlayfair} from '@remotion/google-fonts/PlayfairDisplay';
+import {loadFont as loadLato} from '@remotion/google-fonts/Lato';
 import {KenBurnsImage} from './components/KenBurnsImage';
 import {ParticleField} from './components/ParticleField';
 import {ScanLines} from './components/ScanLines';
-import {IMAGES, COLORS, playfairFont, latoFont} from './constants';
+import {IMAGES, COLORS} from './constants';
+
+const {fontFamily: playfairFamily} = loadPlayfair();
+const {fontFamily: latoFamily} = loadLato();
 
 // ── Seq03 — La Cattedrale Perduta (~15s · 440 frame) ─────────────
 // Cross-dissolve: vescovi → mosaici
@@ -30,12 +35,12 @@ export const Sequence03LaCattedrale: React.FC = () => {
   const card1 = spring({
     frame: Math.max(0, frame - 14),
     fps,
-    config: {damping: 160},
+    config: {damping: 200},
   });
   const card2 = spring({
     frame: Math.max(0, frame - 110),
     fps,
-    config: {damping: 160},
+    config: {damping: 200},
   });
 
   // Ghost "1705" — respiro lento
@@ -93,7 +98,7 @@ export const Sequence03LaCattedrale: React.FC = () => {
       {/* Ghost "1705" — verticale destra */}
       <div style={{
         position: 'absolute', top: 0, right: 60,
-        fontFamily: playfairFont,
+        fontFamily: playfairFamily,
         fontSize: 130,
         fontWeight: 700,
         color: COLORS.oroMedievale,
@@ -108,11 +113,11 @@ export const Sequence03LaCattedrale: React.FC = () => {
       {/* Titolo */}
       <div style={{
         position: 'absolute', left: 72, top: 58,
-        opacity: interpolate(titleEntrance, [0, 1], [0, 1]),
-        transform: `translateY(${interpolate(titleEntrance, [0, 1], [20, 0])}px)`,
+        opacity: interpolate(titleEntrance, [0, 1], [0, 1], {easing: Easing.out(Easing.quad)}),
+        transform: `translateY(${interpolate(titleEntrance, [0, 1], [20, 0], {easing: Easing.out(Easing.cubic)})}px)`,
       }}>
         <div style={{
-          fontFamily: playfairFont,
+          fontFamily: playfairFamily,
           fontSize: 96,
           fontWeight: 700,
           color: COLORS.linoSacro,
@@ -126,8 +131,8 @@ export const Sequence03LaCattedrale: React.FC = () => {
       {/* Card 1 — Fino al 1705 · Cattedrale della Diocesi */}
       <div style={{
         position: 'absolute', left: 72, top: 230,
-        opacity: interpolate(card1, [0, 1], [0, 1]),
-        transform: `translateY(${interpolate(card1, [0, 1], [30, 0])}px)`,
+        opacity: interpolate(card1, [0, 1], [0, 1], {easing: Easing.out(Easing.quad)}),
+        transform: `translateY(${interpolate(card1, [0, 1], [30, 0], {easing: Easing.out(Easing.cubic)})}px)`,
         background: COLORS.glassScuro,
         backdropFilter: 'blur(18px)',
         borderRadius: 8,
@@ -136,7 +141,7 @@ export const Sequence03LaCattedrale: React.FC = () => {
         maxWidth: 580,
       }}>
         <div style={{
-          fontFamily: latoFont,
+          fontFamily: latoFamily,
           fontWeight: 700,
           fontSize: 16,
           letterSpacing: '0.20em',
@@ -147,7 +152,7 @@ export const Sequence03LaCattedrale: React.FC = () => {
           Fino al 1705 — Cattedrale della Diocesi
         </div>
         <div style={{
-          fontFamily: latoFont,
+          fontFamily: latoFamily,
           fontWeight: 300,
           fontSize: 28,
           color: COLORS.biancoCalce,
@@ -162,8 +167,8 @@ export const Sequence03LaCattedrale: React.FC = () => {
       {/* Card 2 — 1840 · Le Terme Romane */}
       <div style={{
         position: 'absolute', left: 72, top: 530,
-        opacity: interpolate(card2, [0, 1], [0, 1]),
-        transform: `translateY(${interpolate(card2, [0, 1], [30, 0])}px)`,
+        opacity: interpolate(card2, [0, 1], [0, 1], {easing: Easing.out(Easing.quad)}),
+        transform: `translateY(${interpolate(card2, [0, 1], [30, 0], {easing: Easing.out(Easing.cubic)})}px)`,
         background: COLORS.glassScuro,
         backdropFilter: 'blur(18px)',
         borderRadius: 8,
@@ -172,7 +177,7 @@ export const Sequence03LaCattedrale: React.FC = () => {
         maxWidth: 580,
       }}>
         <div style={{
-          fontFamily: latoFont,
+          fontFamily: latoFamily,
           fontWeight: 700,
           fontSize: 16,
           letterSpacing: '0.20em',
@@ -183,7 +188,7 @@ export const Sequence03LaCattedrale: React.FC = () => {
           1840 — Le Terme Romane
         </div>
         <div style={{
-          fontFamily: latoFont,
+          fontFamily: latoFamily,
           fontWeight: 300,
           fontSize: 28,
           color: COLORS.biancoCalce,

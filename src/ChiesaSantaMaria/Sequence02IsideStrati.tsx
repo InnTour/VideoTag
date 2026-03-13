@@ -1,9 +1,14 @@
 import React from 'react';
-import {useCurrentFrame, useVideoConfig, interpolate, spring} from 'remotion';
+import {Easing, useCurrentFrame, useVideoConfig, interpolate, spring} from 'remotion';
+import {loadFont as loadPlayfair} from '@remotion/google-fonts/PlayfairDisplay';
+import {loadFont as loadLato} from '@remotion/google-fonts/Lato';
 import {KenBurnsImage} from './components/KenBurnsImage';
 import {ParticleField} from './components/ParticleField';
 import {ScanLines} from './components/ScanLines';
-import {IMAGES, COLORS, playfairFont, latoFont} from './constants';
+import {IMAGES, COLORS} from './constants';
+
+const {fontFamily: playfairFamily} = loadPlayfair();
+const {fontFamily: latoFamily} = loadLato();
 
 // ── Seq02 — Iside, Dioscuri & Aquilonia (~17s · 500 frame) ──────
 // Triple cross-dissolve: iside1 → iside2 → ibrido
@@ -42,17 +47,17 @@ export const Sequence02IsideStrati: React.FC = () => {
   const card1 = spring({
     frame: Math.max(0, frame - 10),
     fps,
-    config: {damping: 160},
+    config: {damping: 200},
   });
   const card2 = spring({
     frame: Math.max(0, frame - 100),
     fps,
-    config: {damping: 160},
+    config: {damping: 200},
   });
   const card3 = spring({
     frame: Math.max(0, frame - 190),
     fps,
-    config: {damping: 160},
+    config: {damping: 200},
   });
 
   // Ghost AQUILONIA — respiro lento
@@ -126,7 +131,7 @@ export const Sequence02IsideStrati: React.FC = () => {
       {/* Ghost "AQUILONIA" — verticale, destra */}
       <div style={{
         position: 'absolute', top: 0, right: 60,
-        fontFamily: playfairFont,
+        fontFamily: playfairFamily,
         fontSize: 110,
         fontWeight: 700,
         color: COLORS.ambraEgizia,
@@ -141,11 +146,11 @@ export const Sequence02IsideStrati: React.FC = () => {
       {/* Titolo */}
       <div style={{
         position: 'absolute', left: 72, top: 58,
-        opacity: interpolate(titleEntrance, [0, 1], [0, 1]),
-        transform: `translateY(${interpolate(titleEntrance, [0, 1], [20, 0])}px)`,
+        opacity: interpolate(titleEntrance, [0, 1], [0, 1], {easing: Easing.out(Easing.quad)}),
+        transform: `translateY(${interpolate(titleEntrance, [0, 1], [20, 0], {easing: Easing.out(Easing.cubic)})}px)`,
       }}>
         <div style={{
-          fontFamily: playfairFont,
+          fontFamily: playfairFamily,
           fontSize: 96,
           fontWeight: 700,
           color: COLORS.oroEgizio,
@@ -159,8 +164,8 @@ export const Sequence02IsideStrati: React.FC = () => {
       {/* Card 1 — Tempio di Iside · 30 a.C. */}
       <div style={{
         position: 'absolute', left: 72, top: 220,
-        opacity: interpolate(card1, [0, 1], [0, 1]),
-        transform: `translateY(${interpolate(card1, [0, 1], [30, 0])}px)`,
+        opacity: interpolate(card1, [0, 1], [0, 1], {easing: Easing.out(Easing.quad)}),
+        transform: `translateY(${interpolate(card1, [0, 1], [30, 0], {easing: Easing.out(Easing.cubic)})}px)`,
         background: COLORS.glassScuro,
         backdropFilter: 'blur(18px)',
         borderRadius: 8,
@@ -169,7 +174,7 @@ export const Sequence02IsideStrati: React.FC = () => {
         maxWidth: 560,
       }}>
         <div style={{
-          fontFamily: latoFont,
+          fontFamily: latoFamily,
           fontWeight: 700,
           fontSize: 16,
           letterSpacing: '0.20em',
@@ -180,7 +185,7 @@ export const Sequence02IsideStrati: React.FC = () => {
           Tempio di Iside — 30 a.C.
         </div>
         <div style={{
-          fontFamily: latoFont,
+          fontFamily: latoFamily,
           fontWeight: 300,
           fontSize: 28,
           color: COLORS.biancoCalce,
@@ -193,8 +198,8 @@ export const Sequence02IsideStrati: React.FC = () => {
       {/* Card 2 — Municipium di Aquilonia */}
       <div style={{
         position: 'absolute', left: 72, top: 430,
-        opacity: interpolate(card2, [0, 1], [0, 1]),
-        transform: `translateY(${interpolate(card2, [0, 1], [30, 0])}px)`,
+        opacity: interpolate(card2, [0, 1], [0, 1], {easing: Easing.out(Easing.quad)}),
+        transform: `translateY(${interpolate(card2, [0, 1], [30, 0], {easing: Easing.out(Easing.cubic)})}px)`,
         background: COLORS.glassScuro,
         backdropFilter: 'blur(18px)',
         borderRadius: 8,
@@ -203,7 +208,7 @@ export const Sequence02IsideStrati: React.FC = () => {
         maxWidth: 560,
       }}>
         <div style={{
-          fontFamily: latoFont,
+          fontFamily: latoFamily,
           fontWeight: 700,
           fontSize: 16,
           letterSpacing: '0.20em',
@@ -214,7 +219,7 @@ export const Sequence02IsideStrati: React.FC = () => {
           Municipium di Aquilonia
         </div>
         <div style={{
-          fontFamily: latoFont,
+          fontFamily: latoFamily,
           fontWeight: 300,
           fontSize: 28,
           color: COLORS.biancoCalce,
@@ -227,8 +232,8 @@ export const Sequence02IsideStrati: React.FC = () => {
       {/* Card 3 — I Dioscuri */}
       <div style={{
         position: 'absolute', left: 72, top: 650,
-        opacity: interpolate(card3, [0, 1], [0, 1]),
-        transform: `translateY(${interpolate(card3, [0, 1], [30, 0])}px)`,
+        opacity: interpolate(card3, [0, 1], [0, 1], {easing: Easing.out(Easing.quad)}),
+        transform: `translateY(${interpolate(card3, [0, 1], [30, 0], {easing: Easing.out(Easing.cubic)})}px)`,
         background: COLORS.glassScuro,
         backdropFilter: 'blur(18px)',
         borderRadius: 8,
@@ -237,7 +242,7 @@ export const Sequence02IsideStrati: React.FC = () => {
         maxWidth: 560,
       }}>
         <div style={{
-          fontFamily: latoFont,
+          fontFamily: latoFamily,
           fontWeight: 700,
           fontSize: 16,
           letterSpacing: '0.20em',
@@ -248,7 +253,7 @@ export const Sequence02IsideStrati: React.FC = () => {
           I Dioscuri
         </div>
         <div style={{
-          fontFamily: latoFont,
+          fontFamily: latoFamily,
           fontWeight: 300,
           fontSize: 28,
           color: COLORS.biancoCalce,

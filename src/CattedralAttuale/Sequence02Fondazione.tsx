@@ -1,8 +1,13 @@
-import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import {COLORS, playfairFont, latoFont} from './constants';
+import {AbsoluteFill, Easing, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {loadFont as loadPlayfair} from '@remotion/google-fonts/PlayfairDisplay';
+import {loadFont as loadLato} from '@remotion/google-fonts/Lato';
+import {COLORS} from './constants';
 import {KenBurnsImage} from './components/KenBurnsImage';
 import {ScanLines} from './components/ScanLines';
 import {ParticleField} from './components/ParticleField';
+
+const {fontFamily: playfairFamily} = loadPlayfair();
+const {fontFamily: latoFamily} = loadLato();
 
 // SEQ 02 — FONDAZIONE (8–25s · 17 secondi)
 // 1696 — vescovo Giovanni Battista La Morea
@@ -14,12 +19,11 @@ export const Sequence02Fondazione: React.FC = () => {
 	const frame = useCurrentFrame();
 	const {fps, durationInFrames} = useVideoConfig();
 
-	const fadeIn  = interpolate(frame, [0, Math.round(fps * 0.5)], [0, 1], {extrapolateRight: 'clamp'});
-	const fadeOut = interpolate(frame, [durationInFrames - Math.round(fps * 0.5), durationInFrames], [1, 0], {extrapolateLeft: 'clamp'});
+	const fadeIn  = interpolate(frame, [0, Math.round(fps * 0.5)], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)});
+	const fadeOut = interpolate(frame, [durationInFrames - Math.round(fps * 0.5), durationInFrames], [1, 0], {extrapolateLeft: 'clamp', easing: Easing.out(Easing.quad)});
 	const opacity = Math.min(fadeIn, fadeOut);
 
 	// Cross-dissolve: vescovo con pergamena → vescovo entra in cattedrale
-	// Transizione a 9s locali (metà sequenza ~270 frame)
 	const dissolveStart = Math.round(8.5 * fps);
 	const dissolveEnd   = Math.round(10.5 * fps);
 	const dissolve = interpolate(frame, [dissolveStart, dissolveEnd], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
@@ -30,17 +34,17 @@ export const Sequence02Fondazione: React.FC = () => {
 	const annoVisible = anno.slice(0, Math.ceil(annoProgress));
 
 	// Cards storiche
-	const card1Spr = spring({frame: Math.max(0, frame - Math.round(1.5 * fps)), fps, config: {damping: 180}});
+	const card1Spr = spring({frame: Math.max(0, frame - Math.round(1.5 * fps)), fps, config: {damping: 200}});
 	const card1Op  = interpolate(card1Spr, [0, 1], [0, 1]);
-	const card1Y   = interpolate(card1Spr, [0, 1], [30, 0]);
+	const card1Y   = interpolate(card1Spr, [0, 1], [30, 0], {easing: Easing.out(Easing.cubic)});
 
-	const card2Spr = spring({frame: Math.max(0, frame - Math.round(3.5 * fps)), fps, config: {damping: 180}});
+	const card2Spr = spring({frame: Math.max(0, frame - Math.round(3.5 * fps)), fps, config: {damping: 200}});
 	const card2Op  = interpolate(card2Spr, [0, 1], [0, 1]);
-	const card2Y   = interpolate(card2Spr, [0, 1], [30, 0]);
+	const card2Y   = interpolate(card2Spr, [0, 1], [30, 0], {easing: Easing.out(Easing.cubic)});
 
-	const card3Spr = spring({frame: Math.max(0, frame - Math.round(5.5 * fps)), fps, config: {damping: 180}});
+	const card3Spr = spring({frame: Math.max(0, frame - Math.round(5.5 * fps)), fps, config: {damping: 200}});
 	const card3Op  = interpolate(card3Spr, [0, 1], [0, 1]);
-	const card3Y   = interpolate(card3Spr, [0, 1], [30, 0]);
+	const card3Y   = interpolate(card3Spr, [0, 1], [30, 0], {easing: Easing.out(Easing.cubic)});
 
 	return (
 		<AbsoluteFill style={{opacity, backgroundColor: COLORS.bgScuro}}>
@@ -88,7 +92,7 @@ export const Sequence02Fondazione: React.FC = () => {
 			{/* Anno in grandi caratteri — top right */}
 			<div style={{
 				position: 'absolute', top: 42, right: 68,
-				fontFamily: playfairFont,
+				fontFamily: playfairFamily,
 				fontSize: 120,
 				fontWeight: 700,
 				color: COLORS.oroSacro,
@@ -107,7 +111,7 @@ export const Sequence02Fondazione: React.FC = () => {
 
 				{/* Titolo sequenza */}
 				<h2 style={{
-					fontFamily: playfairFont,
+					fontFamily: playfairFamily,
 					fontSize: 60,
 					fontWeight: 700,
 					color: COLORS.avorio,
@@ -129,8 +133,8 @@ export const Sequence02Fondazione: React.FC = () => {
 					backdropFilter: 'blur(18px)',
 					maxWidth: 460,
 				}}>
-					<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.oroSacro, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>1696 · Il Vescovo</p>
-					<p style={{fontFamily: playfairFont, fontSize: 26, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
+					<p style={{fontFamily: latoFamily, fontSize: 16, color: COLORS.oroSacro, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>1696 · Il Vescovo</p>
+					<p style={{fontFamily: playfairFamily, fontSize: 26, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
 						Giovanni Battista La Morea osserva le rovine della Chiesa di Sant'Antonio — luogo della <em style={{color: COLORS.oroChiaro}}>congiura dei baroni</em>
 					</p>
 				</div>
@@ -146,8 +150,8 @@ export const Sequence02Fondazione: React.FC = () => {
 					backdropFilter: 'blur(18px)',
 					maxWidth: 460,
 				}}>
-					<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.oroChiaro, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>1696–1709 · La Costruzione</p>
-					<p style={{fontFamily: playfairFont, fontSize: 26, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
+					<p style={{fontFamily: latoFamily, fontSize: 16, color: COLORS.oroChiaro, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>1696–1709 · La Costruzione</p>
+					<p style={{fontFamily: playfairFamily, fontSize: 26, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
 						Tredici anni di lavori · il portale in <em style={{color: COLORS.oroSacro}}>marmo rosso screziato</em> che ancora oggi ammiriamo
 					</p>
 				</div>
@@ -163,8 +167,8 @@ export const Sequence02Fondazione: React.FC = () => {
 					backdropFilter: 'blur(18px)',
 					maxWidth: 460,
 				}}>
-					<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.pietraCalce, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>Strati di storia</p>
-					<p style={{fontFamily: playfairFont, fontSize: 23, color: COLORS.pietraCalce, margin: 0, lineHeight: 1.4}}>
+					<p style={{fontFamily: latoFamily, fontSize: 16, color: COLORS.pietraCalce, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>Strati di storia</p>
+					<p style={{fontFamily: playfairFamily, fontSize: 23, color: COLORS.pietraCalce, margin: 0, lineHeight: 1.4}}>
 						Sulle rovine di Sant'Antonio · sul terreno della congiura · nasce il cuore spirituale della città
 					</p>
 				</div>

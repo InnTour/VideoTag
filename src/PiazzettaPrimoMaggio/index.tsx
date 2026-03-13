@@ -1,4 +1,4 @@
-import {AbsoluteFill, Audio, Sequence, staticFile, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Audio, interpolate, Sequence, staticFile, useVideoConfig} from 'remotion';
 import {SEQUENCES} from './constants';
 import {Sequence01Intro} from './Sequence01Intro';
 import {Sequence02Roccia} from './Sequence02Roccia';
@@ -39,10 +39,14 @@ export const PiazzettaPrimoMaggio: React.FC = () => {
 			{/* === AUDIO — Voce Iapetus ITA · 76.96s · 76.96s === */}
 			<Audio
 				src={staticFile('audio/TAG_A1.06_PIAZZETTA_PRIMO_MAGGIO_Iapetus_ITA(1).mp3')}
-				volume={0.82}
 				startFrom={0}
+				volume={(f) => interpolate(f, [0, 30], [0, 1], { extrapolateRight: 'clamp' })}
 			/>
-			<Audio src={staticFile('music/folk-irpino.mp3')} volume={0.13} loop />
+			<Audio
+				src={staticFile('music/folk-irpino.mp3')}
+				volume={(f) => interpolate(f, [0, fps], [0, 0.13], { extrapolateRight: 'clamp' })}
+				loop
+			/>
 
 			{/* === SEQUENZE === */}
 			{sequences.map(({key, timing, Component}) => (

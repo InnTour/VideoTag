@@ -1,9 +1,14 @@
-import {AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Easing, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
 import {noise2D} from '@remotion/noise';
-import {COLORS, playfairFont, latoFont, TESTI_STORICI} from './constants';
+import {loadFont as loadPlayfair} from '@remotion/google-fonts/PlayfairDisplay';
+import {loadFont as loadLato} from '@remotion/google-fonts/Lato';
+import {COLORS, TESTI_STORICI} from './constants';
 import {KenBurnsImage} from './components/KenBurnsImage';
 import {ManuscriptFrame} from './components/ManuscriptFrame';
 import {CandleParticles} from './components/CandleParticles';
+
+const {fontFamily: playfairFamily} = loadPlayfair();
+const {fontFamily: latoFamily} = loadLato();
 
 // SEQUENZA 01 — "La Notte"
 // Apertura solenne: come l'incipit di un codice miniato.
@@ -15,7 +20,7 @@ export const Sequence01Notte: React.FC = () => {
 	const {fps, durationInFrames} = useVideoConfig();
 
 	// Fade-in globale della sequenza
-	const fadeIn = interpolate(frame, [0, 18], [0, 1], {extrapolateRight: 'clamp'});
+	const fadeIn = interpolate(frame, [0, 18], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)});
 
 	// Noise organico per tremolìo luce candela (perlin noise)
 	const candleFlicker = noise2D('candle', frame / fps, 0) * 0.04;
@@ -71,7 +76,7 @@ export const Sequence01Notte: React.FC = () => {
 					alignItems: 'center',
 					gap: 16,
 					marginBottom: 28,
-					opacity: interpolate(frame, [10, 22], [0, 1], {extrapolateRight: 'clamp'}),
+					opacity: interpolate(frame, [10, 22], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)}),
 				}}>
 					<div style={{width: 80, height: 1, background: `linear-gradient(90deg, transparent, ${COLORS.oroLiturgico})`}} />
 					<div style={{
@@ -84,13 +89,13 @@ export const Sequence01Notte: React.FC = () => {
 
 				{/* Data — come un'iscrizione su pergamena */}
 				<div style={{
-					fontFamily: playfairFont,
+					fontFamily: playfairFamily,
 					fontSize: 56,
 					color: COLORS.avorioCarta,
 					letterSpacing: '0.18em',
 					textTransform: 'uppercase',
 					textShadow: `0 0 40px rgba(212,168,67,0.5), 0 2px 8px rgba(0,0,0,0.9)`,
-					opacity: interpolate(frame, [12, 24], [0, 1], {extrapolateRight: 'clamp'}),
+					opacity: interpolate(frame, [12, 24], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)}),
 				}}>
 					{dataText.slice(0, dataChars)}
 					{dataChars < dataText.length && (
@@ -100,21 +105,21 @@ export const Sequence01Notte: React.FC = () => {
 
 				{/* Luogo — sottotitolo in minuscolo elegante */}
 				<div style={{
-					fontFamily: latoFont,
+					fontFamily: latoFamily,
 					fontSize: 20,
 					fontWeight: 300,
 					color: COLORS.oroPallido,
 					letterSpacing: '0.22em',
 					textTransform: 'uppercase',
 					marginTop: 18,
-					opacity: interpolate(frame, [20, 32], [0, 1], {extrapolateRight: 'clamp'}),
+					opacity: interpolate(frame, [20, 32], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)}),
 				}}>
 					{TESTI_STORICI.luogo}
 				</div>
 
 				{/* Separatore finale */}
 				<div style={{
-					width: interpolate(frame, [28, durationInFrames], [0, 200], {extrapolateRight: 'clamp'}),
+					width: interpolate(frame, [28, durationInFrames], [0, 200], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)}),
 					height: 1,
 					background: COLORS.oroLiturgico,
 					marginTop: 28,

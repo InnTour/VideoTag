@@ -1,9 +1,14 @@
 import React from 'react';
-import {useCurrentFrame, useVideoConfig, interpolate, spring} from 'remotion';
+import {Easing, useCurrentFrame, useVideoConfig, interpolate, spring} from 'remotion';
+import {loadFont as loadPlayfair} from '@remotion/google-fonts/PlayfairDisplay';
+import {loadFont as loadLato} from '@remotion/google-fonts/Lato';
 import {KenBurnsImage} from './components/KenBurnsImage';
 import {ParticleField} from './components/ParticleField';
 import {ScanLines} from './components/ScanLines';
-import {IMAGES, COLORS, playfairFont, latoFont} from './constants';
+import {IMAGES, COLORS} from './constants';
+
+const {fontFamily: playfairFamily} = loadPlayfair();
+const {fontFamily: latoFamily} = loadLato();
 
 // ── Seq04 — Il Miracolo 1948 (~14s · 420 frame) ──────────────────
 // Madonna Addolorata · Lacrime animate SVG · Anno ghost "1948"
@@ -17,14 +22,14 @@ export const Sequence04IlMiracolo: React.FC = () => {
   const titleEntrance = spring({
     frame: Math.max(0, frame - 10),
     fps,
-    config: {damping: 180},
+    config: {damping: 200},
   });
 
   // Card principale entrance
   const cardEntrance = spring({
     frame: Math.max(0, frame - 50),
     fps,
-    config: {damping: 160},
+    config: {damping: 200},
   });
 
   // Anno ghost "1948" — respiro lento
@@ -34,6 +39,7 @@ export const Sequence04IlMiracolo: React.FC = () => {
   const bluOverlayOp = interpolate(frame, [0, 120], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
+    easing: Easing.out(Easing.quad),
   });
 
   // Lacrime SVG: 3 gocce con offset di fase
@@ -46,6 +52,7 @@ export const Sequence04IlMiracolo: React.FC = () => {
   const tearOpacity = interpolate(frame, [80, 140], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
+    easing: Easing.out(Easing.quad),
   });
 
   return (
@@ -82,7 +89,7 @@ export const Sequence04IlMiracolo: React.FC = () => {
       {/* Ghost "1948" — verticale destra */}
       <div style={{
         position: 'absolute', top: 0, right: 70,
-        fontFamily: playfairFont,
+        fontFamily: playfairFamily,
         fontSize: 160,
         fontWeight: 700,
         color: COLORS.bluLacrime,
@@ -138,11 +145,11 @@ export const Sequence04IlMiracolo: React.FC = () => {
       {/* Titolo */}
       <div style={{
         position: 'absolute', left: 72, top: 58,
-        opacity: interpolate(titleEntrance, [0, 1], [0, 1]),
-        transform: `translateY(${interpolate(titleEntrance, [0, 1], [24, 0])}px)`,
+        opacity: interpolate(titleEntrance, [0, 1], [0, 1], {easing: Easing.out(Easing.quad)}),
+        transform: `translateY(${interpolate(titleEntrance, [0, 1], [24, 0], {easing: Easing.out(Easing.cubic)})}px)`,
       }}>
         <div style={{
-          fontFamily: playfairFont,
+          fontFamily: playfairFamily,
           fontSize: 102,
           fontWeight: 700,
           color: COLORS.argento,
@@ -156,8 +163,8 @@ export const Sequence04IlMiracolo: React.FC = () => {
       {/* Card principale — il miracolo */}
       <div style={{
         position: 'absolute', left: 72, top: 260,
-        opacity: interpolate(cardEntrance, [0, 1], [0, 1]),
-        transform: `translateY(${interpolate(cardEntrance, [0, 1], [30, 0])}px)`,
+        opacity: interpolate(cardEntrance, [0, 1], [0, 1], {easing: Easing.out(Easing.quad)}),
+        transform: `translateY(${interpolate(cardEntrance, [0, 1], [30, 0], {easing: Easing.out(Easing.cubic)})}px)`,
         background: COLORS.glassScuro,
         backdropFilter: 'blur(20px)',
         borderRadius: 8,
@@ -166,7 +173,7 @@ export const Sequence04IlMiracolo: React.FC = () => {
         maxWidth: 600,
       }}>
         <div style={{
-          fontFamily: latoFont,
+          fontFamily: latoFamily,
           fontWeight: 700,
           fontSize: 16,
           letterSpacing: '0.20em',
@@ -177,7 +184,7 @@ export const Sequence04IlMiracolo: React.FC = () => {
           Madonna Addolorata · Lacedonia
         </div>
         <div style={{
-          fontFamily: latoFont,
+          fontFamily: latoFamily,
           fontWeight: 300,
           fontSize: 28,
           color: COLORS.biancoCalce,

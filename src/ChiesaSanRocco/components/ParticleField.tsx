@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCurrentFrame } from 'remotion';
 
-type ParticleMode = 'polvere' | 'oro' | 'carta';
+type ParticleMode = 'polvere' | 'oro' | 'carta' | 'partenza' | 'ritorno';
 
 interface ParticleFieldProps {
   count?: number;
