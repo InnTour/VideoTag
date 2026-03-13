@@ -1,6 +1,6 @@
 import React from 'react';
-import { AbsoluteFill, Audio, staticFile } from 'remotion';
-import { TransitionSeries, linearTiming } from '@remotion/transitions';
+import { AbsoluteFill, Audio, interpolate, staticFile, useVideoConfig } from 'remotion';
+import { TransitionSeries, springTiming } from '@remotion/transitions';
 import { fade } from '@remotion/transitions/fade';
 import { Sequence01Intro } from './Sequence01Intro';
 import { Sequence02IlMilite } from './Sequence02IlMilite';
@@ -16,12 +16,22 @@ import { AUDIO, COLORS, SEQ_DUR } from './constants';
 // ─────────────────────────────────────────────────────────────
 
 export const MonumentoAiCaduti: React.FC = () => {
-  const fadeTiming = linearTiming({ durationInFrames: SEQ_DUR.transition });
+  const { fps } = useVideoConfig();
+  const TRANSITION_DUR = 30;
+  const springT = springTiming({ config: { damping: 200 }, durationInFrames: TRANSITION_DUR });
 
   return (
     <AbsoluteFill style={{ background: COLORS.neroProfondo }}>
-      <Audio src={staticFile(AUDIO)} />
-      <Audio src={staticFile('music/solenne-caduti.mp3')} volume={0.13} loop />
+      <Audio
+        src={staticFile(AUDIO)}
+        startFrom={0}
+        volume={(f) => interpolate(f, [0, 30], [0, 1], { extrapolateRight: 'clamp' })}
+      />
+      <Audio
+        src={staticFile('music/solenne-caduti.mp3')}
+        volume={(f) => interpolate(f, [0, fps], [0, 0.13], { extrapolateRight: 'clamp' })}
+        loop
+      />
 
       <TransitionSeries>
         {/* Seq01 — Intro · Nebbia Dorata (300f) */}
@@ -32,7 +42,7 @@ export const MonumentoAiCaduti: React.FC = () => {
           <Sequence01Intro />
         </TransitionSeries.Sequence>
 
-        <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+        <TransitionSeries.Transition presentation={fade()} timing={springT} />
 
         {/* Seq02 — Il Milite · Nicola Di Vietri (440f) */}
         <TransitionSeries.Sequence
@@ -42,7 +52,7 @@ export const MonumentoAiCaduti: React.FC = () => {
           <Sequence02IlMilite />
         </TransitionSeries.Sequence>
 
-        <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+        <TransitionSeries.Transition presentation={fade()} timing={springT} />
 
         {/* Seq03 — Le Lapidi · I Nomi (400f) */}
         <TransitionSeries.Sequence
@@ -52,7 +62,7 @@ export const MonumentoAiCaduti: React.FC = () => {
           <Sequence03LeLapidi />
         </TransitionSeries.Sequence>
 
-        <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+        <TransitionSeries.Transition presentation={fade()} timing={springT} />
 
         {/* Seq04 — La Cerimonia · 4 Novembre (390f) */}
         <TransitionSeries.Sequence
@@ -62,7 +72,7 @@ export const MonumentoAiCaduti: React.FC = () => {
           <Sequence04LaCerimonia />
         </TransitionSeries.Sequence>
 
-        <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+        <TransitionSeries.Transition presentation={fade()} timing={springT} />
 
         {/* Seq05 — Outro · Memoria Immortale (398f) */}
         <TransitionSeries.Sequence durationInFrames={SEQ_DUR.s05}>

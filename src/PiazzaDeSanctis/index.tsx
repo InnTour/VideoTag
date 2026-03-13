@@ -12,7 +12,7 @@
  */
 import React from 'react';
 import { AbsoluteFill, Audio, staticFile } from 'remotion';
-import { TransitionSeries, linearTiming } from '@remotion/transitions';
+import { TransitionSeries, springTiming } from '@remotion/transitions';
 import { fade } from '@remotion/transitions/fade';
 import { Sequence01Intro }      from './Sequence01Intro';
 import { Sequence02DeSanctis }  from './Sequence02DeSanctis';
@@ -23,7 +23,7 @@ import { Sequence06Aforisma }   from './Sequence06Aforisma';
 import { AUDIO, COLORS, SEQ_DUR } from './constants';
 
 export const PiazzaDeSanctis: React.FC = () => {
-  const fadeTiming = linearTiming({ durationInFrames: SEQ_DUR.transition });
+  const springT = springTiming({ config: { damping: 200 }, durationInFrames: 30 });
 
   return (
     <AbsoluteFill style={{ background: COLORS.neroFondo }}>
@@ -41,7 +41,7 @@ export const PiazzaDeSanctis: React.FC = () => {
           <Sequence01Intro />
         </TransitionSeries.Sequence>
 
-        <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+        <TransitionSeries.Transition presentation={fade()} timing={springT} />
 
         {/* Seq02 — De Sanctis · Il Telegramma · 25s */}
         <TransitionSeries.Sequence
@@ -51,7 +51,7 @@ export const PiazzaDeSanctis: React.FC = () => {
           <Sequence02DeSanctis />
         </TransitionSeries.Sequence>
 
-        <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+        <TransitionSeries.Transition presentation={fade()} timing={springT} />
 
         {/* Seq03 — Il Perché · Morra · 25s */}
         <TransitionSeries.Sequence
@@ -61,7 +61,7 @@ export const PiazzaDeSanctis: React.FC = () => {
           <Sequence03IlPerche />
         </TransitionSeries.Sequence>
 
-        <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+        <TransitionSeries.Transition presentation={fade()} timing={springT} />
 
         {/* Seq04 — La Piazza · Campane e voci · 20s */}
         <TransitionSeries.Sequence
@@ -71,7 +71,7 @@ export const PiazzaDeSanctis: React.FC = () => {
           <Sequence04LaPiazza />
         </TransitionSeries.Sequence>
 
-        <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+        <TransitionSeries.Transition presentation={fade()} timing={springT} />
 
         {/* Seq05 — Il Faro · Contadini e Studenti · 25s */}
         <TransitionSeries.Sequence
@@ -81,7 +81,7 @@ export const PiazzaDeSanctis: React.FC = () => {
           <Sequence05IlFaro />
         </TransitionSeries.Sequence>
 
-        <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+        <TransitionSeries.Transition presentation={fade()} timing={springT} />
 
         {/* Seq06 — Aforisma · Outro · 30.27s */}
         <TransitionSeries.Sequence durationInFrames={SEQ_DUR.s06}>

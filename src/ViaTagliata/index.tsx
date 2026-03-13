@@ -11,7 +11,7 @@
  */
 import React from 'react';
 import { AbsoluteFill, Audio, staticFile } from 'remotion';
-import { TransitionSeries, linearTiming } from '@remotion/transitions';
+import { TransitionSeries, springTiming } from '@remotion/transitions';
 import { fade } from '@remotion/transitions/fade';
 import { Sequence01Intro }    from './Sequence01Intro';
 import { Sequence02LaVia }    from './Sequence02LaVia';
@@ -21,7 +21,7 @@ import { Sequence05Outro }    from './Sequence05Outro';
 import { AUDIO, COLORS, SEQ_DUR } from './constants';
 
 export const ViaTagliata: React.FC = () => {
-  const fadeTiming = linearTiming({ durationInFrames: SEQ_DUR.transition });
+  const springT = springTiming({ config: { damping: 200 }, durationInFrames: 30 });
 
   return (
     <AbsoluteFill style={{ background: COLORS.neroFondo }}>
@@ -39,7 +39,7 @@ export const ViaTagliata: React.FC = () => {
           <Sequence01Intro />
         </TransitionSeries.Sequence>
 
-        <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+        <TransitionSeries.Transition presentation={fade()} timing={springT} />
 
         {/* Seq02 — La Via · 150 d.C. · 35s */}
         <TransitionSeries.Sequence
@@ -49,7 +49,7 @@ export const ViaTagliata: React.FC = () => {
           <Sequence02LaVia />
         </TransitionSeries.Sequence>
 
-        <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+        <TransitionSeries.Transition presentation={fade()} timing={springT} />
 
         {/* Seq03 — 212 a.C. · Annibale · 36s */}
         <TransitionSeries.Sequence
@@ -59,7 +59,7 @@ export const ViaTagliata: React.FC = () => {
           <Sequence03Annibale />
         </TransitionSeries.Sequence>
 
-        <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+        <TransitionSeries.Transition presentation={fade()} timing={springT} />
 
         {/* Seq04 — Caedes · Origine del nome · 35s */}
         <TransitionSeries.Sequence
@@ -69,7 +69,7 @@ export const ViaTagliata: React.FC = () => {
           <Sequence04Caedes />
         </TransitionSeries.Sequence>
 
-        <TransitionSeries.Transition presentation={fade()} timing={fadeTiming} />
+        <TransitionSeries.Transition presentation={fade()} timing={springT} />
 
         {/* Seq05 — Outro · Memoria · 46s */}
         <TransitionSeries.Sequence durationInFrames={SEQ_DUR.s05}>
