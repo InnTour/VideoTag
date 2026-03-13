@@ -1,8 +1,13 @@
 import React from 'react';
-import {useCurrentFrame, useVideoConfig, interpolate, spring, Img, staticFile} from 'remotion';
+import {Easing, useCurrentFrame, useVideoConfig, interpolate, spring, Img, staticFile} from 'remotion';
+import {loadFont as loadPlayfair} from '@remotion/google-fonts/PlayfairDisplay';
+import {loadFont as loadLato} from '@remotion/google-fonts/Lato';
 import {KenBurnsImage} from './components/KenBurnsImage';
 import {ScanLines} from './components/ScanLines';
-import {IMAGES, COLORS, playfairFont, latoFont} from './constants';
+import {IMAGES, COLORS} from './constants';
+
+const {fontFamily: playfairFamily} = loadPlayfair();
+const {fontFamily: latoFamily} = loadLato();
 
 // ── Seq05 — Continuum + Outro (~27s · 820 frame) ─────────────────
 // FASE 1 (0-400f): Continuum — processione, citazione, ghost FEDE
@@ -18,7 +23,7 @@ export const Sequence05Outro: React.FC = () => {
   const titleContinuum = spring({
     frame: Math.max(0, frame - 10),
     fps,
-    config: {damping: 180},
+    config: {damping: 200},
   });
 
   // Citazione entrance
@@ -35,6 +40,7 @@ export const Sequence05Outro: React.FC = () => {
   const fase1FadeOut = interpolate(frame, [370, 400], [1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
+    easing: Easing.out(Easing.quad),
   });
 
   // ─── FASE 2: Iris + Outro (400-820f) ──────────────────────────
@@ -49,6 +55,7 @@ export const Sequence05Outro: React.FC = () => {
   const fase2DarkOverlay = interpolate(frame, [390, 440], [0, 0.78], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
+    easing: Easing.out(Easing.quad),
   });
 
   // Iris: cerchio che si restringe da raggio 960→0 in frame 400-520
@@ -62,18 +69,19 @@ export const Sequence05Outro: React.FC = () => {
   const logoComune = spring({
     frame: Math.max(0, frame - 530),
     fps,
-    config: {damping: 160},
+    config: {damping: 200},
   });
   const logoInnTour = spring({
     frame: Math.max(0, frame - 556),
     fps,
-    config: {damping: 160},
+    config: {damping: 200},
   });
 
   // Linea oro animata
   const lineWidth = interpolate(frame, [550, 640], [0, 320], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
+    easing: Easing.out(Easing.quad),
   });
 
   // Label A2.09
@@ -87,13 +95,14 @@ export const Sequence05Outro: React.FC = () => {
   const comuneOpacity = spring({
     frame: Math.max(0, frame - 540),
     fps,
-    config: {damping: 160},
+    config: {damping: 200},
   });
 
   // Fade-out finale: frame 780-820
   const finalFadeOut = interpolate(frame, [780, 820], [1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
+    easing: Easing.out(Easing.quad),
   });
 
   // Logo fade rispetto al finalFadeOut
@@ -129,7 +138,7 @@ export const Sequence05Outro: React.FC = () => {
         <div style={{
           position: 'absolute', bottom: 60, left: 0, right: 0,
           textAlign: 'center',
-          fontFamily: playfairFont,
+          fontFamily: playfairFamily,
           fontSize: 200,
           fontWeight: 700,
           color: COLORS.oroMedievale,
@@ -144,11 +153,11 @@ export const Sequence05Outro: React.FC = () => {
         {/* Titolo Continuum */}
         <div style={{
           position: 'absolute', left: 72, top: 58,
-          opacity: interpolate(titleContinuum, [0, 1], [0, 1]),
-          transform: `translateY(${interpolate(titleContinuum, [0, 1], [24, 0])}px)`,
+          opacity: interpolate(titleContinuum, [0, 1], [0, 1], {easing: Easing.out(Easing.quad)}),
+          transform: `translateY(${interpolate(titleContinuum, [0, 1], [24, 0], {easing: Easing.out(Easing.cubic)})}px)`,
         }}>
           <div style={{
-            fontFamily: playfairFont,
+            fontFamily: playfairFamily,
             fontSize: 102,
             fontWeight: 700,
             color: COLORS.oroMedievale,
@@ -164,8 +173,8 @@ export const Sequence05Outro: React.FC = () => {
         <div style={{
           position: 'absolute', left: 72, bottom: 180,
           maxWidth: 820,
-          opacity: interpolate(citazioneEntrance, [0, 1], [0, 1]),
-          transform: `translateY(${interpolate(citazioneEntrance, [0, 1], [20, 0])}px)`,
+          opacity: interpolate(citazioneEntrance, [0, 1], [0, 1], {easing: Easing.out(Easing.quad)}),
+          transform: `translateY(${interpolate(citazioneEntrance, [0, 1], [20, 0], {easing: Easing.out(Easing.cubic)})}px)`,
           fontFamily: 'Georgia, serif',
           fontStyle: 'italic',
           fontSize: 28,
@@ -231,7 +240,7 @@ export const Sequence05Outro: React.FC = () => {
           opacity: labelOpacity * finalFadeOut,
         }}>
           <div style={{
-            fontFamily: latoFont,
+            fontFamily: latoFamily,
             fontSize: 15,
             color: COLORS.ambraEgizia,
             letterSpacing: '0.18em',
@@ -251,7 +260,7 @@ export const Sequence05Outro: React.FC = () => {
           pointerEvents: 'none',
         }}>
           <div style={{
-            fontFamily: playfairFont,
+            fontFamily: playfairFamily,
             fontSize: 30,
             fontWeight: 400,
             color: COLORS.biancoCalce,

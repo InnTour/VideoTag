@@ -1,5 +1,6 @@
 import React from 'react';
 import { useCurrentFrame } from 'remotion';
+import {noise2D} from '@remotion/noise';
 
 type ParticleMode = 'polvere' | 'oro' | 'carta';
 
@@ -27,8 +28,9 @@ export const ParticleField: React.FC<ParticleFieldProps> = ({
     const phase = (i * 37) % (Math.PI * 2);
     const size = 1.2 + (seed1 / 97) * 2.8;
 
-    const x = baseX + Math.sin(frame * speed + phase) * 2.0;
-    const y = ((baseY - frame * speed * 10) % 110) - 5;
+    const x = baseX + noise2D(`px-${i}`, frame * 0.012, 0) * 3.5;
+    const rawY = (baseY - frame * speed * 10 + noise2D(`py-${i}`, 0, frame * 0.009) * 2.5) % 110;
+    const y = rawY - 5;
 
     let color = '#C89830';
 
@@ -56,8 +58,8 @@ export const ParticleField: React.FC<ParticleFieldProps> = ({
         {particles.map((p, i) => (
           <ellipse
             key={i}
-            cx={(p.x / 100) * 1920}
-            cy={(p.y / 100) * 1080}
+            cx={((p.x / 100) * 1920 + 1920) % 1920}
+            cy={((p.y / 100) * 1080 + 1080) % 1080}
             rx={p.size}
             ry={p.size * 0.6}
             fill={p.color}

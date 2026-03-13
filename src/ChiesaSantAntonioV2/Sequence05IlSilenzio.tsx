@@ -1,9 +1,12 @@
-import {AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Easing, Img, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {noise2D} from '@remotion/noise';
-import {COLORS, latoFont} from './constants';
+import {loadFont as loadLato} from '@remotion/google-fonts/Lato';
+import {COLORS} from './constants';
 import {KenBurnsImage} from './components/KenBurnsImage';
 import {ManuscriptFrame} from './components/ManuscriptFrame';
 import {CandleParticles} from './components/CandleParticles';
+
+const {fontFamily: latoFamily} = loadLato();
 
 // SEQUENZA 05 — "Il Silenzio"
 // Bookend narrativo: stesso portale di notte (image_f7e33fa1) — circolarità.
@@ -17,17 +20,17 @@ export const Sequence05IlSilenzio: React.FC = () => {
 	const candleFlicker = noise2D('silenzio-flick', frame / fps * 0.7, 0.9) * 0.03;
 
 	// Fade in sequenza
-	const fadeIn = interpolate(frame, [0, 12], [0, 1], {extrapolateRight: 'clamp'});
+	const fadeIn = interpolate(frame, [0, 12], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)});
 
 	// Testo finale — appare in due fasi
-	const citazione1Enter = interpolate(frame, [Math.round(3 * fps), Math.round(7 * fps)], [0, 1], {extrapolateRight: 'clamp'});
-	const citazione2Enter = interpolate(frame, [Math.round(7 * fps), Math.round(11 * fps)], [0, 1], {extrapolateRight: 'clamp'});
+	const citazione1Enter = interpolate(frame, [Math.round(3 * fps), Math.round(7 * fps)], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
+	const citazione2Enter = interpolate(frame, [Math.round(7 * fps), Math.round(11 * fps)], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
 
 	// Logo InnTour
-	const logoEnter = interpolate(frame, [Math.round(10 * fps), Math.round(13 * fps)], [0, 1], {extrapolateRight: 'clamp'});
+	const logoEnter = interpolate(frame, [Math.round(10 * fps), Math.round(13 * fps)], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)});
 
 	// Colofone — appare alla fine
-	const colofoneEnter = interpolate(frame, [Math.round(9 * fps), Math.round(13 * fps)], [0, 1], {extrapolateRight: 'clamp'});
+	const colofoneEnter = interpolate(frame, [Math.round(9 * fps), Math.round(13 * fps)], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)});
 
 	// Campana beats (3 pulse — come chiusura del rito)
 	const campanaBeats = [
@@ -117,7 +120,7 @@ export const Sequence05IlSilenzio: React.FC = () => {
 
 				{/* Citazione 2 — il collegamento con la Cattedrale */}
 				<div style={{
-					fontFamily: latoFont,
+					fontFamily: latoFamily,
 					fontSize: 17,
 					fontWeight: 300,
 					color: COLORS.oroPallido,
@@ -164,7 +167,7 @@ export const Sequence05IlSilenzio: React.FC = () => {
 						}}
 					/>
 					<div style={{
-						fontFamily: latoFont,
+						fontFamily: latoFamily,
 						fontSize: 12,
 						fontWeight: 300,
 						color: COLORS.oroPallido,

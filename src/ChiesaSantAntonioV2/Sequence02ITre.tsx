@@ -1,9 +1,14 @@
-import {AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Easing, interpolate, useCurrentFrame, useVideoConfig} from 'remotion';
 import {noise2D} from '@remotion/noise';
-import {COLORS, playfairFont, latoFont, TESTI_STORICI} from './constants';
+import {loadFont as loadPlayfair} from '@remotion/google-fonts/PlayfairDisplay';
+import {loadFont as loadLato} from '@remotion/google-fonts/Lato';
+import {COLORS, TESTI_STORICI} from './constants';
 import {KenBurnsImage} from './components/KenBurnsImage';
 import {ManuscriptFrame} from './components/ManuscriptFrame';
 import {CandleParticles} from './components/CandleParticles';
+
+const {fontFamily: playfairFamily} = loadPlayfair();
+const {fontFamily: latoFamily} = loadLato();
 
 // SEQUENZA 02 — "I Tre"
 // I tre baroni entrano nell'inquadratura — tre ritratti come in un trittico medievale.
@@ -24,12 +29,13 @@ export const Sequence02ITre: React.FC = () => {
 	});
 
 	// Entrata sequenziale dei tre ritratti
-	const card1Enter = interpolate(frame, [6, 14], [0, 1], {extrapolateRight: 'clamp'});
-	const card2Enter = interpolate(frame, [10, 18], [0, 1], {extrapolateRight: 'clamp'});
-	const card3Enter = interpolate(frame, [14, 22], [0, 1], {extrapolateRight: 'clamp'});
+	const card1Enter = interpolate(frame, [6, 14], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)});
+	const card2Enter = interpolate(frame, [10, 18], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)});
+	const card3Enter = interpolate(frame, [14, 22], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)});
 
 	const fadeOut = interpolate(frame, [durationInFrames - 10, durationInFrames], [1, 0], {
 		extrapolateLeft: 'clamp', extrapolateRight: 'clamp',
+		easing: Easing.out(Easing.quad),
 	});
 
 	const cospiratori = TESTI_STORICI.cospiratori;
@@ -79,14 +85,14 @@ export const Sequence02ITre: React.FC = () => {
 				paddingTop: 72,
 			}}>
 				<div style={{
-					fontFamily: latoFont,
+					fontFamily: latoFamily,
 					fontSize: 13,
 					fontWeight: 300,
 					letterSpacing: '0.35em',
 					color: COLORS.oroLiturgico,
 					textTransform: 'uppercase',
 					marginBottom: 10,
-					opacity: interpolate(frame, [0, 10], [0, 1], {extrapolateRight: 'clamp'}),
+					opacity: interpolate(frame, [0, 10], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)}),
 				}}>
 					I Congiurati
 				</div>
@@ -122,7 +128,7 @@ export const Sequence02ITre: React.FC = () => {
 						}}>
 							{/* Numero romano */}
 							<div style={{
-								fontFamily: playfairFont,
+								fontFamily: playfairFamily,
 								fontSize: 13,
 								color: COLORS.oroLiturgico,
 								letterSpacing: '0.2em',
@@ -133,7 +139,7 @@ export const Sequence02ITre: React.FC = () => {
 							</div>
 							{/* Nome */}
 							<div style={{
-								fontFamily: playfairFont,
+								fontFamily: playfairFamily,
 								fontSize: 22,
 								fontStyle: 'italic',
 								color: COLORS.avorioCarta,
@@ -144,7 +150,7 @@ export const Sequence02ITre: React.FC = () => {
 							</div>
 							{/* Titolo */}
 							<div style={{
-								fontFamily: latoFont,
+								fontFamily: latoFamily,
 								fontSize: 13,
 								fontWeight: 300,
 								color: COLORS.oroPallido,

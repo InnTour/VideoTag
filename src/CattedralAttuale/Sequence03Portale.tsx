@@ -1,8 +1,13 @@
-import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import {COLORS, playfairFont, latoFont} from './constants';
+import {AbsoluteFill, Easing, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {loadFont as loadPlayfair} from '@remotion/google-fonts/PlayfairDisplay';
+import {loadFont as loadLato} from '@remotion/google-fonts/Lato';
+import {COLORS} from './constants';
 import {KenBurnsImage} from './components/KenBurnsImage';
 import {ScanLines} from './components/ScanLines';
 import {ParticleField} from './components/ParticleField';
+
+const {fontFamily: playfairFamily} = loadPlayfair();
+const {fontFamily: latoFamily} = loadLato();
 
 // SEQ 03 — PORTALE (25–35s · 10 secondi)
 // Interno della cattedrale — tre navate, luce, incenso
@@ -13,8 +18,8 @@ export const Sequence03Portale: React.FC = () => {
 	const frame = useCurrentFrame();
 	const {fps, durationInFrames} = useVideoConfig();
 
-	const fadeIn  = interpolate(frame, [0, Math.round(fps * 0.5)], [0, 1], {extrapolateRight: 'clamp'});
-	const fadeOut = interpolate(frame, [durationInFrames - Math.round(fps * 0.5), durationInFrames], [1, 0], {extrapolateLeft: 'clamp'});
+	const fadeIn  = interpolate(frame, [0, Math.round(fps * 0.5)], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)});
+	const fadeOut = interpolate(frame, [durationInFrames - Math.round(fps * 0.5), durationInFrames], [1, 0], {extrapolateLeft: 'clamp', easing: Easing.out(Easing.quad)});
 	const opacity = Math.min(fadeIn, fadeOut);
 
 	// Luce dall'alto — effetto "raggio divino" che cresce lentamente
@@ -25,13 +30,13 @@ export const Sequence03Portale: React.FC = () => {
 	const parolaProgress = interpolate(frame, [Math.round(1 * fps), Math.round(3.5 * fps)], [0, parola.length], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
 
 	// Pannelli dato: 1 navata → 3 navate
-	const nava1Spr = spring({frame: Math.max(0, frame - Math.round(1 * fps)), fps, config: {damping: 180}});
+	const nava1Spr = spring({frame: Math.max(0, frame - Math.round(1 * fps)), fps, config: {damping: 200}});
 	const nava1Op  = interpolate(nava1Spr, [0, 1], [0, 1]);
 
-	const nava2Spr = spring({frame: Math.max(0, frame - Math.round(2.5 * fps)), fps, config: {damping: 180}});
+	const nava2Spr = spring({frame: Math.max(0, frame - Math.round(2.5 * fps)), fps, config: {damping: 200}});
 	const nava2Op  = interpolate(nava2Spr, [0, 1], [0, 1]);
 
-	const nava3Spr = spring({frame: Math.max(0, frame - Math.round(4 * fps)), fps, config: {damping: 180}});
+	const nava3Spr = spring({frame: Math.max(0, frame - Math.round(4 * fps)), fps, config: {damping: 200}});
 	const nava3Op  = interpolate(nava3Spr, [0, 1], [0, 1]);
 
 	// Anno 1709 — compila in basso
@@ -93,7 +98,7 @@ export const Sequence03Portale: React.FC = () => {
 				top: '50%',
 				left: 60,
 				transform: 'translateY(-50%)',
-				fontFamily: playfairFont,
+				fontFamily: playfairFamily,
 				fontSize: 120,
 				fontWeight: 700,
 				color: COLORS.oroSacro,
@@ -109,7 +114,7 @@ export const Sequence03Portale: React.FC = () => {
 			{/* Pannelli navate — destra */}
 			<AbsoluteFill style={{justifyContent: 'center', alignItems: 'flex-end', paddingRight: 72, flexDirection: 'column', gap: 14}}>
 				<h2 style={{
-					fontFamily: playfairFont,
+					fontFamily: playfairFamily,
 					fontSize: 50,
 					fontWeight: 700,
 					color: COLORS.avorio,
@@ -132,8 +137,8 @@ export const Sequence03Portale: React.FC = () => {
 						minWidth: 360,
 					}}>
 						<div style={{flex: 1}}>
-							<p style={{fontFamily: latoFont, fontSize: 16, color: n.color, margin: '0 0 3px', letterSpacing: '0.14em', textTransform: 'uppercase', textAlign: 'right'}}>{n.label}</p>
-							<p style={{fontFamily: playfairFont, fontSize: 30, color: COLORS.avorio, margin: 0, textAlign: 'right', fontWeight: 700}}>{n.year}</p>
+							<p style={{fontFamily: latoFamily, fontSize: 16, color: n.color, margin: '0 0 3px', letterSpacing: '0.14em', textTransform: 'uppercase', textAlign: 'right'}}>{n.label}</p>
+							<p style={{fontFamily: playfairFamily, fontSize: 30, color: COLORS.avorio, margin: 0, textAlign: 'right', fontWeight: 700}}>{n.year}</p>
 						</div>
 					</div>
 				))}
@@ -147,7 +152,7 @@ export const Sequence03Portale: React.FC = () => {
 					padding: '8px 18px',
 					backdropFilter: 'blur(14px)',
 				}}>
-					<p style={{fontFamily: playfairFont, fontSize: 16, fontStyle: 'italic', color: COLORS.oroSacro, margin: 0, textAlign: 'right'}}>
+					<p style={{fontFamily: playfairFamily, fontSize: 16, fontStyle: 'italic', color: COLORS.oroSacro, margin: 0, textAlign: 'right'}}>
 						"…con la posa del portale in marmo rosso screziato, che ancora oggi ammiriamo."
 					</p>
 				</div>

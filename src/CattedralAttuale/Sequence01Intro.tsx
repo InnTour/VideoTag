@@ -1,8 +1,13 @@
-import {AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import {COLORS, playfairFont, latoFont} from './constants';
+import {AbsoluteFill, Easing, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {loadFont as loadPlayfair} from '@remotion/google-fonts/PlayfairDisplay';
+import {loadFont as loadLato} from '@remotion/google-fonts/Lato';
+import {COLORS} from './constants';
 import {KenBurnsImage} from './components/KenBurnsImage';
 import {ScanLines} from './components/ScanLines';
 import {ParticleField} from './components/ParticleField';
+
+const {fontFamily: playfairFamily} = loadPlayfair();
+const {fontFamily: latoFamily} = loadLato();
 
 // SEQ 01 — INTRO (0–8s)
 // La concattedrale al tramonto dorato — colpo d'occhio immediato
@@ -13,29 +18,29 @@ export const Sequence01Intro: React.FC = () => {
 	const frame = useCurrentFrame();
 	const {fps, durationInFrames} = useVideoConfig();
 
-	const fadeIn  = interpolate(frame, [0, Math.round(fps * 0.7)], [0, 1], {extrapolateRight: 'clamp'});
-	const fadeOut = interpolate(frame, [durationInFrames - Math.round(fps * 0.5), durationInFrames], [1, 0], {extrapolateLeft: 'clamp'});
+	const fadeIn  = interpolate(frame, [0, Math.round(fps * 0.7)], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)});
+	const fadeOut = interpolate(frame, [durationInFrames - Math.round(fps * 0.5), durationInFrames], [1, 0], {extrapolateLeft: 'clamp', easing: Easing.out(Easing.quad)});
 	const opacity = Math.min(fadeIn, fadeOut);
 
 	// Flash iniziale — come uno scatto fotografico che rivela la cattedrale
 	const flashOp = frame < 4 ? interpolate(frame, [0, 4], [0.7, 0]) : 0;
 
 	// Titolo principale: emerge dal basso
-	const titleSpr = spring({frame: Math.max(0, frame - Math.round(0.5 * fps)), fps, config: {damping: 160}, durationInFrames: Math.round(0.9 * fps)});
+	const titleSpr = spring({frame: Math.max(0, frame - Math.round(0.5 * fps)), fps, config: {damping: 200}, durationInFrames: Math.round(0.9 * fps)});
 	const titleOp  = interpolate(titleSpr, [0, 1], [0, 1]);
-	const titleY   = interpolate(titleSpr, [0, 1], [40, 0]);
+	const titleY   = interpolate(titleSpr, [0, 1], [40, 0], {easing: Easing.out(Easing.cubic)});
 
 	// Sottotitolo: appare dopo il titolo
-	const subSpr = spring({frame: Math.max(0, frame - Math.round(1.4 * fps)), fps, config: {damping: 180}});
+	const subSpr = spring({frame: Math.max(0, frame - Math.round(1.4 * fps)), fps, config: {damping: 200}});
 	const subOp  = interpolate(subSpr, [0, 1], [0, 1]);
 
 	// Badge sezione in alto a sx
 	const badgeSpr = spring({frame: Math.max(0, frame - Math.round(0.3 * fps)), fps, config: {damping: 200}});
 	const badgeOp  = interpolate(badgeSpr, [0, 1], [0, 1]);
-	const badgeX   = interpolate(badgeSpr, [0, 1], [-60, 0]);
+	const badgeX   = interpolate(badgeSpr, [0, 1], [-60, 0], {easing: Easing.out(Easing.cubic)});
 
 	// Linea decorativa che si estende
-	const lineW = interpolate(frame, [Math.round(1 * fps), Math.round(2.5 * fps)], [0, 360], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	const lineW = interpolate(frame, [Math.round(1 * fps), Math.round(2.5 * fps)], [0, 360], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)});
 
 	return (
 		<AbsoluteFill style={{opacity, backgroundColor: COLORS.bgNero}}>
@@ -77,7 +82,7 @@ export const Sequence01Intro: React.FC = () => {
 				backdropFilter: 'blur(14px)',
 			}}>
 				<div style={{width: 7, height: 7, borderRadius: '50%', backgroundColor: COLORS.oroSacro, boxShadow: `0 0 8px ${COLORS.oroSacro}`}} />
-				<span style={{fontFamily: latoFont, fontSize: 16, color: COLORS.oroSacro, letterSpacing: '0.16em', textTransform: 'uppercase'}}>
+				<span style={{fontFamily: latoFamily, fontSize: 16, color: COLORS.oroSacro, letterSpacing: '0.16em', textTransform: 'uppercase'}}>
 					Architettura & Monumenti
 				</span>
 			</div>
@@ -86,7 +91,7 @@ export const Sequence01Intro: React.FC = () => {
 			<AbsoluteFill style={{justifyContent: 'center', alignItems: 'flex-start', paddingLeft: 80, flexDirection: 'column', gap: 12}}>
 				<div style={{opacity: titleOp, transform: `translateY(${titleY}px)`}}>
 					<h1 style={{
-						fontFamily: playfairFont,
+						fontFamily: playfairFamily,
 						fontSize: 102,
 						fontWeight: 700,
 						color: COLORS.avorio,
@@ -110,7 +115,7 @@ export const Sequence01Intro: React.FC = () => {
 
 				<div style={{opacity: subOp, display: 'flex', flexDirection: 'column', gap: 6}}>
 					<p style={{
-						fontFamily: latoFont,
+						fontFamily: latoFamily,
 						fontSize: 27,
 						fontWeight: 300,
 						color: COLORS.pietraCalce,
@@ -121,7 +126,7 @@ export const Sequence01Intro: React.FC = () => {
 						Lacedonia · Irpinia · dal 1709
 					</p>
 					<p style={{
-						fontFamily: playfairFont,
+						fontFamily: playfairFamily,
 						fontSize: 22,
 						fontStyle: 'italic',
 						color: COLORS.oroSacro,

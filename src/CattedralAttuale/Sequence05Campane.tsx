@@ -1,8 +1,13 @@
-import {AbsoluteFill, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
-import {COLORS, playfairFont, latoFont} from './constants';
+import {AbsoluteFill, Easing, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {loadFont as loadPlayfair} from '@remotion/google-fonts/PlayfairDisplay';
+import {loadFont as loadLato} from '@remotion/google-fonts/Lato';
+import {COLORS} from './constants';
 import {KenBurnsImage} from './components/KenBurnsImage';
 import {ScanLines} from './components/ScanLines';
 import {ParticleField} from './components/ParticleField';
+
+const {fontFamily: playfairFamily} = loadPlayfair();
+const {fontFamily: latoFamily} = loadLato();
 
 // SEQ 05 — CAMPANE / OUTRO (50–74.92s · ~25 secondi)
 // Le iscrizioni romane, la sede vescovile nel Regno di Napoli, l'incenso, le campane
@@ -14,8 +19,8 @@ export const Sequence05Campane: React.FC = () => {
 	const frame = useCurrentFrame();
 	const {fps, durationInFrames} = useVideoConfig();
 
-	const fadeIn  = interpolate(frame, [0, Math.round(fps * 0.6)], [0, 1], {extrapolateRight: 'clamp'});
-	const fadeOut = interpolate(frame, [durationInFrames - Math.round(fps * 0.9), durationInFrames], [1, 0], {extrapolateLeft: 'clamp'});
+	const fadeIn  = interpolate(frame, [0, Math.round(fps * 0.6)], [0, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)});
+	const fadeOut = interpolate(frame, [durationInFrames - Math.round(fps * 0.9), durationInFrames], [1, 0], {extrapolateLeft: 'clamp', easing: Easing.out(Easing.quad)});
 	const opacity = Math.min(fadeIn, fadeOut);
 
 	// Cross-dissolve: iscrizioni romane → campanile bookend
@@ -43,7 +48,7 @@ export const Sequence05Campane: React.FC = () => {
 	// Logo e claim
 	const logoSpr  = spring({frame: Math.max(0, frame - Math.round(12 * fps)), fps, config: {damping: 200}});
 	const logoOp   = interpolate(logoSpr, [0, 1], [0, 1]);
-	const logoScale= interpolate(logoSpr, [0, 1], [0.78, 1]);
+	const logoScale= interpolate(logoSpr, [0, 1], [0.78, 1], {easing: Easing.out(Easing.cubic)});
 
 	const subSpr = spring({frame: Math.max(0, frame - Math.round(13 * fps)), fps, config: {damping: 200}});
 	const subOp  = interpolate(subSpr, [0, 1], [0, 1]);
@@ -53,13 +58,13 @@ export const Sequence05Campane: React.FC = () => {
 	const citaOp  = interpolate(citaSpr, [0, 1], [0, 1]);
 
 	// Cards informative (prima della transizione al logo)
-	const card1Spr = spring({frame: Math.max(0, frame - Math.round(1 * fps)), fps, config: {damping: 180}});
+	const card1Spr = spring({frame: Math.max(0, frame - Math.round(1 * fps)), fps, config: {damping: 200}});
 	const card1Op  = interpolate(card1Spr, [0, 1], [0, 1]);
 
-	const card2Spr = spring({frame: Math.max(0, frame - Math.round(3 * fps)), fps, config: {damping: 180}});
+	const card2Spr = spring({frame: Math.max(0, frame - Math.round(3 * fps)), fps, config: {damping: 200}});
 	const card2Op  = interpolate(card2Spr, [0, 1], [0, 1]);
 
-	const lineW = interpolate(frame, [Math.round(12.5 * fps), Math.round(14 * fps)], [0, 300], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+	const lineW = interpolate(frame, [Math.round(12.5 * fps), Math.round(14 * fps)], [0, 300], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.quad)});
 
 	return (
 		<AbsoluteFill style={{opacity, backgroundColor: COLORS.bgNero}}>
@@ -110,7 +115,7 @@ export const Sequence05Campane: React.FC = () => {
 
 				{/* Titolo */}
 				<h2 style={{
-					fontFamily: playfairFont,
+					fontFamily: playfairFamily,
 					fontSize: 54,
 					fontWeight: 700,
 					color: COLORS.avorio,
@@ -130,8 +135,8 @@ export const Sequence05Campane: React.FC = () => {
 						backdropFilter: 'blur(18px)',
 						maxWidth: 500,
 					}}>
-						<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.oroSacro, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>L'importanza storica</p>
-						<p style={{fontFamily: playfairFont, fontSize: 26, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
+						<p style={{fontFamily: latoFamily, fontSize: 16, color: COLORS.oroSacro, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>L'importanza storica</p>
+						<p style={{fontFamily: playfairFamily, fontSize: 26, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
 							La sede vescovile lacedoniese era riconosciuta nel <em style={{color: COLORS.oroChiaro}}>Regno di Napoli</em> — da 1 navata alle attuali 3, crescendo con la sua autorità
 						</p>
 					</div>
@@ -146,8 +151,8 @@ export const Sequence05Campane: React.FC = () => {
 						backdropFilter: 'blur(18px)',
 						maxWidth: 500,
 					}}>
-						<p style={{fontFamily: latoFont, fontSize: 16, color: COLORS.azzurroCielo, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>Le iscrizioni romane</p>
-						<p style={{fontFamily: playfairFont, fontSize: 26, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
+						<p style={{fontFamily: latoFamily, fontSize: 16, color: COLORS.azzurroCielo, margin: '0 0 4px', letterSpacing: '0.14em', textTransform: 'uppercase'}}>Le iscrizioni romane</p>
+						<p style={{fontFamily: playfairFamily, fontSize: 26, color: COLORS.avorio, margin: 0, lineHeight: 1.4}}>
 							Frammenti epigrafici romani reimpiegati nelle mura — strati di tempo sovrapposti, <em style={{color: COLORS.oroSacro}}>Roma sotto il sacro medievale</em>
 						</p>
 					</div>
@@ -184,7 +189,7 @@ export const Sequence05Campane: React.FC = () => {
 				</div>
 
 				<p style={{
-					fontFamily: playfairFont, fontSize: 28, fontWeight: 700,
+					fontFamily: playfairFamily, fontSize: 28, fontWeight: 700,
 					color: COLORS.avorio, margin: 0, letterSpacing: '0.04em',
 					opacity: subOp, textAlign: 'center',
 					textShadow: '0 2px 12px rgba(12,9,4,0.9)',
@@ -192,7 +197,7 @@ export const Sequence05Campane: React.FC = () => {
 					Comune di Lacedonia
 				</p>
 				<p style={{
-					fontFamily: latoFont, fontSize: 16, fontWeight: 300,
+					fontFamily: latoFamily, fontSize: 16, fontWeight: 300,
 					color: COLORS.oroSacro, margin: 0, letterSpacing: '0.16em',
 					textTransform: 'uppercase', opacity: subOp,
 				}}>
@@ -208,7 +213,7 @@ export const Sequence05Campane: React.FC = () => {
 
 				{/* Citazione conclusiva */}
 				<p style={{
-					fontFamily: playfairFont, fontSize: 19, fontStyle: 'italic',
+					fontFamily: playfairFamily, fontSize: 19, fontStyle: 'italic',
 					color: COLORS.oroSacro, margin: 0, opacity: citaOp * 0.82,
 					textAlign: 'center', maxWidth: 680,
 					textShadow: '0 1px 8px rgba(12,9,4,0.9)',
@@ -226,7 +231,7 @@ export const Sequence05Campane: React.FC = () => {
 					backdropFilter: 'blur(12px)',
 				}}>
 					<div style={{width: 6, height: 6, borderRadius: '50%', backgroundColor: COLORS.oroSacro, boxShadow: `0 0 7px ${COLORS.oroSacro}`}} />
-					<span style={{fontFamily: latoFont, fontSize: 16, color: COLORS.oroSacro, letterSpacing: '0.14em'}}>
+					<span style={{fontFamily: latoFamily, fontSize: 16, color: COLORS.oroSacro, letterSpacing: '0.14em'}}>
 						A2.01 · Cattedrale Attuale · Architettura e Monumenti
 					</span>
 				</div>

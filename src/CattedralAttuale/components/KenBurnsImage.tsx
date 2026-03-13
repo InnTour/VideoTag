@@ -1,5 +1,5 @@
 import React from 'react';
-import { AbsoluteFill, Img, useCurrentFrame, useVideoConfig, interpolate, staticFile } from 'remotion';
+import {AbsoluteFill, Easing, Img, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 
 type Motion = 'zoom-in' | 'zoom-out' | 'pan-left' | 'pan-right' | 'pan-up' | 'pan-down';
 
@@ -40,34 +40,23 @@ export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
   outroPadFrames = 105,
 }) => {
   const frame = useCurrentFrame();
-  const { durationInFrames } = useVideoConfig();
+  const {durationInFrames} = useVideoConfig();
 
-  // Linea temporale virtuale estesa:
-  // - L'animazione parte `introPadFrames` prima del frame 0 (immagine già in moto al fade-in)
-  // - L'animazione termina `outroPadFrames` dopo la fine (immagine ancora in moto al fade-out)
-  // Questo garantisce continuità visiva attraverso le cross-dissolvenze TransitionSeries.
   const virtualTotal = introPadFrames + durationInFrames + outroPadFrames;
   const progress = interpolate(
     frame + introPadFrames,
     [0, virtualTotal],
     [0, 1],
-    { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' },
+    {
+      extrapolateLeft: 'clamp',
+      extrapolateRight: 'clamp',
+      easing: Easing.inOut(Easing.quad),
+    },
   );
 
-  // Calcolo scala e traslazione.
-  // Per i movimenti pan: scale = 1+intensity garantisce esattamente abbastanza
-  // spazio di bordo per la traslazione massima senza mai rivelare un'area vuota,
-  // indipendentemente dal formato sorgente (9:16 ritratto → 16:9 landscape).
-  //
-  // Derivazione: con transform: scale(s) translate(tx%) e transformOrigin:center,
-  // il bordo sinistro a progress massimo è: s*(0 - W/2) + s*tx + W/2 = 0
-  // → tx_max = W/2 * (s-1)/s = 50% * intensity/(1+intensity)
-  //
-  // Il pan è centrato a progress=0.5 così la dissolvenza a metà sequenza
-  // mostra sempre il centro dell'immagine.
   let scale = 1;
-  let tx = 0; // translateX in %
-  let ty = 0; // translateY in %
+  let tx = 0;
+  let ty = 0;
 
   const halfRange = (50 * intensity) / (1 + intensity);
 
@@ -102,7 +91,7 @@ export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
       : `scale(${scale})`;
 
   return (
-    <AbsoluteFill style={{ opacity, overflow: 'hidden' }}>
+    <AbsoluteFill style={{opacity, overflow: 'hidden'}}>
       <Img
         src={staticFile(src)}
         style={{
@@ -116,7 +105,7 @@ export const KenBurnsImage: React.FC<KenBurnsImageProps> = ({
       />
       {overlayOpacity > 0 && (
         <AbsoluteFill
-          style={{ backgroundColor: overlayColor, opacity: overlayOpacity }}
+          style={{backgroundColor: overlayColor, opacity: overlayOpacity}}
         />
       )}
     </AbsoluteFill>

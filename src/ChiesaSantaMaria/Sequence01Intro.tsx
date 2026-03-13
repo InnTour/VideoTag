@@ -1,9 +1,14 @@
 import React from 'react';
-import {useCurrentFrame, useVideoConfig, interpolate, spring} from 'remotion';
+import {Easing, useCurrentFrame, useVideoConfig, interpolate, spring} from 'remotion';
+import {loadFont as loadPlayfair} from '@remotion/google-fonts/PlayfairDisplay';
+import {loadFont as loadLato} from '@remotion/google-fonts/Lato';
 import {KenBurnsImage} from './components/KenBurnsImage';
 import {ParticleField} from './components/ParticleField';
 import {ScanLines} from './components/ScanLines';
-import {IMAGES, COLORS, playfairFont, latoFont} from './constants';
+import {IMAGES, COLORS} from './constants';
+
+const {fontFamily: playfairFamily} = loadPlayfair();
+const {fontFamily: latoFamily} = loadLato();
 
 // ── Seq01 — Intro (~10s · 300 frame) ────────────────────────────
 // Colonne corinzie hero · Badge · Titolo · Anno ghost
@@ -15,24 +20,28 @@ export const Sequence01Intro: React.FC = () => {
   const flashOpacity = interpolate(frame, [0, 4, 14], [0.35, 0.10, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
+    easing: Easing.out(Easing.quad),
   });
 
   const badgeEntrance = spring({
     frame: Math.max(0, frame - 16),
     fps,
-    config: {damping: 180},
+    config: {damping: 200},
   });
-  const badgeX = interpolate(badgeEntrance, [0, 1], [-44, 0]);
+  const badgeX = interpolate(badgeEntrance, [0, 1], [-44, 0], {
+    easing: Easing.out(Easing.cubic),
+  });
 
   const lineWidth = interpolate(frame, [20, 90], [0, 300], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
+    easing: Easing.out(Easing.quad),
   });
 
   const titleEntrance = spring({
     frame: Math.max(0, frame - 30),
     fps,
-    config: {damping: 160, stiffness: 80},
+    config: {damping: 200},
   });
 
   const subEntrance = spring({
@@ -78,7 +87,7 @@ export const Sequence01Intro: React.FC = () => {
       {/* Anno ghost "30 a.C." ruotato 90° — filigrana temporale */}
       <div style={{
         position: 'absolute', top: 0, right: 80,
-        fontFamily: playfairFont,
+        fontFamily: playfairFamily,
         fontSize: 160,
         fontWeight: 700,
         color: COLORS.ambraEgizia,
@@ -102,7 +111,7 @@ export const Sequence01Intro: React.FC = () => {
           background: COLORS.ambraEgizia,
           padding: '6px 20px',
           borderRadius: 2,
-          fontFamily: latoFont,
+          fontFamily: latoFamily,
           fontWeight: 700,
           fontSize: 16,
           letterSpacing: '0.18em',
@@ -116,8 +125,8 @@ export const Sequence01Intro: React.FC = () => {
       {/* Titolo + sottotitolo */}
       <div style={{
         position: 'absolute', left: 72, bottom: 220,
-        opacity: interpolate(titleEntrance, [0, 1], [0, 1]),
-        transform: `translateY(${interpolate(titleEntrance, [0, 1], [44, 0])}px)`,
+        opacity: interpolate(titleEntrance, [0, 1], [0, 1], {easing: Easing.out(Easing.quad)}),
+        transform: `translateY(${interpolate(titleEntrance, [0, 1], [44, 0], {easing: Easing.out(Easing.cubic)})}px)`,
       }}>
         {/* Linea oro animata */}
         <div style={{
@@ -127,7 +136,7 @@ export const Sequence01Intro: React.FC = () => {
           marginBottom: 20,
         }} />
         <div style={{
-          fontFamily: playfairFont,
+          fontFamily: playfairFamily,
           fontSize: 102,
           fontWeight: 700,
           color: COLORS.biancoCalce,
@@ -143,10 +152,10 @@ export const Sequence01Intro: React.FC = () => {
       {/* Sottotitolo */}
       <div style={{
         position: 'absolute', left: 72, bottom: 138,
-        opacity: interpolate(subEntrance, [0, 1], [0, 1]),
-        transform: `translateY(${interpolate(subEntrance, [0, 1], [14, 0])}px)`,
+        opacity: interpolate(subEntrance, [0, 1], [0, 1], {easing: Easing.out(Easing.quad)}),
+        transform: `translateY(${interpolate(subEntrance, [0, 1], [14, 0], {easing: Easing.out(Easing.cubic)})}px)`,
         maxWidth: 720,
-        fontFamily: latoFont,
+        fontFamily: latoFamily,
         fontSize: 32,
         fontWeight: 300,
         color: COLORS.biancoCalce,
