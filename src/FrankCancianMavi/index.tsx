@@ -22,6 +22,7 @@ export const FrankCancianMavi: React.FC = () => {
     <AbsoluteFill style={{ background: COLORS.neroFoto }}>
       {/* Audio narrazione — voce Iapetus · 58.70s */}
       <Audio src={staticFile(AUDIO)} />
+      <Audio src={staticFile('music/jazz-vintage-1957.mp3')} volume={0.18} loop />
 
       <TransitionSeries>
         {/* Seq 01 — Intro · Manifesto MAVI ~10.0s */}

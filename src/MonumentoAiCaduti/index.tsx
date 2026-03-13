@@ -21,6 +21,7 @@ export const MonumentoAiCaduti: React.FC = () => {
   return (
     <AbsoluteFill style={{ background: COLORS.neroProfondo }}>
       <Audio src={staticFile(AUDIO)} />
+      <Audio src={staticFile('music/solenne-caduti.mp3')} volume={0.13} loop />
 
       <TransitionSeries>
         {/* Seq01 — Intro · Nebbia Dorata (300f) */}

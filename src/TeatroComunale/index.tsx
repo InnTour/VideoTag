@@ -16,6 +16,7 @@ export const TeatroComunale: React.FC = () => {
     <AbsoluteFill style={{ background: COLORS.neroSala }}>
       {/* Audio narrazione — parte dall'inizio della composizione */}
       <Audio src={staticFile(AUDIO)} />
+      <Audio src={staticFile('music/teatrale-grandioso.mp3')} volume={0.20} loop />
 
       <TransitionSeries>
         {/* Seq 01 — Intro ~9.7s */}

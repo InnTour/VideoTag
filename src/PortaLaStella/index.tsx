@@ -25,6 +25,7 @@ export const PortaLaStella: React.FC = () => {
     <AbsoluteFill style={{ background: COLORS.neroFondo }}>
       {/* ── Narrazione ──────────────────────────────────────────────────────── */}
       <Audio src={staticFile(AUDIO.narrazione)} volume={1} />
+      <Audio src={staticFile('music/epico-medievale.mp3')} volume={0.18} loop />
 
       {/* ── Sequenze ────────────────────────────────────────────────────────── */}
       <TransitionSeries>

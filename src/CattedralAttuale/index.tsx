@@ -27,6 +27,7 @@ export const CattedralAttuale: React.FC = () => {
 				startFrom={0}
 				volume={1}
 			/>
+			<Audio src={staticFile('music/sacro-contemplativo.mp3')} volume={0.15} loop />
 
 			{/* SEQ 01 — INTRO · 0–8s */}
 			<Sequence from={toFrames(SEQUENCES.INTRO.start)} durationInFrames={toFrames(SEQUENCES.INTRO.duration)}>
