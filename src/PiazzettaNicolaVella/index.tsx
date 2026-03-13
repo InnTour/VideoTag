@@ -42,6 +42,7 @@ export const PiazzettaNicolaVella: React.FC = () => {
 				volume={0.82}
 				startFrom={0}
 			/>
+			<Audio src={staticFile('music/folk-irpino.mp3')} volume={0.14} loop />
 
 			{/* === SEQUENZE === */}
 			{sequences.map(({key, timing, Component}) => (

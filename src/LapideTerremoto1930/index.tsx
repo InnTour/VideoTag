@@ -23,6 +23,7 @@ export const LapideTerremoto1930: React.FC = () => {
     <AbsoluteFill style={{ background: COLORS.neroNotte }}>
       {/* Audio narrazione — voce Iapetus · 66.06s */}
       <Audio src={staticFile(AUDIO)} />
+      <Audio src={staticFile('music/sisma-teso.mp3')} volume={0.16} loop />
 
       <TransitionSeries>
         {/* Seq 01 — L'Alba del Dolore · lapide, 3:00, hook ~11.7s */}

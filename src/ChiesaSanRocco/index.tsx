@@ -23,6 +23,7 @@ export const ChiesaSanRocco: React.FC = () => {
     <AbsoluteFill style={{ background: COLORS.neroFondo }}>
       {/* Audio narrazione — voce Iapetus */}
       <Audio src={staticFile(AUDIO)} />
+      <Audio src={staticFile('music/contemplativo-biblioteca.mp3')} volume={0.15} loop />
 
       <TransitionSeries>
         {/* Seq 01 — Intro ~10.3s */}

@@ -22,6 +22,7 @@ export const BibliotecaVescovile: React.FC = () => {
     <AbsoluteFill style={{ background: COLORS.neroSala }}>
       {/* Audio narrazione — voce Iapetus */}
       <Audio src={staticFile(AUDIO)} />
+      <Audio src={staticFile('music/contemplativo-biblioteca.mp3')} volume={0.12} loop />
 
       <TransitionSeries>
         {/* Seq 01 — Intro ~9.0s */}

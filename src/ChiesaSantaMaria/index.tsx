@@ -19,6 +19,7 @@ export const ChiesaSantaMaria: React.FC = () => {
   return (
     <AbsoluteFill style={{backgroundColor: COLORS.neroFondo}}>
       <Audio src={staticFile(AUDIO)} />
+      <Audio src={staticFile('music/sacro-contemplativo.mp3')} volume={0.16} loop />
       <TransitionSeries>
         <TransitionSeries.Sequence durationInFrames={SEQ_DUR.s01} premountFor={SEQ_DUR.transition}>
           <Sequence01Intro />

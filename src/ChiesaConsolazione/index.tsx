@@ -22,6 +22,7 @@ export const ChiesaConsolazione: React.FC = () => {
     <AbsoluteFill style={{ background: COLORS.neroFondo }}>
       {/* Audio narrazione — voce Iapetus */}
       <Audio src={staticFile(AUDIO)} />
+      <Audio src={staticFile('music/sacro-contemplativo.mp3')} volume={0.14} loop />
 
       <TransitionSeries>
         {/* Seq 01 — Intro ~9.7s */}

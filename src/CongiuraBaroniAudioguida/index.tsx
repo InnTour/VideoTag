@@ -25,6 +25,7 @@ export const PortaDiSotto: React.FC = () => {
     <AbsoluteFill style={{ background: COLORS.neroFondo }}>
       {/* ── Narrazione ──────────────────────────────────────────────────────── */}
       <Audio src={staticFile(AUDIO.narrazione)} volume={1} />
+      <Audio src={staticFile('music/drammatico-thriller.mp3')} volume={0.17} loop />
 
       {/* ── Sequenze ────────────────────────────────────────────────────────── */}
       <TransitionSeries>

@@ -29,6 +29,7 @@ export const PiazzaDeSanctis: React.FC = () => {
     <AbsoluteFill style={{ background: COLORS.neroFondo }}>
       {/* ── Narrazione principale ─────────────────────────────────────────── */}
       <Audio src={staticFile(AUDIO.narrazione)} volume={1} />
+      <Audio src={staticFile('music/orchestrale-elevato.mp3')} volume={0.16} loop />
 
       {/* ── Sequenze ─────────────────────────────────────────────────────── */}
       <TransitionSeries>
